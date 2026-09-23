@@ -1,0 +1,2115 @@
+[
+  {
+    "id": "01-colonization-of-the-americas",
+    "date": "1400s",
+    "title": {
+      "en": "Colonization of the Americas",
+      "es": "Colonización de las Américas",
+      "zh": "美洲的殖民化"
+    },
+    "blocks": [
+      {
+        "type": "participant",
+        "code": "MGNJ",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/mgnj",
+        "avatar": "/timeline/d66856d2-8a6c-4202-81cd-8662560ffaec_1620661041.JPG",
+        "title": {
+          "en": "MGNJ | Colonization of the Americas",
+          "es": "MGNJ | Colonización de las Américas",
+          "zh": "MGNJ | 美洲的殖民化"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"When we were conquered there was a lot of cruelty, a lot of injustice, they violated women, they stole so much. Our country has been a very looted country, the Spanish took the gold, just like that, without restraint. From there on the people came with a very hardened heart, very rebellious. It took away all that valor, other customs came in, other cultures.\"",
+          "es": "\"Cuando fuimos conquistados hubo mucha crueldad, mucha injusticia, violaron a las mujeres, robaron muchísimo. Nuestro país ha sido un país muy saqueado, se llevaron el oro, así, sin modo los españoles. Desde ahí ya viene la gente con un corazón muy duro, muy rebelde. Quitó todo ese valor, se metieron otras costumbres, otras culturas.\"",
+          "zh": "“当我们被征服时,充满了残酷与不公,他们侵犯妇女,掠夺了无数财物。我们的国家曾是一个被严重掠夺的国家,西班牙人就那样肆无忌惮地夺走了黄金。从那时起,人们的心变得非常坚硬,非常叛逆。它夺走了所有的勇气,带来了其他习俗、其他文化。”"
+        }
+      },
+      {
+        "type": "participant",
+        "code": "MLNJ",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/mlnj",
+        "avatar": "/timeline/2021-05-10_11-27-04_1620660411.png",
+        "title": {
+          "en": "MLNJ | Colonization of the Americas",
+          "es": "MLNJ | Colonización de las Américas",
+          "zh": "MLNJ | 美洲的殖民化"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"Once you see what slavery did, they took us out of our culture, out of our history. Your name is everything because you live-- When people call your name, it embodies your spirit and who you are. Names have meanings. In the movie Roots, they told him that he couldn't keep his name anymore. They gave him the slave name. When you study your culture and your history, you realize that it's not your African name. They would take the name of the slave master, and it's not who you are, it's not your lineage, it's not your roots. That was a psychological way to get them to assume the identity of slavery.\"",
+          "es": "\"Una vez que ves lo que la esclavitud hizo, nos sacaron de nuestra cultura, de nuestra historia. Tu nombre lo es todo porque vives-- Cuando la gente llama tu nombre, encarna tu espíritu y quién eres. Los nombres tienen significados. En la película Raíces, le dijeron que no podía mantener su nombre nunca más. Le dieron el nombre de esclavo. Cuando estudias tu cultura y tu historia, te das cuenta de que no es tu nombre africano. Tomarían el nombre del dueño de esclavos, y no es quién eres, no es tu linaje, no son tus raíces. Esa era una forma psicológica de hacerles asumir la identidad de la esclavitud\".",
+          "zh": "“一旦你看清奴隶制的所作所为,就会明白他们把我们从自己的文化、自己的历史中剥离了出来。你的名字就是一切,因为你活着——当人们呼唤你的名字时,它承载着你的灵魂和你是谁。名字是有意义的。在电影《根》中,他们告诉他不能再保留自己的名字了。他们给了他奴隶的名字。当你研究自己的文化和历史时,你会意识到那并不是你的非洲名字。他们会取奴隶主的名字,而那不是你是谁,不是你的血脉,不是你的根。那是一种心理手段,用来让他们接受奴隶身份。”"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "Peace activist Rigoberta Menchú Tum addresses the violence of colonialism and her fight for indigenous rights.",
+          "es": "La activista por la paz Rigoberta Menchú Tum aborda la violencia del colonialismo y su lucha por los derechos indígenas.",
+          "zh": "和平活动家里戈贝尔塔·门楚·图姆讲述殖民主义的暴力以及她为原住民权利所进行的斗争。"
+        },
+        "emphasis": "caption"
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/ebRxYPwVCUw",
+        "title": "Dr. Rigoberta Menchú Tum on the rights of indigenous people"
+      }
+    ]
+  },
+  {
+    "id": "02-1790-naturalization-act",
+    "date": "1790",
+    "title": {
+      "en": "1790 Naturalization Act",
+      "es": "Ley de Naturalización de 1790",
+      "zh": "1790 入籍法案"
+    },
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "Congress limited the right to citizenship to \"free white persons.\" In practice, only white, male property owners could naturalize and acquire the status of citizens.",
+          "es": "El Congreso limitó el derecho a la ciudadanía a \"personas blancas libres\". En la práctica, solo los hombres blancos propietarios podían naturalizarse y adquirir el estatus de ciudadanos.",
+          "zh": "国会将公民权限制于“自由白人”。实际上,只有拥有财产的白人男性才能入籍并获得公民身份。"
+        }
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/597150Er59M?si=k7GW0pja0d1IMeWp",
+        "title": "YouTube video player"
+      }
+    ]
+  },
+  {
+    "id": "03-1823-the-monroe-doctrine",
+    "date": "1823",
+    "title": {
+      "en": "1823 The Monroe Doctrine",
+      "es": "1823 La Doctrina Monroe",
+      "zh": "1823 门罗主义"
+    },
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "In 1823 U.S. President James Monroe proclaimed the U.S. protector of the Western Hemisphere.",
+          "es": "En 1823, el presidente estadounidense James Monroe proclamó a Estados Unidos como protector del Hemisferio Occidental.",
+          "zh": "1823 年,美国总统詹姆斯·门罗宣布美国为西半球的保护者。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "How the U.S. caused its own migrant crisis | American Intervention in Latin America | Explore Mode",
+          "es": "Cómo Estados Unidos causó su propia crisis de migrantes | Intervención estadounidense en América Latina | Modo de exploración",
+          "zh": "美国如何造成了自身的移民危机 | 美国对拉丁美洲的干预 | 探索模式"
+        }
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/rrvuPrdiF1E",
+        "title": "How the U.S. caused its own migrant crisis | American Intervention in Latin America | EXPLORE MODE"
+      }
+    ]
+  },
+  {
+    "id": "04-1865-voting-rights",
+    "date": "1865",
+    "title": {
+      "en": "1865 Voting Rights",
+      "es": "1865 Derechos de Voto",
+      "zh": "1865 投票权"
+    },
+    "blocks": [
+      {
+        "type": "participant",
+        "code": "SENJ",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/senj",
+        "avatar": "/timeline/2024-11-10_20-56-42_1731301015.jpg",
+        "title": {
+          "en": "SENJ | Voting Rights",
+          "es": "SENJ | Derechos de voto",
+          "zh": "SENJ | 投票权"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"I helped Obama get in and I want to help get 45 out.\"",
+          "es": "\"Ayudé a que Obama entrara y quiero ayudar a sacar al 45\".",
+          "zh": "“我帮助奥巴马上台,我也想帮助把第 45 任总统赶下台。”"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "I've voted in every election, because we had lots of African-Americans who lost their lives because they voted. My great, great, grandmother, I've been told, had to guess how many beans were in a jar in order to vote. Of course, I'm going to vote. That's ridiculous but those are the kinds of things that they did to us back then to stop us from voting.",
+          "es": "He votado en todas las elecciones, porque hubo muchos afroamericanos que perdieron sus vidas porque votaron. Mi bisabuela, me han dicho, tuvo que adivinar cuántas habichuelas había en un frasco para poder votar. Por supuesto, voy a votar. Es ridículo, pero esas son las cosas que nos hacían para evitar que votáramos.",
+          "zh": "我每次选举都去投票,因为有许多非裔美国人因投票而失去了生命。我听说我的曾曾祖母为了投票,必须猜出罐子里有多少颗豆子。当然,我要去投票。那很荒唐,但那就是当年他们用来阻止我们投票的那些手段。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "Historian Yohuru Williams give a brief rundown of the history of the 15th Amendment, which outlawed votings rights discrimination after the Civil War.",
+          "es": "El historiador Yohuru Williams da un breve resumen de la historia de la 15ª Enmienda, que prohibió la discriminación de los derechos de voto después de la Guerra Civil.",
+          "zh": "历史学家 Yohuru Williams 简要介绍了第十五修正案的历史,该修正案在内战后禁止了投票权方面的歧视。"
+        },
+        "emphasis": "caption"
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/3PWgcHkHFeM",
+        "title": "Sound Smart: The 15th Amendment | History"
+      }
+    ]
+  },
+  {
+    "id": "05-1910-the-great-migration",
+    "date": "1910",
+    "title": {
+      "en": "1910 The Great Migration",
+      "es": "1910 La Gran Migración",
+      "zh": "1910 大迁徙"
+    },
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "Historian Yohuru Williams explains what you need to know about the Great Migration of African Americans from the South to the North after the Civil War.",
+          "es": "El historiador Yohuru Williams explica lo que necesitas saber sobre la Gran Migración de afroamericanos del Sur al Norte después de la Guerra Civil.",
+          "zh": "历史学家 Yohuru Williams 讲解了你需要了解的、内战后非裔美国人从南方迁徙到北方的大迁徙。"
+        }
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/7TfgJnXlaxo",
+        "title": "Sound Smart: The Great Migration | History"
+      }
+    ]
+  },
+  {
+    "id": "06-1920-harlem-renaissance",
+    "date": "1920",
+    "title": {
+      "en": "1920 Harlem Renaissance",
+      "es": "1920 El Renacimiento de Harlem",
+      "zh": "1920 哈莱姆文艺复兴"
+    },
+    "blocks": [
+      {
+        "type": "participant",
+        "code": "SENJ6",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/senj6",
+        "avatar": "/timeline/2024-11-10_20-56-42_1731301015.jpg",
+        "title": {
+          "en": "SENJ6 | Harlem Renaissance",
+          "es": "SENJ6 | Renacimiento de Harlem",
+          "zh": "SENJ6 | 哈莱姆文艺复兴"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"We stayed together very well. It made you feel safe and wanted and loved.\"",
+          "es": "\"Nos llevábamos muy bien. Te hacía sentir seguro, deseado y amado.\"",
+          "zh": "“我们很好地团结在一起。这让你感到安全、被需要、被爱。”"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "I was born in Harlem NY. My neighborhood had tall brick buildings, apartments, very unlike where I live now. Concrete sidewalks, playing jumping rope outside the apartment. I lived on the sixth floor. My mother wanted something from the store, she would throw it out the window in a brown bag, the money and the note, and I would go into the grocery store and get it and then bring it upstairs. It was a close-knit community.",
+          "es": "Nací en Harlem, Nueva York. Mi barrio tenía edificios altos de ladrillo, apartamentos, muy diferente a donde vivo ahora. Aceras de concreto, jugando a la cuerda afuera del apartamento. Vivía en el sexto piso. Mi madre quería algo de la tienda, lo lanzaba por la ventana en una bolsa de papel, el dinero y la nota, y yo iba a la tienda de abarrotes y lo traía y luego lo subía. Era una comunidad muy unida.",
+          "zh": "我出生在纽约哈莱姆区。我家附近有高高的砖楼和公寓,和我现在住的地方很不一样。水泥人行道,我在公寓外跳绳玩。我住在六楼。我妈妈想从商店买点东西,她会把钱和便条装在牛皮纸袋里从窗户扔下来,我就跑去杂货店买好,再带上楼。那是一个非常紧密的社区。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "I could feel safe going to my neighbors and staying there till my mom got home or going to my best friend's mother's house and staying there. You knew everybody, you knew the man who owned a record shop at the corner, Ray and then you knew the man who owned the candy store and you knew Charlie was the butcher and you knew the man who was in the pawnshop and you knew the man who had the photography shop. You knew everybody. We stayed together very well. It made you feel safe and wanted and loved.",
+          "es": "Podía sentirme seguro yendo a casa de mis vecinos y quedándome allí hasta que mi mamá llegara a casa o yendo a casa de la madre de mi mejor amiga y quedándome allí. Conocías a todos, conocías al hombre que tenía una tienda de discos en la esquina, Ray, y luego conocías al hombre que tenía la tienda de caramelos y sabías que Charlie era el carnicero y conocías al hombre que estaba en la casa de empeños y conocías al hombre que tenía la tienda de fotografía. Conocías a todos. Nos llevábamos muy bien. Te hacía sentir seguro, deseado y amado.",
+          "zh": "我可以放心地去邻居家待着,直到我妈妈回家;或者去我最好朋友母亲家待着。你认识所有人——你认识街角开唱片店的那个人 Ray,你认识开糖果店的那个人,你知道 Charlie 是肉铺老板,你认识当铺里的那个人,也认识开照相馆的那个人。你认识每一个人。我们很好地团结在一起。这让你感到安全、被需要、被爱。"
+        }
+      },
+      {
+        "type": "participant",
+        "code": "WPNY",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/wpny",
+        "avatar": "/timeline/2024-11-10_20-46-17_1731300393.jpg",
+        "title": {
+          "en": "WPNY | Harlem Renaissance",
+          "es": "WPNY | Renacimiento de Harlem",
+          "zh": "WPNY | 哈莱姆文艺复兴"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"There were people who looked like me that were in charge\"",
+          "es": "\"Había personas que se parecían a mí que estaban a cargo\"",
+          "zh": "“有和我长得一样的人在掌管事务”"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "I went to an elementary school where the principal was the first Black principal in the city, in the New York City School System. She was very proud, very stately woman, very handsome. Even then, a mature woman like your grandmother might be or something. She would always come around where the kids were. She wasn't like a person who stayed in her office. Her presence, she had great dignity as a person. We were always influenced by that.",
+          "es": "Fui a una escuela primaria donde la directora era la primera directora negra en la ciudad, en el Sistema de Escuelas de la Ciudad de Nueva York. Era una mujer muy orgullosa, muy majestuosa, muy guapa. Incluso entonces, una mujer madura como tu abuela o algo así. Siempre venía donde estaban los niños. No era como una persona que se quedaba en su oficina. Su presencia, tenía una gran dignidad como persona. Siempre fuimos influenciados por eso.",
+          "zh": "我上的小学校长是全市、也是纽约市学校系统中的第一位黑人校长。她非常自豪,仪态端庄,十分英气。即使在当时,她也已是一位像你祖母那样的成熟女性。她总是会到孩子们身边走动。她不是那种只待在办公室里的人。她的存在、她作为一个人的尊严,总是深深影响着我们。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "It was an all Black school and we would sing the Black national anthem, and we would just sing to our little hearts out so proudly. That was my beginning in elementary school.",
+          "es": "Era una escuela completamente negra y cantábamos el himno nacional negro, y simplemente cantábamos con todo nuestro corazón tan orgullosamente. Ese fue mi comienzo en la escuela primaria.",
+          "zh": "那是一所全是黑人的学校,我们会唱黑人国歌,我们会自豪地放声歌唱。这就是我小学的开端。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "Lift ev'ry voice and sing\n'Til earth and heaven ring.",
+          "es": "Alza cada voz y canta\nHasta que cielo y tierra resuenen.",
+          "zh": "扬起每一个声音歌唱,直到大地与天堂回响。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "There was always this sense that you had to be proud of who you were, and you have to be-- That whole thing of you're responsible to represent your race. I don't know that it was indeed as clear terms, but that influence was there. The pride that there were people who looked like me that were in charge.",
+          "es": "Siempre había este sentimiento de que tenías que estar orgulloso de quién eras, y que tenías que ser-- Todo eso de que eres responsable de representar a tu raza. No sé si lo expresaba en términos tan claros, pero esa influencia estaba ahí. El orgullo de que había personas que se parecían a mí que estaban a cargo.",
+          "zh": "总有这样一种感觉:你必须为自己是谁而自豪,你必须——那种你有责任代表自己族裔的整个观念。我不确定它是否被表达得如此明确,但那种影响一直都在。那种自豪——有和我长得一样的人在掌管事务。"
+        }
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/ONgOH_tq7-Q",
+        "title": "Lift Every Voice and Sing with Lyrics"
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/9gboEyrj02g",
+        "title": "The Harlem Renaissance"
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "In this episode of Black History in Two Minutes or So hosted by Henry Louis Gates Jr. — with additional commentary from Farah Griffin and Brent Hayes Edwards of Columbia University, and author and journalist Isabel Wilkerson — we look at a new generation of black people whose bold commitment to artistic expression will forever live on. Learn about the Harlem Renaissance.",
+          "es": "En este episodio de Black History in Two Minutes or So, presentado por Henry Louis Gates Jr. —con comentarios adicionales de Farah Griffin y Brent Hayes Edwards de la Universidad de Columbia, y de la autora y periodista Isabel Wilkerson— examinamos una nueva generación de personas negras cuyo compromiso audaz con la expresión artística vivirá para siempre. Aprende sobre el Renacimiento de Harlem.",
+          "zh": "在本期由 Henry Louis Gates Jr. 主持的 Black History in Two Minutes or So 中——并由哥伦比亚大学的 Farah Griffin 和 Brent Hayes Edwards,以及作家兼记者 Isabel Wilkerson 提供额外评论——我们回顾了新一代黑人,他们对艺术表达的大胆投入将永远延续。一起了解哈莱姆文艺复兴。"
+        },
+        "emphasis": "caption"
+      }
+    ]
+  },
+  {
+    "id": "07-1924-the-immigration-act-border-patrol-establish",
+    "date": "1924",
+    "title": {
+      "en": "1924 The Immigration Act & Border Patrol Established",
+      "es": "1924 La Ley de Inmigración y Establecimiento de la Patrulla Fronteriza",
+      "zh": "1924 移民法案与边境巡逻队的设立"
+    },
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "While the 1924 immigration law spared Mexico a quota, a series of secondary laws — including one that made it a crime to enter the country outside official ports of entry — gave border and customs agents on-the-spot discretion to decide who could enter the country legally. They had the power to turn what had been a routine daily or seasonal event — crossing the border to go to work — into a ritual of abuse.",
+          "es": "Aunque la ley de inmigración de 1924 eximió a México de una cuota, una serie de leyes secundarias —incluyendo una que hizo delito entrar al país fuera de los puertos oficiales de entrada— otorgó a los agentes de aduanas y frontera discreción en el lugar para decidir quién podía entrar al país legalmente. Tenían el poder de convertir lo que había sido un evento rutinario diario o estacional —cruzar la frontera para ir a trabajar— en un ritual de abuso.",
+          "zh": "尽管 1924 年的移民法没有对墨西哥设定配额,但一系列次级法律——包括将从官方入境口岸以外进入美国列为犯罪的法律——赋予了边境和海关人员现场裁量权,由他们决定谁可以合法入境。他们有权把原本日常或季节性的常规活动——为了上班而跨越边境——变成一场充满虐待的仪式。"
+        }
+      },
+      {
+        "type": "link",
+        "href": "https://theintercept.com/2019/01/12/border-patrol-history/",
+        "image": "https://theintercept.com/wp-content/uploads/2019/01/GettyImages-50526650-1547246131-e1547246270362.jpg?fit=1498%2C747",
+        "imageAlt": "The Border Patrol Has Been a Cult of Brutality Since 1924",
+        "title": {
+          "en": "The Border Patrol Has Been a Cult of Brutality Since 1924",
+          "es": "La Patrulla Fronteriza Ha Sido un Culto de Brutalidad Desde 1924",
+          "zh": "自 1924 年以来,边境巡逻队就一直是一种残暴的崇拜"
+        },
+        "description": {
+          "en": "Since its founding, the U.S. Border Patrol has arguably been the most politicized and abusive branch of federal law enforcement.",
+          "es": "Desde su fundación, la Patrulla Fronteriza de EE.UU. ha sido posiblemente la rama más politizada y abusiva de la aplicación de la ley federal.",
+          "zh": "自成立以来,美国边境巡逻队可以说一直是联邦执法机构中政治化程度最高、最具虐待性的部门。"
+        },
+        "domain": "theintercept.com"
+      }
+    ]
+  },
+  {
+    "id": "08-1940-white-flight",
+    "date": "1940",
+    "title": {
+      "en": "1940 White Flight",
+      "es": "1940 Éxodo Blanco",
+      "zh": "1940 白人外迁"
+    },
+    "blocks": [
+      {
+        "type": "participant",
+        "code": "SENJ6",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/senj6",
+        "avatar": "/timeline/2024-11-10_20-56-42_1731301015.jpg",
+        "title": {
+          "en": "SENJ6 | White Flight",
+          "es": "SENJ6 | Fuga Blanca",
+          "zh": "SENJ6 | 白人迁离"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"Neighbors were very friendly, but they moved out.\"",
+          "es": "\"Los vecinos eran muy amables, pero se mudaron.\"",
+          "zh": "“邻居们都很友好,但他们都搬走了。”"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "When we moved to New Jersey we were the first African-American family on this block back in 1954. Our next door neighbors were very friendly, but they moved out. On the other side of us were two brothers who owned my house and the house next door. They were very friendly but they moved out. They weren't mean to us. We didn't have anybody who put a cross on our lawn or threw a brick through our window. We had none of that. They just moved out. They called it a white flight.",
+          "es": "Cuando nos mudamos a Nueva Jersey, éramos la primera familia afroamericana en esta cuadra, allá por 1954. Nuestros vecinos de al lado eran muy amables, pero se mudaron. Del otro lado había dos hermanos que eran dueños de mi casa y de la casa de al lado. Eran muy amables pero se mudaron. No fueron malos con nosotros. No hubo nadie que pusiera una cruz en nuestro patio o que tirara un ladrillo por nuestra ventana. Nada de eso. Simplemente se mudaron. Lo llamaban \"fuga blanca\".",
+          "zh": "1954年我们搬到新泽西时,是这条街上第一个非裔美国人家庭。我们隔壁的邻居非常友好,但他们搬走了。我们另一边住着两兄弟,我家和隔壁的房子都是他们的。他们也非常友好,但他们也搬走了。他们对我们并不刻薄。没有人在我们的草坪上立十字架,也没有人朝我们的窗户扔砖头。这些事都没发生过。他们只是搬走了。人们把这叫做白人迁离。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "In other words, once any African-American starts moving into a certain area then the white people who own the houses start moving out. That happened, when we came in 1954 it was an all-white block and we were the first to integrate it. By the time the '60s came, there was a white couple, a mixed couple and then it was Johnny across the street but it was predominantly black. Still was a nice neighborhood. I had friends and we had the same rapport with our neighbors that we have now. I could visit a couple of people. It wasn't as intimate as it was in Harlem, New York.",
+          "es": "En otras palabras, una vez que cualquier afroamericano comienza a mudarse a cierta área, la gente blanca que es dueña de las casas comienza a mudarse. Eso pasó cuando llegamos en 1954, era una cuadra completamente blanca y fuimos los primeros en integrarla. Para cuando llegó los años '60, había una pareja blanca, una pareja mixta y luego estaba Johnny al otro lado de la calle, pero era predominantemente negra. Seguía siendo un buen barrio. Tenía amigos y teníamos la misma relación con nuestros vecinos que tenemos ahora. Podía visitar a un par de personas. No era tan íntimo como lo era en Harlem, Nueva York.",
+          "zh": "换句话说,一旦有非裔美国人开始搬入某个地区,拥有房屋的白人就开始搬离。这种情况就发生了,我们1954年搬来时,这是一个全是白人的街区,我们是第一个打破隔离的家庭。到了六十年代,这里有一对白人夫妇、一对跨族裔夫妇,街对面还有Johnny,但居民以黑人为主。这依然是个不错的社区。我有朋友,我们和邻居之间的融洽程度跟现在一样。我可以去拜访一些人。但不像纽约哈莱姆区那样亲密无间。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "In this video, we cover the concept of white flight, also known as white exodus. There are 3 main reasons for white flight that we cover in this video.",
+          "es": "En este video, cubrimos el concepto de la huida blanca, también conocida como éxodo blanco. Hay 3 razones principales para la huida blanca que cubrimos en este video.",
+          "zh": "在这段视频中,我们介绍了白人迁离的概念,也被称为白人外流。本视频涵盖了导致白人迁离的三个主要原因。"
+        },
+        "emphasis": "caption"
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/lAGsVjoIxFU",
+        "title": "White Flight Explained"
+      }
+    ]
+  },
+  {
+    "id": "09-1942-the-bracero-program",
+    "date": "1942",
+    "title": {
+      "en": "1942 The Bracero Program",
+      "es": "1942 El Programa Bracero",
+      "zh": "1942 布拉塞罗计划"
+    },
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "America's biggest guest-worker program created to avoid labor shortages during WWII, ended in 1964.",
+          "es": "El programa de trabajadores huéspedes más grande de América, creado para evitar escasez de mano de obra durante la Segunda Guerra Mundial, terminó en 1964.",
+          "zh": "美国为避免二战期间劳动力短缺而创立的最大客工计划,于1964年结束。"
+        }
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/oxEZrpcJpSU",
+        "title": "The Braceros at 80"
+      }
+    ]
+  },
+  {
+    "id": "10-1947-mendez-v-westminster-school-district",
+    "date": "1947",
+    "title": {
+      "en": "1947 Mendez v. Westminster School District",
+      "es": "1947 Méndez vs. Distrito Escolar de Westminster",
+      "zh": "1947 门德斯诉威斯敏斯特学区案"
+    },
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "Sylvia Mendez's family sued four school districts for being denied entrance to Westminster Elementary School because they were Mexican. The ruling sets a precedent for the historic Brown v. Board of Education Supreme Court case seven years later.",
+          "es": "La familia de Sylvia Méndez demandó a cuatro distritos escolares por negarles la entrada a la Escuela Primaria Westminster porque eran mexicanos. La sentencia sienta un precedente para el histórico caso de la Corte Suprema Brown v. Board of Education siete años después.",
+          "zh": "西尔维娅·门德斯一家因身为墨西哥人而被拒于威斯敏斯特小学门外,起诉了四个学区。该判决为七年后具有历史意义的布朗诉教育委员会最高法院案开创了先例。"
+        }
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/SIMWdfSxoh8",
+        "title": "Voices of History: Sylvia Mendez"
+      }
+    ]
+  },
+  {
+    "id": "11-1949-the-groveland-four",
+    "date": "1949",
+    "title": {
+      "en": "1949 The Groveland Four",
+      "es": "1949 Los Cuatro de Groveland",
+      "zh": "1949 格罗夫兰四人案"
+    },
+    "blocks": [
+      {
+        "type": "participant",
+        "code": "FRNJ6",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/frnj6",
+        "avatar": "/timeline/2021-05-10_11-51-29_1620661857.png",
+        "title": {
+          "en": "FRNJ6 | The Groveland Four",
+          "es": "FRNJ6 | Los Cuatro de Groveland",
+          "zh": "FRNJ6 | 格罗夫兰四人案"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"It was a culture. You knew where you could go and where you couldn't go...\"",
+          "es": "\"Era una cultura. Sabías a dónde podías ir y a dónde no podías ir...\"",
+          "zh": "“这是一种文化。你知道哪里可以去,哪里不能去……”"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "Everything was segregated at that time. I had no discrimination in school because everybody was Black...Our neighborhood was heavily policed. The sheriff's department did a lot of wrong to us. They had a couple of cases one was the Groveland Four. It happened in the county that I grew up in and it was a couple of guys that were accused of sexual assault and sentenced to death. Two of them were killed by the sheriff's department. It happened in the early '50s or something like that. They had other incidents after that. There's a book about it titled Devil in the Grove by Gilbert King.",
+          "es": "Todo estaba segregado en esa época. No tuve discriminación en la escuela porque todos eran negros... Nuestro barrio estaba fuertemente vigilado. El departamento del sheriff nos hizo mucho daño. Había un par de casos, uno era el de los Cuatro de Groveland. Sucedió en el condado donde crecí y eran un par de chicos que fueron acusados de agresión sexual y condenados a muerte. Dos de ellos fueron asesinados por el departamento del sheriff. Sucedió a principios de los años '50 o algo así. Hubo otros incidentes después de eso. Hay un libro sobre esto titulado \"Devil in the Grove\" de Gilbert King.",
+          "zh": "那时候一切都实行种族隔离。我在学校没有受到歧视,因为大家都是黑人……我们的社区警察盘查得很严。郡警局对我们做了很多坏事。他们办过几起案子,其中一起就是格罗夫兰四人案。它就发生在我成长的那个郡,几个小伙子被指控性侵并被判处死刑。其中两人被郡警局杀害。这事发生在五十年代初前后。后来还有其他事件。有一本书写过这件事,叫《丛林中的魔鬼》(Devil in the Grove),作者是吉尔伯特·金(Gilbert King)。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "It was a culture. You knew where you could go and where you couldn't go, and you just be vigilant to watch what you're doing. You knew your bounds and you stayed within. You knew what you had to do to survive and so, you did that.",
+          "es": "Era una cultura. Sabías a dónde podías ir y a dónde no podías ir, y solo tenías que ser vigilante y observar lo que hacías. Conocías tus límites y te mantenías dentro de ellos. Sabías qué tenías que hacer para sobrevivir y así lo hacías.",
+          "zh": "这是一种文化。你知道哪里可以去,哪里不能去,你必须时刻警觉,留意自己的一举一动。你清楚自己的界限,并守在界限之内。你知道为了生存必须做什么,你就那样做。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "News Clip about the Pardoning of the Groveland Four.\n**Trigger Warning: Death and Violence**",
+          "es": "Noticia sobre el indulto de los Cuatro de Groveland.\n**Advertencia: Contenido sobre muerte y violencia**",
+          "zh": "关于格罗夫兰四人获赦免的新闻片段。内容警告:涉及死亡与暴力"
+        },
+        "emphasis": "caption"
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/EQlGZwqlaWo",
+        "title": "Four black men granted pardons in case seen as example of racial injustice"
+      }
+    ]
+  },
+  {
+    "id": "12-1952-puerto-rico-becomes-a-commonwealth",
+    "date": "1952",
+    "title": {
+      "en": "1952 Puerto Rico becomes a commonwealth",
+      "es": "1952 Puerto Rico se convierte en estado libre asociado",
+      "zh": "1952 波多黎各成为自由邦"
+    },
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "In 1898, the United States invaded and colonized Puerto Rico as part of the Spanish American War. In 1917 - Jones Act grants US citizenship to Puerto Ricans. In 1947 - Partial self-government is granted enabling Puerto Ricans to elect their own governor. In 1952, President Luis Muñoz Marín establishes Puerto Rico as a commonwealth of the U.S.",
+          "es": "In 1898, the United States invaded and colonized Puerto Rico as part of the Spanish American War. In 1917 - Jones Act grants US citizenship to Puerto Ricans. In 1947 - Partial self-government is granted enabling Puerto Ricans to elect their own governor. In 1952, President Luis Muñoz Marín establishes Puerto Rico as a commonwealth of the U.S.",
+          "zh": "1898年,美国在美西战争期间入侵并殖民了波多黎各。1917年——《琼斯法案》授予波多黎各人美国公民身份。1947年——授予部分自治权,使波多黎各人能够自行选举总督。1952年,总统路易斯·穆尼奥斯·马林确立波多黎各为美国自由邦。"
+        }
+      },
+      {
+        "type": "participant",
+        "code": "EBNJ",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/ebnj",
+        "avatar": "/timeline/un-granito-de-arena_1626740217.jpg",
+        "title": {
+          "en": "EBNJ | Puerto Rico",
+          "es": "EBNJ | Puerto Rico",
+          "zh": "EBNJ | 波多黎各"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "I practically couldn't enjoy childhood because by the time I was nine or ten years old I was already making white rice, beans, when at that age kids today are on their computers and their things. I grew up before my time.",
+          "es": "Yo prácticamente no pude disfrutar de la niñez porque ya a los nueve o diez años ya yo estaba haciendo arroz blanco, habichuelas cuando a esa edad los niños hoy día están con su computadora y sus cosas. Yo crecí antes de tiempo.",
+          "zh": "我几乎无法享受童年,因为到我九岁或十岁时,我就已经在做白米饭和豆子了,而现在那个年纪的孩子都在玩电脑和各种东西。我未到年纪就长大了。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "I worried a lot about my little siblings, and also about my neighbors. Since my dad worked we didn't get help from the Government, even though my mom was sick there was no assistance. The help came after 1952 when Luis Muñoz Marín made the Association with the United States.",
+          "es": "Yo me preocupaba mucho por mis hermanitos, también por mis vecinos. Como mi papá trabajaba no nos daban ayuda el Gobierno, aunque mi mamá estuviera enferma no existía la ayuda. La ayuda llegó después de 1952 que Luis Muñoz Marín hizo la Asociación con Estados Unidos.",
+          "zh": "我非常担心年幼的弟弟妹妹,也担心邻居们。因为我父亲有工作,我们得不到政府的帮助,尽管我母亲生病了也没有救济。直到1952年路易斯·穆尼奥斯·马林与美国建立联系之后,援助才到来。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "The Last Colony - A Brief History of Puerto Rico's Status",
+          "es": "La Última Colonia - Una Breve Historia del Estatus de Puerto Rico",
+          "zh": "最后的殖民地——波多黎各地位简史"
+        },
+        "emphasis": "caption"
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/zz830ga1dUs",
+        "title": "The Last Colony - A Brief History of Puerto Rico's Status"
+      }
+    ]
+  },
+  {
+    "id": "13-the-civil-rights-movement",
+    "date": "1954 – 1968",
+    "title": {
+      "en": "The Civil Rights Movement",
+      "es": "El Movimiento de Derechos Civiles",
+      "zh": "民权运动"
+    },
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"The African American Civil Rights Movement was intened by many of its leaders to include all Americans of color struggling for equality, regardless of their origins. In response to the efforts of Dr. Martin Luther King, among others, Hispanic Americans of various backgrounds began organizing their own struggle for civil equality and fairness.\"",
+          "es": "\"El Movimiento de Derechos Civiles Afroamericano fue concebido por muchos de sus líderes para incluir a todos los estadounidenses de color que luchaban por la igualdad, independientemente de sus orígenes. En respuesta a los esfuerzos del Dr. Martin Luther King, entre otros, los estadounidenses hispanos de diversos orígenes comenzaron a organizar su propia lucha por la igualdad civil y la justicia.\"",
+          "zh": "“非裔美国人民权运动的许多领导人本意是要将所有为平等而奋斗的有色人种美国人纳入其中,无论其出身如何。在小马丁·路德·金博士等人的努力激励下,各种背景的西班牙裔美国人也开始组织起来,为公民平等和公正而抗争。”"
+        }
+      },
+      {
+        "type": "link",
+        "href": "https://www.loc.gov/item/ihas.200197398/",
+        "image": "",
+        "imageAlt": "",
+        "title": {
+          "en": "The Chicano Civil Rights Movement",
+          "es": "El Movimiento de Derechos Civiles Chicano",
+          "zh": "奇卡诺民权运动"
+        },
+        "description": {
+          "en": "Hispanic Americans of various backgrounds began organizing their own struggle for civil equality and fairness.",
+          "es": "Los hispanoamericanos de diversos orígenes comenzaron a organizar su propia lucha por la igualdad civil y la justicia.",
+          "zh": "各种背景的西班牙裔美国人开始组织起来,为公民平等和公正而抗争。"
+        },
+        "domain": "loc.gov"
+      },
+      {
+        "type": "participant",
+        "code": "RBNY7",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/rbny7",
+        "avatar": "/timeline/2024-11-10_20-52-31_1731300819.jpg",
+        "title": {
+          "en": "RBNY7 | Civil Rights",
+          "es": "RBNY7 | Derechos Civiles",
+          "zh": "RBNY7 | 民权"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"That could have been me in my church, somebody in my church.\"",
+          "es": "\"Eso podría haber sido yo en mi iglesia, alguien en mi iglesia.\"",
+          "zh": "“那本可能是教堂里的我,或者教堂里的某个人。”"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "I also remember watching the Civil Rights riots, watching children getting hosed and the little girl getting blown up in the church. I said, \"That could have been me in my church, somebody in my church.\" I saw how dogs were thrown on people just because they want to sit out at a place to eat, not realizing that in the grade school that I went in, another parent had to get up and say something like that.",
+          "es": "También recuerdo ver los disturbios de los Derechos Civiles, ver a los niños siendo rociados con mangueras y a la niña siendo volada por los aires en la iglesia. Dije, \"Eso podría haber sido yo en mi iglesia, alguien en mi iglesia.\" Vi cómo los perros fueron lanzados sobre la gente solo porque querían sentarse en un lugar para comer, sin darme cuenta de que en la escuela primaria a la que asistí, otro padre tuvo que levantarse y decir algo así.",
+          "zh": "我还记得看到民权运动中的骚乱,看到孩子们被消防水龙冲、那个小女孩在教堂里被炸死。我说:“那本可能是教堂里的我,或者教堂里的某个人。”我看到狗被放出去咬人,只因为他们想坐在某家店里吃饭,当时我并没意识到,在我上的小学里,另一位家长也不得不站出来讲过类似的话。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "I didn't understand what was going on, but I could feel it. It hurt me that people that looked like me were being shot at, they were being hosed. They were having horses trampled on them. That could have been my mother, that could have been me.",
+          "es": "No entendía qué estaba pasando, pero podía sentirlo. Me dolió que personas que se parecían a mí fueran disparadas, fueran rociadas. Tenían caballos pisoteándolos. Eso podría haber sido mi madre, eso podría haber sido yo.",
+          "zh": "我不明白发生了什么,但我能感觉到。让我心痛的是,那些和我长得一样的人被开枪射击、被消防水龙冲,被马匹踩踏。那本可能是我母亲,本可能是我。"
+        }
+      },
+      {
+        "type": "participant",
+        "code": "FRNJ",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/frnj",
+        "avatar": "/timeline/2021-05-10_11-51-29_1620661857.png",
+        "title": {
+          "en": "FRNJ | Civil Rights",
+          "es": "FRNJ | Derechos Civiles",
+          "zh": "FRNJ | 民权"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"I participated in the Selma to Montgomery March back in '65\"",
+          "es": "\"Participé en la Marcha de Selma a Montgomery en el '65\"",
+          "zh": "“我参加了1965年从塞尔玛到蒙哥马利的游行”"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "I participated in the Selma to Montgomery March back in '65. I was a student at Tuskegee University; the university organized buses, and everybody went. You had a lot of students over there. In fact, a lot of the nursing students were aiding to help marches and things. They had them deployed there. They took a group of nursing students there to help with that.",
+          "es": "Participé en la Marcha de Selma a Montgomery en el '65. Yo era estudiante en la Universidad de Tuskegee; la universidad organizó autobuses, y todos fueron. Había muchos estudiantes por allá. De hecho, muchas de las estudiantes de enfermería estaban ayudando a las marchas y todo eso. Los tenían desplegados allá. Llevaron un grupo de estudiantes de enfermería para ayudar con eso.",
+          "zh": "我参加了1965年从塞尔玛到蒙哥马利的游行。当时我是塔斯基吉大学的学生;学校组织了大巴,大家都去了。那里有很多学生。事实上,许多护理专业的学生也在为游行等活动提供帮助。学校把他们派到那里。学校带了一批护理专业的学生过去协助。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "The marching was from Selma, which was about 40 miles southeast of Montgomery. A lot of students from Tuskegee went over to Montgomery, the capital of Alabama. Everybody was surrounding the capitol, and they didn't want the march there. So, once you got there, if you left, you couldn't come back; that was the way to eliminate people. They had no restroom facilities there, you just had to stay there and endure because there were speeches by Dr. King. It was pretty rough there. They had state troopers and National Guard. Later, state troopers on horseback were riding over folks, and they had cattle prods and all this stuff, kind of wild. People were getting hurt. It wasn't a battle because the students would not have battled. Rarely did violence show up in Martin Luther King rallies. Just in that.",
+          "es": "La marcha fue desde Selma, que estaba a unos 40 millas al sureste de Montgomery. Muchos estudiantes de Tuskegee fueron a Montgomery, la capital de Alabama. Todos rodeaban el capitolio, y no querían la marcha allí. Entonces, una vez que llegabas, si te ibas, no podías regresar; esa era la forma de eliminar a la gente. No había baños allí, simplemente tenías que quedarte y aguantar porque había discursos del Dr. King. Fue bastante difícil allí. Había policías estatales y Guardia Nacional. Más tarde, policías estatales a caballo iban galopando sobre la gente, y tenían bastones de descarga eléctrica y todas esas cosas, algo bastante salvaje. La gente se estaba lastimando. No fue una batalla porque los estudiantes no habrían luchado. Rara vez la violencia apareció en los mítines de Martin Luther King. Solo en ese.",
+          "zh": "游行从塞尔玛出发,塞尔玛位于蒙哥马利东南约40英里处。许多塔斯基吉的学生前往阿拉巴马州首府蒙哥马利。大家把州议会大厦围了起来,而他们不希望游行在那里举行。所以,一旦你到了那里,如果离开就不能再回来了;这就是他们用来减少人数的办法。那里没有洗手间设施,你必须留在那里坚持下去,因为金博士要发表演讲。那里相当艰难。他们派来了州警和国民警卫队。后来,骑马的州警从人群上踩踏过去,还使用了赶牛刺棒之类的东西,场面相当疯狂。有人受伤了。这并不是一场战斗,因为学生们不会去战斗。马丁·路德·金的集会上很少出现暴力。仅此一次。"
+        }
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/-n9c_hKvbh4",
+        "title": "March On Washington Inspired Chicano Rights Movement"
+      }
+    ]
+  },
+  {
+    "id": "14-brown-vs-boe-of-topeka",
+    "date": "1954",
+    "title": {
+      "en": "Brown Vs. BOE of Topeka",
+      "es": "Brown contra la Junta de Educación de Topeka",
+      "zh": "布朗诉托皮卡教育委员会案"
+    },
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "Brown v. Board of Education was a case brought to the Supreme Court in 1954 after Linda Brown, an African American student in Kansas, was denied access to the white-only schools nearby her house. Future Supreme Court Justice Thurgood Marshall was the lawyer for the case, and argued that segregated schools were inherently unequal.",
+          "es": "Brown v. Board of Education fue un caso presentado a la Corte Suprema en 1954 después de que Linda Brown, una estudiante afroamericana en Kansas, fue negada el acceso a las escuelas solo para blancos cerca de su casa. El futuro Juez de la Corte Suprema Thurgood Marshall fue el abogado del caso, y argumentó que las escuelas segregadas eran inherentemente desiguales.",
+          "zh": "布朗诉教育委员会案是1954年提交至最高法院的一桩案件,起因是堪萨斯州一名非裔美国学生琳达·布朗被拒于其住所附近的白人专属学校之外。后来成为最高法院大法官的瑟古德·马歇尔担任此案的律师,主张实行种族隔离的学校天然就是不平等的。"
+        }
+      },
+      {
+        "type": "participant",
+        "code": "RBNY7",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/rbny7",
+        "avatar": "/timeline/2024-11-10_20-52-31_1731300819.jpg",
+        "title": {
+          "en": "RBNY7 | Integration of Schools",
+          "es": "RBNY7 | Integración de Escuelas",
+          "zh": "RBNY7 | 学校种族融合"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"You're not going to do that\"",
+          "es": "\"No vas a hacer eso\"",
+          "zh": "“你别想那样做”"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "I found out recently that one of my other neighbors was responsible for the school that I went to being integrated because we were zoned to go to another school that was further down the street, which was actually not really part of the city school system. But this mother stood up and said, \"You're not going to do that. My children are going to go here.\" So, that's where I went.",
+          "es": "Me enteré hace poco que una de mis otras vecinas fue responsable de que la escuela a la que asistí se integrara porque estábamos asignados a ir a otra escuela que estaba más adelante en la calle, que en realidad no formaba parte del sistema de escuelas públicas. Pero esta madre se levantó y dijo, \"No vas a hacer eso. Mis hijos van a ir aquí\". Así que, ahí es donde fui.",
+          "zh": "我最近才发现,我的另一位邻居正是促成我所就读学校实现种族融合的人。因为按学区划分,我们本该去街那头更远的另一所学校,而那所学校其实并不真正属于市立学校系统。但这位母亲挺身而出,说:“你别想那样做。我的孩子要在这里上学。”所以,我就在那里上了学。"
+        }
+      },
+      {
+        "type": "participant",
+        "code": "BMNJ",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/bmnj",
+        "avatar": "/timeline/image_1620663833.jpg",
+        "title": {
+          "en": "BMNJ | Integration of Schools",
+          "es": "BMNJ | Integración de Escuelas",
+          "zh": "BMNJ | 学校的种族融合"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"It doesn't take anything away from you.\"",
+          "es": "\"No te quita nada\".",
+          "zh": "“这并不会从你身上夺走任何东西。”"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "It became crystal clear of what my parents were saying how we was being systematically held back in all them schools. I'd stay after school, I picked up the violin. I got involved with school life. It was back then, it was a very good education for me.",
+          "es": "Se hizo cristalino lo que mis padres estaban diciendo sobre cómo nos estaban frenando sistemáticamente en todas esas escuelas. Me quedaba después de la escuela, cogí el violín. Me involucraba en la vida escolar. Era en ese entonces, fue una educación muy buena para mí.",
+          "zh": "我父母所说的——我们在那些学校里如何被系统性地压制——变得无比清晰。我会留校,学起了小提琴。我积极参与校园生活。在那时,对我来说,那是非常好的教育。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "When we got off the bus, it frightened me because we would be met by the crowd like, \"Go back to your school. Get out of here. This is my school.\" You had also a lot of parents who didn't want to integrate the school. Every time that you heard a snide comment from maybe some of the kids or their parents who was by the bus stop. It might be a voice in the crowd saying, \"Look at those kids. They're trying to be white,\" because we were going to private school. It was almost an immediate response from somewhere out in the crowd saying, \"No, those kids are trying to get ahead.\" That kind of people degrading each other, it was not acceptable, and somebody would definitely speak up about it.",
+          "es": "Cuando bajábamos del autobús, me asustaba porque nos recibía una multitud diciendo, \"Vuelvan a su escuela. Salgan de aquí. Esta es mi escuela\". También había muchos padres que no querían integrar la escuela. Cada vez que escuchabas un comentario hiriente de algunos de los niños o sus padres que estaban en la parada del autobús. Podría ser una voz en la multitud diciendo, \"Miren a esos niños. Están tratando de ser blancos\", porque estábamos yendo a escuela privada. Fue casi una respuesta inmediata de alguien en la multitud diciendo, \"No, esos niños están tratando de salir adelante\". Ese tipo de gente degradándose mutuamente, no era aceptable, y alguien definitivamente hablaría al respecto.",
+          "zh": "我们下校车的时候,真的让我害怕,因为人群会迎上来,喊着:“滚回你们自己的学校。从这里出去。这是我的学校。”也有很多家长不愿意学校实行种族融合。每次你都能听到那些站在校车站附近的孩子或他们的家长说出讥讽的话。可能是人群中的一个声音说:“看看那些孩子。他们想装成白人,”因为我们当时上的是私立学校。几乎立刻就会有人从人群另一处回应说:“不,那些孩子是在努力上进。”那种人与人之间相互贬低的事是不可接受的,一定会有人站出来说话。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "I think a lot of times in America, white Americans feel like equality and integration means they're losing something, but we know it's not that. Integration means you're accommodating something else. It doesn't take anything away from you.",
+          "es": "Creo que muchas veces en América, los estadounidenses blancos sienten que igualdad e integración significa que están perdiendo algo, pero sabemos que no es así. Integración significa que estás acogiendo algo más. No te quita nada.",
+          "zh": "我觉得在美国,很多时候,白人美国人觉得平等与融合意味着他们要失去些什么,但我们知道并非如此。融合意味着你在容纳别的东西。它并不会从你身上夺走任何东西。"
+        }
+      },
+      {
+        "type": "participant",
+        "code": "MLNJ6",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/mlnj6",
+        "avatar": "/timeline/2021-05-10_11-27-04_1620660411.png",
+        "title": {
+          "en": "MLNJ6 | Integration of Schools",
+          "es": "MLNJ6 | Integración de Escuelas",
+          "zh": "MLNJ6 | 学校的种族融合"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"That hurt a lot.\"",
+          "es": "\"Eso me dolió mucho\".",
+          "zh": "“那让我非常伤心。”"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "In grammar school, it always bothered me that I wasn't invited to the parties. It was a big thing, a birthday party. The kids would bring the invitations to the class, like have cupcakes that day. I was never invited. Only one person, the whole time I was there, invited me. She was always so nice to me. It meant so much. I guess it goes back to the quote by Maya Angelou, that you always remember how somebody made you feel more than what they did.",
+          "es": "En la escuela primaria, siempre me molestaba que no me invitaran a las fiestas. Era algo importante, una fiesta de cumpleaños. Los niños traían las invitaciones a la clase, como cupcakes ese día. Nunca me invitaban. Una sola persona, todo el tiempo que estuve ahí, me invitó. Siempre fue muy amable conmigo. Significó mucho. Supongo que va de la mano con la cita de Maya Angelou, que siempre recuerdas cómo alguien te hizo sentir más que lo que hizo.",
+          "zh": "在小学时,我没被邀请参加派对这件事一直让我难过。生日派对是件大事。孩子们会把请帖带到班里,比如那天会有纸杯蛋糕。我从来没被邀请过。在我上学的整段时间里,只有一个人邀请过我。她对我一直特别好。这对我意义重大。我想这就回到了玛雅·安吉罗的那句话——你永远记得某人让你产生的感受,而不是他们做了什么。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "We didn't talk about color though. People didn't talk about color. That's how I was treated. I wasn't invited to parties, but she was always so nice to me. She's the only one that invited me all that time. That hurt a lot.",
+          "es": "No hablábamos del color sin embargo. La gente no hablaba del color. Así es cómo fui tratada. No me invitaban a fiestas, pero ella siempre fue muy amable conmigo. Fue la única que me invitó todo ese tiempo. Eso me dolió mucho.",
+          "zh": "不过我们不谈肤色。人们不谈肤色。我就是这样被对待的。我没被邀请去参加派对,但她对我一直特别好。在那段时间里,她是唯一邀请过我的人。那让我非常伤心。"
+        }
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/1siiQelPHbQ",
+        "title": "Brown v. Board of Education | BRI's Homework Help Series"
+      }
+    ]
+  },
+  {
+    "id": "15-emmett-till-murdered",
+    "date": "1955",
+    "title": {
+      "en": "Emmett Till Murdered",
+      "es": "Emmett Till es asesinado",
+      "zh": "埃米特·蒂尔遇害"
+    },
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "On August 24, 1955, 14-year-old Emmett Till reportedly flirted with a white cashier in Money, Mississippi. Four days later, two white men tortured and murdered Till. His murder galvanized the emerging Civil Rights Movement.",
+          "es": "El 24 de agosto de 1955, Emmett Till, de 14 años, supuestamente coqueteó con una cajera blanca en Money, Mississippi. Cuatro días después, dos hombres blancos torturaron y asesinaron a Till. Su asesinato galvanizó el emergente Movimiento por los Derechos Civiles.",
+          "zh": "1955 年 8 月 24 日,14 岁的埃米特·蒂尔据说在密西西比州莫尼镇与一名白人女收银员调情。四天后,两名白人男子虐待并杀害了蒂尔。他的遇害激起了正在兴起的民权运动。"
+        }
+      },
+      {
+        "type": "participant",
+        "code": "BMNJ",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/bmnj",
+        "avatar": "/timeline/image_1620663833.jpg",
+        "title": {
+          "en": "BMNJ | Murder of Emmett Till",
+          "es": "BMNJ | Asesinato de Emmett Till",
+          "zh": "BMNJ | 埃米特·蒂尔之死"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"I was afraid of racists.\"",
+          "es": "\"Tenía miedo de los racistas\".",
+          "zh": "“我害怕的是种族主义者。”"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "After Emmet Till is killed, images of his body were printed in popular Black-owned Magazine 'Jet Magazine': \"I remember my parents told me to take a look at it and to see how brutal racism could be. That must have been when I was about maybe four or five years old when I remember them sitting down, explaining this picture to me.",
+          "es": "Después de que Emmett Till es asesinado, imágenes de su cuerpo fueron impresas en la popular revista de propiedad negra 'Jet Magazine': \"Recuerdo que mis padres me dijeron que lo mirara y que viera cuán brutal podía ser el racismo. Eso debe haber sido cuando tenía tal vez cuatro o cinco años cuando recuerdo que se sentaron, explicándome esta foto.",
+          "zh": "埃米特·蒂尔被杀害后,他遗体的照片被刊登在广受欢迎的黑人所有的杂志《Jet Magazine》上:“我记得我父母让我看了这些照片,让我看看种族主义可以多么残忍。我大概四五岁的时候,他们坐下来,把这张照片解释给我听。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "My parents came from an age where you showed the children the ugliness and explained it to them. I could remember being afraid. I wasn't afraid of white people. I was afraid of racists.\"",
+          "es": "Mis padres vinieron de una época en la que le mostraban a los niños la fealdad y se la explicaban. Recuerdo haber tenido miedo. No tenía miedo de los blancos. Tenía miedo de los racistas\".",
+          "zh": "我父母成长于那样一个年代——你会把丑恶的东西展示给孩子看,并向他们解释。我记得自己很害怕。我不是害怕白人。我害怕的是种族主义者。”"
+        }
+      },
+      {
+        "type": "participant",
+        "code": "HSNJ",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/hsnj",
+        "avatar": "/timeline/jean-baptiste_1626739279.jpg",
+        "title": {
+          "en": "HSNJ | Emmett Till",
+          "es": "HSNJ | Emmett Till",
+          "zh": "HSNJ | 埃米特·蒂尔"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"I was 13 years old, I read the story in the Chicago Defender. It was a Black newspaper. It was talked about all over the place. You could hear all the folks in the Black community talking about getting their guns and going down the Mississippi. I would hear my mother talking about it, my mother had a certain class understanding of racism. I can quote her saying, 'They get the Black folks and the White folks fighting each other, while the rich folks are laughing all the way to the bank.'\"",
+          "es": "\"Tenía 13 años, leí la historia en el Chicago Defender. Era un periódico negro. Se hablaba de ello en todas partes. Podías escuchar a toda la gente de la comunidad negra hablando sobre conseguir sus armas e ir a Mississippi. Escuchaba a mi madre hablar de ello, mi madre tenía una cierta comprensión de clase sobre el racismo. Puedo citar sus palabras diciendo: 'Hacen que los negros y los blancos se peleen entre sí, mientras los ricos se ríen todo el camino hacia el banco'\".",
+          "zh": "“我那时 13 岁,在《Chicago Defender》上读到了这个故事。那是一份黑人报纸。这件事被到处讨论。你能听到黑人社区里的所有人都在说要拿起枪,南下密西西比。我会听到我母亲谈论这件事,她对种族主义有一种基于阶级的理解。我可以引用她的话:‘他们让黑人和白人互相争斗,而有钱人则一路笑着把钱存进银行。’”"
+        }
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/MGqqOMTreNA",
+        "title": "Emmett Till - Legacy | American Freedom Stories | Biography | History"
+      }
+    ]
+  },
+  {
+    "id": "16-1961-the-u-s-increases-military-in-the-vietnam-w",
+    "date": "1961",
+    "title": {
+      "en": "1961 The U.S. increases military in the Vietnam War",
+      "es": "1961 Estados Unidos aumenta su presencia militar en la Guerra de Vietnam",
+      "zh": "1961 年 美国在越南战争中加大军事投入"
+    },
+    "blocks": [
+      {
+        "type": "participant",
+        "code": "HSNJ",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/hsnj",
+        "avatar": "/timeline/jean-baptiste_1626739279.jpg",
+        "title": {
+          "en": "HSNJ | The Vietnam War",
+          "es": "HSNJ | La Guerra de Vietnam",
+          "zh": "HSNJ | 越南战争"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"There I was in Korea, standing up for democracy, peace, and freedom, and we didn't have it back home.\"",
+          "es": "\"Allí estaba yo en Corea, defendiendo la democracia, la paz y la libertad, y no la teníamos en casa\".",
+          "zh": "“我在朝鲜,为民主、和平和自由挺身而出,可我们在国内却没有这些。”"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "Here's the contradiction. There I was in Korea, standing up for democracy, peace, and freedom, and we didn't have it back home. It was a contradiction, I was embarrassed by that. I really was. There were pictures on television of Bull Connor spraying those kids with hoses down in Alabama. There were pictures of demonstrations and things that I thought— The four Black girls were blown up in a goddamn church in Birmingham, Alabama. I was born in Alabama.",
+          "es": "Aquí está la contradicción. Allí estaba yo en Corea, defendiendo la democracia, la paz y la libertad, y no la teníamos en casa. Era una contradicción, me avergonzaba eso. De verdad que sí. Había fotos en la televisión de Bull Connor rociando a esos niños con mangueras en Alabama. Había fotos de manifestaciones y cosas que pensé— Las cuatro niñas negras fueron voladas en pedazos en una condenada iglesia en Birmingham, Alabama. Nací en Alabama.",
+          "zh": "矛盾就在这里。我在朝鲜,为民主、和平和自由挺身而出,可我们在国内却没有这些。这是一个矛盾,我为此感到羞愧。我真的觉得羞愧。电视上有 Bull Connor 在阿拉巴马用水管喷射那些孩子的画面。还有游行和其他场景的画面,我想着——四个黑人女孩在阿拉巴马州伯明翰那该死的教堂里被炸死。我出生在阿拉巴马。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "I was in the military for almost seven years, and during the mid-1960s, I was stationed at Fort Sheridan in Chicago, which is way on the North End. From there, I went up to Milwaukee, where this Catholic priest, Father John Groppi, organized a young antiracist group, the NAACP Youth Council. They were holding open housing marches. There used to be these restrictive covenants, like segregated neighborhoods were enforced, both legally and socially. This group was organizing against those segregated neighborhoods. I was able to participate in two of those marches. Being there just gave me a sense of commitment to fight against racism and for equality. It was in my personal interest, and I thought that it was wrong for people to be discriminated against based on their color and their history. I didn't believe in this. I bought into the idea that we're all created equal and that we're all endowed with certain unalienable rights. I believed that stuff, and so I tried to act on it.",
+          "es": "Estuve en el ejército durante casi siete años, y a mediados de los años 60, estuve estacionado en Fort Sheridan en Chicago, que queda muy al norte. De allí, me fui a Milwaukee, donde un sacerdote católico, el Padre John Groppi, organizó un grupo joven antiracista, el Consejo de Jóvenes de la NAACP. Estaban organizando marchas por vivienda abierta. Solía haber estos pactos restrictivos, como barrios segregados que se hacían cumplir, tanto legal como socialmente. Este grupo estaba organizándose en contra de esos barrios segregados. Pude participar en dos de esas marchas. El estar allí simplemente me dio un sentido de compromiso para luchar contra el racismo y por la igualdad. Era de mi interés personal, y pensé que estaba mal que la gente fuera discriminada por su color e historia. No creía en esto. Acepté la idea de que todos somos creados iguales y que todos estamos dotados de ciertos derechos inalienables. Creía en eso, así que traté de actuar en consecuencia.",
+          "zh": "我在军队服役了将近七年。20 世纪 60 年代中期,我驻扎在芝加哥的 Fort Sheridan,那地方位于很北的北端。从那里我去了密尔沃基,有位天主教神父 Father John Groppi 组织了一个年轻的反种族主义团体——NAACP Youth Council。他们在举行开放居住权游行。过去存在那种限制性契约,种族隔离的社区在法律上和社会上都被强制执行。这个团体正在组织反对那些种族隔离社区的行动。我参加了其中两次游行。身处其中让我产生了一种为反对种族主义、为平等而奋斗的承诺感。这符合我个人的利益,而且我认为基于肤色和历史去歧视他人是错误的。我不相信这种事情。我认同人人生而平等、人人都被赋予某些不可剥夺权利的理念。我相信这些,所以我尽力去身体力行。"
+        }
+      },
+      {
+        "type": "participant",
+        "code": "ETNY",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/etny",
+        "avatar": "/timeline/2021-07-19_19-55-12_1626738877.jpg",
+        "title": {
+          "en": "ETNY | The Vietnam War",
+          "es": "ETNY | La Guerra de Vietnam",
+          "zh": "ETNY | 越南战争"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"I really didn't think about anything other than being a wife and a mother.\"",
+          "es": "\"Realmente no pensaba en nada más que en ser esposa y madre.\"",
+          "zh": "“除了做妻子和母亲,我真的什么都没想过。”"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "When I was in my 20s I was thinking about getting married and having children, then my husband went straight to Vietnam after he graduated. As a naïve person at that time, I really didn't think about a lot of stuff for the future. A lot of things were happening back then that I really didn't think about anything other than being a wife and a mother. I loved Angela Davis at that time but I didn't think about being an activist then. It was a lot of things happening back in the '60s that I really didn't consider in my future. This African American woman (Angela Davis), she had this big afro and at that time, I had a big afro. I saw that she was free, but I guess it's cause I was the third child, I was sheltered. We worked at Rockefeller University as waitresses, my uncle was the chef at the University. After my husband came home from Vietnam, we got married and my sister got me a job with the Martin Luther King Health Center.",
+          "es": "Cuando tenía 20 años estaba pensando en casarme y tener hijos, luego mi esposo se fue directamente a Vietnam después de graduarse. Como persona ingenua en ese momento, realmente no pensaba mucho en el futuro. Muchas cosas estaban sucediendo en ese entonces que realmente no pensaba en nada más que en ser esposa y madre. Me encantaba Angela Davis en ese momento pero no pensaba en ser activista entonces. Había muchas cosas sucediendo en los años 60 que realmente no consideré en mi futuro. Esta mujer afroamericana (Angela Davis), tenía este enorme afro y en ese momento, yo también tenía un afro grande. Vi que ella era libre, pero supongo que es porque era la tercera hija, estaba protegida. Trabajamos en la Universidad Rockefeller como meseras, mi tío era el chef de la Universidad. Después de que mi esposo regresó de Vietnam, nos casamos y mi hermana me consiguió un trabajo en el Centro de Salud Martin Luther King.",
+          "zh": "我二十几岁的时候,想着结婚生子,然后我丈夫一毕业就直接去了越南。当时我是个天真的人,我真的没怎么去想未来的很多事情。那时候发生了许多事,但除了做妻子和母亲,我真的什么都没想过。那时候我喜欢 Angela Davis,但我没想过要成为活动人士。60 年代发生了很多事,但在我对未来的设想里,我真的都没考虑过。这位非裔美国女性(Angela Davis)留着一头大爆炸头,那时候我也留着大爆炸头。我看到她活得很自由,但我想可能因为我是家里的第三个孩子,我被庇护得很周到。我们在洛克菲勒大学当服务员,我舅舅是那所大学的厨师。我丈夫从越南回来后,我们结了婚,我姐姐帮我在马丁·路德·金健康中心找了一份工作。"
+        }
+      },
+      {
+        "type": "participant",
+        "code": "WPNY",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/wpny",
+        "avatar": "/timeline/2024-11-10_20-46-17_1731300393.jpg",
+        "title": {
+          "en": "WPNY | Alternative Schools",
+          "es": "WPNY | Escuelas Alternativas",
+          "zh": "WPNY | 替代性学校"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"They were not being accepted in white institutions.\"",
+          "es": "\"No eran aceptados en instituciones blancas.\"",
+          "zh": "“他们没有被白人机构接纳。”"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "There is not much information on the alternative school movement of the 1960s. The participant below provides her own account of her involvement in this movement.",
+          "es": "No hay mucha información sobre el movimiento de escuelas alternativas de los años 60. La participante a continuación proporciona su propio relato de su participación en este movimiento.",
+          "zh": "关于 20 世纪 60 年代的替代性学校运动,资料并不多。下面这位参与者讲述了她自己参与这一运动的经历。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "That must have been the late 60s, early 70s, there were lots of independent, ethnic based schools around the United States. Native Americans developed their own schools. I'm not sure if in the Puerto Rican community. Mexicans developed their own schools. And we were part of that network of what they called independent freestanding schools. Many offered accreditations. We started out applying for accreditation, and we did get the certificate to function as an accrediting institution, but we decided just to be a community education program, not to worry about degrees.",
+          "es": "Eso debe haber sido a finales de los 60, principios de los 70, había muchas escuelas independientes, basadas en etnias en todo Estados Unidos. Los nativos americanos desarrollaron sus propias escuelas. No estoy segura si en la comunidad puertorriqueña. Los mexicanos desarrollaron sus propias escuelas. Y éramos parte de esa red de lo que llamaban escuelas independientes autónomas. Muchas ofrecían acreditaciones. Comenzamos solicitando acreditación, e hicimos obtener el certificado para funcionar como institución acreditadora, pero decidimos ser simplemente un programa de educación comunitaria, sin preocuparnos por grados.",
+          "zh": "那一定是 60 年代末、70 年代初,美国各地有很多独立的、基于族裔的学校。原住民开办了他们自己的学校。波多黎各社区里我不太确定。墨西哥裔开办了他们自己的学校。我们也是那张被称为“独立自立学校”的网络的一部分。很多都提供学历认证。我们一开始也申请了认证,确实拿到了作为认证机构运作的证书,但我们决定就做一个社区教育项目,不去操心学位的事。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "They're now structured. But they started out as alternative schools. The thing was to get people of color into educational programs, because they were not being accepted in white institutions. At that point, they were not being accepted, and many did not have the adequate background, say, to compete in a traditional B.A. program. So many of the other school in the network developed their curriculum, and we developed our curriculum also. Once they were accredited there was no need to go to a traditional program. There was a whole network of alternative educational programs, like Boricua College which still exists.",
+          "es": "Ahora están estructuradas. Pero comenzaron como escuelas alternativas. La cuestión era meter a personas de color en programas educativos, porque no eran aceptados en instituciones blancas. En ese momento, no eran aceptados, y muchos no tenían el trasfondo adecuado, digamos, para competir en un programa tradicional de B.A. Entonces muchas de las otras escuelas en la red desarrollaron su currículo, y nosotros también desarrollamos nuestro currículo. Una vez que fueron acreditadas, no había necesidad de ir a un programa tradicional. Había toda una red de programas educativos alternativos, como Boricua College que todavía existe.",
+          "zh": "这些学校现在已经成体系了。但它们最初都是作为替代性学校起家的。其目的是让有色人种能够进入教育项目,因为他们没有被白人机构接纳。在那个时候,他们没有被接纳,而且许多人也不具备足够的背景,比如说,去参加传统本科项目的竞争。因此这个网络中许多其他学校开发了自己的课程,我们也开发了自己的课程。一旦他们获得了认证,就没必要再去读传统项目了。有一整套替代性教育项目的网络,比如至今仍然存在的 Boricua College。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "Muhammad Ali opposes the Vietnam War.",
+          "es": "Muhammad Ali se opone a la Guerra de Vietnam.",
+          "zh": "穆罕默德·阿里反对越南战争。"
+        },
+        "emphasis": "caption"
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/2q3lKkaZchY",
+        "title": "Powerful Muhammad Ali Interview on Vietnam War Protest - Special Documentary (1967)"
+      }
+    ]
+  },
+  {
+    "id": "17-1964-malcolm-x-the-ballot-or-the-bullet",
+    "date": "1964",
+    "title": {
+      "en": "1964 Malcolm X — 'The Ballot or the Bullet'",
+      "es": "1964 Malcolm X — 'La Papeleta o la Bala'",
+      "zh": "1964 年 马尔科姆·X——《选票还是子弹》"
+    },
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "On April 12, 1964, one month after splitting with the NOI, Malcolm X gave his \"Ballot or the Bullet\" speech at King Solomon Baptist Church in Detroit.",
+          "es": "El 12 de abril de 1964, un mes después de separarse de la NOI, Malcolm X pronunció su discurso \"Urna o Bala\" en la Iglesia Bautista King Solomon en Detroit.",
+          "zh": "1964 年 4 月 12 日,在与伊斯兰民族组织(NOI)决裂一个月后,马尔科姆·X 在底特律的 King Solomon Baptist Church 发表了他的《选票还是子弹》演讲。"
+        }
+      },
+      {
+        "type": "participant",
+        "code": "MLNJ",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/mlnj",
+        "avatar": "/timeline/2021-05-10_11-27-04_1620660411.png",
+        "title": {
+          "en": "MLNJ | Malcolm X",
+          "es": "MLNJ | Malcolm X",
+          "zh": "MLNJ | 马尔科姆·X"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"They taught you how to live in a racist society\"",
+          "es": "\"Te enseñaron cómo vivir en una sociedad racista\"",
+          "zh": "“他们教你如何在一个种族主义社会中生活”"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "My family, they were so excited about hearing Malcolm X speak. We would go to my aunt's on Sunday to see him speak on TV, they loved Malcolm X. I saw him being assassinated on TV. I don't know if you've heard of Ossie Davis, very famous actor. He gave the eulogy at Malcolm X's funeral. I showed the film of Malcolm X, where he delivered that eulogy.",
+          "es": "Mi familia estaba muy emocionada por escuchar hablar a Malcolm X. Íbamos a casa de mi tía los domingos para verlo hablar por televisión, les encantaba Malcolm X. Lo vi siendo asesinado por televisión. No sé si has oído hablar de Ossie Davis, un actor muy famoso. Dio el panegírico en el funeral de Malcolm X. Mostré la película de Malcolm X, donde pronunció ese panegírico.",
+          "zh": "我的家人,他们一听到马尔科姆·X的演讲就特别激动。星期天我们会去姑姑家在电视上看他演讲,他们都很爱马尔科姆·X。我在电视上看到他被刺杀。不知道你有没有听说过奥西·戴维斯,一位非常著名的演员。他在马尔科姆·X的葬礼上致悼词。我放映了马尔科姆·X的影片,就是他致悼词的那一段。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "I knew Malcom X's wife, Dr. Betty Shabazz, she lived in Mount Vernon and went to the same hairdresser I went to. We went on the National Black Holistic Retreats at King's Lodge. A group of 12 African-American men started it, during a time where Black people could not go to any resort or lodge for vacations or anything. We would go there to hear famous speakers and do yoga in the morning that was afro-centric. These retreats were only available in two places where Blacks could go to have a good time. They had workshops on relationships, healthy eating, healthy living, things about racism like maybe how you have to combat racism as a person, as a couple, if you're a parent.",
+          "es": "Conocía a la esposa de Malcolm X, Dra. Betty Shabazz, vivía en Mount Vernon e iba a la misma peluquería que yo. Asistimos a los Retiros Holísticos Negros Nacionales en King's Lodge. Un grupo de 12 hombres afroamericanos lo iniciaron, en una época en la que los negros no podían ir a ningún resort o lodge para vacaciones o nada. Íbamos allí para escuchar a oradores famosos y hacer yoga por la mañana que era afrocéntrico. Estos retiros solo estaban disponibles en dos lugares donde los negros podían ir a pasarlo bien. Tenían talleres sobre relaciones, alimentación saludable, vida saludable, cosas sobre el racismo como quizás cómo tienes que combatir el racismo como persona, como pareja, si eres padre.",
+          "zh": "我认识马尔科姆·X的妻子贝蒂·沙巴兹博士,她住在弗农山,和我去同一家发廊。我们参加了在国王旅舍举办的全国黑人整体修养营。那是由12位非裔美国男性发起的,当时黑人去任何度假村或旅舍度假都不被允许。我们到那里去听著名演讲者讲话,早晨练习以非洲为中心的瑜伽。当时只有两个地方可以让黑人安心享受这种修养营。他们办的工作坊涵盖人际关系、健康饮食、健康生活,以及关于种族主义的话题——比如你作为个人、作为夫妻、作为父母,要如何对抗种族主义。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "They used to have discussion on the killings and the things we see now that are not new. Like, what you do if the police stopped you. They would tell you, \"You don't move your hand. And they always want to say you're reaching for a gun.\" It's called the black book, and this lady came up to speak, she had done the black book. Things like this. Black boys are usually the ones that are threatened, so they would speak about the Black Whooping and what to do if the police stopped you. They taught you how to live in a racist society and how to cope as a Black person in America. You got so much out of it, you felt so much pride after going to them. It was a safe place to go.",
+          "es": "Solían tener discusiones sobre los asesinatos y las cosas que vemos ahora que no son nuevas. Como, qué haces si la policía te detiene. Te dirían, \"No muevas tu mano. Y siempre quieren decir que estás buscando un arma\". Se llama el libro negro, y esta señora vino a hablar, ella había hecho el libro negro. Cosas como estas. Los chicos negros generalmente son los que están amenazados, así que hablaban sobre los Azotes Negros y qué hacer si la policía te detiene. Te enseñaban cómo vivir en una sociedad racista y cómo sobrellevar como persona negra en América. Sacabas mucho de ello, te sentías tan orgulloso después de asistir a ellos. Era un lugar seguro para ir.",
+          "zh": "他们以前会讨论杀戮事件,以及我们今天看到的那些其实并不新鲜的事情。比如,如果警察拦住你,你该怎么办。他们会告诉你:“别动你的手。他们总爱说你是在掏枪。”那叫做“黑书”,有位女士上台演讲,她就编过那本“黑书”。诸如此类。黑人男孩通常是受到威胁的对象,所以他们会讲“黑人挨打”这件事,以及警察拦住你时该怎么办。他们教你如何在一个种族主义社会中生活,如何作为一名美国黑人去应对。你从中收获很多,参加完这些活动你会感到无比自豪。那是一个安全的去处。"
+        }
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/0ymPLDO0pOA",
+        "title": "Malcolm X's Full 'The Ballot or the Bullet' Speech - 1964"
+      }
+    ]
+  },
+  {
+    "id": "18-1966-kwanzaa-is-founded",
+    "date": "1966",
+    "title": {
+      "en": "1966 Kwanzaa is Founded",
+      "es": "1966 Se funda Kwanzaa",
+      "zh": "1966 宽扎节创立"
+    },
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "Kwanzaa annual holiday, affirming African-American and social values that is celebrated primarily in the United States from December 26 to January 1 both the name and the celebration were devised in 1966 by Maulana Karenga, a professor of Africana studies at California State University in Long Beach and an important figure in Afrocentrism.",
+          "es": "Kwanzaa es un día festivo anual que afirma los valores afroamericanos y sociales que se celebra principalmente en los Estados Unidos del 26 de diciembre al 1 de enero, tanto el nombre como la celebración fueron creados en 1966 por Maulana Karenga, profesor de estudios africanos en la Universidad Estatal de California en Long Beach y una figura importante en el afrocentrismo.",
+          "zh": "宽扎节是一年一度的节日,旨在弘扬非裔美国人的文化与社会价值观,主要在美国从12月26日庆祝到1月1日。其名称和庆祝活动均由毛拉纳·卡伦加于1966年创立,他是加州州立大学长滩分校非洲研究教授,也是非洲中心主义运动中的重要人物。"
+        }
+      },
+      {
+        "type": "participant",
+        "code": "MLNJ6",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/mlnj6",
+        "avatar": "/timeline/2021-05-10_11-27-04_1620660411.png",
+        "title": {
+          "en": "MLNJ6 | Kwanzaa is Founded",
+          "es": "MLNJ6 | Se Funda Kwanzaa",
+          "zh": "MLNJ6 | 宽扎节创立"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"We all have to be united to come together to do anything.\"",
+          "es": "\"Todos tenemos que estar unidos para reunirnos y hacer algo\".",
+          "zh": "“我们必须团结一致,才能做成任何事情。”"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "Kwanzaa is seven days, people have said you can take each principle and let that highlight your day, and that is so true. The founder, Dr. Maulana Karenga who founded Kwanzaa in 1966, he would come up here every year from California. The 55th Kwanzaa is coming up in December 26 through January 1st and each day has a significance.",
+          "es": "Kwanzaa tiene siete días, la gente ha dicho que puedes tomar cada principio y dejar que destaque tu día, y eso es muy cierto. El fundador, Dr. Maulana Karenga, quien fundó Kwanzaa en 1966, vendría aquí cada año desde California. El 55 Kwanzaa que se aproxima será del 26 de diciembre al 1 de enero y cada día tiene un significado.",
+          "zh": "宽扎节为期七天,人们说你可以把每一项原则作为那一天的核心,这话非常真实。创始人毛拉纳·卡伦加博士于1966年创立了宽扎节,他每年都会从加州来到这里。第55届宽扎节即将于12月26日至1月1日举行,每一天都有其特殊意义。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "The first day starts with Sunday, Umoja, unity \"What can I do today to think more of unity in my family, in my community?\" It makes you more aware. To be asking, they say, is to be conscious. You have to know what's going on, and to be aware of what's happening, and to be aware of doing better. We all have to be united to come together to do anything. It's taken from the harvest festivals in Africa.",
+          "es": "El primer día comienza con el domingo, Umoja, unidad \"¿Qué puedo hacer hoy para pensar más en la unidad en mi familia, en mi comunidad?\" Te hace más consciente. Para preguntar, dicen, es ser consciente. Tienes que saber qué está pasando, y ser consciente de lo que está sucediendo, y ser consciente de hacerlo mejor. Todos tenemos que estar unidos para reunirnos y hacer algo. Se toma de los festivales de cosecha en África.",
+          "zh": "第一天从星期天开始,Umoja(团结):“今天我能做些什么,让我更多地思考家庭和社区中的团结?”这会让你更有觉察。他们说,提问就是有意识。你必须了解正在发生的事情,意识到正在发生什么,意识到要做得更好。我们必须团结一致,才能做成任何事情。这是源自非洲的丰收节。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "Kuumba, another of the Kwanzaa principles, means creativity, and to always do as much as we can in the way we can, in order to leave our community more beautiful and beneficial than we inherited it. I feel like this is part of civic participation, we want things to be better because of what work we're doing. The volunteer work, whatever works to make it better than we inherited it.",
+          "es": "Kuumba, otro de los principios de Kwanzaa, significa creatividad, y siempre hacer todo lo que podamos de la manera que podamos, para dejar nuestra comunidad más bella y beneficiosa de lo que la heredamos. Siento que esto es parte de la participación cívica, queremos que las cosas sean mejores por el trabajo que estamos haciendo. El trabajo voluntario, lo que sea que funcione para hacerlo mejor de lo que lo heredamos.",
+          "zh": "Kuumba是宽扎节的另一项原则,意为创造力,即始终尽我们所能,以我们的方式,让我们留给社区的样子比我们继承时更美好、更有益。我觉得这就是公民参与的一部分,我们希望因为我们所做的工作,事情变得更好。志愿工作,以及任何能让我们留下的状况比继承时更好的努力。"
+        }
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/soDTe6RO7Y8",
+        "title": "Unpacking the Future of Kwanzaa in the Black Community"
+      }
+    ]
+  },
+  {
+    "id": "19-the-black-panthers-the-young-lords",
+    "date": "1966 & 1968",
+    "title": {
+      "en": "The Black Panthers & The Young Lords",
+      "es": "Los Panteras Negras y Los Young Lords",
+      "zh": "黑豹党与青年领主党"
+    },
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"...the Black Panther Party created what they called \"community survival programs\" was by occupying abandoned or dilapidated buildings in poor areas and remodeling the structures into child care or resource distribution centers…",
+          "es": "\"...el Partido de las Panteras Negras creó lo que llamaban 'programas de supervivencia comunitaria' fue ocupando edificios abandonados o deteriorados en áreas pobres y remodelando las estructuras en centros de cuidado infantil o distribución de recursos…",
+          "zh": "“……黑豹党创建了他们所称的‘社区生存计划’,做法是占领贫困地区被遗弃或破败的建筑,并将其改造成托儿所或资源分发中心……”"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "Using the model of the Black Panther Party, the Young Lords, a Puerto Rican civil rights and community organization founded in September 1968, prioritized change in their local communities \"through 'serve the people' programs.\"",
+          "es": "Utilizando el modelo del Partido de las Panteras Negras, los Young Lords, una organización de derechos civiles y comunitarios puertorriqueña fundada en septiembre de 1968, priorizaron el cambio en sus comunidades locales \"a través de programas de 'servir al pueblo'\".",
+          "zh": "青年领主党借鉴了黑豹党的模式,这是一个成立于1968年9月的波多黎各民权与社区组织,他们将通过“为人民服务”的项目来推动当地社区的变革放在首位。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "[Young Lords and Black Panthers — Digital Chicago History](https://digitalchicagohistory.org/exhibits/show/young-lords/young-lords-and-black-panthers)",
+          "es": "[Young Lords y Black Panthers — Digital Chicago History](https://digitalchicagohistory.org/exhibits/show/young-lords/young-lords-and-black-panthers)",
+          "zh": "青年领主党与黑豹党 — Digital Chicago History"
+        }
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/9B5413gggl8",
+        "title": "The Young Lords"
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/4e7gm5JZc9M",
+        "title": "What You Don't Know About The Black Panthers | AJ+"
+      }
+    ]
+  },
+  {
+    "id": "20-1967-adam-clayton-powell-what-s-in-your-hand-spe",
+    "date": "1967",
+    "title": {
+      "en": "1967 Adam Clayton Powell 'What's In Your Hand' Speech",
+      "es": "1967 Discurso de Adam Clayton Powell 'Lo que tienes en tu mano'",
+      "zh": "1967 亚当·克莱顿·鲍威尔《你手中有什么》演讲"
+    },
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "Adam Clayton Powell Junior (November 29, 1908 - April 4, 1972) was an American Baptist pastor and politician who represented the Harlem Neighbourhood of New York City in the United States House of Representatives from 1943 until 1971.",
+          "es": "Adam Clayton Powell Junior (29 de noviembre de 1908 - 4 de abril de 1972) fue un pastor bautista estadounidense y político que representó el barrio de Harlem en la ciudad de Nueva York en la Cámara de Representantes de los Estados Unidos desde 1943 hasta 1971.",
+          "zh": "小亚当·克莱顿·鲍威尔(1908年11月29日—1972年4月4日)是一位美国浸信会牧师和政治家,自1943年至1971年间代表纽约市哈莱姆区在美国众议院任职。"
+        }
+      },
+      {
+        "type": "participant",
+        "code": "MLNJ",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/mlnj",
+        "avatar": "/timeline/2021-05-10_11-27-04_1620660411.png",
+        "title": {
+          "en": "MLNJ | Adam Clayton Powell",
+          "es": "MLNJ | Adam Clayton Powell",
+          "zh": "MLNJ | 亚当·克莱顿·鲍威尔"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "Adam Clayton Powell was so big, because he said, \"Work where you buy.\" We couldn't get jobs in none of those stores. This was in the '60s. I'm not talking about olden history. We could spend our money, but you couldn't go in and try on anything. You could go in and buy it. They wanted you in and out of those stores. Adam Clayton Powell talked about what's in your hand. What's in your hand? There's something in your hand that you can work with or do or give or share. When you have something going on for you, what's in your hand. That's a very famous speech. He was a famous African American civil rights leader in Harlem, became a congressman. He says don't shop where you can't work. We couldn't work in any of those stores. None of them would hire us to work. He's the one who fought to change legislation.",
+          "es": "Adam Clayton Powell era tan importante porque dijo, \"Trabaja donde compras\". No podíamos conseguir empleos en ninguna de esas tiendas. Esto fue en los años 60. No estoy hablando de la historia antigua. Podíamos gastar nuestro dinero, pero no podías entrar e intentar nada. Podías entrar y comprarlo. Querían que entraras y salieras de esas tiendas. Adam Clayton Powell hablaba de lo que tienes en la mano. ¿Qué tienes en la mano? Hay algo en tu mano con lo que puedes trabajar, hacer, dar o compartir. Cuando tienes algo a tu favor, lo que tienes en la mano. Ese es un discurso muy famoso. Fue un famoso líder de derechos civiles afroamericano en Harlem, se convirtió en congresista. Dice no compres donde no puedas trabajar. No podíamos trabajar en ninguna de esas tiendas. Ninguna de ellas nos contrataría para trabajar. Él fue quien luchó para cambiar la legislación.",
+          "zh": "亚当·克莱顿·鲍威尔之所以举足轻重,是因为他说:“在你购物的地方工作。”那些店我们一份工作都得不到。这是上世纪60年代的事,我说的不是远古历史。我们可以在那里花钱,但你不能进去试穿任何东西。你只能进去买。他们希望你买完就走。亚当·克莱顿·鲍威尔讲到“你手中有什么”。你手中有什么?你手中总有可以用、可以做、可以给予或分享的东西。当你为自己做点事时,看看你手里有什么。那是一篇非常著名的演讲。他是哈莱姆著名的非裔美国民权领袖,后来成为国会议员。他说,不要在你不能工作的地方购物。那些店我们一家都不能工作。没有一家愿意雇我们。他就是那个为推动立法改革而奋斗的人。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "This is why I work with young people because they don't feel they're somebody. They don't know who they are. You have to know who you are, and from where you came. This helps you to know where you're going. People talk about today, \"Oh Black Lives Matter. Every life matters.\" Sure it does, but we haven't-- That's why so many people have so much low self-esteem. My parents talked about it. It's not that long ago that Black people weren't allowed to eat in White Castle and other restaurants. People would go in, sit at the counter and be arrested. I saw them sitting at the counter in White Castle. We were parked across the street. I saw them being arrested.",
+          "es": "Por eso trabajo con jóvenes porque no sienten que sean alguien. No saben quiénes son. Tienes que saber quién eres y de dónde viniste. Esto te ayuda a saber hacia dónde vas. La gente habla hoy, \"Oh, Las Vidas Negras Importan. Cada vida importa\". Claro que sí, pero no hemos-- Por eso muchas personas tienen tanta baja autoestima. Mis padres hablaban de eso. No hace mucho tiempo que las personas negras no podían comer en White Castle y otros restaurantes. La gente entraría, se sentaría en el mostrador y sería arrestada. Los vi sentados en el mostrador de White Castle. Estábamos estacionados al otro lado de la calle. Los vi siendo arrestados.",
+          "zh": "这就是为什么我和年轻人一起工作,因为他们觉得自己什么都不是。他们不知道自己是谁。你必须知道自己是谁,知道你从何而来。这能帮助你知道自己要去哪里。今天人们谈论:“哦,黑人的命也是命。每一条生命都重要。”当然如此,可是我们还没有——这就是为什么这么多人自我价值感这么低。我的父母谈到过。其实并不是很久以前,黑人还被禁止在白色城堡和其他餐馆吃饭。人们会进去坐在柜台前然后被逮捕。我亲眼看见他们坐在白色城堡的柜台前。我们的车就停在街对面。我看见他们被逮捕。"
+        }
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/fkpHpkZ_Udw",
+        "title": "WHAT'S IN YOUR HAND--Classic Adam Clayton Powell, Jr."
+      }
+    ]
+  },
+  {
+    "id": "21-1969-stonewall-riots",
+    "date": "1969",
+    "title": {
+      "en": "1969 Stonewall Riots",
+      "es": "1969 Disturbios de Stonewall",
+      "zh": "1969 石墙暴动"
+    },
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "Fifty years on from the landmark Stonewall riots, the circumstances for NYC's LGBT+ culture have changed exponentially. i-D celebrates the freedom given to today's young LGBT+ population as a result of the previous generation's fight.",
+          "es": "Cincuenta años después de los históricos disturbios de Stonewall, las circunstancias para la cultura LGBT+ de Nueva York han cambiado exponencialmente. i-D celebra la libertad otorgada a la población LGBT+ joven de hoy como resultado de la lucha de la generación anterior.",
+          "zh": "在具有里程碑意义的石墙暴动过去五十年后,纽约市LGBT+文化的环境已经发生了天翻地覆的变化。i-D杂志致敬今天年轻一代LGBT+群体所享有的自由——这是上一代人奋斗的成果。"
+        }
+      },
+      {
+        "type": "participant",
+        "code": "RBNY7",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/rbny7",
+        "avatar": "/timeline/2024-11-10_20-52-31_1731300819.jpg",
+        "title": {
+          "en": "RBNY7 | Stonewall Riots",
+          "es": "RBNY7 | Disturbios de Stonewall",
+          "zh": "RBNY7 | 石墙暴动"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"Stonewall had happened just two years before here in New York City.\"",
+          "es": "\"Stonewall había ocurrido hace apenas dos años aquí en la ciudad de Nueva York\".",
+          "zh": "“石墙事件就在两年前发生在纽约市。”"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "I was president of the Gay Liberation Front. We applied for funding and space in the student funded student union, and we were denied. William Kunstler, a famous civil rights lawyer, represented us. We lost the case, so we changed tactics. We formed a speaker's Bureau that did teaching at various schools and universities around the state...And I wrote an op-ed in Newsweek and in the student newspaper. And I listed all of the groups that got funding. I ended my statements with, \"The only reason we didn't get funding was because we were queer.\" I embarrassed the university and we got funding and space the very next year. My mother said, \"Stand up for what you believe.\" And I did, because I said, \"I had put up with this shit as a kid, hiding this all the time.\"",
+          "es": "Yo era presidente del Frente de Liberación Gay. Solicitamos financiamiento y espacio en la unión estudiantil financiada por estudiantes, y nos lo negaron. William Kunstler, un famoso abogado de derechos civiles, nos representó. Perdimos el caso, así que cambiamos tácticas. Formamos una Oficina de Oradores que daba charlas en varias escuelas y universidades en todo el estado... Y escribí un artículo de opinión en Newsweek y en el periódico estudiantil. Y enumeré todos los grupos que recibieron financiamiento. Terminé mis declaraciones con, \"La única razón por la que no obtuvimos financiamiento fue porque somos queer\". Avergoncé a la universidad y obtuvimos financiamiento y espacio al año siguiente. Mi madre dijo, \"Defiende en lo que crees\". Y lo hice, porque dije, \"He aguantado esta mierda de niño, escondiendo esto todo el tiempo\".",
+          "zh": "我曾是同性恋解放阵线的主席。我们向学生出资的学生会申请经费和场地,被拒绝了。著名的民权律师威廉·昆斯特勒为我们代理诉讼。我们输了这场官司,于是我们改变了策略。我们成立了一个讲师团,到州内各所学校和大学去授课……我还在《新闻周刊》和学生报上写了一篇评论文章,列出了所有获得经费的团体。我在文章结尾写道:“我们没拿到经费的唯一原因,就是我们是酷儿。”我让大学难堪,第二年我们就拿到了经费和场地。我母亲说:“为你所信仰的事挺身而出。”我做到了,因为我说:“我从小就忍受这种破事,一直在掩饰自己。”"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "Stonewall had happened just two years before here in New York City. So that was my impetus. I said, \"Hey, if they can do that in New York, but I'm here and this is affecting me. I'm going to do something.\" And I did it in Kansas in 1971. I was 19 years old and we sued the university for funding and space. This was something that we didn't have before, but I had been bullied, and not being able to be myself, and I was not going to stand for that anymore.",
+          "es": "Stonewall había ocurrido hace apenas dos años aquí en la ciudad de Nueva York. Así que eso fue mi impulso. Dije, \"Oye, si pueden hacer eso en Nueva York, pero estoy aquí y esto me afecta. Voy a hacer algo\". Y lo hice en Kansas en 1971. Tenía 19 años y demandamos a la universidad por financiamiento y espacio. Esto era algo que no teníamos antes, pero había sido intimidado y no poder ser yo mismo, y no iba a tolerar eso nunca más.",
+          "zh": "石墙事件就在两年前发生在纽约市。这就是我的动力。我说:“嘿,如果他们能在纽约那样做,而我在这里又受到影响,那我也得做点什么。”我在1971年在堪萨斯就这样做了。当时我19岁,我们起诉了大学,争取经费和场地。这是我们以前从未有过的,但我曾被霸凌,无法做真实的自己,我不打算再忍下去了。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "The people who were responsible for Stonewall happening were young, queer, trans people who could not go anywhere else. They were not allowed in the other white bars all over town, so the Stonewall was the only place that they could go. The mafia ran it and they were taking advantage of them, and the police would come every now and then do raids, shakeups, and that sort of thing. Until one night, these children, literally children, runaway youth, some of them, were just fed up with the police coming and bullying them, and they decided to fight back because they had nothing else to lose. That's what it was. They had nothing else to lose and said, \"We're not going to put up with this.\" So they fought back.",
+          "es": "Las personas responsables de que sucediera Stonewall eran jóvenes, personas queer y trans que no podían ir a ningún otro lado. No se les permitía entrar en los otros bares blancos por toda la ciudad, así que Stonewall era el único lugar al que podían ir. La mafia lo dirigía y estaban aprovechándose de ellos, y la policía vendría de vez en cuando a hacer redadas, allanamientos, ese tipo de cosas. Hasta que una noche, estos niños, literalmente niños, algunos de ellos jóvenes fugitivos, simplemente estaban hartos de que la policía viniera y los intimidara, y decidieron luchar porque no tenían nada que perder. Eso fue. No tenían nada que perder y dijeron, \"No vamos a tolerar esto\". Así que lucharon.",
+          "zh": "促成石墙事件发生的,是那些年轻的酷儿和跨性别者,他们无处可去。他们不被允许进入城里其他那些白人酒吧,所以石墙是他们唯一能去的地方。黑手党经营那家酒吧,从他们身上牟利,警察则时不时来突击搜查、骚扰之类的。直到有一晚,这些孩子——真的是孩子,其中一些是离家出走的青少年——再也受不了警察来欺压他们了,他们决定反击,因为他们已经没有什么可失去的了。事情就是如此。他们没有什么可失去的,于是说:“我们不会再忍下去了。”所以他们反抗了。"
+        }
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/zHK2WwINSic",
+        "title": "The True Story Behind The Stonewall Riots | i-D"
+      }
+    ]
+  },
+  {
+    "id": "22-1970-christopher-street-liberation-day",
+    "date": "1970",
+    "title": {
+      "en": "1970 Christopher Street Liberation Day",
+      "es": "1970 Día de la Liberación de Christopher Street",
+      "zh": "1970 克里斯托弗街解放日"
+    },
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "On Sunday, June 28, 1970, queer activists in New York City held the first pride celebration to honor and remember the events of Stonewall.",
+          "es": "El domingo, 28 de junio de 1970, activistas queer en la ciudad de Nueva York celebraron la primera celebración del orgullo para honrar y recordar los eventos de Stonewall.",
+          "zh": "1970年6月28日星期日,纽约市的酷儿活动人士举办了第一场骄傲庆典,以纪念和缅怀石墙事件。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"Circle of Life Celebration & Pride Memorial honors and acknowledges the older members of the LGBTQ community, including, as they say, 'elders, ancestors and allies of color,' to ensure that their lives and works are commemorated.\"",
+          "es": "\"Circle of Life Celebration & Pride Memorial honra y reconoce a los miembros mayores de la comunidad LGBTQ, incluyendo, como dicen, 'ancianos, antepasados y aliados de color', para garantizar que sus vidas y obras sean conmemoradas\".",
+          "zh": "“生命之环庆典暨骄傲纪念活动,致敬并铭记LGBTQ社群中的年长成员,包括他们所说的‘有色人种的长者、先辈和盟友’,以确保他们的生平与工作被铭记。”"
+        }
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/zpwKozB7SFA",
+        "title": "Circle of Life & Pride Memorial is Honoring Its Elders | BK Live"
+      }
+    ]
+  },
+  {
+    "id": "23-1982-hiv-aids-epidemic",
+    "date": "1982",
+    "title": {
+      "en": "1982 HIV/AIDS Epidemic",
+      "es": "Epidemia de VIH/SIDA de 1982",
+      "zh": "1982 HIV/艾滋病疫情"
+    },
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "While sporadic cases of AIDS were documented prior to 1970, available data suggests that the current epidemic started in the mid-to-late 1970s. By 1980, HIV may have already spread to five continents (North America, South America, Europe, Africa, and Australia). In this period, between 100,000 and 300,000 people could have already been infected.",
+          "es": "Aunque se documentaron casos esporádicos de SIDA antes de 1970, los datos disponibles sugieren que la epidemia actual comenzó a mediados o finales de los años 70. Para 1980, el VIH ya podría haberse propagado a cinco continentes (América del Norte, América del Sur, Europa, África y Australia). En este período, entre 100,000 y 300,000 personas podrían haber estado ya infectadas.",
+          "zh": "虽然1970年之前已有零星的艾滋病病例记录,但现有数据表明当前的疫情始于20世纪70年代中后期。到1980年,HIV可能已经扩散至五大洲(北美洲、南美洲、欧洲、非洲和大洋洲)。在此期间,可能已有10万至30万人被感染。"
+        }
+      },
+      {
+        "type": "participant",
+        "code": "EMNJ",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/emnj",
+        "avatar": "/timeline/2021-05-10_12-06-35_1620662777.jpg",
+        "title": {
+          "en": "EMNJ | HIV AIDS Epidemic",
+          "es": "EMNJ | Epidemia de VIH SIDA",
+          "zh": "EMNJ | HIV艾滋病疫情"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"But once I found out there was a program...\"",
+          "es": "\"Pero una vez que descubrí que había un programa...\"",
+          "zh": "“但当我发现有这样一个项目的时候……”"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"Back then I didn't know I had HIV, which I did. I got it before, when the fire happened, when I was two years old. I found out like five years ago that it was through a blood transfusion. Then when I found out I really stayed away from people. I would be scared to talk to people, because you don't want to tell everybody your business. We don't tell everybody. I stigmatized myself, but once I found out there was a program, that's where I made more friends.\"",
+          "es": "\"En ese entonces no sabía que tenía VIH, pero sí lo tenía. Lo contraí antes, cuando pasó el incendio, cuando tenía dos años. Me enteré hace cinco años que fue por una transfusión de sangre. Entonces cuando me enteré, realmente me alejé de la gente. Me daba miedo hablar con la gente, porque no quieres contarle tu vida a todo el mundo. No le contamos a todo el mundo. Me estigmaticé a mí misma, pero una vez que descubrí que había un programa, ahí fue donde hice más amigos.\"",
+          "zh": "“那时候我并不知道自己有HIV,但我确实感染了。我是在更早以前感染的——发生火灾的时候,我才两岁。大约五年前我才发现是因为输血感染的。后来我知道之后,就真的开始远离别人。我会害怕和人交谈,因为你不想把自己的事告诉所有人。我们不会逢人就讲。我把自己污名化了,但当我发现有这样一个项目的时候,我就在那里结交了更多朋友。”"
+        }
+      },
+      {
+        "type": "participant",
+        "code": "LRNJ",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/lrnj",
+        "avatar": "/timeline/food-pantry.jpg",
+        "title": {
+          "en": "LRNJ | HIV/AIDS",
+          "es": "LRNJ | VIH/SIDA",
+          "zh": "LRNJ | HIV/艾滋病"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"I lost nine people...\"",
+          "es": "\"Perdí a nueve personas...\"",
+          "zh": "\"我失去了九个人……\""
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "When the AIDS epidemic came, there was no cure and it was very fast, happened very fast. I lost nine people that worked for me. They were my friends. It happened very fast back in the late 80s, early 90s. '93, '94, '95. We were faced with a lot of pain because not only I'm losing employees, but I'm losing my friends. They were my friends because there were a group of people that we got along, we had a great time, they were artists, they were good people, they didn't hurt nobody, and unfortunately this happened so fast that it took their life, there was no solution for it right away. Through a lot of stuff that I did in my salon I'd contribute to the AIDS society. We did events and I provided a lot to them, taking care of them physically. Taking them to my house and provided for them so they felt secure.",
+          "es": "Cuando llegó la epidemia del SIDA, no había cura y fue muy rápido, pasó muy rápido. Perdí a nueve personas que trabajaban para mí. Eran mis amigos. Pasó muy rápido a finales de los 80, principios de los 90. '93, '94, '95. Enfrentamos mucho dolor porque no solo estaba perdiendo empleados, sino que estaba perdiendo mis amigos. Eran mis amigos porque eran un grupo de personas con las que nos llevábamos bien, nos lo pasábamos genial, eran artistas, eran buenas personas, no le hacían daño a nadie, y desafortunadamente pasó tan rápido que se llevó sus vidas, no había solución inmediata para ello. A través de muchas cosas que hice en mi salón contribuí a la sociedad del SIDA. Hicimos eventos y les proporcioné mucho, cuidándolos físicamente. Los llevaba a mi casa y les proveía para que se sintieran seguros.",
+          "zh": "艾滋病疫情来临时,没有任何治愈方法,而且病情发展非常迅速,一切都来得很快。我失去了九个为我工作的人。他们是我的朋友。那都是发生在80年代末、90年代初的事。93年、94年、95年。我们承受了巨大的痛苦,因为我不仅失去了员工,还失去了朋友。他们之所以是我的朋友,是因为我们这群人相处融洽,共度过许多美好时光,他们是艺术家,是善良的人,从未伤害过任何人。不幸的是,这一切来得太快,夺走了他们的生命,而当时没有任何立竿见影的解决办法。通过我在沙龙做的许多事情,我为艾滋病协会做了贡献。我们举办活动,我给予了他们很多帮助,在身体上照顾他们。把他们接到我家,为他们提供帮助,让他们感到安心。"
+        }
+      },
+      {
+        "type": "participant",
+        "code": "RBNY",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/rbny",
+        "avatar": "/timeline/2024-11-10_20-52-31_1731300819.jpg",
+        "title": {
+          "en": "RBNY | HIV/AIDS",
+          "es": "RBNY | VIH/SIDA",
+          "zh": "RBNY | 艾滋病毒/艾滋病"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"It Doesn't Have to be That Way\"",
+          "es": "\"No Tiene que Ser Así\"",
+          "zh": "\"事情不必如此\""
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "On August 15, 1986, thirty four years ago, I was told to get my affairs in order because I would be dead in two years. I was 34 when I was diagnosed with HIV+. At that time death from HIV was almost certain. The doctor cautioned me to be careful around my nieces, aged 1 and 2. What the flip did that mean? Don't touch them. Don't be in the same room? I got this diagnosis while visiting my parents in Kansas City, KS. I had been living and performing around Europe since 1980. I was living in Athens, Greece when I visited my parents. There was no support system at that time. I returned to perform in Athens until 1990.",
+          "es": "El 15 de agosto de 1986, hace treinta y cuatro años, me dijeron que pusiera mis asuntos en orden porque estaría muerto en dos años. Tenía 34 años cuando me diagnosticaron VIH+. En ese momento, la muerte por VIH era casi segura. El doctor me advirtió que tuviera cuidado alrededor de mis sobrinas, de 1 y 2 años de edad. ¿Qué diablos significaba eso? No las toques. ¿No estar en la misma habitación? Recibí este diagnóstico mientras visitaba a mis padres en Kansas City, KS. Había estado viviendo y actuando por toda Europa desde 1980. Estaba viviendo en Atenas, Grecia cuando visité a mis padres. No había sistema de apoyo en ese momento. Volví a actuar en Atenas hasta 1990.",
+          "zh": "1986 年 8 月 15 日,也就是三十四年前,有人告诉我要安排好后事,因为我活不过两年。我被诊断出 HIV 阳性时才 34 岁。那时,因艾滋病死亡几乎是必然的。医生告诫我在 1 岁和 2 岁的侄女身边要小心。这他妈到底是什么意思?不要碰她们?不要同处一室?我是在堪萨斯州堪萨斯城探望父母时得到这个诊断的。从 1980 年起,我一直在欧洲各地生活和演出。探望父母时,我住在希腊雅典。那时没有任何支持系统。我回到雅典继续演出,直到 1990 年。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "I have been HIV+ for half of my 68 years. I have been unable to transmit HIV for 17 of those years. I have had no AIDS related illnesses during this time. Scripture says that things that are meant to be bad or defeat me, Creator can turn to good. It was/is my spirituality that gives me clarity and grounds me when shit happens.",
+          "es": "He tenido VIH+ durante la mitad de mis 68 años. No he podido transmitir el VIH durante 17 de esos años. No he tenido enfermedades relacionadas con el SIDA durante este tiempo. La Escritura dice que las cosas que están destinadas a serme malas o a derrotarme, el Creador puede convertirlas en bien. Fue y es mi espiritualidad la que me da claridad y me ancla cuando la mierda sucede.",
+          "zh": "在我 68 年的人生中,有一半的时间我是 HIV 阳性。其中有 17 年我已无法传播 HIV。在这段时间里,我没有患过任何与艾滋病相关的疾病。圣经说,那些本该让我陷入困境或将我击垮的事情,造物主可以将其转化为好事。正是我的灵性,在事情发生时让我保持清晰,并使我脚踏实地。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "This just focused me in a way that, okay, I know that death inevitable, so now let me make sure that I do as much as I can with the time that I have here. That's why I'm here, and every chance I get, as I'm doing now, I'm telling my story.",
+          "es": "Esto simplemente me enfocó de una manera que, bueno, sé que la muerte es inevitable, así que ahora déjame asegurarme de hacer todo lo que pueda con el tiempo que tengo aquí. Por eso estoy aquí, y cada vez que tengo la oportunidad, como estoy haciendo ahora, estoy contando mi historia.",
+          "zh": "这件事让我以一种新的方式聚焦人生,好吧,我知道死亡不可避免,所以现在让我确保在有限的时间里尽可能多做事。这就是我现在在这里的原因,每当有机会,就像现在这样,我都会讲述我的故事。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "This is not an accident. This is all part of the divine plan for my life. It's the three of us working together, you can't beat us. My mother, spirit, and myself, you can't beat us, and I love my life. I am living my life like it is golden because my life IS golden.",
+          "es": "Esto no es un accidente. Todo esto es parte del plan divino para mi vida. Somos los tres trabajando juntos, no pueden vencernos. Mi madre, el espíritu, y yo, no pueden vencernos, y amo mi vida. Estoy viviendo mi vida como si fuera oro porque mi vida ES oro.",
+          "zh": "这不是偶然。这一切都是我生命中神圣计划的一部分。是我们三个人共同努力,你打不败我们。我的母亲、灵性和我自己,你打不败我们,我热爱我的生活。我把我的人生当作黄金一样去过,因为我的人生本就如黄金。"
+        }
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/ETsCtPDMzoA",
+        "title": "HIV survivors reflect on 40 years of AIDS epidemic l ABC News"
+      }
+    ]
+  },
+  {
+    "id": "24-1986-reagan-signs-the-immigration-reform-and-con",
+    "date": "1986",
+    "title": {
+      "en": "1986 Reagan signs the Immigration Reform and Control Act",
+      "es": "1986 Reagan firma la Ley de Reforma y Control de Inmigración",
+      "zh": "1986 里根签署《移民改革与控制法案》"
+    },
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "1988 - undocumented immigrants in the United States rush to beat the filing deadline to register for an amnesty program established by the administration of President Ronald Reagan",
+          "es": "1988 - inmigrantes indocumentados en Estados Unidos se apresuran a cumplir con la fecha límite de registro para un programa de amnistía establecido por la administración del presidente Ronald Reagan",
+          "zh": "1988 年 — 美国境内的无证移民赶在申请截止日期前,争相登记参加由罗纳德·里根总统政府设立的特赦计划"
+        }
+      },
+      {
+        "type": "participant",
+        "code": "NCNJ",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/ncnj",
+        "avatar": "/timeline/Resized_Resized_20210308_132735003001_1620660343.jpg",
+        "title": {
+          "en": "NCNJ | Immigration Reform",
+          "es": "NCNJ | Reforma Migratoria",
+          "zh": "NCNJ | 移民改革"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"Help with studying for American citizenship.\"",
+          "es": "\"Ayudar con estudios para la ciudadanía americana.\"",
+          "zh": "\"帮助学习美国公民入籍考试。\""
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "In Puerto Rico, since I was a salesman I visited homes, and I've always been drawn to reading and preparing myself, studying something that could be useful for me and for other people. For example, I began to study the questions for American citizenship. There were 100 questions and they came with some books. I wasn't a citizen back then, I was just a resident. At that moment I wasn't interested in being a citizen, because I had the resident card, which allowed me to come and go at any time, and I went on like that for about 15 years. I would come and go from the country, because as a salesman they would reward me each year with international trips, twice or once a year. I worried about selling a lot to win those trips and earn enough money to help my daughters pay for their studies.",
+          "es": "En Puerto Rico, como era vendedor visitaba los hogares, y siempre me ha atraído leer y prepararme, estudiar algo que puede ser útil para mí y para otras personas. Por ejemplo, yo empecé a estudiar las preguntas para la ciudadanía americana. Eran 100 preguntas y llevaban unos libros. Yo no era ciudadano en ese entonces, era residente nada más. En ese momento no me interesaba ser ciudadano, porque tenía la tarjeta de residente, que entraba y salía en cualquier momento, y así pasé como unos 15 años. Yo entraba y salía del país, porque como era vendedor me premiaban cada año con viajes internacionales, dos o una vez al año. Yo me preocupaba por vender bastante para ganarme esos viajes y ganar suficiente dinero para ayudar a mis hijas pagar sus estudios.",
+          "zh": "在波多黎各,因为我是推销员,需要上门拜访,我一直喜欢阅读、自我提升,学习对自己和他人都有用的东西。比如,我开始学习美国入籍考试的题目。一共有 100 道题,还配有一些书。那时我还不是公民,只是居民。当时我对成为公民并不感兴趣,因为我有居民卡,可以随时往返,就这样过了大约 15 年。我经常出入这个国家,因为作为推销员,公司每年都会奖励我一两次国际旅行。我一心想多卖东西,既能赢得那些旅行,也能挣足够的钱帮女儿们支付学费。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "I said, \"I'll become a citizen, I'll be more secure,\" and I started studying the questions. When I studied them, in the homes I would visit, the conversation would come up that \"I'm studying for citizenship\" and I would tell them, \"Where are you in it? Do you want me to help you? I've studied them too.\" Already we were forming a little group, two, three, \"I'm going to call a leader to come. What days can you make it?\", \"Saturdays, after 6:00 PM\". Like that, they would bring a friend, two friends, three friends. There came a moment when I had eight in the group and we would study the citizenship questions and I would help them.",
+          "es": "Yo dije, \"Me hago ciudadano, estoy más seguro\", y empecé a estudiar las preguntas. Cuando las estudié, a los hogares que llegaba, entraba la conversación de que \"Estoy estudiando para ciudadanía\" y yo les decía, \"¿Por dónde vas? ¿Quieres que te ayude? Yo también las he estudiado\". Ya formábamos un grupito dos, tres, \"Voy a llamar a un líder para que venga. ¿Qué días puedes?\", \"Los sábados, después de las 6:00 PM\". Así, llevaban una amiga, dos amigas, tres amigas. Llegó un momento que tenía ocho en el grupo y estudiábamos las preguntas de la ciudadanía y les ayudaba.",
+          "zh": "我说:\"我要入籍,这样会更有保障。\"于是我开始学习那些题目。在我学习这些题目时,在我拜访的人家里,谈话中会提到:\"我正在准备入籍考试\",我就会告诉他们:\"你学到哪里了?要我帮你吗?我也学过这些。\"我们就这样慢慢组成了一个小组,两个、三个,\"我要请一位领头人来。你们什么时候有空?\"\"周六晚上 6 点以后\"。就这样,他们会带一个朋友、两个朋友、三个朋友来。后来有一段时间,小组里有八个人,我们一起学习入籍考试的题目,我帮助他们。"
+        }
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/ClPc4Rbjd0k",
+        "title": "Before They Were Called Dreamers - Ronald Reagan Endorsed Amnesty for Illegal Immigrants Too"
+      }
+    ]
+  },
+  {
+    "id": "25-the-1994-crime-bill",
+    "date": "1994",
+    "title": {
+      "en": "The 1994 Crime Bill",
+      "es": "La Ley de Delitos de 1994",
+      "zh": "1994 犯罪法案"
+    },
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "The Violent Crime Control and Law Enforcement Act of 1994, allocated $12 Billion for states to build more prisons, and hire more police force. During a time, when crime rates were decreasing",
+          "es": "La Ley de Control de Delitos Violentos y Cumplimiento de la Ley de 1994 asignó $12 mil millones a los estados para construir más prisiones y contratar más personal policial. Durante una época en que las tasas de criminalidad estaban disminuyendo",
+          "zh": "1994 年《暴力犯罪控制与执法法案》拨款 120 亿美元,用于各州建造更多监狱、雇佣更多警力。而当时,犯罪率正在下降。"
+        }
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/0DcN6wNKxZA",
+        "title": "What Is The 1994 Crime Bill? | NBC News Now"
+      }
+    ]
+  },
+  {
+    "id": "26-2001-the-dream-act-is-introduced",
+    "date": "2001",
+    "title": {
+      "en": "2001 The DREAM Act is Introduced",
+      "es": "2001 Se introduce la Ley DREAM",
+      "zh": "2001 《梦想法案》被提出"
+    },
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"The first version of the Development, Relief, and Education for Alien Minors (DREAM) Act was introduced in 2001. In part because of the publicity around that bill, young undocumented immigrants have been referred to as 'Dreamers.' Over the last 20 years, at least 11 versions of the Dream Act have been introduced in Congress. While the various versions of the bill have contained some key differences, they all would have provided a pathway to legal status for undocumented people who came to this country as children.\"",
+          "es": "\"La primera versión de la Ley de Desarrollo, Alivio y Educación para Menores Extranjeros (DREAM) fue presentada en 2001. En parte debido a la publicidad alrededor de ese proyecto de ley, los jóvenes inmigrantes indocumentados han sido llamados 'Dreamers'. Durante los últimos 20 años, al menos 11 versiones de la Ley DREAM han sido presentadas en el Congreso. Aunque las diversas versiones del proyecto de ley han contenido algunas diferencias clave, todas habrían proporcionado un camino hacia el estatus legal para personas indocumentadas que vinieron a este país siendo niños\".",
+          "zh": "\"《外国未成年人发展、救济与教育法案》(DREAM 法案)的第一个版本于 2001 年被提出。部分由于该法案获得的关注,年轻的无证移民被称为'追梦人'。在过去 20 年里,至少有 11 个版本的《梦想法案》被提交到国会。虽然不同版本之间存在一些关键差异,但它们都会为儿童时期来到这个国家的无证人士提供一条获得合法身份的途径。\""
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "[American Immigration Council](https://www.americanimmigrationcouncil.org/)",
+          "es": "[Consejo Estadounidense de Inmigración](https://www.americanimmigrationcouncil.org/)",
+          "zh": "美国移民委员会"
+        }
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/iz2yr-vPOeo",
+        "title": "Immigration Reform: The Fight to Pass the Dream Act"
+      }
+    ]
+  },
+  {
+    "id": "27-2003-ice-is-established",
+    "date": "2003",
+    "title": {
+      "en": "2003 ICE is Established",
+      "es": "2003 Se establece ICE",
+      "zh": "2003 ICE 成立"
+    },
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "Abolish ICE: Why We Need to Abolish Immigrations and Customs Enforcement",
+          "es": "Abolir ICE: Por qué necesitamos abolir Inmigración y Control de Aduanas",
+          "zh": "废除 ICE:我们为什么要废除移民与海关执法局"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"ICE, or Immigration and Customs Enforcement, was created in 2003, as part of post-9/11 legislation that housed immigration enforcement under the Department of Homeland Security,\" he explained. \"This signaled a shift towards viewing immigrants as the threat to national security.\"",
+          "es": "\"ICE, o Inmigración y Control de Aduanas, fue creado en 2003, como parte de la legislación posterior al 11 de septiembre que colocó la aplicación de la ley de inmigración bajo el Departamento de Seguridad Nacional\", explicó. \"Esto señaló un cambio hacia ver a los inmigrantes como una amenaza a la seguridad nacional\".",
+          "zh": "\"ICE,即移民与海关执法局,成立于 2003 年,是 9·11 事件后立法的一部分,该立法将移民执法纳入国土安全部,\"他解释道。\"这标志着一种转变——开始将移民视为国家安全的威胁。\""
+        }
+      },
+      {
+        "type": "participant",
+        "code": "",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/dhnj",
+        "avatar": "",
+        "title": {
+          "en": "DHNJ | Abolish ICE",
+          "es": "DHNJ | Abolir ICE",
+          "zh": "DHNJ | 废除 ICE"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"Te va a agarrar la migra\"",
+          "es": "\"Te va a agarrar la migra\"",
+          "zh": "\"Te va a agarrar la migra\"(\"移民局会抓你的\")"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "I would tell my friends, I would tell them about the time the police caught me, and how expensive the ticket was for me. I invite them to participate in the organization to help eliminate the problem of licenses. Some do go and others don't, then they say \"Don't go, immigration is going to catch you.\" It's the fear they have. I've been going and immigration has never shown up. But the same thing used to happen to me, when they told me to go to the march, I would say, \"No, it's difficult, the police are going to come.\" I thought the police were going to catch us, because it's a public commotion. But I began to analyze the words the president said about free speech, where are our free speech rights? I'm going to participate to see what happens, anyway I can't work, if they send me to the doctor, so be it. That's why I participated.",
+          "es": "Les platicaba a mis amigos, les contaba de la vez cuando me agarro la policía, y lo caro que me salió el ticket. Les invito a que participen en la organización para ayudar a eliminar el problema de las licencias. Algunos si van y otros no, luego dicen \"No vayas, te va a agarrar la migra\". Es el miedo que tienen. Yo he estado yendo y nunca se presenta la migra. Pero a mi me pasaba los mismo, cuando me decían de ir a la marcha, yo decía, \"No, está difícil, va a llegar la policía\". Pensaba que nos iba a agarrar la policía, porque es escándalo público. Pero comencé a analizar las palabras que decía el presidente que hay libre expresión, ¿dónde están nuestros derechos de la libre expresión? Yo voy a participar a ver qué pasa, como quiera no puedo trabajar, si me mandan para el médico, ya ni modo. Por eso participé.",
+          "zh": "我会告诉我的朋友们,告诉他们我曾被警察抓住、罚单有多贵。我邀请他们加入这个组织,帮助解决驾照的问题。有些人去了,有些人不去,然后他们说:\"别去,移民局会抓你的。\"这就是他们的恐惧。我一直在去,但移民局从来没有出现过。不过我以前也是这样,当他们叫我去参加游行时,我会说:\"不行,这很麻烦,警察会来的。\"我以为警察会抓我们,因为那是公开的骚动。但我开始分析总统所说的关于言论自由的话,我们的言论自由权在哪里?我要去参加,看看会发生什么,反正我也不能工作,即使他们把我送去看医生,那也认了。这就是我去参加的原因。"
+        }
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/JEQZP3QtvwM",
+        "title": "Abolish ICE: Why We Need to Abolish Immigrations and Customs Enforcement | Op-Ed | NowThis"
+      }
+    ]
+  },
+  {
+    "id": "28-2005-hurricane-katrina-devastates-new-orleans-co",
+    "date": "2005",
+    "title": {
+      "en": "2005 Hurricane Katrina Devastates New Orleans Community",
+      "es": "2005 El huracán Katrina devastó la comunidad de Nueva Orleans",
+      "zh": "2005 卡特里娜飓风摧毁新奥尔良社区"
+    },
+    "blocks": [
+      {
+        "type": "participant",
+        "code": "BMNJ6",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/bmnj6",
+        "avatar": "/timeline/image_1620663833.jpg",
+        "title": {
+          "en": "BMNJ6 | Hurricane Katrina",
+          "es": "BMNJ6 | Huracán Katrina",
+          "zh": "BMNJ6 | 卡特里娜飓风"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"The next day we sat down and talked about it. He showed me the bill and showed me these thousands of dollars was going to go here for somebody to put a new garbage can there. This one was thousands of dollars to paint a road there. All this stuff was everywhere but those people that had got flooded out in Louisiana. After he explained it all to me, I told him, I said, \"But look, if this bill doesn't get signed,\" I said, \"Those people don't get the money.\" I read in the paper the next day that he signed onto it. I tell people how sometimes when they say one person don't matter, yes, one person does matter. I feel like perhaps a family out of Katrina got a check because I helped in passing the law because I said something.",
+          "es": "\"Al día siguiente nos sentamos y hablamos sobre eso. Él me mostró el proyecto de ley y me mostró que miles de dólares iban a ir aquí para que alguien pusiera un nuevo bote de basura allá. Este otro era miles de dólares para pintar una carretera allá. Todo esto estaba por todas partes pero esa gente que había quedado inundada en Luisiana. Después de que él me lo explicó todo, le dije, dije, \"Pero mira, si este proyecto de ley no se firma,\" dije, \"Esa gente no recibe el dinero.\" Leí en el periódico al día siguiente que él lo firmó. Le digo a la gente cómo a veces cuando dicen que una persona no importa, sí, una persona sí importa. Siento que quizás una familia de Katrina recibió un cheque porque yo ayudé a pasar la ley porque dije algo.",
+          "zh": "\"第二天我们坐下来谈了这件事。他给我看了那项法案,告诉我有几千美元要拨去某地给某人安装新的垃圾桶。还有几千美元要拨去某地给道路刷漆。这些钱被花在了各种各样的地方,却没有花到路易斯安那州那些被洪水冲毁家园的人身上。在他向我解释完一切后,我告诉他,我说:\"但你看,如果这项法案不被签署,\"我说,\"那些人就拿不到钱。\"第二天我在报纸上读到他签署了这项法案。我告诉人们,有时当人们说一个人的力量微不足道时,不,一个人确实可以起作用。我觉得,也许有一个卡特里娜飓风的受灾家庭因此拿到了一张支票,因为我说了一句话,帮助这项法律得以通过。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "It encourages me to keep doing what I do. I've seen I can help. I've had losses [laughs]. Since the last time I'm going to people as politicians to sign on for this and it didn't happen but still you keep going. You keep going, this is what I have to do.\"",
+          "es": "Me anima a seguir haciendo lo que hago. He visto que puedo ayudar. He tenido pérdidas [se ríe]. Desde la última vez voy a políticos para que firmen por esto y no sucedió pero aún así sigues adelante. Sigues adelante, esto es lo que tengo que hacer.\"",
+          "zh": "这件事鼓励我继续做我正在做的事情。我看到我能帮上忙。我也有失败的时候[笑]。从上次起,我去找政治家们让他们签署支持,结果没有成功,但你还是要继续。你要继续走下去,这就是我必须做的事。\""
+        }
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/Am-hb3ZCPUQ",
+        "title": "Hurricane Katrina: Superdome Survivor | History"
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "Hurricane Katrina: Superdome Survivor — History Channel\n\nWhen Hurricane Katrina forced New Orleans poet Shelton Alexander to evacuate his home, he took his truck and video camera to the Superdome. He escaped the chaotic shelter a few days later with a truckload of people and video documentation of history.",
+          "es": "Huracán Katrina: Sobreviviente del Superdome — History Channel\n\nCuando el Huracán Katrina obligó al poeta de Nueva Orleans Shelton Alexander a evacuar su hogar, tomó su camión y cámara de video al Superdome. Escapó del refugio caótico unos días después con un camión lleno de personas y documentación en video de la historia.",
+          "zh": "卡特里娜飓风:超级穹顶幸存者 — History Channel。当卡特里娜飓风迫使新奥尔良诗人 Shelton Alexander 撤离家园时,他开着卡车带着摄像机来到了超级穹顶。几天后,他带着满满一卡车的人和这段历史的影像记录,逃离了那个混乱的避难所。"
+        },
+        "emphasis": "caption"
+      }
+    ]
+  },
+  {
+    "id": "29-2008-president-barack-obama-is-elected",
+    "date": "2008",
+    "title": {
+      "en": "2008 President Barack Obama is Elected",
+      "es": "2008 Barack Obama es elegido presidente",
+      "zh": "2008 巴拉克·奥巴马当选总统"
+    },
+    "blocks": [
+      {
+        "type": "participant",
+        "code": "SENJ6",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/senj6",
+        "avatar": "/timeline/2024-11-10_20-56-42_1731301015.jpg",
+        "title": {
+          "en": "SENJ6 2008 | Obama's Election",
+          "es": "SENJ6 2008 | La Elección de Obama",
+          "zh": "SENJ6 2008 | 奥巴马当选"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "My greatest joy was in 2008. They weren't doing anything down here but up in Rockland County where I used to attend church up there, one of the unions up there ran a bus to Pennsylvania to campaign for Barack Obama. I was on that bus, my girlfriend and I, and they put us off in a certain neighborhood. If I tell you that some of those people sicced dogs on us I wouldn't be lying. Pennsylvania wasn't a state that was going to vote for Barack Obama. I think that's why they sent us there, but those people were mean spirited.",
+          "es": "Mi mayor alegría fue en 2008. No estaban haciendo nada aquí abajo pero arriba en el Condado de Rockland donde solía asistir a la iglesia allá, uno de los sindicatos de allá organizó un autobús a Pensilvania para hacer campaña por Barack Obama. Yo estaba en ese autobús, mi novia y yo, y nos dejaron en cierto vecindario. Si te digo que algunos de esos vecinos soltaron perros sobre nosotros no estaría mintiendo. Pensilvania no era un estado que fuera a votar por Barack Obama. Creo que por eso nos enviaron allá, pero esa gente fue de mal corazón.",
+          "zh": "我最大的喜悦是在 2008 年。这边什么活动都没有,但在我以前去教堂的罗克兰县那边,当地一家工会安排了一辆大巴前往宾夕法尼亚州为巴拉克·奥巴马拉票。我和我的女朋友就在那辆大巴上,他们把我们放在某个社区。如果我告诉你那里的一些人放狗咬我们,这绝不是说谎。宾夕法尼亚州当时并不是一个会投票给巴拉克·奥巴马的州。我想这就是他们派我们去那里的原因,但那些人心肠真的很坏。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "I certainly wasn't about to be bitten by a dog but I really-- A first African American president, I would have done anything. It signaled a new era, we thought finally we have somebody who maybe would look out for some of the things we needed, for the DACA students. The immigrants, those young people who have come here and been here all their lives but are not citizens but maybe he would do something for them and he did. Now the Supreme court has given them a say but he initiated that program.",
+          "es": "Ciertamente no estaba por ser mordido por un perro pero realmente-- Un primer presidente afroamericano, hubiera hecho cualquier cosa. Señaló una nueva era, pensamos que finalmente tenemos a alguien que tal vez se preocupe por algunas de las cosas que necesitábamos, por los estudiantes de DACA. Los inmigrantes, esos jóvenes que han venido aquí y han estado aquí toda su vida pero no son ciudadanos pero quizás él haría algo por ellos e hizo. Ahora la Corte Suprema les ha dado voz pero él inició ese programa.",
+          "zh": "我当然不会让自己被狗咬到,但我真的——第一位非裔美国总统,我什么都愿意做。这标志着一个新时代,我们以为终于有了一个人,或许会关注我们需要的一些事情,关注 DACA 学生。那些移民,那些从小来到这里、一辈子都在这里却不是公民的年轻人,也许他会为他们做点什么,而他确实做到了。如今最高法院给了他们发言权,但是是他发起了那个计划。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "I did voter registration for Barack. I had voter registration at the church and I asked some of my Hispanic friends to come so they could interpret for the Spanish people who showed up.",
+          "es": "Hice registro de votantes para Barack. Tenía registro de votantes en la iglesia y pedí a algunos de mis amigos hispanos que vinieran para que pudieran interpretar para las personas de habla hispana que se presentaran.",
+          "zh": "我为巴拉克做了选民登记工作。我在教堂组织选民登记,并请了一些西班牙裔的朋友来,这样他们就可以为前来的讲西班牙语的人做翻译。"
+        }
+      },
+      {
+        "type": "participant",
+        "code": "ETNY6",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/etny6",
+        "avatar": "/timeline/2021-07-19_19-55-12_1626738877.jpg",
+        "title": {
+          "en": "ETNY6 2008 | Obama's Election",
+          "es": "ETNY6 2008 | La Elección de Obama",
+          "zh": "ETNY6 2008 | 奥巴马当选"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"That was the highlight of my life that I went on that trip knowing that he was the first black president and I was alive to go to that bus outing. We as black people we have to remember we got to work hard at a lot of things that's out there for us, but we have to cherish some of the stuff that's been happening for us all.\"",
+          "es": "\"Ese fue el punto culminante de mi vida que fui a ese viaje sabiendo que él era el primer presidente negro y estuve vivo para ir a ese paseo en autobús. Nosotros como personas negras tenemos que recordar que tenemos que trabajar duro en muchas de las cosas que hay para nosotros, pero tenemos que apreciar algunas de las cosas que han estado sucediendo para nosotros.\"",
+          "zh": "“那是我人生中的高光时刻——我参加了那次旅行，知道他是第一位黑人总统，而我还活着，能去参加那次大巴出行。我们黑人必须记住，对于摆在我们面前的许多事情，我们必须努力争取，但我们也必须珍惜那些已经为我们所有人发生的事情。”"
+        }
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/vsPbmUhwUtg",
+        "title": "Relive The Historic Moment Obama Won The 2008 Election"
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "The Historic Moment Obama Won The 2008 Election — On election night in 2008, when then Senator Barack Obama won Virginia, it became apparent that he would go on to win the election. Here's a look back at that historic moment.",
+          "es": "El Momento Histórico en que Obama Ganó la Elección de 2008 — En la noche de las elecciones de 2008, cuando el entonces Senador Barack Obama ganó Virginia, quedó claro que seguiría adelante para ganar la elección. Aquí hay una mirada retrospectiva a ese momento histórico.",
+          "zh": "奥巴马赢得2008年大选的历史性时刻——在2008年大选之夜，当时任参议员的巴拉克·奥巴马赢得弗吉尼亚州时，他将赢得大选已显而易见。让我们回顾那个历史性的时刻。"
+        },
+        "emphasis": "caption"
+      }
+    ]
+  },
+  {
+    "id": "30-2012-daca-is-established",
+    "date": "2012",
+    "title": {
+      "en": "2012 DACA is established",
+      "es": "2012 Se establece DACA",
+      "zh": "2012 年 DACA 设立"
+    },
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "Nearly 800,000 immigrant kids who were once undocumented have been able to live in the US without constant fear of deportation because of DACA. CNN's Vanessa Yurkevich explains the Deferred Action for Childhood Arrivals (DACA) program.",
+          "es": "Casi 800,000 niños inmigrantes que una vez fueron indocumentados han podido vivir en los EE.UU. sin miedo constante a la deportación gracias a DACA. La corresponsal de CNN Vanessa Yurkevich explica el programa de Acción Diferida para los Llegados en la Infancia (DACA).",
+          "zh": "由于 DACA，近 80 万曾经无证的移民儿童得以在美国生活，不再时刻担心被驱逐出境。CNN 的 Vanessa Yurkevich 介绍了童年抵美者暂缓遣返（DACA）项目。"
+        }
+      },
+      {
+        "type": "participant",
+        "code": "BMNJ6",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/bmnj6",
+        "avatar": "/timeline/image_1620663833.jpg",
+        "title": {
+          "en": "BMNJ6 | DACA",
+          "es": "BMNJ6 | DACA",
+          "zh": "BMNJ6 | DACA"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"Everybody has something to give.\"",
+          "es": "\"Todos tienen algo que aportar.\"",
+          "zh": "“每个人都有可以给予的东西。”"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "I know when I was fighting for DACA students. These are people who have come usually by their parent, they have been brought here, that by them succeeding, the DACA student that you help succeed may be the one that cures the cancer you're going to get. The person you help along the way may be the one to help you. We're different pieces of the puzzle. When I was younger, I had an incident where somebody tried to rob me. They end up hurting me and I had to end up going to the hospital. The person who took me to the hospital was, what we often refer to as the neighborhood bum. He was the one in the corner, the one, they ask you for money. This man, he saved my life.",
+          "es": "Sé que cuando estaba luchando por los estudiantes de DACA. Estas son personas que generalmente han venido traídas por sus padres, las han traído aquí, y por el hecho de que ellos tengan éxito, el estudiante de DACA al que ayudas a tener éxito puede ser el que cure el cáncer que vas a tener. La persona a la que ayudas en el camino puede ser la que te ayude a ti. Somos diferentes piezas del rompecabezas. Cuando era más joven, tuve un incidente donde alguien intentó robarme. Terminaron hiriéndome y tuve que terminar yendo al hospital. La persona que me llevó al hospital fue lo que a menudo nos referimos como el indigente del barrio. Fue el que estaba en la esquina, el que te pide dinero. Este hombre, él me salvó la vida.",
+          "zh": "我记得当我在为 DACA 学生奔走时，这些人通常是被父母带过来的，他们是被带到这里的。如果他们成功了，你帮助过的那个 DACA 学生，也许就是治愈你将来会得的癌症的人。你一路上帮助过的人，也许就是日后帮助你的人。我们都是拼图中的不同碎片。我年轻的时候曾发生过一件事，有人想抢劫我。他们伤了我，我不得不去医院。送我去医院的那个人，就是我们常说的街区里的“流浪汉”。他就是站在街角、向你讨钱的那种人。就是这个人救了我的命。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "It proved the point that everybody has something to give. You realize that these experiences are many. No matter who you are, you can give something. It taught me that everybody has worth and I can't be the one to judge somebody else's work because you never know.",
+          "es": "Eso comprobó el punto de que todos tienen algo que aportar. Te das cuenta de que estas experiencias son muchas. Sin importar quién seas, puedes aportar algo. Me enseñó que todos tienen valor y no puedo ser yo quien juzgue el trabajo de otra persona porque nunca se sabe.",
+          "zh": "这件事证明了：每个人都有可以给予的东西。你会意识到，这样的经历有很多。无论你是谁，你都能给予一些东西。它教会了我每个人都有自己的价值，我没有资格去评判别人所做的事，因为你永远说不准。"
+        }
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/QJCyApAugdY",
+        "title": "What is DACA?"
+      }
+    ]
+  },
+  {
+    "id": "31-2019-new-jersey-signs-licenses-for-all",
+    "date": "2019",
+    "title": {
+      "en": "2019 New Jersey signs Licenses for All!",
+      "es": "2019 Nueva Jersey firma \"Licenses for All\"",
+      "zh": "2019 年 新泽西州签署“人人享有驾照”法案！"
+    },
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"Nearly 750,000 people will be affected by the law, which passed in December 2019 and will also benefit certain senior citizens, formerly incarcerated residents, transgender people whose documents may not match their given gender identity, domestic violence survivors who are unable to retrieve legal documents, homeless people, veterans and low-income residents who cannot afford to recover legal papers.\"",
+          "es": "\"Casi 750,000 personas serán afectadas por la ley, que fue aprobada en diciembre de 2019 y también beneficiará a ciertos adultos mayores, residentes previamente encarcelados, personas transgénero cuyos documentos pueden no coincidir con su identidad de género, sobrevivientes de violencia doméstica que no pueden obtener documentos legales, personas sin hogar, veteranos y residentes de bajos ingresos que no pueden permitirse recuperar documentos legales.\"",
+          "zh": "“这部于 2019 年 12 月通过的法律将影响近 75 万人，并将惠及某些老年人、曾被监禁的居民、证件可能与其性别认同不符的跨性别者、无法取回合法证件的家暴幸存者、无家可归者、退伍军人，以及无力恢复合法文件的低收入居民。”"
+        }
+      },
+      {
+        "type": "participant",
+        "code": "",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/dhnj",
+        "avatar": "",
+        "title": {
+          "en": "DHNJ | Licenses for All",
+          "es": "DHNJ | Licencias para Todos",
+          "zh": "DHNJ | 人人享有驾照"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"The law for licenses for everyone was won.\"",
+          "es": "\"Se ganó la ley de licencias para todos.\"",
+          "zh": "“人人享有驾照的法律赢下来了。”"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "The last one I remember most is when the law for licenses for everyone was won, and even my grandson was jumping with joy. They told us no, they would never give licenses to everyone, but you have to try, if you don't try, they won't listen to us. They have to listen to us, because like a child who doesn't cry doesn't get a bottle, that's how they had us.",
+          "es": "La última que recuerdo más, es cuándo se ganó la ley de licencias para todos, y hasta el nieto estaba brincando de gusto. Nos decían que no, nunca van a dar licencias para todos, pero hay que tratar, si uno no trata, no nos van a oír. Nos tienen que oír, porque como niño que no llora no le dan mamila, así nos tenían.",
+          "zh": "我印象最深的最后一件事，就是人人享有驾照的法律获得通过的那一刻，连我的孙子都高兴得跳了起来。他们曾对我们说不行，绝不会让所有人都拿到驾照，但你必须去尝试，如果你不尝试，他们就不会听我们的。他们必须听我们的，因为就像不哭的孩子吃不到奶瓶一样，他们就是这样对待我们的。"
+        }
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/_uVp29dytMo",
+        "title": "MVC delays driver's licenses for NJ undocumented immigrants"
+      }
+    ]
+  },
+  {
+    "id": "32-2020-new-jersey-restores-voting-rights-to-former",
+    "date": "2020",
+    "title": {
+      "en": "2020 New Jersey restores voting rights to former felons",
+      "es": "2020 Nueva Jersey restaura derechos de voto a ex delincuentes",
+      "zh": "2020 年 新泽西州恢复前重罪犯的投票权"
+    },
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"Two years after the New Jersey Institute for Social Justice and its partners launched the 1844 No More campaign to restore voting rights for those with criminal convictions, the New Jersey Assembly today passed legislation (A5823) to restore the vote to people on parole and probation.\"",
+          "es": "\"Dos años después de que el New Jersey Institute for Social Justice y sus socios lanzaran la campaña 1844 No More para restaurar los derechos de voto para aquellos con antecedentes penales, la Asamblea de Nueva Jersey hoy aprobó la legislación (A5823) para restaurar el voto a personas en libertad condicional y en prueba.\"",
+          "zh": "“在新泽西社会正义研究所及其合作伙伴发起“1844 No More”运动以恢复有犯罪记录者的投票权两年之后，新泽西州议会今天通过立法（A5823），恢复了正在假释和缓刑期间人士的投票权。”"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "[New Jersey Institute for Social Justice](https://www.njisj.org/)",
+          "es": "[New Jersey Institute for Social Justice](https://www.njisj.org/)",
+          "zh": "New Jersey Institute for Social Justice"
+        }
+      },
+      {
+        "type": "participant",
+        "code": "BMNJ",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/bmnj",
+        "avatar": "/timeline/image_1620663833.jpg",
+        "title": {
+          "en": "BMNJ | Voting Rights",
+          "es": "BMNJ | Derechos de Voto",
+          "zh": "BMNJ | 投票权"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"It restored the right to vote for 83,000 former felons.\"",
+          "es": "\"Restauró el derecho al voto para 83,000 antiguos delincuentes.\"",
+          "zh": "“它为 8.3 万名前重罪犯恢复了投票权。”"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "Prior to COVID, I've gone to my state legislator, my national legislator, and spoke one on one with Senators, Governors, Congresspeople to lobby on behalf of our (NAACP) causes. Just before COVID shut us down, we were trying to get former felons the right to vote. They were not legally able to vote. We were trying to get them the right to vote. I've done this on the state level. I've gone back to Trenton and talked to our congressional representatives, our assembly representatives, our state representatives. I have gone to their offices and met with them on local sites and explained why we felt they should pass this legislation. They finally passed it. Around the end of February, early March, and it restored the right to vote for 83,000 former felons.",
+          "es": "Antes de COVID, he ido a mi legislador estatal, mi legislador nacional, y hablé uno a uno con Senadores, Gobernadores, Miembros del Congreso para cabildear en nombre de nuestras causas de la NAACP. Justo antes de que COVID nos cerrara, estábamos tratando de darle a los antiguos delincuentes el derecho al voto. No estaban legalmente autorizados a votar. Estábamos tratando de darles el derecho al voto. Lo he hecho a nivel estatal. He vuelto a Trenton y hablé con nuestros representantes del congreso, nuestros representantes de la asamblea, nuestros representantes estatales. He ido a sus oficinas y me he reunido con ellos en sitios locales y expliqué por qué sentíamos que deberían aprobar esta legislación. Finalmente la aprobaron. A finales de febrero, principios de marzo, y restauró el derecho al voto para 83,000 antiguos delincuentes.",
+          "zh": "在新冠之前，我曾去找过我所在的州议员、国会议员，并与参议员、州长、国会议员一对一交谈，为我们（NAACP）的事业进行游说。就在新冠让我们停摆之前，我们正争取让前重罪犯获得投票权。他们当时在法律上无法投票。我们想为他们争取这一权利。我在州一级做过这件事。我回到特伦顿，与我们的国会代表、州众议院代表、州议员进行交谈。我去过他们的办公室，也在当地与他们会面，向他们解释我们为什么认为他们应当通过这项立法。他们最终通过了。大约在二月底、三月初，这项立法恢复了 8.3 万名前重罪犯的投票权。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "I remember when they passed that voting rights act, giving felons the right to vote. I was down in Trenton at the statehouse when that bill passed and was finally signed by the governor. I've seen guys and women who have come out of jail and worked with us trying to get the right to vote. When Governor Murphy put his name on that paper, I've seen people who were grown men and women be like, \"Wow, I can do this.\" I've seen the tears rolling down their faces. That's how important it was. It meant they can be part of society again.",
+          "es": "Recuerdo cuando aprobaron esa ley de derechos de voto, dándole a los delincuentes el derecho al voto. Estuve en Trenton en el edificio de la legislatura cuando ese proyecto de ley fue aprobado y finalmente firmado por el gobernador. He visto hombres y mujeres que han salido de la cárcel y trabajaron con nosotros tratando de obtener el derecho al voto. Cuando el Gobernador Murphy puso su nombre en ese papel, vi a personas que eran hombres y mujeres adultos diciendo, \"Vaya, puedo hacer esto.\" He visto las lágrimas corriendo por sus caras. Así de importante era. Significaba que podían ser parte de la sociedad nuevamente.",
+          "zh": "我记得他们通过那项投票权法案，赋予重罪犯投票权的时候。当那项法案通过并最终由州长签署时，我就在特伦顿的州议会大厦。我见过一些刚出狱的男人和女人，他们和我们一起努力争取投票权。当州长墨菲在那份文件上签下自己名字时，我看到那些已经成年的男人和女人说：“哇，我也可以做这件事了。”我看到泪水从他们脸上流下来。这件事就是这么重要。它意味着他们可以重新成为社会的一份子。"
+        }
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/ISeSMrEr9hw",
+        "title": "The Cost Of Restoring Voting Rights To Former Felons"
+      }
+    ]
+  },
+  {
+    "id": "33-covid-19-pandemic",
+    "date": "Ongoing",
+    "title": {
+      "en": "Covid-19 Pandemic",
+      "es": "Pandemia de Covid-19",
+      "zh": "新冠疫情"
+    },
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "The COVID-19 is an ongoing pandemic caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). It was first identified in December 2019 in Wuhan, China. The World Health Organization declared the outbreak a Public Health Emergency of International Concern in January 2020 and a pandemic in March 2020.",
+          "es": "El COVID-19 es una pandemia en curso causada por el síndrome respiratorio agudo severo coronavirus 2 (SARS-CoV-2). Fue identificado por primera vez en diciembre de 2019 en Wuhan, China. La Organización Mundial de la Salud declaró el brote una Emergencia de Salud Pública de Preocupación Internacional en enero de 2020 y una pandemia en marzo de 2020.",
+          "zh": "新冠肺炎（COVID-19）是一场由严重急性呼吸综合征冠状病毒 2 型（SARS-CoV-2）引起的、仍在持续的大流行病。它于 2019 年 12 月在中国武汉首次被发现。世界卫生组织于 2020 年 1 月宣布此次疫情为“国际关注的突发公共卫生事件”，并于 2020 年 3 月宣布其为大流行。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "It has disproportionately affected Latinx, Black, and Indigenous communities.",
+          "es": "Ha afectado desproporcionadamente a las comunidades Latinx, negras e indígenas.",
+          "zh": "它对拉丁裔、黑人和原住民社区造成了不成比例的影响。"
+        }
+      },
+      {
+        "type": "participant",
+        "code": "NCNJ",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/ncnj",
+        "avatar": "/timeline/Resized_Resized_20210308_132735003001_1620660343.jpg",
+        "title": {
+          "en": "NCNJ | COVID-19",
+          "es": "NCNJ | COVID-19",
+          "zh": "NCNJ | 新冠肺炎"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"How can they manage to survive?\"",
+          "es": "\"¿Cómo ellos pueden estar pasándola para sobrevivir?\"",
+          "zh": "“他们怎么活得下去？”"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "At the beginning, things were tight, everyone was out of work. At the church, the brothers who are part of a group weren't receiving collection benefits. They are Hispanic seniors over 60 years old, one is 85 years old, another is 70 and another is 65 years old. Some don't have legal documents. I asked myself, if they can't receive help from the Government, no food stamps, nothing, and they're out of work, how can they manage to survive? I called them to ask how they were doing, if they were working, \"No, brother, we're not working,\" \"But you can't be collecting either?\", \"No, we can't collect,\" \"Don't worry.\" Since I had some savings, I started sending them USD 40 or USD 50 every two weeks to four brothers. Then, I would go to the supermarket to buy with my own money and I would buy USD 15 or USD 20 of groceries, and I would take them to distribute.",
+          "es": "Al principio, las cosas estaban apretando, todos estaban sin trabajo. En la iglesia, los hermanos que somos parte de un grupo no estaban recibiendo los beneficios de colección. Son Hispanos mayores de 60 años, uno tiene 85 años, el otro tiene 70 y el otro tiene 65 años. Algunos no tienen documentos legales. Yo preguntaba, si ellos no pueden recibir ayuda del Gobierno, ni cupones, ni esto, y están sin trabajo, ¿cómo ellos pueden estar pasándola para sobrevivir? Les llamé para preguntarles que cómo les estaba yendo, si estaban trabajando, \"No, hermano, no estamos trabajando\", \"Pero ¿tampoco pueden estar colectando?\", \"No, no podemos colectar\", \"No se preocupen\". Como yo tengo unos ahorritos, empecé a enviarles USD 40 o USD 50 cada dos semanas a cuatro hermanos. Luego, iba al supermercado a comprar de mi dinero y compraba USD 15 o USD 20 de compras, y se los llevaba a repartir.",
+          "zh": "一开始，日子很紧，大家都失业了。在教堂里，一个团体里的那些兄弟领不到领取的福利。他们都是 60 岁以上的西语裔老人，其中一位 85 岁，另一位 70 岁，还有一位 65 岁。有些人没有合法身份证件。我问自己，如果他们不能从政府那里得到任何帮助，没有食品券，什么都没有，又失业了，他们要怎么活下去？我打电话问他们过得怎么样，有没有工作，“没有，兄弟，我们没有工作。”“可是你们也领不到补助吧？”“是啊，我们领不到。”“别担心。”因为我自己有些存款，所以我开始每两周给四位兄弟每人寄 40 美元或 50 美元。然后我会用自己的钱去超市，买上 15 美元或 20 美元的食品杂货，再带去分给大家。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "Then, I realized that at certain Baptist churches, around my building, they were providing food. Then, I went and they gave me one for myself and I asked them if they could give me two or three more and yes, they would give them to me. I would go to another church and so on until I gathered 10 bags. What I was missing, I would go buy to complete some bags and then I would go distribute them.",
+          "es": "Luego, me di cuenta de que en ciertas iglesias bautistas, alrededor de mi building, estaban proporcionando alimentos. Luego, fui y me dieron uno para mí y les pregunté si me podían dar dos o tres más y sí, me las daban. Me iba a otra iglesia y así hasta que reunía 10 bolsas. Lo que me faltaba, yo pasaba a comprar para completar unas bolsas y luego me iba a repartirlas.",
+          "zh": "后来我发现，在我家楼附近的一些浸信会教堂在发放食物。于是我就去了，他们给了我一份，我又问他们能不能再给我两三份，他们也愿意给我。我接着去另一家教堂，就这样一直去，直到凑够 10 袋。缺什么，我就去自己买来补齐一些袋子，然后再去把它们分发出去。"
+        }
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/rJKDJlrBfxI",
+        "title": "COVID Exposes Significant Racial Health Inequities as Black, Brown & Indigenous People Suffer Most"
+      }
+    ]
+  },
+  {
+    "id": "34-black-lives-matter",
+    "date": "Ongoing",
+    "title": {
+      "en": "Black Lives Matter",
+      "es": "Black Lives Matter",
+      "zh": "黑人的命也是命（Black Lives Matter）"
+    },
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"#BlackLivesMatter was founded in 2013 in response to the acquittal of Trayvon Martin's murderer. Black Lives Matter Global Network Foundation, Inc. is a global organization in the US, UK, and Canada, whose mission is to eradicate white supremacy and build local power to intervene in violence inflicted on Black communities by the state and vigilantes.\"",
+          "es": "\"#BlackLivesMatter fue fundado en 2013 en respuesta a la absolución del asesino de Trayvon Martin. Black Lives Matter Global Network Foundation, Inc. es una organización global en EE.UU., Reino Unido y Canadá, cuya misión es erradicar la supremacía blanca y construir poder local para intervenir en la violencia infligida en las comunidades negras por el estado y los vigilantes.\"",
+          "zh": "“#BlackLivesMatter 成立于 2013 年，起因是杀害 Trayvon Martin 的凶手被无罪释放。Black Lives Matter Global Network Foundation, Inc. 是一个分布在美国、英国和加拿大的全球性组织，其使命是消除白人至上主义，并在地方层面建立力量，以干预国家和自行执法者对黑人社区施加的暴力。”"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "[blacklivesmatter.com](https://blacklivesmatter.com/)",
+          "es": "[blacklivesmatter.com](https://blacklivesmatter.com/)",
+          "zh": "blacklivesmatter.com"
+        }
+      },
+      {
+        "type": "participant",
+        "code": "ETNY",
+        "href": "https://www.ourwayoflifearchive.com/s/stories/etny",
+        "avatar": "/timeline/2021-07-19_19-55-12_1626738877.jpg",
+        "title": {
+          "en": "ETNY | BLM",
+          "es": "ETNY | BLM",
+          "zh": "ETNY | BLM"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "\"I also became involved with Mothers on the Move, doing demonstrations for my son's death.\"",
+          "es": "\"También me involucrE con Mothers on the Move, haciendo demostraciones por la muerte de mi hijo.\"",
+          "zh": "“我也加入了 Mothers on the Move，为我儿子的死亡参与示威活动。”"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "I didn't go to this protest [BLM protests in NYC]. But I went to quite a few. I walked with Al Chapman and various other people. I also became involved with Mothers on the Move, doing demonstrations for my son's death. We had marched because of the gun violence and it's not just for police officers, people in general. Then I ran into Margarita Rosario, I ran into Carl. A lot of the Mothers On the Move. A lot of the mothers who's children have been killed and all these marches. I became friends with a lot of them. And we developed a friendship during those times.",
+          "es": "No fui a esta protesta [protestas de BLM en Nueva York]. Pero fui a bastantes. Caminé con Al Chapman y varias otras personas. También me involucré con Mothers on the Move, haciendo demostraciones por la muerte de mi hijo. Habíamos marchado por la violencia armada y no es solo por oficiales de policía, gente en general. Entonces me encontré con Margarita Rosario, me encontré con Carl. Muchas de las Mothers On the Move. Muchas de las madres cuyos hijos han sido asesinados y todas estas marchas. Me hice amiga de muchas de ellas. Y desarrollamos una amistad durante esos tiempos.",
+          "zh": "这次抗议（纽约市的 BLM 抗议）我没有参加，但我参加过不少其他的抗议。我和 Al Chapman 以及其他许多人一起走过。我也加入了 Mothers on the Move，为我儿子的死亡参与示威。我们因为枪支暴力而游行，不只是针对警察，还有针对一般人的暴力。后来我遇到了 Margarita Rosario，也遇到了 Carl。Mothers On the Move 里很多人。很多妈妈的孩子被杀，参加了所有这些游行。我和她们中的很多人成了朋友。在那段时间里，我们建立起了友谊。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "My child was not killed by the police, but regardless killing is a sin no matter who you are. And that child's supposed to still be alive because you are older than that. So you already expected to die before that younger person in your family. And these mother feels the same way. So, that brought a lot on our body.",
+          "es": "Mi hijo no fue asesinado por la policía, pero sin importar eso, matar es un pecado sin importar quién seas. Y ese niño se suponía que aún estaría vivo porque eres más viejo que eso. Entonces ya esperabas morir antes que esa persona más joven en tu familia. Y estas madres sienten lo mismo. Entonces, eso trajo mucho a nuestro cuerpo.",
+          "zh": "我的孩子不是被警察杀的，但无论你是谁，杀人都是一种罪。那个孩子本应该还活着，因为你比他年纪大。所以你本来就预计自己会比家里那个比你年轻的人先离开人世。这些母亲也是同样的感受。所以，这些事在我们身上压上了很多。"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "We could be fighting, but still it brings a lot on us that it makes our bodies deteriorate. Because knowing that you don't have an answer, to these people or yourself, why my child has been killed. But that's enough to last me for the rest of my life until the day I die, that my child's been killed at 17 and I'm 72, and he's dead. The system is broken. The system is broken. When you think that you have the facts, the facts is supposed to be true. And when you go in court and find out that this child only got 19 months for killing my child. Why are they letting guns in the hands of children or anybody who shouldn't have those guns? Now, that police officer who killed that young man, he didn't use a gun. He used his body. So that alone, that's telling you, \"I can do anything I want.\"",
+          "es": "Podríamos estar peleando, pero aún así nos trae mucho que hace que nuestros cuerpos se deterioren. Porque saber que no tienes una respuesta, a estas personas o a ti mismo, por qué mi hijo ha sido asesinado. Pero eso es suficiente para durar el resto de mi vida hasta el día que muera, que mi hijo fue asesinado a los 17 y yo tengo 72, y está muerto. El sistema está roto. El sistema está roto. Cuando piensas que tienes los hechos, los hechos se suponía que eran verdaderos. Y cuando vas a la corte y descubres que este niño solo recibió 19 meses por matar a mi hijo. ¿Por qué están dejando armas en las manos de niños o de cualquiera que no debería tener esas armas? Ahora, ese oficial de policía que mató a ese joven, no usó un arma. Usó su cuerpo. Entonces solo eso, eso te está diciendo, \"Puedo hacer lo que quiera.\"",
+          "zh": "我们可以一直抗争，但这些事仍然在我们身上压得很重，让我们的身体一天天垮下去。因为你知道，对那些人，或对你自己，你都给不出一个答案——为什么我的孩子被杀了。但仅这一件事就足够让我承受到生命的最后一天：我的孩子在 17 岁时被杀，而我 72 岁，他却死了。这个体制坏掉了。这个体制坏掉了。当你以为自己掌握了事实，事实本应该是真实的。可当你走进法庭，却发现这个孩子杀了我的孩子，只判了 19 个月。他们为什么让枪支落到孩子或那些根本不该持有枪支的人手里？再说，那个杀了那个年轻人的警察，他没有用枪，他用的是自己的身体。仅凭这一点，就在告诉你：“我想做什么都行。”"
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "en": "[Advice from this elder mother]\n\"Activism takes a toll on the body and on the mind. What keeps me going is my believe in the Lord, he has been keeping me going to understand what I'm doing. Now I am passing on the knowledge, I have made my bed. I am throwing it at you. It's your bed but take it easy. Take it easy. Don't get yourself killed in the meantime. Take it easy and love your family.\"",
+          "es": "[Consejo de esta madre mayor]\n\"El activismo cobra un precio en el cuerpo y en la mente. Lo que me mantiene adelante es mi creencia en el Señor, él me ha estado manteniendo para entender lo que estoy haciendo. Ahora estoy transmitiendo el conocimiento, he hecho mi cama. La estoy tirando hacia ti. Es tu cama pero tómalo con calma. Tómalo con calma. No te hagas matar en el proceso. Tómalo con calma y ama a tu familia.\"",
+          "zh": "[这位年长母亲的建议]“行动主义会消耗你的身体，也会消耗你的心灵。让我坚持下来的，是我对主的信仰，是祂一直支撑着我，让我明白自己正在做的事。现在我把这些经验传下去，我已经铺好了我的床。我把它扔给你。这是你的床，但慢慢来。慢慢来。同时不要让自己被害。慢慢来，爱你的家人。”"
+        }
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/wPu6-1yy8-o",
+        "title": "History of Policing in America | Throughline | NPR"
+      }
+    ]
+  }
+]

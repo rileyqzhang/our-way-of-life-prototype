@@ -54,7 +54,7 @@ export default function HomePage() {
         <div className="container callout">
           <p className="eyebrow">Interactive Timeline</p>
           <h2>Place stories in historical context.</h2>
-          <p>The timeline page is ready for the existing archive’s events to be migrated without locking the design into a WordPress plugin.</p>
+          <p>Laws, migrations, and movements sit beside the stories participants told about living through them.</p>
           <Link className="button" href="/timeline">Open Timeline</Link>
         </div>
       </section>

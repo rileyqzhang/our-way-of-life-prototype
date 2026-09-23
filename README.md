@@ -60,9 +60,12 @@ Vercel request bodies are limited to about 4.5 MB. Each image, audio, or additio
 3. Vercel will detect Next.js automatically.
 4. Framework preset: Next.js; build command: `next build`; output: automatic.
 
+## Interactive Timeline
+
+`/timeline` uses the 34 events migrated from the current public archive ([Interactive Timeline](https://www.ourwayoflifearchive.com/interactive-timeline)). Copy lives in [`lib/timeline/events.json`](lib/timeline/events.json) (English, Spanish, Chinese). Participant photos are in `public/timeline/`. Participant name links still go to the existing published story pages on the current archive until those stories are migrated here.
+
 ## Next content steps
 - Migrate one verified story into a CMS/data model.
 - Replace placeholder About copy with verified project copy.
-- Migrate verified timeline events.
 - Add review / participant-approval tools for submissions.
 - Confirm Berkeley hosting/accessibility requirements before replacing the current public site.
