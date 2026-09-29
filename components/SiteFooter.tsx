@@ -1,16 +1,22 @@
 import Link from "next/link";
+import { ui } from "@/lib/content/copy";
+import type { SiteSettings } from "@/lib/content/copy";
+import { localizeHref, type Locale } from "@/lib/i18n";
+import { pick } from "@/lib/content/text";
 
-export function SiteFooter() {
+export function SiteFooter({ lang, settings }: { lang: Locale; settings: SiteSettings }) {
+  const copy = ui[lang];
+
   return (
     <footer className="footer">
       <div className="goldBar" aria-hidden="true" />
       <div className="container footerInner">
-        <strong>Our Way of Life Archive</strong>
+        <strong>{pick(settings.siteName, lang)}</strong>
         <div className="footerLinks">
-          <Link href="/about">About</Link>
-          <Link href="/contact">Contact</Link>
-          <Link href="/share-your-story">Share Your Story</Link>
-          <a href="https://dap.berkeley.edu/">Accessibility</a>
+          <Link href={localizeHref(lang, "/about")}>{copy.footer.about}</Link>
+          <Link href={localizeHref(lang, "/contact")}>{copy.footer.contact}</Link>
+          <Link href={localizeHref(lang, "/share-your-story")}>{copy.footer.share}</Link>
+          <a href={settings.accessibilityUrl}>{copy.footer.accessibility}</a>
         </div>
       </div>
     </footer>

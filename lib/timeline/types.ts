@@ -14,6 +14,10 @@ export type TimelineParticipant = {
   href: string;
   avatar: string;
   title: LocalizedText;
+  /** Internal story slug. Filled when content is prepared for the site. */
+  slug?: string;
+  imageAlt?: LocalizedText;
+  caption?: LocalizedText;
 };
 
 export type TimelineVideo = {

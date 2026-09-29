@@ -1,6 +1,10 @@
 "use client";
 
-import { Fragment, useId, useState } from "react";
+import { Fragment, useId } from "react";
+import Link from "next/link";
+import { ArchiveImage } from "@/components/media/ArchiveImage";
+import type { Locale } from "@/lib/i18n";
+import { pick } from "@/lib/content/text";
 import type { TimelineBlock, TimelineEvent, TimelineLanguage } from "@/lib/timeline/types";
 
 const languages: { id: TimelineLanguage; label: string }[] = [
@@ -10,21 +14,9 @@ const languages: { id: TimelineLanguage; label: string }[] = [
 ];
 
 const copy: Record<TimelineLanguage, { title: string; subtitle: string; hint: string }> = {
-  en: {
-    title: "Our Way of Life",
-    subtitle: "Weaving Our History",
-    hint: "Click to translate timeline",
-  },
-  es: {
-    title: "Nuestra Forma de Vida",
-    subtitle: "Tejiendo Nuestra Historia",
-    hint: "Haga clic para traducir la línea de tiempo",
-  },
-  zh: {
-    title: "我们的生活方式",
-    subtitle: "编织我们的历史",
-    hint: "点击翻译时间轴",
-  },
+  en: { title: "Our Way of Life", subtitle: "Weaving Our History", hint: "Timeline language" },
+  es: { title: "Nuestra Forma de Vida", subtitle: "Tejiendo Nuestra Historia", hint: "Idioma de la línea de tiempo" },
+  zh: { title: "我们的生活方式", subtitle: "编织我们的历史", hint: "时间线语言" },
 };
 
 const richToken = /(\*\*[^*]+\*\*|\[[^\]]+\]\([^)\s]+\))/g;
@@ -67,23 +59,26 @@ function BlockView({ block, lang }: { block: TimelineBlock; lang: TimelineLangua
   if (block.type === "paragraph") {
     return (
       <p className={block.emphasis === "caption" ? "itlCaption" : undefined}>
-        <RichText value={block.text[lang]} />
+        <RichText value={pick(block.text, lang)} />
       </p>
     );
   }
 
   if (block.type === "participant") {
+    const href = block.slug ? `/${lang}/stories/${block.slug}` : block.href;
+    const external = href.startsWith("http");
+    const alt = pick(block.imageAlt, lang) || `Portrait of participant ${block.code}`;
     return (
       <h4>
-        <a className="itlParticipant" href={block.href} rel="noopener noreferrer" target="_blank">
+        <a className="itlParticipant" href={href} {...(external ? { rel: "noopener noreferrer", target: "_blank" } : {})}>
           {block.avatar ? (
-            <img alt="" className="itlAvatar" src={block.avatar} />
+            <ArchiveImage alt={alt} className="itlAvatar" height={60} src={block.avatar} width={60} />
           ) : (
             <span className="itlAvatarFallback" aria-hidden="true">
               {block.code.slice(0, 1)}
             </span>
           )}
-          <span>{block.title[lang]}</span>
+          <span>{pick(block.title, lang)}</span>
         </a>
       </h4>
     );
@@ -105,12 +100,13 @@ function BlockView({ block, lang }: { block: TimelineBlock; lang: TimelineLangua
     );
   }
 
+  const imageAlt = block.imageAlt || pick(block.title, lang);
   return (
     <a className="itlLink" href={block.href} rel="noopener noreferrer" target="_blank">
-      {block.image ? <img alt={block.imageAlt || ""} src={block.image} /> : null}
+      {block.image ? <img alt={imageAlt} src={block.image} /> : null}
       <span className="itlLinkText">
-        <span className="itlLinkTitle">{block.title[lang]}</span>
-        {block.description[lang] ? <span className="itlLinkDesc">{block.description[lang]}</span> : null}
+        <span className="itlLinkTitle">{pick(block.title, lang)}</span>
+        {pick(block.description, lang) ? <span className="itlLinkDesc">{pick(block.description, lang)}</span> : null}
         {block.domain ? <span className="itlLinkDomain">{block.domain}</span> : null}
       </span>
     </a>
@@ -120,11 +116,11 @@ function BlockView({ block, lang }: { block: TimelineBlock; lang: TimelineLangua
 function TimelineEntry({ event, lang }: { event: TimelineEvent; lang: TimelineLanguage }) {
   const panelId = useId();
   return (
-    <article className="itlEntry">
+    <article className="itlEntry" id={event.id}>
       <p className="itlDate">{event.date}</p>
       <details>
         <summary aria-controls={panelId}>
-          <h2 className="itlHeading">{event.title[lang]}</h2>
+          <h2 className="itlHeading">{pick(event.title, lang)}</h2>
           <span className="itlChevron" aria-hidden="true">
             <svg viewBox="0 0 24 24">
               <polyline points="6 9 12 15 18 9" />
@@ -141,54 +137,31 @@ function TimelineEntry({ event, lang }: { event: TimelineEvent; lang: TimelineLa
   );
 }
 
-export function InteractiveTimeline({ events }: { events: TimelineEvent[] }) {
-  const labelId = useId();
-  const [lang, setLang] = useState<TimelineLanguage>("en");
+export function InteractiveTimeline({ events, lang }: { events: TimelineEvent[]; lang: Locale }) {
   const text = copy[lang];
-
-  function moveSelection(current: TimelineLanguage, direction: 1 | -1) {
-    const index = languages.findIndex((language) => language.id === current);
-    const next = languages[(index + direction + languages.length) % languages.length];
-    setLang(next.id);
-    document.getElementById(`timeline-language-${next.id}`)?.focus();
-  }
 
   return (
     <div className="interactiveTimeline">
-      <div className="itlLang">
-          <p id={labelId} className="itlLangHint">
-            {text.hint}
-          </p>
-          <div className="itlLangButtons" role="radiogroup" aria-labelledby={labelId}>
-            {languages.map((language) => {
-              const selected = language.id === lang;
-              return (
-                <button
-                  key={language.id}
-                  type="button"
-                  role="radio"
-                  id={`timeline-language-${language.id}`}
-                  aria-checked={selected}
-                  tabIndex={selected ? 0 : -1}
-                  className={selected ? "isSelected" : undefined}
-                  onClick={() => setLang(language.id)}
-                  onKeyDown={(event) => {
-                    if (event.key === "ArrowRight" || event.key === "ArrowDown") {
-                      event.preventDefault();
-                      moveSelection(language.id, 1);
-                    }
-                    if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
-                      event.preventDefault();
-                      moveSelection(language.id, -1);
-                    }
-                  }}
-                >
-                  {language.label}
-                </button>
-              );
-            })}
-          </div>
-      </div>
+      <nav className="itlLang" aria-label={text.hint}>
+        <p className="itlLangHint">{text.hint}</p>
+        <div className="itlLangButtons">
+          {languages.map((language) => {
+            const selected = language.id === lang;
+            return (
+              <Link
+                key={language.id}
+                href={`/${language.id}/timeline`}
+                hrefLang={language.id}
+                lang={language.id}
+                aria-current={selected ? "true" : undefined}
+                className={selected ? "isSelected" : undefined}
+              >
+                {language.label}
+              </Link>
+            );
+          })}
+        </div>
+      </nav>
       <h1 className="itlTitle">{text.title}</h1>
       <p className="itlSubtitle">{text.subtitle}</p>
 
