@@ -1,0 +1,238 @@
+{
+  "writtenAt": "2026-10-24T18:33:36.311Z",
+  "dataset": "production",
+  "sanityWrites": 0,
+  "note": "Dry run. Published stories and collection documents are not modified. Draft collections are created only with --apply. Draft story references are added only with --link-drafts after the collection is published.",
+  "summary": {
+    "preserve": 0,
+    "createDraft": 3,
+    "storiesSkipped": 1,
+    "storiesWaiting": 32,
+    "storyDraftsReadyToLink": 0
+  },
+  "importCommand": "npx tsx scripts/migrate-collections.ts --apply --only=latine,africanAmerican,chinese",
+  "linkCommand": "npx tsx scripts/migrate-collections.ts --apply --link-drafts --only=latine,africanAmerican,chinese",
+  "collections": [
+    {
+      "slug": "latine",
+      "documentId": "collection-latine",
+      "draftId": "drafts.collection-latine",
+      "action": "CreateDraft",
+      "displayOrder": 0
+    },
+    {
+      "slug": "africanAmerican",
+      "documentId": "collection-africanAmerican",
+      "draftId": "drafts.collection-africanAmerican",
+      "action": "CreateDraft",
+      "displayOrder": 1
+    },
+    {
+      "slug": "chinese",
+      "documentId": "collection-chinese",
+      "draftId": "drafts.collection-chinese",
+      "action": "CreateDraft",
+      "displayOrder": 2
+    }
+  ],
+  "stories": [
+    {
+      "id": "362fbdab-460c-421b-ba63-61add1e64c86",
+      "legacy": "africanAmerican",
+      "action": "Wait",
+      "reason": "The collection document is not published, so no story reference was written."
+    },
+    {
+      "id": "drafts.story-aawe",
+      "legacy": "latine",
+      "action": "Wait",
+      "reason": "The collection document is not published, so no story reference was written."
+    },
+    {
+      "id": "drafts.story-alwe",
+      "legacy": "latine",
+      "action": "Wait",
+      "reason": "The collection document is not published, so no story reference was written."
+    },
+    {
+      "id": "drafts.story-amwe",
+      "legacy": "latine",
+      "action": "Wait",
+      "reason": "The collection document is not published, so no story reference was written."
+    },
+    {
+      "id": "drafts.story-bmnj",
+      "legacy": "africanAmerican",
+      "action": "Wait",
+      "reason": "The collection document is not published, so no story reference was written."
+    },
+    {
+      "id": "drafts.story-crwe",
+      "legacy": "latine",
+      "action": "Wait",
+      "reason": "The collection document is not published, so no story reference was written."
+    },
+    {
+      "id": "drafts.story-cssf",
+      "legacy": "chinese",
+      "action": "Wait",
+      "reason": "The collection document is not published, so no story reference was written."
+    },
+    {
+      "id": "drafts.story-emwe",
+      "legacy": "latine",
+      "action": "Wait",
+      "reason": "The collection document is not published, so no story reference was written."
+    },
+    {
+      "id": "drafts.story-erowe",
+      "legacy": "latine",
+      "action": "Wait",
+      "reason": "The collection document is not published, so no story reference was written."
+    },
+    {
+      "id": "drafts.story-erwe",
+      "legacy": "latine",
+      "action": "Wait",
+      "reason": "The collection document is not published, so no story reference was written."
+    },
+    {
+      "id": "drafts.story-etny",
+      "legacy": "africanAmerican",
+      "action": "Wait",
+      "reason": "The collection document is not published, so no story reference was written."
+    },
+    {
+      "id": "drafts.story-gjsf",
+      "legacy": "chinese",
+      "action": "Wait",
+      "reason": "The collection document is not published, so no story reference was written."
+    },
+    {
+      "id": "drafts.story-hsnj",
+      "legacy": "africanAmerican",
+      "action": "Wait",
+      "reason": "The collection document is not published, so no story reference was written."
+    },
+    {
+      "id": "drafts.story-jzok",
+      "legacy": "chinese",
+      "action": "Wait",
+      "reason": "The collection document is not published, so no story reference was written."
+    },
+    {
+      "id": "drafts.story-lawe",
+      "legacy": "latine",
+      "action": "Wait",
+      "reason": "The collection document is not published, so no story reference was written."
+    },
+    {
+      "id": "drafts.story-llsf",
+      "legacy": "chinese",
+      "action": "Wait",
+      "reason": "The collection document is not published, so no story reference was written."
+    },
+    {
+      "id": "drafts.story-lrnj",
+      "legacy": "latine",
+      "action": "Wait",
+      "reason": "The collection document is not published, so no story reference was written."
+    },
+    {
+      "id": "drafts.story-mlnj",
+      "legacy": "africanAmerican",
+      "action": "Wait",
+      "reason": "The collection document is not published, so no story reference was written."
+    },
+    {
+      "id": "drafts.story-mmwe",
+      "legacy": "latine",
+      "action": "Wait",
+      "reason": "The collection document is not published, so no story reference was written."
+    },
+    {
+      "id": "drafts.story-mvwe",
+      "legacy": "latine",
+      "action": "Wait",
+      "reason": "The collection document is not published, so no story reference was written."
+    },
+    {
+      "id": "drafts.story-ncnj",
+      "legacy": "latine",
+      "action": "Wait",
+      "reason": "The collection document is not published, so no story reference was written."
+    },
+    {
+      "id": "drafts.story-nrwe",
+      "legacy": "latine",
+      "action": "Wait",
+      "reason": "The collection document is not published, so no story reference was written."
+    },
+    {
+      "id": "drafts.story-rbny",
+      "legacy": "africanAmerican",
+      "action": "Wait",
+      "reason": "The collection document is not published, so no story reference was written."
+    },
+    {
+      "id": "drafts.story-rhwe",
+      "legacy": "latine",
+      "action": "Wait",
+      "reason": "The collection document is not published, so no story reference was written."
+    },
+    {
+      "id": "drafts.story-shok",
+      "legacy": "chinese",
+      "action": "Wait",
+      "reason": "The collection document is not published, so no story reference was written."
+    },
+    {
+      "id": "drafts.story-slok",
+      "legacy": "chinese",
+      "action": "Wait",
+      "reason": "The collection document is not published, so no story reference was written."
+    },
+    {
+      "id": "drafts.story-wlok",
+      "legacy": "chinese",
+      "action": "Wait",
+      "reason": "The collection document is not published, so no story reference was written."
+    },
+    {
+      "id": "drafts.story-wpny",
+      "legacy": "africanAmerican",
+      "action": "Wait",
+      "reason": "The collection document is not published, so no story reference was written."
+    },
+    {
+      "id": "story-ebnj",
+      "legacy": "latine",
+      "action": "Wait",
+      "reason": "The collection document is not published, so no story reference was written."
+    },
+    {
+      "id": "story-jmok",
+      "legacy": "chinese",
+      "action": "Wait",
+      "reason": "The collection document is not published, so no story reference was written."
+    },
+    {
+      "id": "story-jmwe",
+      "legacy": "africanAmerican",
+      "action": "Wait",
+      "reason": "The collection document is not published, so no story reference was written."
+    },
+    {
+      "id": "story-mgnj",
+      "legacy": "",
+      "action": "Skip",
+      "reason": "No verified legacy community is stored on this story."
+    },
+    {
+      "id": "story-senj",
+      "legacy": "africanAmerican",
+      "action": "Wait",
+      "reason": "The collection document is not published, so no story reference was written."
+    }
+  ]
+}

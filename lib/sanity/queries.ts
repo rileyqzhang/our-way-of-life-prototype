@@ -1,6 +1,16 @@
 import { defineQuery } from "next-sanity";
 
 export const archiveQuery = defineQuery(`{
+  "collections": *[_type == "collection" && defined(slug.current)] | order(displayOrder asc) {
+    "slug": slug.current,
+    name,
+    description,
+    displayOrder,
+    cover {
+      asset,
+      alt
+    }
+  },
   "timeline": *[_type == "timelineEvent"] | order(displayOrder asc) {
     "id": slug.current,
     date,
@@ -30,6 +40,7 @@ export const archiveQuery = defineQuery(`{
     "slug": slug.current,
     participantCode,
     collection,
+    "communitySlug": community->slug.current,
     title,
     summary,
     body,

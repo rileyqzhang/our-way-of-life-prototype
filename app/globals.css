@@ -473,7 +473,7 @@ button, input, textarea, select { font: inherit; color: inherit; }
   border: 3px solid white; box-shadow: 0 0 0 1px #dfc885;
 }
 
-.collections { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.collections { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px; }
 .collectionCard { background: white; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; }
 .collectionCard span { color: var(--orange-dark); font-size: .78rem; font-weight: 800; text-transform: uppercase; letter-spacing: .14em; }
 .collectionCard h3 { margin: 10px 0 12px; font-family: var(--font-display-stack); font-size: 1.65rem; }
@@ -1801,7 +1801,7 @@ button, input, textarea, select { font: inherit; color: inherit; }
 }
 .volumeShelf {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 36px;
   align-items: stretch;
   max-width: 980px;
@@ -1847,6 +1847,7 @@ button, input, textarea, select { font: inherit; color: inherit; }
   border: 2px solid rgba(232, 206, 154, .8);
   filter: grayscale(1) contrast(1.08);
 }
+.volumePhoto--empty { display: block; background: rgba(255, 255, 255, .08); filter: none; }
 .volumeBlurb {
   margin-top: 20px;
   text-align: center;

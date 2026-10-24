@@ -63,7 +63,7 @@ export default async function StoryPage({ params }: { params: Promise<{ lang: st
   if (!story) notFound();
   const copy = ui[lang];
   const portrait = story.photographs[0];
-  const volume = story.collection ? copy.stories.volumes.find((item) => item.id === story.collection) : undefined;
+  const volume = story.collection ? archive.collections.find((item) => item.slug === story.collection) : undefined;
   const siblings = archive.stories
     .filter((item) => item.collection === story.collection)
     .sort((a, b) => a.participantCode.localeCompare(b.participantCode));
@@ -87,7 +87,7 @@ export default async function StoryPage({ params }: { params: Promise<{ lang: st
       image={portrait ? { src: portrait.src, alt: pick(portrait.alt, lang) } : undefined}
       layout={layout}
       collectionHref={story.collection ? localizeHref(lang, `/stories/collections/${story.collection}`) : undefined}
-      collectionLabel={volume ? `${copy.story.backTo} ${volume.title}` : undefined}
+      collectionLabel={volume ? `${copy.story.backTo} ${pick(volume.name, lang)}` : undefined}
       nextHref={next ? localizeHref(lang, `/stories/${next.slug}`) : undefined}
       externalHref={story.externalHref}
     />

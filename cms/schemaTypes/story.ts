@@ -14,9 +14,16 @@ export const story = defineType({
       description: "The person document for this story. The participant code above stays the public identifier.",
     }),
     defineField({
+      name: "community",
+      title: "Collection",
+      description: "Assign this story to a collection. Create new communities under Collection. Leave this empty when membership has not been verified. Publish the collection before publishing a story that points to it.",
+      type: "reference",
+      to: [{ type: "collection" }],
+    }),
+    defineField({
       name: "collection",
-      title: "Community",
-      description: "Choose the collection this story appears in. Each community has its own page on the website.",
+      title: "Legacy community",
+      description: "The original classification for this story. It stays in place so existing pages keep working. Do not use it to guess an unverified community. When the collection reference above is set, the website uses that reference.",
       type: "string",
       options: {
         list: [
@@ -26,7 +33,6 @@ export const story = defineType({
         ],
         layout: "radio",
       },
-      validation: (rule) => rule.required(),
     }),
     defineField({ name: "slug", title: "Slug", type: "slug", options: { source: "participantCode" }, validation: (rule) => rule.required() }),
     defineField({ name: "title", title: "Title", type: "localeString", validation: (rule) => rule.required() }),

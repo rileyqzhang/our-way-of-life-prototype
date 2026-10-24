@@ -75,11 +75,13 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           <p className="eyebrow">{copy.home.collectionsEyebrow}</p>
           <h2 className="sectionTitle">{copy.home.collectionsTitle}</h2>
           <div className="collections">
-            {copy.collections.map((collection) => (
-              <Link className="collectionCard" href={localizeHref(lang, `/stories/collections/${collection.id}`)} key={collection.id}>
-                <span>{collection.label}</span>
-                <h3>{collection.title}</h3>
-                <p>{collection.description}</p>
+            {archive.collections.map((collection) => (
+              <Link className="collectionCard" href={localizeHref(lang, `/stories/collections/${collection.slug}`)} key={collection.slug}>
+                {pick(collection.label, lang) && pick(collection.label, lang) !== pick(collection.name, lang) ? (
+                  <span>{pick(collection.label, lang)}</span>
+                ) : null}
+                <h3>{pick(collection.name, lang)}</h3>
+                {pick(collection.description, lang) ? <p>{pick(collection.description, lang)}</p> : null}
               </Link>
             ))}
           </div>

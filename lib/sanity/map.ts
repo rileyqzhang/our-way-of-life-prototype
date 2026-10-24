@@ -1,4 +1,4 @@
-import { isStoryCollection } from "@/lib/content/collections";
+import { storyCollectionSlug, type ArchiveCollection } from "@/lib/content/collections";
 import type { PageDocument, SiteSettings } from "@/lib/content/copy";
 import { localPages, localSettings } from "@/lib/content/copy";
 import type { ArchiveStory, Photo, PreparedTimelineEvent, StoryArticleBlock } from "@/lib/content/derive";
@@ -46,10 +46,19 @@ type SanityPhoto = {
   usagePermission?: string;
 };
 
+type SanityCollection = {
+  slug?: string;
+  name?: LocaleValue;
+  description?: LocaleValue;
+  displayOrder?: number;
+  cover?: { asset?: { _ref?: string }; alt?: LocaleValue } | null;
+};
+
 type SanityStory = {
   slug?: string;
   participantCode?: string;
   collection?: string;
+  communitySlug?: string;
   title?: LocaleValue;
   summary?: LocaleValue;
   body?: LocaleValue;
@@ -72,6 +81,7 @@ type SanitySettings = {
 };
 
 export type SanityArchive = {
+  collections?: SanityCollection[] | null;
   timeline?: SanityEvent[] | null;
   stories?: SanityStory[] | null;
   pages?: SanityPage[] | null;
@@ -158,6 +168,23 @@ function mapArticle(article: SanityStory["article"]): ArchiveStory["article"] {
   return { en, es, zh };
 }
 
+export function mapCollections(collections: SanityCollection[] | null | undefined): ArchiveCollection[] {
+  return (collections || [])
+    .filter((collection) => collection.slug && (collection.name?.en || collection.name?.es || collection.name?.zh))
+    .map((collection) => {
+      const alt = locale(collection.cover?.alt);
+      return {
+        slug: collection.slug as string,
+        name: locale(collection.name),
+        description: locale(collection.description),
+        label: { en: "", es: "", zh: "" },
+        image: sanityImageUrl(collection.cover, 1200) || undefined,
+        imageAlt: alt,
+        displayOrder: collection.displayOrder ?? 0,
+      };
+    });
+}
+
 export function mapStories(stories: SanityStory[] | null | undefined): ArchiveStory[] {
   return (stories || [])
     .filter((story) => story.slug && story.participantCode)
@@ -185,7 +212,7 @@ export function mapStories(stories: SanityStory[] | null | undefined): ArchiveSt
           .map((event) => ({ id: event.id as string, date: event.date || "", title: locale(event.title) })),
         externalHref: story.externalHref || undefined,
         published: story.published !== false,
-        collection: isStoryCollection(story.collection) ? story.collection : undefined,
+        collection: storyCollectionSlug(story.communitySlug, story.collection),
       };
     });
 }

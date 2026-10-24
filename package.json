@@ -15,7 +15,8 @@
     "migrate:docx:latine": "tsx scripts/migrate-docx.ts --community=latine",
     "migrate:docx:chinese": "tsx scripts/migrate-docx.ts --community=chinese",
     "migrate:timeline": "tsx scripts/migrate-timeline.ts",
-    "test:migration": "tsx --test lib/migration/participant-code.test.ts lib/migration/docx-document.test.ts lib/migration/timeline.test.ts"
+    "migrate:collections": "tsx scripts/migrate-collections.ts",
+    "test:migration": "tsx --test lib/migration/participant-code.test.ts lib/migration/docx-document.test.ts lib/migration/timeline.test.ts lib/migration/collections.test.ts lib/content/collections.test.ts"
   },
   "dependencies": {
     "@sanity/image-url": "^2.1.1",

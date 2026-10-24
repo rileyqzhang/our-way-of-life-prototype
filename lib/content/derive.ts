@@ -1,4 +1,3 @@
-import type { StoryCollection } from "@/lib/content/collections";
 import { canonicalParticipantSlug, normalizeParticipantCode } from "@/lib/migration/participant-code";
 import type { LocalizedText, TimelineBlock, TimelineEvent } from "@/lib/timeline/types";
 
@@ -53,7 +52,7 @@ export type ArchiveStory = {
   article?: { en: StoryArticleBlock[]; es: StoryArticleBlock[]; zh: StoryArticleBlock[] };
   externalHref?: string;
   published: boolean;
-  collection?: StoryCollection;
+  collection?: string;
 };
 
 export type PreparedTimelineEvent = TimelineEvent & { displayOrder: number };
