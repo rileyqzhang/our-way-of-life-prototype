@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Libre_Franklin, Source_Serif_4 } from "next/font/google";
+import { Libre_Baskerville, Libre_Franklin } from "next/font/google";
 import { draftMode } from "next/headers";
 import { VisualEditing } from "next-sanity";
+import { HideOnStoryDetail } from "@/components/HideOnStoryDetail";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { getArchive } from "@/lib/content/get-content";
@@ -16,12 +17,16 @@ const bodyFont = Libre_Franklin({
   display: "swap",
 });
 
-const displayFont = Source_Serif_4({
+const displayFont = Libre_Baskerville({
   subsets: ["latin"],
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
   variable: "--font-display",
   display: "swap",
   adjustFontFallback: false,
 });
+
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: { default: "Our Way of Life Archive", template: "%s | Our Way of Life Archive" },
@@ -47,9 +52,13 @@ export default async function SiteLayout({
         <a className="skipLink" href="#main">
           {copy.skip}
         </a>
-        <SiteHeader lang={lang} navigation={archive.settings.navigation} />
+        <HideOnStoryDetail>
+          <SiteHeader lang={lang} navigation={archive.settings.navigation} />
+        </HideOnStoryDetail>
         <main id="main">{children}</main>
-        <SiteFooter lang={lang} settings={archive.settings} />
+        <HideOnStoryDetail>
+          <SiteFooter lang={lang} settings={archive.settings} />
+        </HideOnStoryDetail>
         {draft.isEnabled ? <VisualEditing /> : null}
       </body>
     </html>

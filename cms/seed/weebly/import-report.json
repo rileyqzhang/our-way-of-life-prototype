@@ -1,0 +1,43 @@
+{
+  "mode": "apply",
+  "writtenAt": "2026-10-24T06:15:48.957Z",
+  "selected": 2,
+  "dependencies": {
+    "missing": [
+      "timeline-01-colonization-of-the-americas"
+    ],
+    "unknown": [],
+    "satisfied": [
+      "timeline-01-colonization-of-the-americas"
+    ],
+    "created": [
+      "timeline-01-colonization-of-the-americas"
+    ]
+  },
+  "rows": [
+    {
+      "slug": "jmwe",
+      "action": "skip-unchanged",
+      "detail": "Already imported and unchanged."
+    },
+    {
+      "slug": "timeline-01-colonization-of-the-americas",
+      "action": "create-timeline",
+      "detail": "Missing from Sanity. The archive timeline has 01-colonization-of-the-americas (Colonization of the Americas). It is created before stories that reference it."
+    },
+    {
+      "slug": "mgnj",
+      "action": "create",
+      "detail": "New participant and story. Published stays off. Depends on timeline-01-colonization-of-the-americas, created from the archive timeline first."
+    }
+  ],
+  "summary": {
+    "create": 1,
+    "timeline": 1,
+    "fillEmpty": 0,
+    "update": 0,
+    "skipped": 1,
+    "blocked": 0,
+    "failed": 0
+  }
+}

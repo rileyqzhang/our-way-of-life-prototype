@@ -1,12 +1,43 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { Cormorant_Garamond, DM_Sans, Plus_Jakarta_Sans, Source_Serif_4 } from "next/font/google";
 import { notFound } from "next/navigation";
-import { ArchiveImage } from "@/components/media/ArchiveImage";
+import { StoryDetailView } from "@/components/stories/StoryDetailView";
 import { ui } from "@/lib/content/copy";
 import { getArchive, getStory } from "@/lib/content/get-content";
+import { buildStoryLayout } from "@/lib/content/story-layout";
 import { pick } from "@/lib/content/text";
 import { locales, localizeHref } from "@/lib/i18n";
 import { readLang } from "@/lib/i18n/request";
+
+const storySans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-story-sans",
+  display: "swap",
+});
+
+const storyDm = DM_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-story-dm",
+  display: "swap",
+});
+
+const storySerif = Source_Serif_4({
+  subsets: ["latin"],
+  weight: ["400", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-story-serif",
+  display: "swap",
+});
+
+const storyDisplay = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-story-display",
+  display: "swap",
+});
 
 export async function generateStaticParams() {
   const archive = await getArchive();
@@ -28,74 +59,37 @@ export async function generateMetadata({
 export default async function StoryPage({ params }: { params: Promise<{ lang: string; slug: string }> }) {
   const { slug } = await params;
   const lang = await readLang(params);
-  const story = await getStory(slug);
+  const [story, archive] = await Promise.all([getStory(slug), getArchive()]);
   if (!story) notFound();
   const copy = ui[lang];
-  const photo = story.photographs[0];
+  const portrait = story.photographs[0];
+  const volume = story.collection ? copy.stories.volumes.find((item) => item.id === story.collection) : undefined;
+  const siblings = archive.stories
+    .filter((item) => item.collection === story.collection)
+    .sort((a, b) => a.participantCode.localeCompare(b.participantCode));
+  const index = siblings.findIndex((item) => item.slug === story.slug);
+  const next = siblings.length > 1 && index >= 0 ? siblings[(index + 1) % siblings.length] : undefined;
+  const layout = buildStoryLayout({
+    code: story.participantCode,
+    location: pick(story.location, lang),
+    summary: pick(story.summary, lang),
+    body: pick(story.body, lang),
+    lang,
+    article: story.article,
+    quotations: story.quotations.map((quotation) => ({ text: pick(quotation.text, lang) })),
+    relatedEvents: story.relatedEvents.map((event) => ({ id: event.id, date: event.date, title: pick(event.title, lang) })),
+  });
 
   return (
-    <>
-      <section className="archiveHero">
-        <div className="container archiveHeroSplit">
-          <div className="archiveHeroCopy">
-            <p className="eyebrow">
-              <Link href={localizeHref(lang, "/stories")}>{copy.story.back}</Link>
-            </p>
-            <h1 className="archiveTitle">{pick(story.title, lang)}</h1>
-            <p className="archiveLede">{pick(story.summary, lang)}</p>
-          </div>
-          {photo ? (
-            <figure className="archivePhotoFrame">
-              <ArchiveImage alt={pick(photo.alt, lang)} className="storyPortrait" height={900} priority src={photo.src} width={900} />
-              {photo.caption ? <figcaption>{pick(photo.caption, lang)}</figcaption> : null}
-              {photo.source ? <p className="photoMeta">{photo.source}</p> : null}
-              {photo.usagePermission ? <p className="photoMeta">{photo.usagePermission}</p> : null}
-            </figure>
-          ) : null}
-        </div>
-      </section>
-      <div className="goldBar" aria-hidden="true" />
-
-      <section className="paperBand">
-        <div className="container storyDetail">
-          <h2>{copy.story.quotations}</h2>
-          <div className="quotationList">
-            {story.quotations.map((quotation, index) => (
-              <blockquote key={`${quotation.eventId}-${index}`}>
-                <p>{pick(quotation.text, lang)}</p>
-                <footer>
-                  <Link href={`${localizeHref(lang, "/timeline")}#${quotation.eventId}`}>
-                    {quotation.eventDate} · {pick(quotation.eventTitle, lang)}
-                  </Link>
-                </footer>
-              </blockquote>
-            ))}
-          </div>
-
-          {story.relatedEvents.length ? (
-            <>
-              <h2>{copy.story.related}</h2>
-              <ul className="relatedEvents">
-                {story.relatedEvents.map((event) => (
-                  <li key={event.id}>
-                    <Link href={`${localizeHref(lang, "/timeline")}#${event.id}`}>
-                      {event.date} · {pick(event.title, lang)}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </>
-          ) : null}
-
-          {story.externalHref ? (
-            <p>
-              <a href={story.externalHref} rel="noopener noreferrer" target="_blank">
-                {copy.story.archiveLink}
-              </a>
-            </p>
-          ) : null}
-        </div>
-      </section>
-    </>
+    <StoryDetailView
+      lang={lang}
+      fontClassName={`${storySans.variable} ${storyDm.variable} ${storySerif.variable} ${storyDisplay.variable}`}
+      image={portrait ? { src: portrait.src, alt: pick(portrait.alt, lang) } : undefined}
+      layout={layout}
+      collectionHref={story.collection ? localizeHref(lang, `/stories/collections/${story.collection}`) : undefined}
+      collectionLabel={volume ? `${copy.story.backTo} ${volume.title}` : undefined}
+      nextHref={next ? localizeHref(lang, `/stories/${next.slug}`) : undefined}
+      externalHref={story.externalHref}
+    />
   );
 }

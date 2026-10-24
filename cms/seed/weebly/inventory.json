@@ -1,0 +1,867 @@
+{
+  "extractedAt": "2026-10-24T01:55:47.140Z",
+  "source": "https://www.ourwayoflifearchive.com",
+  "stories": [
+    {
+      "slug": "aawe",
+      "participantCode": "AAWE",
+      "sourceUrl": "https://www.ourwayoflifearchive.com/s/stories/aawe",
+      "status": "extracted",
+      "languages": {
+        "en": true,
+        "es": true,
+        "zh": false
+      },
+      "paragraphCounts": {
+        "en": 5,
+        "es": 4,
+        "zh": 0,
+        "undetermined": 0
+      },
+      "linkCount": 0,
+      "images": 0,
+      "relatedEventIds": [],
+      "notes": [
+        "Weebly image field has no public URL.",
+        "Weebly post title is the placeholder \"Story title\" and was not used.",
+        "This story URL is not linked from the timeline data in the repository."
+      ]
+    },
+    {
+      "slug": "alwe",
+      "participantCode": "ALWE",
+      "sourceUrl": "https://www.ourwayoflifearchive.com/s/stories/alwe",
+      "status": "extracted",
+      "languages": {
+        "en": true,
+        "es": true,
+        "zh": false
+      },
+      "paragraphCounts": {
+        "en": 4,
+        "es": 4,
+        "zh": 0,
+        "undetermined": 0
+      },
+      "linkCount": 0,
+      "images": 0,
+      "relatedEventIds": [],
+      "notes": [
+        "Weebly image field has no public URL.",
+        "Weebly post title is the placeholder \"Story title\" and was not used.",
+        "This story URL is not linked from the timeline data in the repository."
+      ]
+    },
+    {
+      "slug": "amwe",
+      "participantCode": "AMWE",
+      "sourceUrl": "https://www.ourwayoflifearchive.com/s/stories/amwe",
+      "status": "extracted",
+      "languages": {
+        "en": true,
+        "es": true,
+        "zh": false
+      },
+      "paragraphCounts": {
+        "en": 4,
+        "es": 4,
+        "zh": 0,
+        "undetermined": 0
+      },
+      "linkCount": 0,
+      "images": 0,
+      "relatedEventIds": [],
+      "notes": [
+        "Weebly image field has no public URL.",
+        "Weebly post title is the placeholder \"Story title\" and was not used.",
+        "This story URL is not linked from the timeline data in the repository."
+      ]
+    },
+    {
+      "slug": "bmnj",
+      "participantCode": "BMNJ",
+      "sourceUrl": "https://www.ourwayoflifearchive.com/s/stories/bmnj",
+      "status": "extracted",
+      "languages": {
+        "en": true,
+        "es": false,
+        "zh": false
+      },
+      "paragraphCounts": {
+        "en": 3,
+        "es": 0,
+        "zh": 0,
+        "undetermined": 0
+      },
+      "linkCount": 0,
+      "images": 1,
+      "relatedEventIds": [
+        "14-brown-vs-boe-of-topeka",
+        "15-emmett-till-murdered",
+        "32-2020-new-jersey-restores-voting-rights-to-former"
+      ],
+      "notes": [
+        "Weebly image field has no public URL."
+      ]
+    },
+    {
+      "slug": "crwe",
+      "participantCode": "CRWE",
+      "sourceUrl": "https://www.ourwayoflifearchive.com/s/stories/crwe",
+      "status": "extracted",
+      "languages": {
+        "en": true,
+        "es": true,
+        "zh": false
+      },
+      "paragraphCounts": {
+        "en": 4,
+        "es": 4,
+        "zh": 0,
+        "undetermined": 0
+      },
+      "linkCount": 0,
+      "images": 0,
+      "relatedEventIds": [],
+      "notes": [
+        "Weebly image field has no public URL.",
+        "Weebly post title is the placeholder \"Story title\" and was not used.",
+        "This story URL is not linked from the timeline data in the repository."
+      ]
+    },
+    {
+      "slug": "ebnj",
+      "participantCode": "EBNJ",
+      "sourceUrl": "https://www.ourwayoflifearchive.com/s/stories/ebnj",
+      "status": "extracted",
+      "languages": {
+        "en": false,
+        "es": true,
+        "zh": false
+      },
+      "paragraphCounts": {
+        "en": 0,
+        "es": 3,
+        "zh": 0,
+        "undetermined": 0
+      },
+      "linkCount": 0,
+      "images": 1,
+      "relatedEventIds": [
+        "12-1952-puerto-rico-becomes-a-commonwealth"
+      ],
+      "notes": [
+        "Weebly image field has no public URL.",
+        "Weebly post title is the placeholder \"Story title\" and was not used."
+      ]
+    },
+    {
+      "slug": "emnj",
+      "participantCode": "EMNJ",
+      "sourceUrl": "https://www.ourwayoflifearchive.com/s/stories/emnj",
+      "status": "extracted",
+      "languages": {
+        "en": true,
+        "es": false,
+        "zh": false
+      },
+      "paragraphCounts": {
+        "en": 3,
+        "es": 0,
+        "zh": 0,
+        "undetermined": 0
+      },
+      "linkCount": 0,
+      "images": 1,
+      "relatedEventIds": [
+        "23-1982-hiv-aids-epidemic"
+      ],
+      "notes": [
+        "Weebly image field has no public URL.",
+        "Weebly post title is the placeholder \"Story title\" and was not used."
+      ]
+    },
+    {
+      "slug": "emwe",
+      "participantCode": "EMWE",
+      "sourceUrl": "https://www.ourwayoflifearchive.com/s/stories/emwe",
+      "status": "extracted",
+      "languages": {
+        "en": true,
+        "es": true,
+        "zh": false
+      },
+      "paragraphCounts": {
+        "en": 3,
+        "es": 4,
+        "zh": 0,
+        "undetermined": 0
+      },
+      "linkCount": 0,
+      "images": 0,
+      "relatedEventIds": [],
+      "notes": [
+        "Weebly image field has no public URL.",
+        "Weebly post title is the placeholder \"Story title\" and was not used.",
+        "This story URL is not linked from the timeline data in the repository."
+      ]
+    },
+    {
+      "slug": "erowe",
+      "participantCode": "ERoWE",
+      "sourceUrl": "https://www.ourwayoflifearchive.com/s/stories/erowe",
+      "status": "extracted",
+      "languages": {
+        "en": true,
+        "es": true,
+        "zh": false
+      },
+      "paragraphCounts": {
+        "en": 4,
+        "es": 4,
+        "zh": 0,
+        "undetermined": 0
+      },
+      "linkCount": 0,
+      "images": 0,
+      "relatedEventIds": [],
+      "notes": [
+        "Weebly image field has no public URL.",
+        "Weebly post title is the placeholder \"Story title\" and was not used.",
+        "This story URL is not linked from the timeline data in the repository."
+      ]
+    },
+    {
+      "slug": "erwe",
+      "participantCode": "ERWE",
+      "sourceUrl": "https://www.ourwayoflifearchive.com/s/stories/erwe",
+      "status": "extracted",
+      "languages": {
+        "en": true,
+        "es": true,
+        "zh": false
+      },
+      "paragraphCounts": {
+        "en": 4,
+        "es": 4,
+        "zh": 0,
+        "undetermined": 0
+      },
+      "linkCount": 0,
+      "images": 0,
+      "relatedEventIds": [],
+      "notes": [
+        "Weebly image field has no public URL.",
+        "Weebly post title is the placeholder \"Story title\" and was not used.",
+        "This story URL is not linked from the timeline data in the repository."
+      ]
+    },
+    {
+      "slug": "etny",
+      "participantCode": "ETNY",
+      "sourceUrl": "https://www.ourwayoflifearchive.com/s/stories/etny",
+      "status": "extracted",
+      "languages": {
+        "en": true,
+        "es": false,
+        "zh": false
+      },
+      "paragraphCounts": {
+        "en": 3,
+        "es": 0,
+        "zh": 0,
+        "undetermined": 0
+      },
+      "linkCount": 0,
+      "images": 1,
+      "relatedEventIds": [
+        "16-1961-the-u-s-increases-military-in-the-vietnam-w",
+        "34-black-lives-matter"
+      ],
+      "notes": [
+        "Weebly image field has no public URL.",
+        "Weebly post title is the placeholder \"Story title\" and was not used."
+      ]
+    },
+    {
+      "slug": "frnj",
+      "participantCode": "FRNJ",
+      "sourceUrl": "https://www.ourwayoflifearchive.com/s/stories/frnj",
+      "status": "extracted",
+      "languages": {
+        "en": true,
+        "es": false,
+        "zh": false
+      },
+      "paragraphCounts": {
+        "en": 3,
+        "es": 0,
+        "zh": 0,
+        "undetermined": 0
+      },
+      "linkCount": 0,
+      "images": 1,
+      "relatedEventIds": [
+        "13-the-civil-rights-movement"
+      ],
+      "notes": [
+        "Weebly image field has no public URL.",
+        "Weebly post title is the placeholder \"Story title\" and was not used."
+      ]
+    },
+    {
+      "slug": "hsnj",
+      "participantCode": "HSNJ",
+      "sourceUrl": "https://www.ourwayoflifearchive.com/s/stories/hsnj",
+      "status": "extracted",
+      "languages": {
+        "en": true,
+        "es": false,
+        "zh": false
+      },
+      "paragraphCounts": {
+        "en": 3,
+        "es": 0,
+        "zh": 0,
+        "undetermined": 0
+      },
+      "linkCount": 0,
+      "images": 1,
+      "relatedEventIds": [
+        "15-emmett-till-murdered",
+        "16-1961-the-u-s-increases-military-in-the-vietnam-w"
+      ],
+      "notes": [
+        "Weebly image field has no public URL.",
+        "Weebly post title is the placeholder \"Story title\" and was not used."
+      ]
+    },
+    {
+      "slug": "jmwe",
+      "participantCode": "JMWE",
+      "sourceUrl": "https://www.ourwayoflifearchive.com/s/stories/jmwe",
+      "status": "extracted",
+      "languages": {
+        "en": true,
+        "es": true,
+        "zh": false
+      },
+      "paragraphCounts": {
+        "en": 4,
+        "es": 4,
+        "zh": 0,
+        "undetermined": 0
+      },
+      "linkCount": 0,
+      "images": 0,
+      "relatedEventIds": [],
+      "notes": [
+        "Weebly image field has no public URL.",
+        "Weebly post title is the placeholder \"Story title\" and was not used.",
+        "This story URL is not linked from the timeline data in the repository."
+      ]
+    },
+    {
+      "slug": "lawe",
+      "participantCode": "LAWE",
+      "sourceUrl": "https://www.ourwayoflifearchive.com/s/stories/lawe",
+      "status": "extracted",
+      "languages": {
+        "en": true,
+        "es": true,
+        "zh": false
+      },
+      "paragraphCounts": {
+        "en": 4,
+        "es": 4,
+        "zh": 0,
+        "undetermined": 0
+      },
+      "linkCount": 0,
+      "images": 0,
+      "relatedEventIds": [],
+      "notes": [
+        "Weebly image field has no public URL.",
+        "Weebly post title is the placeholder \"Story title\" and was not used.",
+        "This story URL is not linked from the timeline data in the repository."
+      ]
+    },
+    {
+      "slug": "lrnj",
+      "participantCode": "LRNJ",
+      "sourceUrl": "https://www.ourwayoflifearchive.com/s/stories/lrnj",
+      "status": "extracted",
+      "languages": {
+        "en": true,
+        "es": false,
+        "zh": false
+      },
+      "paragraphCounts": {
+        "en": 3,
+        "es": 0,
+        "zh": 0,
+        "undetermined": 0
+      },
+      "linkCount": 0,
+      "images": 1,
+      "relatedEventIds": [
+        "23-1982-hiv-aids-epidemic"
+      ],
+      "notes": [
+        "Weebly image field has no public URL.",
+        "Weebly post title is the placeholder \"Story title\" and was not used."
+      ]
+    },
+    {
+      "slug": "mgnj",
+      "participantCode": "MGNJ",
+      "sourceUrl": "https://www.ourwayoflifearchive.com/s/stories/mgnj",
+      "status": "extracted",
+      "languages": {
+        "en": false,
+        "es": true,
+        "zh": false
+      },
+      "paragraphCounts": {
+        "en": 0,
+        "es": 3,
+        "zh": 0,
+        "undetermined": 0
+      },
+      "linkCount": 0,
+      "images": 1,
+      "relatedEventIds": [
+        "01-colonization-of-the-americas"
+      ],
+      "notes": [
+        "Weebly image field has no public URL.",
+        "Weebly post title is the placeholder \"Story title\" and was not used."
+      ]
+    },
+    {
+      "slug": "mlnj",
+      "participantCode": "MLNJ",
+      "sourceUrl": "https://www.ourwayoflifearchive.com/s/stories/mlnj",
+      "status": "extracted",
+      "languages": {
+        "en": true,
+        "es": false,
+        "zh": false
+      },
+      "paragraphCounts": {
+        "en": 3,
+        "es": 0,
+        "zh": 0,
+        "undetermined": 0
+      },
+      "linkCount": 0,
+      "images": 1,
+      "relatedEventIds": [
+        "01-colonization-of-the-americas",
+        "17-1964-malcolm-x-the-ballot-or-the-bullet",
+        "20-1967-adam-clayton-powell-what-s-in-your-hand-spe"
+      ],
+      "notes": [
+        "Weebly image field has no public URL.",
+        "Weebly post title is the placeholder \"Story title\" and was not used."
+      ]
+    },
+    {
+      "slug": "mmwe",
+      "participantCode": "MMWE",
+      "sourceUrl": "https://www.ourwayoflifearchive.com/s/stories/mmwe",
+      "status": "extracted",
+      "languages": {
+        "en": true,
+        "es": true,
+        "zh": false
+      },
+      "paragraphCounts": {
+        "en": 4,
+        "es": 4,
+        "zh": 0,
+        "undetermined": 0
+      },
+      "linkCount": 0,
+      "images": 0,
+      "relatedEventIds": [],
+      "notes": [
+        "Weebly image field has no public URL.",
+        "Weebly post title is the placeholder \"Story title\" and was not used.",
+        "This story URL is not linked from the timeline data in the repository."
+      ]
+    },
+    {
+      "slug": "mvwe",
+      "participantCode": "MVWE",
+      "sourceUrl": "https://www.ourwayoflifearchive.com/s/stories/mvwe",
+      "status": "extracted",
+      "languages": {
+        "en": true,
+        "es": true,
+        "zh": false
+      },
+      "paragraphCounts": {
+        "en": 4,
+        "es": 6,
+        "zh": 0,
+        "undetermined": 0
+      },
+      "linkCount": 0,
+      "images": 0,
+      "relatedEventIds": [],
+      "notes": [
+        "Weebly image field has no public URL.",
+        "Weebly post title is the placeholder \"Story title\" and was not used.",
+        "This story URL is not linked from the timeline data in the repository."
+      ]
+    },
+    {
+      "slug": "ncnj",
+      "participantCode": "NCNJ",
+      "sourceUrl": "https://www.ourwayoflifearchive.com/s/stories/ncnj",
+      "status": "extracted",
+      "languages": {
+        "en": false,
+        "es": true,
+        "zh": false
+      },
+      "paragraphCounts": {
+        "en": 0,
+        "es": 3,
+        "zh": 0,
+        "undetermined": 0
+      },
+      "linkCount": 0,
+      "images": 1,
+      "relatedEventIds": [
+        "24-1986-reagan-signs-the-immigration-reform-and-con",
+        "33-covid-19-pandemic"
+      ],
+      "notes": [
+        "Weebly image field has no public URL.",
+        "Weebly post title is the placeholder \"Story title\" and was not used."
+      ]
+    },
+    {
+      "slug": "nrwe",
+      "participantCode": "NRWE",
+      "sourceUrl": "https://www.ourwayoflifearchive.com/s/stories/nrwe",
+      "status": "extracted",
+      "languages": {
+        "en": true,
+        "es": true,
+        "zh": false
+      },
+      "paragraphCounts": {
+        "en": 4,
+        "es": 4,
+        "zh": 0,
+        "undetermined": 0
+      },
+      "linkCount": 0,
+      "images": 0,
+      "relatedEventIds": [],
+      "notes": [
+        "Weebly image field has no public URL.",
+        "Weebly post title is the placeholder \"Story title\" and was not used.",
+        "This story URL is not linked from the timeline data in the repository."
+      ]
+    },
+    {
+      "slug": "rbny",
+      "participantCode": "RBNY",
+      "sourceUrl": "https://www.ourwayoflifearchive.com/s/stories/rbny",
+      "status": "extracted",
+      "languages": {
+        "en": true,
+        "es": false,
+        "zh": false
+      },
+      "paragraphCounts": {
+        "en": 3,
+        "es": 0,
+        "zh": 0,
+        "undetermined": 0
+      },
+      "linkCount": 0,
+      "images": 1,
+      "relatedEventIds": [
+        "23-1982-hiv-aids-epidemic"
+      ],
+      "notes": [
+        "Weebly image field has no public URL."
+      ]
+    },
+    {
+      "slug": "rhwe",
+      "participantCode": "RHWE",
+      "sourceUrl": "https://www.ourwayoflifearchive.com/s/stories/rhwe",
+      "status": "extracted",
+      "languages": {
+        "en": true,
+        "es": true,
+        "zh": false
+      },
+      "paragraphCounts": {
+        "en": 4,
+        "es": 4,
+        "zh": 0,
+        "undetermined": 0
+      },
+      "linkCount": 0,
+      "images": 0,
+      "relatedEventIds": [],
+      "notes": [
+        "Weebly image field has no public URL.",
+        "Weebly post title is the placeholder \"Story title\" and was not used.",
+        "This story URL is not linked from the timeline data in the repository."
+      ]
+    },
+    {
+      "slug": "senj",
+      "participantCode": "SENJ",
+      "sourceUrl": "https://www.ourwayoflifearchive.com/s/stories/senj",
+      "status": "extracted",
+      "languages": {
+        "en": true,
+        "es": false,
+        "zh": false
+      },
+      "paragraphCounts": {
+        "en": 3,
+        "es": 0,
+        "zh": 0,
+        "undetermined": 0
+      },
+      "linkCount": 0,
+      "images": 1,
+      "relatedEventIds": [
+        "04-1865-voting-rights"
+      ],
+      "notes": [
+        "Weebly image field has no public URL."
+      ]
+    },
+    {
+      "slug": "wpny",
+      "participantCode": "WPNY",
+      "sourceUrl": "https://www.ourwayoflifearchive.com/s/stories/wpny",
+      "status": "extracted",
+      "languages": {
+        "en": true,
+        "es": false,
+        "zh": false
+      },
+      "paragraphCounts": {
+        "en": 3,
+        "es": 0,
+        "zh": 0,
+        "undetermined": 0
+      },
+      "linkCount": 0,
+      "images": 1,
+      "relatedEventIds": [
+        "06-1920-harlem-renaissance",
+        "16-1961-the-u-s-increases-military-in-the-vietnam-w"
+      ],
+      "notes": [
+        "Weebly image field has no public URL."
+      ]
+    },
+    {
+      "slug": "bmnj6",
+      "participantCode": "BMNJ6",
+      "sourceUrl": "https://www.ourwayoflifearchive.com/s/stories/bmnj6",
+      "status": "missing",
+      "languages": {
+        "en": false,
+        "es": false,
+        "zh": false
+      },
+      "paragraphCounts": {
+        "en": 0,
+        "es": 0,
+        "zh": 0,
+        "undetermined": 0
+      },
+      "linkCount": 0,
+      "images": 0,
+      "relatedEventIds": [
+        "28-2005-hurricane-katrina-devastates-new-orleans-co",
+        "30-2012-daca-is-established"
+      ],
+      "notes": [
+        "No Weebly story was published at the timeline link."
+      ]
+    },
+    {
+      "slug": "dhnj",
+      "participantCode": "DHNJ",
+      "sourceUrl": "https://www.ourwayoflifearchive.com/s/stories/dhnj",
+      "status": "missing",
+      "languages": {
+        "en": false,
+        "es": false,
+        "zh": false
+      },
+      "paragraphCounts": {
+        "en": 0,
+        "es": 0,
+        "zh": 0,
+        "undetermined": 0
+      },
+      "linkCount": 0,
+      "images": 0,
+      "relatedEventIds": [
+        "27-2003-ice-is-established",
+        "31-2019-new-jersey-signs-licenses-for-all"
+      ],
+      "notes": [
+        "No Weebly story was published at the timeline link."
+      ]
+    },
+    {
+      "slug": "etny6",
+      "participantCode": "ETNY6",
+      "sourceUrl": "https://www.ourwayoflifearchive.com/s/stories/etny6",
+      "status": "missing",
+      "languages": {
+        "en": false,
+        "es": false,
+        "zh": false
+      },
+      "paragraphCounts": {
+        "en": 0,
+        "es": 0,
+        "zh": 0,
+        "undetermined": 0
+      },
+      "linkCount": 0,
+      "images": 0,
+      "relatedEventIds": [
+        "29-2008-president-barack-obama-is-elected"
+      ],
+      "notes": [
+        "No Weebly story was published at the timeline link."
+      ]
+    },
+    {
+      "slug": "frnj6",
+      "participantCode": "FRNJ6",
+      "sourceUrl": "https://www.ourwayoflifearchive.com/s/stories/frnj6",
+      "status": "missing",
+      "languages": {
+        "en": false,
+        "es": false,
+        "zh": false
+      },
+      "paragraphCounts": {
+        "en": 0,
+        "es": 0,
+        "zh": 0,
+        "undetermined": 0
+      },
+      "linkCount": 0,
+      "images": 0,
+      "relatedEventIds": [
+        "11-1949-the-groveland-four"
+      ],
+      "notes": [
+        "No Weebly story was published at the timeline link."
+      ]
+    },
+    {
+      "slug": "mlnj6",
+      "participantCode": "MLNJ6",
+      "sourceUrl": "https://www.ourwayoflifearchive.com/s/stories/mlnj6",
+      "status": "missing",
+      "languages": {
+        "en": false,
+        "es": false,
+        "zh": false
+      },
+      "paragraphCounts": {
+        "en": 0,
+        "es": 0,
+        "zh": 0,
+        "undetermined": 0
+      },
+      "linkCount": 0,
+      "images": 0,
+      "relatedEventIds": [
+        "14-brown-vs-boe-of-topeka",
+        "18-1966-kwanzaa-is-founded"
+      ],
+      "notes": [
+        "No Weebly story was published at the timeline link."
+      ]
+    },
+    {
+      "slug": "rbny7",
+      "participantCode": "RBNY7",
+      "sourceUrl": "https://www.ourwayoflifearchive.com/s/stories/rbny7",
+      "status": "missing",
+      "languages": {
+        "en": false,
+        "es": false,
+        "zh": false
+      },
+      "paragraphCounts": {
+        "en": 0,
+        "es": 0,
+        "zh": 0,
+        "undetermined": 0
+      },
+      "linkCount": 0,
+      "images": 0,
+      "relatedEventIds": [
+        "13-the-civil-rights-movement",
+        "14-brown-vs-boe-of-topeka",
+        "21-1969-stonewall-riots"
+      ],
+      "notes": [
+        "No Weebly story was published at the timeline link."
+      ]
+    },
+    {
+      "slug": "senj6",
+      "participantCode": "SENJ6",
+      "sourceUrl": "https://www.ourwayoflifearchive.com/s/stories/senj6",
+      "status": "missing",
+      "languages": {
+        "en": false,
+        "es": false,
+        "zh": false
+      },
+      "paragraphCounts": {
+        "en": 0,
+        "es": 0,
+        "zh": 0,
+        "undetermined": 0
+      },
+      "linkCount": 0,
+      "images": 0,
+      "relatedEventIds": [
+        "06-1920-harlem-renaissance",
+        "08-1940-white-flight",
+        "29-2008-president-barack-obama-is-elected"
+      ],
+      "notes": [
+        "No Weebly story was published at the timeline link."
+      ]
+    }
+  ],
+  "errors": [],
+  "summary": {
+    "extracted": 26,
+    "incomplete": 0,
+    "missing": 7,
+    "errors": 0,
+    "english": 23,
+    "spanish": 16,
+    "chinese": 0,
+    "withLinks": 0,
+    "readyToImport": 26
+  }
+}

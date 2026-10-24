@@ -1,0 +1,481 @@
+{
+  "mode": "dry-run",
+  "writtenAt": "2026-10-24T07:23:43.046Z",
+  "importDirectory": "source-documents/african-american",
+  "discovery": "Recursive filename match on the normalized participant code. Exact Drive filenames are not required.",
+  "sanityNote": "",
+  "localInventory": [
+    {
+      "relativePath": "African American Stories/BMNJ6 Stories.docx",
+      "bytes": 59497,
+      "originalCode": "BMNJ6",
+      "normalizedCode": "BMNJ",
+      "status": "valid",
+      "detail": "DOCX zip archive"
+    },
+    {
+      "relativePath": "African American Stories/ETNY6 Stories- FInal.docx",
+      "bytes": 35127,
+      "originalCode": "ETNY6",
+      "normalizedCode": "ETNY",
+      "status": "valid",
+      "detail": "DOCX zip archive"
+    },
+    {
+      "relativePath": "African American Stories/FRNJ6 Stories- Elicitation Final.docx",
+      "bytes": 213843,
+      "originalCode": "FRNJ6",
+      "normalizedCode": "FRNJ",
+      "status": "valid",
+      "detail": "DOCX zip archive"
+    },
+    {
+      "relativePath": "African American Stories/HSNJ6 Stories-Final.docx",
+      "bytes": 35947,
+      "originalCode": "HSNJ6",
+      "normalizedCode": "HSNJ",
+      "status": "valid",
+      "detail": "DOCX zip archive"
+    },
+    {
+      "relativePath": "African American Stories/MLNJ/MLNJ Elicitation Exercise- Sent to participant.docx",
+      "bytes": 617877,
+      "originalCode": "MLNJ",
+      "normalizedCode": "MLNJ",
+      "status": "valid",
+      "detail": "DOCX zip archive"
+    },
+    {
+      "relativePath": "African American Stories/MLNJ/MLNJ6 Finalized.docx",
+      "bytes": 41803,
+      "originalCode": "MLNJ6",
+      "normalizedCode": "MLNJ",
+      "status": "valid",
+      "detail": "DOCX zip archive"
+    },
+    {
+      "relativePath": "African American Stories/RBNY7 stories final.docx",
+      "bytes": 67454,
+      "originalCode": "RBNY7",
+      "normalizedCode": "RBNY",
+      "status": "valid",
+      "detail": "DOCX zip archive"
+    },
+    {
+      "relativePath": "African American Stories/SENJ6 Stories- finalized.docx",
+      "bytes": 55476,
+      "originalCode": "SENJ6",
+      "normalizedCode": "SENJ",
+      "status": "valid",
+      "detail": "DOCX zip archive"
+    },
+    {
+      "relativePath": "African American Stories/WPNY7 Stories-Finalized.docx",
+      "bytes": 61999,
+      "originalCode": "WPNY7",
+      "normalizedCode": "WPNY",
+      "status": "valid",
+      "detail": "DOCX zip archive"
+    }
+  ],
+  "documentsDiscovered": 9,
+  "documentsRead": 9,
+  "unmatchedLocalFiles": [],
+  "duplicateCodes": [
+    {
+      "canonical": "MLNJ",
+      "files": [
+        "African American Stories/MLNJ/MLNJ Elicitation Exercise- Sent to participant.docx",
+        "African American Stories/MLNJ/MLNJ6 Finalized.docx"
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "originalFilename": "MLNJ Elicitation Exercise- Sent to participant.docx",
+      "relativePath": "African American Stories/MLNJ/MLNJ Elicitation Exercise- Sent to participant.docx",
+      "bytes": 617877,
+      "originalCode": "MLNJ",
+      "normalizedCode": "MLNJ",
+      "verifiedCommunity": "African American Stories",
+      "existingSanityStory": "No",
+      "existingWeeblyArticle": "Yes",
+      "languages": "en",
+      "paragraphCount": 18,
+      "storySectionCount": 0,
+      "contentCharacters": 10410,
+      "imageCount": 1,
+      "articleStatus": "Complete",
+      "proposedAction": "Review",
+      "proposedStoryId": "story-mlnj-elicitation",
+      "proposedDraftId": "drafts.story-mlnj-elicitation",
+      "proposedSlug": "mlnj-elicitation",
+      "existingSanityId": null,
+      "missingDependencies": [
+        "timeline-14-brown-vs-boe-of-topeka",
+        "timeline-17-1964-malcolm-x-the-ballot-or-the-bullet",
+        "timeline-18-1966-kwanzaa-is-founded",
+        "timeline-20-1967-adam-clayton-powell-what-s-in-your-hand-spe"
+      ],
+      "representation": "Separate Story document for the same Participant. It is not merged into the primary story.",
+      "editorialDifference": null,
+      "conflict": "This second Word document was kept separate. It is not part of the default import. 4 timeline documents are not in Sanity. Those references were left off.",
+      "sourceStatus": "Read successfully",
+      "driveId": "1K4pjBpx_TnzihxTZERJ9NcJSnv3u2ra4",
+      "warnings": []
+    },
+    {
+      "originalFilename": "MLNJ6 Finalized.docx",
+      "relativePath": "African American Stories/MLNJ/MLNJ6 Finalized.docx",
+      "bytes": 41803,
+      "originalCode": "MLNJ6",
+      "normalizedCode": "MLNJ",
+      "verifiedCommunity": "African American Stories",
+      "existingSanityStory": "No",
+      "existingWeeblyArticle": "Yes",
+      "languages": "en",
+      "paragraphCount": 145,
+      "storySectionCount": 23,
+      "contentCharacters": 68866,
+      "imageCount": 0,
+      "articleStatus": "Complete",
+      "proposedAction": "Create",
+      "proposedStoryId": "story-mlnj",
+      "proposedDraftId": "drafts.story-mlnj",
+      "proposedSlug": "mlnj",
+      "existingSanityId": null,
+      "missingDependencies": [
+        "timeline-14-brown-vs-boe-of-topeka",
+        "timeline-17-1964-malcolm-x-the-ballot-or-the-bullet",
+        "timeline-18-1966-kwanzaa-is-founded",
+        "timeline-20-1967-adam-clayton-powell-what-s-in-your-hand-spe"
+      ],
+      "representation": "One Story document. Numbered sections stay in that article as headings and are not separate Sanity documents.",
+      "editorialDifference": null,
+      "conflict": "23 numbered sections are stored as headings inside this one story. 4 timeline documents are not in Sanity. Those references were left off.",
+      "sourceStatus": "Read successfully",
+      "driveId": "1K4pjBpx_TnzihxTZERJ9NcJSnv3u2ra4",
+      "warnings": []
+    },
+    {
+      "originalFilename": "BMNJ6 Stories.docx",
+      "relativePath": "African American Stories/BMNJ6 Stories.docx",
+      "bytes": 59497,
+      "originalCode": "BMNJ6",
+      "normalizedCode": "BMNJ",
+      "verifiedCommunity": "African American Stories",
+      "existingSanityStory": "No",
+      "existingWeeblyArticle": "Yes",
+      "languages": "en",
+      "paragraphCount": 150,
+      "storySectionCount": 35,
+      "contentCharacters": 59488,
+      "imageCount": 0,
+      "articleStatus": "Complete",
+      "proposedAction": "Create",
+      "proposedStoryId": "story-bmnj",
+      "proposedDraftId": "drafts.story-bmnj",
+      "proposedSlug": "bmnj",
+      "existingSanityId": null,
+      "missingDependencies": [
+        "timeline-14-brown-vs-boe-of-topeka",
+        "timeline-15-emmett-till-murdered",
+        "timeline-28-2005-hurricane-katrina-devastates-new-orleans-co",
+        "timeline-30-2012-daca-is-established",
+        "timeline-32-2020-new-jersey-restores-voting-rights-to-former"
+      ],
+      "representation": "One Story document. Numbered sections stay in that article as headings and are not separate Sanity documents.",
+      "editorialDifference": null,
+      "conflict": "35 numbered sections are stored as headings inside this one story. 5 timeline documents are not in Sanity. Those references were left off.",
+      "sourceStatus": "Read successfully",
+      "driveId": "1uXOF0DI01aKBk_BSPjc0nuLTzRoZMCAn",
+      "warnings": []
+    },
+    {
+      "originalFilename": "ETNY6 Stories- FInal.docx",
+      "relativePath": "African American Stories/ETNY6 Stories- FInal.docx",
+      "bytes": 35127,
+      "originalCode": "ETNY6",
+      "normalizedCode": "ETNY",
+      "verifiedCommunity": "African American Stories",
+      "existingSanityStory": "No",
+      "existingWeeblyArticle": "Yes",
+      "languages": "en",
+      "paragraphCount": 74,
+      "storySectionCount": 23,
+      "contentCharacters": 26464,
+      "imageCount": 0,
+      "articleStatus": "Complete",
+      "proposedAction": "Create",
+      "proposedStoryId": "story-etny",
+      "proposedDraftId": "drafts.story-etny",
+      "proposedSlug": "etny",
+      "existingSanityId": null,
+      "missingDependencies": [
+        "timeline-16-1961-the-u-s-increases-military-in-the-vietnam-w",
+        "timeline-29-2008-president-barack-obama-is-elected",
+        "timeline-34-black-lives-matter"
+      ],
+      "representation": "One Story document. Numbered sections stay in that article as headings and are not separate Sanity documents.",
+      "editorialDifference": null,
+      "conflict": "23 numbered sections are stored as headings inside this one story. 3 timeline documents are not in Sanity. Those references were left off.",
+      "sourceStatus": "Read successfully",
+      "driveId": "1_qoQZ5yut8ujaYoTwLsUq8JiIa4vv8p8",
+      "warnings": []
+    },
+    {
+      "originalFilename": "FRNJ6 Stories- Elicitation Final.docx",
+      "relativePath": "African American Stories/FRNJ6 Stories- Elicitation Final.docx",
+      "bytes": 213843,
+      "originalCode": "FRNJ6",
+      "normalizedCode": "FRNJ",
+      "verifiedCommunity": "African American Stories",
+      "existingSanityStory": "Yes",
+      "existingWeeblyArticle": "Yes",
+      "languages": "en",
+      "paragraphCount": 147,
+      "storySectionCount": 27,
+      "contentCharacters": 52893,
+      "imageCount": 1,
+      "articleStatus": "Complete",
+      "proposedAction": "Preserve",
+      "proposedStoryId": "story-frnj",
+      "proposedDraftId": "drafts.story-frnj",
+      "proposedSlug": "frnj",
+      "existingSanityId": "362fbdab-460c-421b-ba63-61add1e64c86",
+      "missingDependencies": [
+        "timeline-11-1949-the-groveland-four",
+        "timeline-13-the-civil-rights-movement"
+      ],
+      "representation": "One Story document. Numbered sections stay in that article as headings and are not separate Sanity documents.",
+      "editorialDifference": {
+        "docxCharacters": 52893,
+        "sanityCharacters": 25987,
+        "docxParagraphs": 147,
+        "sanityParagraphs": 41,
+        "identicalParagraphs": 0,
+        "docxOnlyParagraphs": 147,
+        "sameText": false
+      },
+      "conflict": "An existing Sanity story already has this participant. Its article was not changed. 2 timeline documents are not in Sanity. Those references were left off. DOCX and the Sanity article differ: 0 identical paragraphs, 147 paragraphs only in the Word document, 25987 characters in Sanity and 52893 in the Word document.",
+      "sourceStatus": "Read successfully",
+      "driveId": "1hHV5rNKtJpRUepNVW_ouNoDu9XDCkQX5",
+      "warnings": []
+    },
+    {
+      "originalFilename": "HSNJ6 Stories-Final.docx",
+      "relativePath": "African American Stories/HSNJ6 Stories-Final.docx",
+      "bytes": 35947,
+      "originalCode": "HSNJ6",
+      "normalizedCode": "HSNJ",
+      "verifiedCommunity": "African American Stories",
+      "existingSanityStory": "No",
+      "existingWeeblyArticle": "Yes",
+      "languages": "en",
+      "paragraphCount": 128,
+      "storySectionCount": 0,
+      "contentCharacters": 46903,
+      "imageCount": 0,
+      "articleStatus": "Complete",
+      "proposedAction": "Create",
+      "proposedStoryId": "story-hsnj",
+      "proposedDraftId": "drafts.story-hsnj",
+      "proposedSlug": "hsnj",
+      "existingSanityId": null,
+      "missingDependencies": [
+        "timeline-15-emmett-till-murdered",
+        "timeline-16-1961-the-u-s-increases-military-in-the-vietnam-w"
+      ],
+      "representation": "One Story document. Numbered sections stay in that article as headings and are not separate Sanity documents.",
+      "editorialDifference": null,
+      "conflict": "No numbered story labels were found. The paragraphs stay in their original order inside this one story. 2 timeline documents are not in Sanity. Those references were left off.",
+      "sourceStatus": "Read successfully",
+      "driveId": "1gC23_1LEJfB33abOiBfl6EC-nvAEhAGw",
+      "warnings": [
+        "Unrecognised paragraph style: 'Body Text' (Style ID: BodyText)"
+      ]
+    },
+    {
+      "originalFilename": "RBNY7 stories final.docx",
+      "relativePath": "African American Stories/RBNY7 stories final.docx",
+      "bytes": 67454,
+      "originalCode": "RBNY7",
+      "normalizedCode": "RBNY",
+      "verifiedCommunity": "African American Stories",
+      "existingSanityStory": "No",
+      "existingWeeblyArticle": "Yes",
+      "languages": "en",
+      "paragraphCount": 174,
+      "storySectionCount": 33,
+      "contentCharacters": 67792,
+      "imageCount": 0,
+      "articleStatus": "Complete",
+      "proposedAction": "Create",
+      "proposedStoryId": "story-rbny",
+      "proposedDraftId": "drafts.story-rbny",
+      "proposedSlug": "rbny",
+      "existingSanityId": null,
+      "missingDependencies": [
+        "timeline-13-the-civil-rights-movement",
+        "timeline-14-brown-vs-boe-of-topeka",
+        "timeline-21-1969-stonewall-riots",
+        "timeline-23-1982-hiv-aids-epidemic"
+      ],
+      "representation": "One Story document. Numbered sections stay in that article as headings and are not separate Sanity documents.",
+      "editorialDifference": null,
+      "conflict": "33 numbered sections are stored as headings inside this one story. 4 timeline documents are not in Sanity. Those references were left off.",
+      "sourceStatus": "Read successfully",
+      "driveId": "1EUBvkseRBcLZT1cKjqM8zaK6Kl6ZdZ2t",
+      "warnings": []
+    },
+    {
+      "originalFilename": "SENJ6 Stories- finalized.docx",
+      "relativePath": "African American Stories/SENJ6 Stories- finalized.docx",
+      "bytes": 55476,
+      "originalCode": "SENJ6",
+      "normalizedCode": "SENJ",
+      "verifiedCommunity": "African American Stories",
+      "existingSanityStory": "No",
+      "existingWeeblyArticle": "Yes",
+      "languages": "en",
+      "paragraphCount": 177,
+      "storySectionCount": 29,
+      "contentCharacters": 60210,
+      "imageCount": 0,
+      "articleStatus": "Complete",
+      "proposedAction": "Create",
+      "proposedStoryId": "story-senj",
+      "proposedDraftId": "drafts.story-senj",
+      "proposedSlug": "senj",
+      "existingSanityId": null,
+      "missingDependencies": [
+        "timeline-04-1865-voting-rights",
+        "timeline-06-1920-harlem-renaissance",
+        "timeline-08-1940-white-flight",
+        "timeline-29-2008-president-barack-obama-is-elected"
+      ],
+      "representation": "One Story document. Numbered sections stay in that article as headings and are not separate Sanity documents.",
+      "editorialDifference": null,
+      "conflict": "29 numbered sections are stored as headings inside this one story. 4 timeline documents are not in Sanity. Those references were left off.",
+      "sourceStatus": "Read successfully",
+      "driveId": "1S5Acjq0Iw2M0KCvm_ob3Jv35ErgXlz2B",
+      "warnings": []
+    },
+    {
+      "originalFilename": "WPNY7 Stories-Finalized.docx",
+      "relativePath": "African American Stories/WPNY7 Stories-Finalized.docx",
+      "bytes": 61999,
+      "originalCode": "WPNY7",
+      "normalizedCode": "WPNY",
+      "verifiedCommunity": "African American Stories",
+      "existingSanityStory": "No",
+      "existingWeeblyArticle": "Yes",
+      "languages": "en",
+      "paragraphCount": 171,
+      "storySectionCount": 31,
+      "contentCharacters": 66188,
+      "imageCount": 0,
+      "articleStatus": "Complete",
+      "proposedAction": "Create",
+      "proposedStoryId": "story-wpny",
+      "proposedDraftId": "drafts.story-wpny",
+      "proposedSlug": "wpny",
+      "existingSanityId": null,
+      "missingDependencies": [
+        "timeline-06-1920-harlem-renaissance",
+        "timeline-16-1961-the-u-s-increases-military-in-the-vietnam-w"
+      ],
+      "representation": "One Story document. Numbered sections stay in that article as headings and are not separate Sanity documents.",
+      "editorialDifference": null,
+      "conflict": "31 numbered sections are stored as headings inside this one story. 2 timeline documents are not in Sanity. Those references were left off.",
+      "sourceStatus": "Read successfully",
+      "driveId": "1k3Gg1aEOSLKx1XXCoTmhWYSQKE4swkDR",
+      "warnings": [
+        "Unrecognised paragraph style: 'Standard' (Style ID: Standard)"
+      ]
+    }
+  ],
+  "collisions": [
+    {
+      "canonical": "BMNJ",
+      "originals": [
+        "BMNJ",
+        "BMNJ6"
+      ]
+    },
+    {
+      "canonical": "ETNY",
+      "originals": [
+        "ETNY",
+        "ETNY6"
+      ]
+    },
+    {
+      "canonical": "FRNJ",
+      "originals": [
+        "FRNJ",
+        "FRNJ6"
+      ]
+    },
+    {
+      "canonical": "HSNJ",
+      "originals": [
+        "HSNJ",
+        "HSNJ6"
+      ]
+    },
+    {
+      "canonical": "MLNJ",
+      "originals": [
+        "MLNJ",
+        "MLNJ6"
+      ]
+    },
+    {
+      "canonical": "RBNY",
+      "originals": [
+        "RBNY",
+        "RBNY7"
+      ]
+    },
+    {
+      "canonical": "SENJ",
+      "originals": [
+        "SENJ",
+        "SENJ6"
+      ]
+    },
+    {
+      "canonical": "WPNY",
+      "originals": [
+        "WPNY",
+        "WPNY7"
+      ]
+    }
+  ],
+  "summary": {
+    "discovered": 9,
+    "read": 9,
+    "missing": 0,
+    "invalid": 0,
+    "extractionFailed": 0,
+    "notAccessible": 0,
+    "duplicateCodes": 1,
+    "unmatched": 0,
+    "review": 1,
+    "preserve": 1,
+    "wouldCreate": 7,
+    "wouldSupplement": 0,
+    "sanityWrites": 0
+  },
+  "readyToCreate": [
+    "mlnj",
+    "bmnj",
+    "etny",
+    "hsnj",
+    "rbny",
+    "senj",
+    "wpny"
+  ],
+  "importCommand": "npx tsx scripts/migrate-docx.ts --apply --only=mlnj,bmnj,etny,hsnj,rbny,senj,wpny"
+}

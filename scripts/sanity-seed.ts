@@ -30,20 +30,32 @@ async function importDocuments() {
     useCdn: false,
   });
 
-  for (let index = 0; index < documents.length; index += 25) {
-    const batch = documents.slice(index, index + 25);
+  const existingIds = new Set(await client.fetch<string[]>(`*[_id in $ids]._id`, { ids: documents.map((document) => document._id) }));
+  const existingStorySlugs = new Set(
+    await client.fetch<string[]>(`*[_type == "story" && defined(slug.current)].slug.current`),
+  );
+  const pending = documents.filter((document) => {
+    if (existingIds.has(String(document._id))) return false;
+    const slug = (document as { slug?: { current?: string } }).slug?.current;
+    if (document._type === "story" && slug && existingStorySlugs.has(slug)) return false;
+    return true;
+  });
+  console.log(`Skipping ${documents.length - pending.length} documents that already exist.`);
+
+  for (let index = 0; index < pending.length; index += 25) {
+    const batch = pending.slice(index, index + 25);
     let transaction = client.transaction();
     for (const document of batch) {
-      transaction = transaction.createOrReplace(document as { _id: string; _type: string });
+      transaction = transaction.createIfNotExists(document as { _id: string; _type: string });
     }
     await transaction.commit();
-    console.log(`Imported ${Math.min(index + 25, documents.length)} / ${documents.length}`);
+    console.log(`Imported ${Math.min(index + 25, pending.length)} / ${pending.length}`);
   }
 }
 
 if (process.argv.includes("--import")) {
   importDocuments().catch((error) => {
-    console.error(error);
+    console.error(error instanceof Error ? error.message : "Sanity import failed.");
     process.exit(1);
   });
 }

@@ -1,6 +1,7 @@
+import { isStoryCollection } from "@/lib/content/collections";
 import type { PageDocument, SiteSettings } from "@/lib/content/copy";
 import { localPages, localSettings } from "@/lib/content/copy";
-import type { ArchiveStory, Photo, PreparedTimelineEvent } from "@/lib/content/derive";
+import type { ArchiveStory, Photo, PreparedTimelineEvent, StoryArticleBlock } from "@/lib/content/derive";
 import { portraitAlt } from "@/lib/content/derive";
 import type { LocalizedText, TimelineBlock } from "@/lib/timeline/types";
 import { sanityImageUrl } from "@/lib/sanity/image";
@@ -48,8 +49,12 @@ type SanityPhoto = {
 type SanityStory = {
   slug?: string;
   participantCode?: string;
+  collection?: string;
   title?: LocaleValue;
   summary?: LocaleValue;
+  body?: LocaleValue;
+  article?: { en?: StoryArticleBlock[] | null; es?: StoryArticleBlock[] | null; zh?: StoryArticleBlock[] | null } | null;
+  location?: LocaleValue;
   externalHref?: string;
   published?: boolean;
   photographs?: SanityPhoto[] | null;
@@ -145,6 +150,14 @@ export function mapTimeline(events: SanityEvent[] | null | undefined): PreparedT
     }));
 }
 
+function mapArticle(article: SanityStory["article"]): ArchiveStory["article"] {
+  const en = article?.en || [];
+  const es = article?.es || [];
+  const zh = article?.zh || [];
+  if (!en.length && !es.length && !zh.length) return undefined;
+  return { en, es, zh };
+}
+
 export function mapStories(stories: SanityStory[] | null | undefined): ArchiveStory[] {
   return (stories || [])
     .filter((story) => story.slug && story.participantCode)
@@ -155,12 +168,15 @@ export function mapStories(stories: SanityStory[] | null | undefined): ArchiveSt
         participantCode: code,
         title: locale(story.title).en ? locale(story.title) : { en: code, es: code, zh: code },
         summary: locale(story.summary),
+        body: story.body && (story.body.en || story.body.es || story.body.zh) ? locale(story.body) : undefined,
+        article: mapArticle(story.article),
+        location: story.location && (story.location.en || story.location.es || story.location.zh) ? locale(story.location) : undefined,
         photographs: (story.photographs || []).map((photo) => mapPhoto(photo, code)).filter((photo): photo is Photo => Boolean(photo)),
         quotations: (story.quotations || [])
-          .filter((quotation) => quotation.text && quotation.eventId)
+          .filter((quotation) => quotation.text && (quotation.text.en || quotation.text.es || quotation.text.zh))
           .map((quotation) => ({
             text: locale(quotation.text),
-            eventId: quotation.eventId as string,
+            eventId: quotation.eventId || "",
             eventDate: quotation.eventDate || "",
             eventTitle: locale(quotation.eventTitle),
           })),
@@ -169,6 +185,7 @@ export function mapStories(stories: SanityStory[] | null | undefined): ArchiveSt
           .map((event) => ({ id: event.id as string, date: event.date || "", title: locale(event.title) })),
         externalHref: story.externalHref || undefined,
         published: story.published !== false,
+        collection: isStoryCollection(story.collection) ? story.collection : undefined,
       };
     });
 }

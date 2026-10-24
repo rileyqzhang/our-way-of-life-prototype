@@ -6,7 +6,7 @@ export const client: SanityClient | null = isSanityConfigured()
       projectId,
       dataset,
       apiVersion,
-      useCdn: true,
+      useCdn: process.env.NODE_ENV === "production",
       perspective: "published",
     })
   : null;

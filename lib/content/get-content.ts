@@ -5,14 +5,24 @@ import { localArchive } from "@/lib/content/local";
 import { client, previewClient } from "@/lib/sanity/client";
 import { isSanityConfigured } from "@/lib/sanity/env";
 import { mapPages, mapSettings, mapStories, mapTimeline, type SanityArchive } from "@/lib/sanity/map";
+import { mergeTimeline } from "@/lib/content/derive";
+import { canonicalParticipantSlug } from "@/lib/migration/participant-code";
 import { archiveQuery } from "@/lib/sanity/queries";
+
+async function previewEnabled() {
+  try {
+    const draft = await draftMode();
+    return draft.isEnabled;
+  } catch {
+    return false;
+  }
+}
 
 async function readSanity(): Promise<ArchiveContent | null> {
   if (!client || !isSanityConfigured()) return null;
 
   try {
-    const draft = await draftMode();
-    const active = draft.isEnabled ? previewClient() : client;
+    const active = (await previewEnabled()) ? previewClient() : client;
     if (!active) return null;
     const data = await active.fetch<SanityArchive>(archiveQuery);
     const timeline = mapTimeline(data?.timeline);
@@ -21,7 +31,7 @@ async function readSanity(): Promise<ArchiveContent | null> {
     const local = localArchive();
     return {
       source: "sanity",
-      timeline: timeline.length ? timeline : local.timeline,
+      timeline: mergeTimeline(timeline, local.timeline),
       stories: stories.length ? stories : local.stories,
       pages: mapPages(data?.pages),
       settings: mapSettings(data?.settings),
@@ -38,5 +48,11 @@ export const getArchive = cache(async (): Promise<ArchiveContent> => {
 
 export async function getStory(slug: string) {
   const archive = await getArchive();
-  return archive.stories.find((story) => story.slug === slug) ?? null;
+  const direct = archive.stories.find((story) => story.slug === slug);
+  if (direct) return direct;
+  const canonical = canonicalParticipantSlug(slug);
+  if (canonical === slug) return null;
+  return (
+    archive.stories.find((story) => canonicalParticipantSlug(story.participantCode || story.slug) === canonical) ?? null
+  );
 }

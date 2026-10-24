@@ -1,0 +1,240 @@
+{
+  "mode": "dry-run",
+  "writtenAt": "2026-10-24T06:53:38.723Z",
+  "sourcesChecked": [
+    "Weebly navigation lists every participant under one Participants page.",
+    "The Weebly Participants page has unlabeled story grids, not Latine, African American, or Chinese collections.",
+    "Other Weebly pages mention those communities in prose and do not link them to story membership.",
+    "Repository timeline and seed documents do not store a community field.",
+    "Published Sanity Community values are preserved and are not treated as a source for other stories."
+  ],
+  "verified": [
+    {
+      "slug": "bmnj",
+      "action": "verified-not-imported",
+      "collection": "africanAmerican",
+      "detail": "African American Stories Google Drive group supplied for this import. Original file BMNJ6 Stories.docx. Drive id 1uXOF0DI01aKBk_BSPjc0nuLTzRoZMCAn. Original codes bmnj, bmnj6 match bmnj."
+    },
+    {
+      "slug": "etny",
+      "action": "verified-not-imported",
+      "collection": "africanAmerican",
+      "detail": "African American Stories Google Drive group supplied for this import. Original file ETNY6 Stories-Final.docx. Drive id 1_qoQZ5yut8ujaYoTwLsUq8JiIa4vv8p8. Original codes etny, etny6 match etny."
+    },
+    {
+      "slug": "hsnj",
+      "action": "verified-not-imported",
+      "collection": "africanAmerican",
+      "detail": "African American Stories Google Drive group supplied for this import. Original file HSNJ6 Stories-Final.docx. Drive id 1gC23_1LEJfB33abOiBfl6EC-nvAEhAGw."
+    },
+    {
+      "slug": "mlnj",
+      "action": "verified-not-imported",
+      "collection": "africanAmerican",
+      "detail": "African American Stories Google Drive group supplied for this import. Drive folder 1K4pjBpx_TnzihxTZERJ9NcJSnv3u2ra4 for MLNJ. Original codes mlnj, mlnj6 match mlnj."
+    },
+    {
+      "slug": "rbny",
+      "action": "verified-not-imported",
+      "collection": "africanAmerican",
+      "detail": "African American Stories Google Drive group supplied for this import. Original file RBNY7 stories final.docx. Drive id 1EUBvkseRBcLZT1cKjqM8zaK6Kl6ZdZ2t. Original codes rbny, rbny7 match rbny."
+    },
+    {
+      "slug": "senj",
+      "action": "verified-not-imported",
+      "collection": "africanAmerican",
+      "detail": "African American Stories Google Drive group supplied for this import. Original file SENJ6 Stories-finalized.docx. Drive id 1S5Acjq0Iw2M0KCvm_ob3Jv35ErgXlz2B. Original codes senj, senj6 match senj."
+    },
+    {
+      "slug": "wpny",
+      "action": "verified-not-imported",
+      "collection": "africanAmerican",
+      "detail": "African American Stories Google Drive group supplied for this import. Original file WPNY7 Stories-Finalized.docx. Drive id 1k3Gg1aEOSLKx1XXCoTmhWYSQKE4swkDR."
+    }
+  ],
+  "preserved": [
+    {
+      "slug": "frnj",
+      "action": "preserve",
+      "collection": "africanAmerican",
+      "detail": "Published Community is already set. It was not changed. Original codes frnj, frnj6 match frnj."
+    }
+  ],
+  "unresolved": [
+    {
+      "slug": "aawe",
+      "action": "review",
+      "collection": null,
+      "detail": "No explicit Weebly collection, repository metadata, or published editorial classification."
+    },
+    {
+      "slug": "alwe",
+      "action": "review",
+      "collection": null,
+      "detail": "No explicit Weebly collection, repository metadata, or published editorial classification."
+    },
+    {
+      "slug": "amwe",
+      "action": "review",
+      "collection": null,
+      "detail": "No explicit Weebly collection, repository metadata, or published editorial classification."
+    },
+    {
+      "slug": "crwe",
+      "action": "review",
+      "collection": null,
+      "detail": "No explicit Weebly collection, repository metadata, or published editorial classification."
+    },
+    {
+      "slug": "dhnj",
+      "action": "review",
+      "collection": null,
+      "detail": "No explicit Weebly collection, repository metadata, or published editorial classification."
+    },
+    {
+      "slug": "ebnj",
+      "action": "review",
+      "collection": null,
+      "detail": "No explicit Weebly collection, repository metadata, or published editorial classification."
+    },
+    {
+      "slug": "emnj",
+      "action": "review",
+      "collection": null,
+      "detail": "No explicit Weebly collection, repository metadata, or published editorial classification."
+    },
+    {
+      "slug": "emwe",
+      "action": "review",
+      "collection": null,
+      "detail": "No explicit Weebly collection, repository metadata, or published editorial classification."
+    },
+    {
+      "slug": "erowe",
+      "action": "review",
+      "collection": null,
+      "detail": "No explicit Weebly collection, repository metadata, or published editorial classification."
+    },
+    {
+      "slug": "erwe",
+      "action": "review",
+      "collection": null,
+      "detail": "No explicit Weebly collection, repository metadata, or published editorial classification."
+    },
+    {
+      "slug": "jmwe",
+      "action": "review",
+      "collection": null,
+      "detail": "No verified collection membership. An unpublished Studio value is africanAmerican; it was not published or copied."
+    },
+    {
+      "slug": "lawe",
+      "action": "review",
+      "collection": null,
+      "detail": "No explicit Weebly collection, repository metadata, or published editorial classification."
+    },
+    {
+      "slug": "lrnj",
+      "action": "review",
+      "collection": null,
+      "detail": "No explicit Weebly collection, repository metadata, or published editorial classification."
+    },
+    {
+      "slug": "mgnj",
+      "action": "review",
+      "collection": null,
+      "detail": "No explicit Weebly collection, repository metadata, or published editorial classification."
+    },
+    {
+      "slug": "mmwe",
+      "action": "review",
+      "collection": null,
+      "detail": "No explicit Weebly collection, repository metadata, or published editorial classification."
+    },
+    {
+      "slug": "mvwe",
+      "action": "review",
+      "collection": null,
+      "detail": "No explicit Weebly collection, repository metadata, or published editorial classification."
+    },
+    {
+      "slug": "ncnj",
+      "action": "review",
+      "collection": null,
+      "detail": "No explicit Weebly collection, repository metadata, or published editorial classification."
+    },
+    {
+      "slug": "nrwe",
+      "action": "review",
+      "collection": null,
+      "detail": "No explicit Weebly collection, repository metadata, or published editorial classification."
+    },
+    {
+      "slug": "rhwe",
+      "action": "review",
+      "collection": null,
+      "detail": "No explicit Weebly collection, repository metadata, or published editorial classification."
+    }
+  ],
+  "missingPortraits": [
+    "aawe",
+    "alwe",
+    "amwe",
+    "crwe",
+    "emwe",
+    "erowe",
+    "erwe",
+    "jmwe",
+    "lawe",
+    "mmwe",
+    "mvwe",
+    "nrwe",
+    "rhwe",
+    "bmnj6",
+    "dhnj",
+    "etny6",
+    "frnj6",
+    "mlnj6",
+    "rbny7",
+    "senj6"
+  ],
+  "missingQuotations": [
+    "bmnj6",
+    "dhnj",
+    "etny6",
+    "frnj6",
+    "mlnj6",
+    "rbny7",
+    "senj6"
+  ],
+  "publishedCards": [
+    {
+      "slug": "frnj",
+      "collection": "africanAmerican",
+      "portrait": true,
+      "storedQuotation": false
+    },
+    {
+      "slug": "jmwe",
+      "collection": null,
+      "portrait": false,
+      "storedQuotation": false
+    },
+    {
+      "slug": "mgnj",
+      "collection": null,
+      "portrait": true,
+      "storedQuotation": true
+    }
+  ],
+  "summary": {
+    "verified": 7,
+    "wouldAssign": 0,
+    "preserved": 1,
+    "conflict": 0,
+    "review": 19,
+    "missingPortraits": 20,
+    "missingQuotations": 7,
+    "written": 0
+  }
+}

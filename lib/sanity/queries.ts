@@ -26,11 +26,15 @@ export const archiveQuery = defineQuery(`{
       videoTitle
     }
   },
-  "stories": *[_type == "story" && published != false] | order(participantCode asc) {
+  "stories": *[_type == "story"] | order(participantCode asc) {
     "slug": slug.current,
     participantCode,
+    collection,
     title,
     summary,
+    body,
+    article,
+    location,
     externalHref,
     published,
     photographs[] {

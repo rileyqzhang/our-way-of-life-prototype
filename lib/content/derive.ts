@@ -1,3 +1,5 @@
+import type { StoryCollection } from "@/lib/content/collections";
+import { canonicalParticipantSlug, normalizeParticipantCode } from "@/lib/migration/participant-code";
 import type { LocalizedText, TimelineBlock, TimelineEvent } from "@/lib/timeline/types";
 
 export type Photo = {
@@ -21,16 +23,37 @@ export type RelatedEvent = {
   title: LocalizedText;
 };
 
+export type StoryArticleSpan = {
+  _key?: string;
+  _type?: string;
+  text?: string;
+  marks?: string[];
+};
+
+export type StoryArticleBlock = {
+  _key?: string;
+  _type?: string;
+  style?: string;
+  listItem?: string;
+  level?: number;
+  children?: StoryArticleSpan[];
+  markDefs?: { _key?: string; _type?: string; href?: string }[];
+};
+
 export type ArchiveStory = {
   slug: string;
   participantCode: string;
   title: LocalizedText;
   summary: LocalizedText;
+  body?: LocalizedText;
+  location?: LocalizedText;
   photographs: Photo[];
   quotations: StoryQuotation[];
   relatedEvents: RelatedEvent[];
+  article?: { en: StoryArticleBlock[]; es: StoryArticleBlock[]; zh: StoryArticleBlock[] };
   externalHref?: string;
   published: boolean;
+  collection?: StoryCollection;
 };
 
 export type PreparedTimelineEvent = TimelineEvent & { displayOrder: number };
@@ -51,12 +74,12 @@ function hasText(value: LocalizedText | undefined) {
 
 export function participantSlug(block: ParticipantBlock) {
   const code = block.code.trim();
-  if (code) return code.toLowerCase();
+  if (code) return canonicalParticipantSlug(code);
   const fromTitle = block.title.en.split("|")[0]?.trim();
-  if (fromTitle) return fromTitle.toLowerCase();
+  if (fromTitle) return canonicalParticipantSlug(fromTitle);
   try {
     const parts = new URL(block.href).pathname.split("/").filter(Boolean);
-    return (parts.at(-1) || "").toLowerCase();
+    return canonicalParticipantSlug(parts.at(-1) || "");
   } catch {
     return "";
   }
@@ -99,16 +122,17 @@ export function storiesFromTimeline(events: PreparedTimelineEvent[]): ArchiveSto
         }
 
         const code = block.code || participantCode(block, slug);
+        const canonicalCode = normalizeParticipantCode(code);
         let story = bySlug.get(slug);
         if (!story) {
           story = {
             slug,
-            participantCode: code,
-            title: { en: code, es: code, zh: code },
+            participantCode: canonicalCode,
+            title: { en: canonicalCode, es: canonicalCode, zh: canonicalCode },
             summary: {
-              en: `Quotations from participant ${code} on the interactive timeline.`,
-              es: `Citas de la persona participante ${code} en la línea de tiempo.`,
-              zh: `参与者 ${code} 在互动时间线上的引语。`,
+              en: `Quotations from participant ${canonicalCode} on the interactive timeline.`,
+              es: `Citas de la persona participante ${canonicalCode} en la línea de tiempo.`,
+              zh: `参与者 ${canonicalCode} 在互动时间线上的引语。`,
             },
             photographs: [],
             quotations: [],
@@ -156,4 +180,24 @@ export function storiesFromTimeline(events: PreparedTimelineEvent[]): ArchiveSto
   }
 
   return [...bySlug.values()].sort((a, b) => a.participantCode.localeCompare(b.participantCode));
+}
+
+/** Keep the archive order. Published Sanity events replace the matching local event. */
+export function mergeTimeline(remote: PreparedTimelineEvent[], local: PreparedTimelineEvent[]) {
+  if (!remote.length) return local;
+  const remoteById = new Map(remote.filter((event) => event.id).map((event) => [event.id, event]));
+  const seen = new Set<string>();
+  const merged = local.map((event) => {
+    seen.add(event.id);
+    const published = remoteById.get(event.id);
+    return published ? { ...published, displayOrder: event.displayOrder } : event;
+  });
+  for (const event of remote) {
+    if (!event.id || seen.has(event.id)) continue;
+    merged.push({ ...event, displayOrder: merged.length });
+  }
+  const remoteIds = new Set(remote.map((event) => event.id));
+  const complete = local.every((event) => remoteIds.has(event.id));
+  if (!complete) return merged;
+  return [...remote].sort((left, right) => left.displayOrder - right.displayOrder || left.id.localeCompare(right.id));
 }

@@ -7,12 +7,21 @@
     "build": "next build",
     "start": "next start",
     "sanity:seed": "tsx scripts/sanity-seed.ts",
-    "sanity:import": "tsx scripts/sanity-seed.ts --import"
+    "sanity:import": "tsx scripts/sanity-seed.ts --import",
+    "migrate:weebly": "tsx scripts/migrate-weebly.ts",
+    "migrate:weebly:test": "tsx scripts/migrate-weebly.ts dry-run --only=mgnj,jmwe",
+    "migrate:community": "tsx scripts/migrate-weebly.ts community",
+    "migrate:docx": "tsx scripts/migrate-docx.ts",
+    "migrate:docx:latine": "tsx scripts/migrate-docx.ts --community=latine",
+    "migrate:docx:chinese": "tsx scripts/migrate-docx.ts --community=chinese",
+    "migrate:timeline": "tsx scripts/migrate-timeline.ts",
+    "test:migration": "tsx --test lib/migration/participant-code.test.ts lib/migration/docx-document.test.ts lib/migration/timeline.test.ts"
   },
   "dependencies": {
     "@sanity/image-url": "^2.1.1",
     "@sanity/vision": "^3.99.0",
     "@supabase/supabase-js": "^2.116.0",
+    "mammoth": "^1.13.0",
     "next": "^15.5.28",
     "next-sanity": "^9.12.3",
     "react": "19.1.1",

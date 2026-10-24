@@ -1,0 +1,1537 @@
+{
+  "writtenAt": "2026-10-24T08:08:01.467Z",
+  "source": "lib/timeline/events.json",
+  "sanityWrites": 0,
+  "summary": {
+    "total": 34,
+    "existing": 1,
+    "readyToCreate": 33,
+    "review": 0,
+    "duplicateIds": [],
+    "missingTranslations": [],
+    "missingStoryReferences": [
+      "story-dhnj",
+      "story-emnj"
+    ],
+    "missingParticipants": [
+      "person-dhnj",
+      "person-emnj"
+    ],
+    "missingImages": [
+      "13-the-civil-rights-movement:empty",
+      "27-2003-ice-is-established:empty",
+      "31-2019-new-jersey-signs-licenses-for-all:empty"
+    ]
+  },
+  "importCommand": "npx tsx scripts/migrate-timeline.ts --apply --only=02-1790-naturalization-act,03-1823-the-monroe-doctrine,04-1865-voting-rights,05-1910-the-great-migration,06-1920-harlem-renaissance,07-1924-the-immigration-act-border-patrol-establish,08-1940-white-flight,09-1942-the-bracero-program,10-1947-mendez-v-westminster-school-district,11-1949-the-groveland-four,12-1952-puerto-rico-becomes-a-commonwealth,13-the-civil-rights-movement,14-brown-vs-boe-of-topeka,15-emmett-till-murdered,16-1961-the-u-s-increases-military-in-the-vietnam-w,17-1964-malcolm-x-the-ballot-or-the-bullet,18-1966-kwanzaa-is-founded,19-the-black-panthers-the-young-lords,20-1967-adam-clayton-powell-what-s-in-your-hand-spe,21-1969-stonewall-riots,22-1970-christopher-street-liberation-day,23-1982-hiv-aids-epidemic,24-1986-reagan-signs-the-immigration-reform-and-con,25-the-1994-crime-bill,26-2001-the-dream-act-is-introduced,27-2003-ice-is-established,28-2005-hurricane-katrina-devastates-new-orleans-co,29-2008-president-barack-obama-is-elected,30-2012-daca-is-established,31-2019-new-jersey-signs-licenses-for-all,32-2020-new-jersey-restores-voting-rights-to-former,33-covid-19-pandemic,34-black-lives-matter",
+  "events": [
+    {
+      "eventId": "01-colonization-of-the-americas",
+      "date": "1400s",
+      "displayOrder": 0,
+      "proposedDocumentId": "drafts.timeline-01-colonization-of-the-americas",
+      "publishedId": "timeline-01-colonization-of-the-americas",
+      "existingSanityId": [
+        "timeline-01-colonization-of-the-americas"
+      ],
+      "action": "Preserve",
+      "languages": [
+        "en",
+        "es",
+        "zh"
+      ],
+      "missingTitleLanguages": [],
+      "paragraphsMissingALanguage": 0,
+      "counts": {
+        "blocks": 6,
+        "paragraphs": 3,
+        "participants": 2,
+        "videos": 1,
+        "links": 0,
+        "title": {
+          "en": 28,
+          "es": 28,
+          "zh": 6
+        }
+      },
+      "omittedStoryIds": [],
+      "linkedStoryIds": [
+        "story-mgnj",
+        "story-mlnj"
+      ],
+      "missingParticipants": [],
+      "images": [
+        {
+          "block": "timelineParticipant",
+          "state": "local"
+        },
+        {
+          "block": "timelineParticipant",
+          "state": "local"
+        }
+      ],
+      "videos": 1,
+      "externalLinks": 0,
+      "contentMatchesArchive": true,
+      "existingDifference": {
+        "date": true,
+        "displayOrder": true,
+        "title": true,
+        "blocks": true,
+        "paragraphs": true,
+        "participants": true,
+        "videos": true,
+        "links": true
+      },
+      "notes": []
+    },
+    {
+      "eventId": "02-1790-naturalization-act",
+      "date": "1790",
+      "displayOrder": 1,
+      "proposedDocumentId": "drafts.timeline-02-1790-naturalization-act",
+      "publishedId": "timeline-02-1790-naturalization-act",
+      "existingSanityId": [],
+      "action": "Create",
+      "languages": [
+        "en",
+        "es",
+        "zh"
+      ],
+      "missingTitleLanguages": [],
+      "paragraphsMissingALanguage": 0,
+      "counts": {
+        "blocks": 2,
+        "paragraphs": 1,
+        "participants": 0,
+        "videos": 1,
+        "links": 0,
+        "title": {
+          "en": 23,
+          "es": 29,
+          "zh": 9
+        }
+      },
+      "omittedStoryIds": [],
+      "linkedStoryIds": [],
+      "missingParticipants": [],
+      "images": [],
+      "videos": 1,
+      "externalLinks": 0,
+      "contentMatchesArchive": true,
+      "existingDifference": null,
+      "notes": []
+    },
+    {
+      "eventId": "03-1823-the-monroe-doctrine",
+      "date": "1823",
+      "displayOrder": 2,
+      "proposedDocumentId": "drafts.timeline-03-1823-the-monroe-doctrine",
+      "publishedId": "timeline-03-1823-the-monroe-doctrine",
+      "existingSanityId": [],
+      "action": "Create",
+      "languages": [
+        "en",
+        "es",
+        "zh"
+      ],
+      "missingTitleLanguages": [],
+      "paragraphsMissingALanguage": 0,
+      "counts": {
+        "blocks": 3,
+        "paragraphs": 2,
+        "participants": 0,
+        "videos": 1,
+        "links": 0,
+        "title": {
+          "en": 24,
+          "es": 23,
+          "zh": 9
+        }
+      },
+      "omittedStoryIds": [],
+      "linkedStoryIds": [],
+      "missingParticipants": [],
+      "images": [],
+      "videos": 1,
+      "externalLinks": 0,
+      "contentMatchesArchive": true,
+      "existingDifference": null,
+      "notes": []
+    },
+    {
+      "eventId": "04-1865-voting-rights",
+      "date": "1865",
+      "displayOrder": 3,
+      "proposedDocumentId": "drafts.timeline-04-1865-voting-rights",
+      "publishedId": "timeline-04-1865-voting-rights",
+      "existingSanityId": [],
+      "action": "Create",
+      "languages": [
+        "en",
+        "es",
+        "zh"
+      ],
+      "missingTitleLanguages": [],
+      "paragraphsMissingALanguage": 0,
+      "counts": {
+        "blocks": 5,
+        "paragraphs": 3,
+        "participants": 1,
+        "videos": 1,
+        "links": 0,
+        "title": {
+          "en": 18,
+          "es": 21,
+          "zh": 8
+        }
+      },
+      "omittedStoryIds": [],
+      "linkedStoryIds": [
+        "story-senj"
+      ],
+      "missingParticipants": [],
+      "images": [
+        {
+          "block": "timelineParticipant",
+          "state": "local"
+        }
+      ],
+      "videos": 1,
+      "externalLinks": 0,
+      "contentMatchesArchive": true,
+      "existingDifference": null,
+      "notes": []
+    },
+    {
+      "eventId": "05-1910-the-great-migration",
+      "date": "1910",
+      "displayOrder": 4,
+      "proposedDocumentId": "drafts.timeline-05-1910-the-great-migration",
+      "publishedId": "timeline-05-1910-the-great-migration",
+      "existingSanityId": [],
+      "action": "Create",
+      "languages": [
+        "en",
+        "es",
+        "zh"
+      ],
+      "missingTitleLanguages": [],
+      "paragraphsMissingALanguage": 0,
+      "counts": {
+        "blocks": 2,
+        "paragraphs": 1,
+        "participants": 0,
+        "videos": 1,
+        "links": 0,
+        "title": {
+          "en": 24,
+          "es": 22,
+          "zh": 8
+        }
+      },
+      "omittedStoryIds": [],
+      "linkedStoryIds": [],
+      "missingParticipants": [],
+      "images": [],
+      "videos": 1,
+      "externalLinks": 0,
+      "contentMatchesArchive": true,
+      "existingDifference": null,
+      "notes": []
+    },
+    {
+      "eventId": "06-1920-harlem-renaissance",
+      "date": "1920",
+      "displayOrder": 5,
+      "proposedDocumentId": "drafts.timeline-06-1920-harlem-renaissance",
+      "publishedId": "timeline-06-1920-harlem-renaissance",
+      "existingSanityId": [],
+      "action": "Create",
+      "languages": [
+        "en",
+        "es",
+        "zh"
+      ],
+      "missingTitleLanguages": [],
+      "paragraphsMissingALanguage": 0,
+      "counts": {
+        "blocks": 13,
+        "paragraphs": 9,
+        "participants": 2,
+        "videos": 2,
+        "links": 0,
+        "title": {
+          "en": 23,
+          "es": 30,
+          "zh": 12
+        }
+      },
+      "omittedStoryIds": [],
+      "linkedStoryIds": [
+        "story-senj",
+        "story-wpny"
+      ],
+      "missingParticipants": [],
+      "images": [
+        {
+          "block": "timelineParticipant",
+          "state": "local"
+        },
+        {
+          "block": "timelineParticipant",
+          "state": "local"
+        }
+      ],
+      "videos": 2,
+      "externalLinks": 0,
+      "contentMatchesArchive": true,
+      "existingDifference": null,
+      "notes": []
+    },
+    {
+      "eventId": "07-1924-the-immigration-act-border-patrol-establish",
+      "date": "1924",
+      "displayOrder": 6,
+      "proposedDocumentId": "drafts.timeline-07-1924-the-immigration-act-border-patrol-establish",
+      "publishedId": "timeline-07-1924-the-immigration-act-border-patrol-establish",
+      "existingSanityId": [],
+      "action": "Create",
+      "languages": [
+        "en",
+        "es",
+        "zh"
+      ],
+      "missingTitleLanguages": [],
+      "paragraphsMissingALanguage": 0,
+      "counts": {
+        "blocks": 2,
+        "paragraphs": 1,
+        "participants": 0,
+        "videos": 0,
+        "links": 1,
+        "title": {
+          "en": 52,
+          "es": 70,
+          "zh": 18
+        }
+      },
+      "omittedStoryIds": [],
+      "linkedStoryIds": [],
+      "missingParticipants": [],
+      "images": [
+        {
+          "block": "timelineLink",
+          "state": "remote"
+        }
+      ],
+      "videos": 0,
+      "externalLinks": 1,
+      "contentMatchesArchive": true,
+      "existingDifference": null,
+      "notes": []
+    },
+    {
+      "eventId": "08-1940-white-flight",
+      "date": "1940",
+      "displayOrder": 7,
+      "proposedDocumentId": "drafts.timeline-08-1940-white-flight",
+      "publishedId": "timeline-08-1940-white-flight",
+      "existingSanityId": [],
+      "action": "Create",
+      "languages": [
+        "en",
+        "es",
+        "zh"
+      ],
+      "missingTitleLanguages": [],
+      "paragraphsMissingALanguage": 0,
+      "counts": {
+        "blocks": 6,
+        "paragraphs": 4,
+        "participants": 1,
+        "videos": 1,
+        "links": 0,
+        "title": {
+          "en": 17,
+          "es": 17,
+          "zh": 9
+        }
+      },
+      "omittedStoryIds": [],
+      "linkedStoryIds": [
+        "story-senj"
+      ],
+      "missingParticipants": [],
+      "images": [
+        {
+          "block": "timelineParticipant",
+          "state": "local"
+        }
+      ],
+      "videos": 1,
+      "externalLinks": 0,
+      "contentMatchesArchive": true,
+      "existingDifference": null,
+      "notes": []
+    },
+    {
+      "eventId": "09-1942-the-bracero-program",
+      "date": "1942",
+      "displayOrder": 8,
+      "proposedDocumentId": "drafts.timeline-09-1942-the-bracero-program",
+      "publishedId": "timeline-09-1942-the-bracero-program",
+      "existingSanityId": [],
+      "action": "Create",
+      "languages": [
+        "en",
+        "es",
+        "zh"
+      ],
+      "missingTitleLanguages": [],
+      "paragraphsMissingALanguage": 0,
+      "counts": {
+        "blocks": 2,
+        "paragraphs": 1,
+        "participants": 0,
+        "videos": 1,
+        "links": 0,
+        "title": {
+          "en": 24,
+          "es": 24,
+          "zh": 11
+        }
+      },
+      "omittedStoryIds": [],
+      "linkedStoryIds": [],
+      "missingParticipants": [],
+      "images": [],
+      "videos": 1,
+      "externalLinks": 0,
+      "contentMatchesArchive": true,
+      "existingDifference": null,
+      "notes": []
+    },
+    {
+      "eventId": "10-1947-mendez-v-westminster-school-district",
+      "date": "1947",
+      "displayOrder": 9,
+      "proposedDocumentId": "drafts.timeline-10-1947-mendez-v-westminster-school-district",
+      "publishedId": "timeline-10-1947-mendez-v-westminster-school-district",
+      "existingSanityId": [],
+      "action": "Create",
+      "languages": [
+        "en",
+        "es",
+        "zh"
+      ],
+      "missingTitleLanguages": [],
+      "paragraphsMissingALanguage": 0,
+      "counts": {
+        "blocks": 2,
+        "paragraphs": 1,
+        "participants": 0,
+        "videos": 1,
+        "links": 0,
+        "title": {
+          "en": 42,
+          "es": 47,
+          "zh": 17
+        }
+      },
+      "omittedStoryIds": [],
+      "linkedStoryIds": [],
+      "missingParticipants": [],
+      "images": [],
+      "videos": 1,
+      "externalLinks": 0,
+      "contentMatchesArchive": true,
+      "existingDifference": null,
+      "notes": []
+    },
+    {
+      "eventId": "11-1949-the-groveland-four",
+      "date": "1949",
+      "displayOrder": 10,
+      "proposedDocumentId": "drafts.timeline-11-1949-the-groveland-four",
+      "publishedId": "timeline-11-1949-the-groveland-four",
+      "existingSanityId": [],
+      "action": "Create",
+      "languages": [
+        "en",
+        "es",
+        "zh"
+      ],
+      "missingTitleLanguages": [],
+      "paragraphsMissingALanguage": 0,
+      "counts": {
+        "blocks": 6,
+        "paragraphs": 4,
+        "participants": 1,
+        "videos": 1,
+        "links": 0,
+        "title": {
+          "en": 23,
+          "es": 28,
+          "zh": 12
+        }
+      },
+      "omittedStoryIds": [],
+      "linkedStoryIds": [
+        "362fbdab-460c-421b-ba63-61add1e64c86"
+      ],
+      "missingParticipants": [],
+      "images": [
+        {
+          "block": "timelineParticipant",
+          "state": "local"
+        }
+      ],
+      "videos": 1,
+      "externalLinks": 0,
+      "contentMatchesArchive": true,
+      "existingDifference": null,
+      "notes": []
+    },
+    {
+      "eventId": "12-1952-puerto-rico-becomes-a-commonwealth",
+      "date": "1952",
+      "displayOrder": 11,
+      "proposedDocumentId": "drafts.timeline-12-1952-puerto-rico-becomes-a-commonwealth",
+      "publishedId": "timeline-12-1952-puerto-rico-becomes-a-commonwealth",
+      "existingSanityId": [],
+      "action": "Create",
+      "languages": [
+        "en",
+        "es",
+        "zh"
+      ],
+      "missingTitleLanguages": [],
+      "paragraphsMissingALanguage": 0,
+      "counts": {
+        "blocks": 6,
+        "paragraphs": 4,
+        "participants": 1,
+        "videos": 1,
+        "links": 0,
+        "title": {
+          "en": 39,
+          "es": 54,
+          "zh": 14
+        }
+      },
+      "omittedStoryIds": [],
+      "linkedStoryIds": [
+        "story-ebnj"
+      ],
+      "missingParticipants": [],
+      "images": [
+        {
+          "block": "timelineParticipant",
+          "state": "local"
+        }
+      ],
+      "videos": 1,
+      "externalLinks": 0,
+      "contentMatchesArchive": true,
+      "existingDifference": null,
+      "notes": []
+    },
+    {
+      "eventId": "13-the-civil-rights-movement",
+      "date": "1954 – 1968",
+      "displayOrder": 12,
+      "proposedDocumentId": "drafts.timeline-13-the-civil-rights-movement",
+      "publishedId": "timeline-13-the-civil-rights-movement",
+      "existingSanityId": [],
+      "action": "Create",
+      "languages": [
+        "en",
+        "es",
+        "zh"
+      ],
+      "missingTitleLanguages": [],
+      "paragraphsMissingALanguage": 0,
+      "counts": {
+        "blocks": 11,
+        "paragraphs": 7,
+        "participants": 2,
+        "videos": 1,
+        "links": 1,
+        "title": {
+          "en": 25,
+          "es": 33,
+          "zh": 4
+        }
+      },
+      "omittedStoryIds": [],
+      "linkedStoryIds": [
+        "362fbdab-460c-421b-ba63-61add1e64c86",
+        "story-rbny"
+      ],
+      "missingParticipants": [],
+      "images": [
+        {
+          "block": "timelineLink",
+          "state": "empty"
+        },
+        {
+          "block": "timelineParticipant",
+          "state": "local"
+        },
+        {
+          "block": "timelineParticipant",
+          "state": "local"
+        }
+      ],
+      "videos": 1,
+      "externalLinks": 1,
+      "contentMatchesArchive": true,
+      "existingDifference": null,
+      "notes": []
+    },
+    {
+      "eventId": "14-brown-vs-boe-of-topeka",
+      "date": "1954",
+      "displayOrder": 13,
+      "proposedDocumentId": "drafts.timeline-14-brown-vs-boe-of-topeka",
+      "publishedId": "timeline-14-brown-vs-boe-of-topeka",
+      "existingSanityId": [],
+      "action": "Create",
+      "languages": [
+        "en",
+        "es",
+        "zh"
+      ],
+      "missingTitleLanguages": [],
+      "paragraphsMissingALanguage": 0,
+      "counts": {
+        "blocks": 14,
+        "paragraphs": 10,
+        "participants": 3,
+        "videos": 1,
+        "links": 0,
+        "title": {
+          "en": 23,
+          "es": 44,
+          "zh": 12
+        }
+      },
+      "omittedStoryIds": [],
+      "linkedStoryIds": [
+        "story-bmnj",
+        "story-mlnj",
+        "story-rbny"
+      ],
+      "missingParticipants": [],
+      "images": [
+        {
+          "block": "timelineParticipant",
+          "state": "local"
+        },
+        {
+          "block": "timelineParticipant",
+          "state": "local"
+        },
+        {
+          "block": "timelineParticipant",
+          "state": "local"
+        }
+      ],
+      "videos": 1,
+      "externalLinks": 0,
+      "contentMatchesArchive": true,
+      "existingDifference": null,
+      "notes": []
+    },
+    {
+      "eventId": "15-emmett-till-murdered",
+      "date": "1955",
+      "displayOrder": 14,
+      "proposedDocumentId": "drafts.timeline-15-emmett-till-murdered",
+      "publishedId": "timeline-15-emmett-till-murdered",
+      "existingSanityId": [],
+      "action": "Create",
+      "languages": [
+        "en",
+        "es",
+        "zh"
+      ],
+      "missingTitleLanguages": [],
+      "paragraphsMissingALanguage": 0,
+      "counts": {
+        "blocks": 8,
+        "paragraphs": 5,
+        "participants": 2,
+        "videos": 1,
+        "links": 0,
+        "title": {
+          "en": 20,
+          "es": 24,
+          "zh": 8
+        }
+      },
+      "omittedStoryIds": [],
+      "linkedStoryIds": [
+        "story-bmnj",
+        "story-hsnj"
+      ],
+      "missingParticipants": [],
+      "images": [
+        {
+          "block": "timelineParticipant",
+          "state": "local"
+        },
+        {
+          "block": "timelineParticipant",
+          "state": "local"
+        }
+      ],
+      "videos": 1,
+      "externalLinks": 0,
+      "contentMatchesArchive": true,
+      "existingDifference": null,
+      "notes": []
+    },
+    {
+      "eventId": "16-1961-the-u-s-increases-military-in-the-vietnam-w",
+      "date": "1961",
+      "displayOrder": 15,
+      "proposedDocumentId": "drafts.timeline-16-1961-the-u-s-increases-military-in-the-vietnam-w",
+      "publishedId": "timeline-16-1961-the-u-s-increases-military-in-the-vietnam-w",
+      "existingSanityId": [],
+      "action": "Create",
+      "languages": [
+        "en",
+        "es",
+        "zh"
+      ],
+      "missingTitleLanguages": [],
+      "paragraphsMissingALanguage": 0,
+      "counts": {
+        "blocks": 14,
+        "paragraphs": 10,
+        "participants": 3,
+        "videos": 1,
+        "links": 0,
+        "title": {
+          "en": 51,
+          "es": 72,
+          "zh": 21
+        }
+      },
+      "omittedStoryIds": [],
+      "linkedStoryIds": [
+        "story-etny",
+        "story-hsnj",
+        "story-wpny"
+      ],
+      "missingParticipants": [],
+      "images": [
+        {
+          "block": "timelineParticipant",
+          "state": "local"
+        },
+        {
+          "block": "timelineParticipant",
+          "state": "local"
+        },
+        {
+          "block": "timelineParticipant",
+          "state": "local"
+        }
+      ],
+      "videos": 1,
+      "externalLinks": 0,
+      "contentMatchesArchive": true,
+      "existingDifference": null,
+      "notes": []
+    },
+    {
+      "eventId": "17-1964-malcolm-x-the-ballot-or-the-bullet",
+      "date": "1964",
+      "displayOrder": 16,
+      "proposedDocumentId": "drafts.timeline-17-1964-malcolm-x-the-ballot-or-the-bullet",
+      "publishedId": "timeline-17-1964-malcolm-x-the-ballot-or-the-bullet",
+      "existingSanityId": [],
+      "action": "Create",
+      "languages": [
+        "en",
+        "es",
+        "zh"
+      ],
+      "missingTitleLanguages": [],
+      "paragraphsMissingALanguage": 0,
+      "counts": {
+        "blocks": 7,
+        "paragraphs": 5,
+        "participants": 1,
+        "videos": 1,
+        "links": 0,
+        "title": {
+          "en": 43,
+          "es": 40,
+          "zh": 23
+        }
+      },
+      "omittedStoryIds": [],
+      "linkedStoryIds": [
+        "story-mlnj"
+      ],
+      "missingParticipants": [],
+      "images": [
+        {
+          "block": "timelineParticipant",
+          "state": "local"
+        }
+      ],
+      "videos": 1,
+      "externalLinks": 0,
+      "contentMatchesArchive": true,
+      "existingDifference": null,
+      "notes": []
+    },
+    {
+      "eventId": "18-1966-kwanzaa-is-founded",
+      "date": "1966",
+      "displayOrder": 17,
+      "proposedDocumentId": "drafts.timeline-18-1966-kwanzaa-is-founded",
+      "publishedId": "timeline-18-1966-kwanzaa-is-founded",
+      "existingSanityId": [],
+      "action": "Create",
+      "languages": [
+        "en",
+        "es",
+        "zh"
+      ],
+      "missingTitleLanguages": [],
+      "paragraphsMissingALanguage": 0,
+      "counts": {
+        "blocks": 7,
+        "paragraphs": 5,
+        "participants": 1,
+        "videos": 1,
+        "links": 0,
+        "title": {
+          "en": 23,
+          "es": 21,
+          "zh": 10
+        }
+      },
+      "omittedStoryIds": [],
+      "linkedStoryIds": [
+        "story-mlnj"
+      ],
+      "missingParticipants": [],
+      "images": [
+        {
+          "block": "timelineParticipant",
+          "state": "local"
+        }
+      ],
+      "videos": 1,
+      "externalLinks": 0,
+      "contentMatchesArchive": true,
+      "existingDifference": null,
+      "notes": []
+    },
+    {
+      "eventId": "19-the-black-panthers-the-young-lords",
+      "date": "1966 & 1968",
+      "displayOrder": 18,
+      "proposedDocumentId": "drafts.timeline-19-the-black-panthers-the-young-lords",
+      "publishedId": "timeline-19-the-black-panthers-the-young-lords",
+      "existingSanityId": [],
+      "action": "Create",
+      "languages": [
+        "en",
+        "es",
+        "zh"
+      ],
+      "missingTitleLanguages": [],
+      "paragraphsMissingALanguage": 0,
+      "counts": {
+        "blocks": 5,
+        "paragraphs": 3,
+        "participants": 0,
+        "videos": 2,
+        "links": 0,
+        "title": {
+          "en": 36,
+          "es": 37,
+          "zh": 9
+        }
+      },
+      "omittedStoryIds": [],
+      "linkedStoryIds": [],
+      "missingParticipants": [],
+      "images": [],
+      "videos": 2,
+      "externalLinks": 0,
+      "contentMatchesArchive": true,
+      "existingDifference": null,
+      "notes": []
+    },
+    {
+      "eventId": "20-1967-adam-clayton-powell-what-s-in-your-hand-spe",
+      "date": "1967",
+      "displayOrder": 19,
+      "proposedDocumentId": "drafts.timeline-20-1967-adam-clayton-powell-what-s-in-your-hand-spe",
+      "publishedId": "timeline-20-1967-adam-clayton-powell-what-s-in-your-hand-spe",
+      "existingSanityId": [],
+      "action": "Create",
+      "languages": [
+        "en",
+        "es",
+        "zh"
+      ],
+      "missingTitleLanguages": [],
+      "paragraphsMissingALanguage": 0,
+      "counts": {
+        "blocks": 5,
+        "paragraphs": 3,
+        "participants": 1,
+        "videos": 1,
+        "links": 0,
+        "title": {
+          "en": 53,
+          "es": 63,
+          "zh": 25
+        }
+      },
+      "omittedStoryIds": [],
+      "linkedStoryIds": [
+        "story-mlnj"
+      ],
+      "missingParticipants": [],
+      "images": [
+        {
+          "block": "timelineParticipant",
+          "state": "local"
+        }
+      ],
+      "videos": 1,
+      "externalLinks": 0,
+      "contentMatchesArchive": true,
+      "existingDifference": null,
+      "notes": []
+    },
+    {
+      "eventId": "21-1969-stonewall-riots",
+      "date": "1969",
+      "displayOrder": 20,
+      "proposedDocumentId": "drafts.timeline-21-1969-stonewall-riots",
+      "publishedId": "timeline-21-1969-stonewall-riots",
+      "existingSanityId": [],
+      "action": "Create",
+      "languages": [
+        "en",
+        "es",
+        "zh"
+      ],
+      "missingTitleLanguages": [],
+      "paragraphsMissingALanguage": 0,
+      "counts": {
+        "blocks": 7,
+        "paragraphs": 5,
+        "participants": 1,
+        "videos": 1,
+        "links": 0,
+        "title": {
+          "en": 20,
+          "es": 28,
+          "zh": 9
+        }
+      },
+      "omittedStoryIds": [],
+      "linkedStoryIds": [
+        "story-rbny"
+      ],
+      "missingParticipants": [],
+      "images": [
+        {
+          "block": "timelineParticipant",
+          "state": "local"
+        }
+      ],
+      "videos": 1,
+      "externalLinks": 0,
+      "contentMatchesArchive": true,
+      "existingDifference": null,
+      "notes": []
+    },
+    {
+      "eventId": "22-1970-christopher-street-liberation-day",
+      "date": "1970",
+      "displayOrder": 21,
+      "proposedDocumentId": "drafts.timeline-22-1970-christopher-street-liberation-day",
+      "publishedId": "timeline-22-1970-christopher-street-liberation-day",
+      "existingSanityId": [],
+      "action": "Create",
+      "languages": [
+        "en",
+        "es",
+        "zh"
+      ],
+      "missingTitleLanguages": [],
+      "paragraphsMissingALanguage": 0,
+      "counts": {
+        "blocks": 3,
+        "paragraphs": 2,
+        "participants": 0,
+        "videos": 1,
+        "links": 0,
+        "title": {
+          "en": 38,
+          "es": 47,
+          "zh": 14
+        }
+      },
+      "omittedStoryIds": [],
+      "linkedStoryIds": [],
+      "missingParticipants": [],
+      "images": [],
+      "videos": 1,
+      "externalLinks": 0,
+      "contentMatchesArchive": true,
+      "existingDifference": null,
+      "notes": []
+    },
+    {
+      "eventId": "23-1982-hiv-aids-epidemic",
+      "date": "1982",
+      "displayOrder": 22,
+      "proposedDocumentId": "drafts.timeline-23-1982-hiv-aids-epidemic",
+      "publishedId": "timeline-23-1982-hiv-aids-epidemic",
+      "existingSanityId": [],
+      "action": "Create",
+      "languages": [
+        "en",
+        "es",
+        "zh"
+      ],
+      "missingTitleLanguages": [],
+      "paragraphsMissingALanguage": 0,
+      "counts": {
+        "blocks": 14,
+        "paragraphs": 10,
+        "participants": 3,
+        "videos": 1,
+        "links": 0,
+        "title": {
+          "en": 22,
+          "es": 28,
+          "zh": 14
+        }
+      },
+      "omittedStoryIds": [
+        "story-emnj"
+      ],
+      "linkedStoryIds": [
+        "story-lrnj",
+        "story-rbny"
+      ],
+      "missingParticipants": [
+        "person-emnj"
+      ],
+      "images": [
+        {
+          "block": "timelineParticipant",
+          "state": "local"
+        },
+        {
+          "block": "timelineParticipant",
+          "state": "local"
+        },
+        {
+          "block": "timelineParticipant",
+          "state": "local"
+        }
+      ],
+      "videos": 1,
+      "externalLinks": 0,
+      "contentMatchesArchive": true,
+      "existingDifference": null,
+      "notes": []
+    },
+    {
+      "eventId": "24-1986-reagan-signs-the-immigration-reform-and-con",
+      "date": "1986",
+      "displayOrder": 23,
+      "proposedDocumentId": "drafts.timeline-24-1986-reagan-signs-the-immigration-reform-and-con",
+      "publishedId": "timeline-24-1986-reagan-signs-the-immigration-reform-and-con",
+      "existingSanityId": [],
+      "action": "Create",
+      "languages": [
+        "en",
+        "es",
+        "zh"
+      ],
+      "missingTitleLanguages": [],
+      "paragraphsMissingALanguage": 0,
+      "counts": {
+        "blocks": 6,
+        "paragraphs": 4,
+        "participants": 1,
+        "videos": 1,
+        "links": 0,
+        "title": {
+          "en": 56,
+          "es": 60,
+          "zh": 20
+        }
+      },
+      "omittedStoryIds": [],
+      "linkedStoryIds": [
+        "story-ncnj"
+      ],
+      "missingParticipants": [],
+      "images": [
+        {
+          "block": "timelineParticipant",
+          "state": "local"
+        }
+      ],
+      "videos": 1,
+      "externalLinks": 0,
+      "contentMatchesArchive": true,
+      "existingDifference": null,
+      "notes": []
+    },
+    {
+      "eventId": "25-the-1994-crime-bill",
+      "date": "1994",
+      "displayOrder": 24,
+      "proposedDocumentId": "drafts.timeline-25-the-1994-crime-bill",
+      "publishedId": "timeline-25-the-1994-crime-bill",
+      "existingSanityId": [],
+      "action": "Create",
+      "languages": [
+        "en",
+        "es",
+        "zh"
+      ],
+      "missingTitleLanguages": [],
+      "paragraphsMissingALanguage": 0,
+      "counts": {
+        "blocks": 2,
+        "paragraphs": 1,
+        "participants": 0,
+        "videos": 1,
+        "links": 0,
+        "title": {
+          "en": 19,
+          "es": 25,
+          "zh": 9
+        }
+      },
+      "omittedStoryIds": [],
+      "linkedStoryIds": [],
+      "missingParticipants": [],
+      "images": [],
+      "videos": 1,
+      "externalLinks": 0,
+      "contentMatchesArchive": true,
+      "existingDifference": null,
+      "notes": []
+    },
+    {
+      "eventId": "26-2001-the-dream-act-is-introduced",
+      "date": "2001",
+      "displayOrder": 25,
+      "proposedDocumentId": "drafts.timeline-26-2001-the-dream-act-is-introduced",
+      "publishedId": "timeline-26-2001-the-dream-act-is-introduced",
+      "existingSanityId": [],
+      "action": "Create",
+      "languages": [
+        "en",
+        "es",
+        "zh"
+      ],
+      "missingTitleLanguages": [],
+      "paragraphsMissingALanguage": 0,
+      "counts": {
+        "blocks": 3,
+        "paragraphs": 2,
+        "participants": 0,
+        "videos": 1,
+        "links": 0,
+        "title": {
+          "en": 32,
+          "es": 30,
+          "zh": 14
+        }
+      },
+      "omittedStoryIds": [],
+      "linkedStoryIds": [],
+      "missingParticipants": [],
+      "images": [],
+      "videos": 1,
+      "externalLinks": 0,
+      "contentMatchesArchive": true,
+      "existingDifference": null,
+      "notes": []
+    },
+    {
+      "eventId": "27-2003-ice-is-established",
+      "date": "2003",
+      "displayOrder": 26,
+      "proposedDocumentId": "drafts.timeline-27-2003-ice-is-established",
+      "publishedId": "timeline-27-2003-ice-is-established",
+      "existingSanityId": [],
+      "action": "Create",
+      "languages": [
+        "en",
+        "es",
+        "zh"
+      ],
+      "missingTitleLanguages": [],
+      "paragraphsMissingALanguage": 0,
+      "counts": {
+        "blocks": 6,
+        "paragraphs": 4,
+        "participants": 1,
+        "videos": 1,
+        "links": 0,
+        "title": {
+          "en": 23,
+          "es": 21,
+          "zh": 11
+        }
+      },
+      "omittedStoryIds": [
+        "story-dhnj"
+      ],
+      "linkedStoryIds": [],
+      "missingParticipants": [
+        "person-dhnj"
+      ],
+      "images": [
+        {
+          "block": "timelineParticipant",
+          "state": "empty"
+        }
+      ],
+      "videos": 1,
+      "externalLinks": 0,
+      "contentMatchesArchive": true,
+      "existingDifference": null,
+      "notes": []
+    },
+    {
+      "eventId": "28-2005-hurricane-katrina-devastates-new-orleans-co",
+      "date": "2005",
+      "displayOrder": 27,
+      "proposedDocumentId": "drafts.timeline-28-2005-hurricane-katrina-devastates-new-orleans-co",
+      "publishedId": "timeline-28-2005-hurricane-katrina-devastates-new-orleans-co",
+      "existingSanityId": [],
+      "action": "Create",
+      "languages": [
+        "en",
+        "es",
+        "zh"
+      ],
+      "missingTitleLanguages": [],
+      "paragraphsMissingALanguage": 0,
+      "counts": {
+        "blocks": 5,
+        "paragraphs": 3,
+        "participants": 1,
+        "videos": 1,
+        "links": 0,
+        "title": {
+          "en": 55,
+          "es": 61,
+          "zh": 19
+        }
+      },
+      "omittedStoryIds": [],
+      "linkedStoryIds": [
+        "story-bmnj"
+      ],
+      "missingParticipants": [],
+      "images": [
+        {
+          "block": "timelineParticipant",
+          "state": "local"
+        }
+      ],
+      "videos": 1,
+      "externalLinks": 0,
+      "contentMatchesArchive": true,
+      "existingDifference": null,
+      "notes": []
+    },
+    {
+      "eventId": "29-2008-president-barack-obama-is-elected",
+      "date": "2008",
+      "displayOrder": 28,
+      "proposedDocumentId": "drafts.timeline-29-2008-president-barack-obama-is-elected",
+      "publishedId": "timeline-29-2008-president-barack-obama-is-elected",
+      "existingSanityId": [],
+      "action": "Create",
+      "languages": [
+        "en",
+        "es",
+        "zh"
+      ],
+      "missingTitleLanguages": [],
+      "paragraphsMissingALanguage": 0,
+      "counts": {
+        "blocks": 8,
+        "paragraphs": 5,
+        "participants": 2,
+        "videos": 1,
+        "links": 0,
+        "title": {
+          "en": 38,
+          "es": 39,
+          "zh": 16
+        }
+      },
+      "omittedStoryIds": [],
+      "linkedStoryIds": [
+        "story-etny",
+        "story-senj"
+      ],
+      "missingParticipants": [],
+      "images": [
+        {
+          "block": "timelineParticipant",
+          "state": "local"
+        },
+        {
+          "block": "timelineParticipant",
+          "state": "local"
+        }
+      ],
+      "videos": 1,
+      "externalLinks": 0,
+      "contentMatchesArchive": true,
+      "existingDifference": null,
+      "notes": []
+    },
+    {
+      "eventId": "30-2012-daca-is-established",
+      "date": "2012",
+      "displayOrder": 29,
+      "proposedDocumentId": "drafts.timeline-30-2012-daca-is-established",
+      "publishedId": "timeline-30-2012-daca-is-established",
+      "existingSanityId": [],
+      "action": "Create",
+      "languages": [
+        "en",
+        "es",
+        "zh"
+      ],
+      "missingTitleLanguages": [],
+      "paragraphsMissingALanguage": 0,
+      "counts": {
+        "blocks": 6,
+        "paragraphs": 4,
+        "participants": 1,
+        "videos": 1,
+        "links": 0,
+        "title": {
+          "en": 24,
+          "es": 22,
+          "zh": 14
+        }
+      },
+      "omittedStoryIds": [],
+      "linkedStoryIds": [
+        "story-bmnj"
+      ],
+      "missingParticipants": [],
+      "images": [
+        {
+          "block": "timelineParticipant",
+          "state": "local"
+        }
+      ],
+      "videos": 1,
+      "externalLinks": 0,
+      "contentMatchesArchive": true,
+      "existingDifference": null,
+      "notes": []
+    },
+    {
+      "eventId": "31-2019-new-jersey-signs-licenses-for-all",
+      "date": "2019",
+      "displayOrder": 30,
+      "proposedDocumentId": "drafts.timeline-31-2019-new-jersey-signs-licenses-for-all",
+      "publishedId": "timeline-31-2019-new-jersey-signs-licenses-for-all",
+      "existingSanityId": [],
+      "action": "Create",
+      "languages": [
+        "en",
+        "es",
+        "zh"
+      ],
+      "missingTitleLanguages": [],
+      "paragraphsMissingALanguage": 0,
+      "counts": {
+        "blocks": 5,
+        "paragraphs": 3,
+        "participants": 1,
+        "videos": 1,
+        "links": 0,
+        "title": {
+          "en": 39,
+          "es": 42,
+          "zh": 24
+        }
+      },
+      "omittedStoryIds": [
+        "story-dhnj"
+      ],
+      "linkedStoryIds": [],
+      "missingParticipants": [
+        "person-dhnj"
+      ],
+      "images": [
+        {
+          "block": "timelineParticipant",
+          "state": "empty"
+        }
+      ],
+      "videos": 1,
+      "externalLinks": 0,
+      "contentMatchesArchive": true,
+      "existingDifference": null,
+      "notes": []
+    },
+    {
+      "eventId": "32-2020-new-jersey-restores-voting-rights-to-former",
+      "date": "2020",
+      "displayOrder": 31,
+      "proposedDocumentId": "drafts.timeline-32-2020-new-jersey-restores-voting-rights-to-former",
+      "publishedId": "timeline-32-2020-new-jersey-restores-voting-rights-to-former",
+      "existingSanityId": [],
+      "action": "Create",
+      "languages": [
+        "en",
+        "es",
+        "zh"
+      ],
+      "missingTitleLanguages": [],
+      "paragraphsMissingALanguage": 0,
+      "counts": {
+        "blocks": 7,
+        "paragraphs": 5,
+        "participants": 1,
+        "videos": 1,
+        "links": 0,
+        "title": {
+          "en": 55,
+          "es": 61,
+          "zh": 21
+        }
+      },
+      "omittedStoryIds": [],
+      "linkedStoryIds": [
+        "story-bmnj"
+      ],
+      "missingParticipants": [],
+      "images": [
+        {
+          "block": "timelineParticipant",
+          "state": "local"
+        }
+      ],
+      "videos": 1,
+      "externalLinks": 0,
+      "contentMatchesArchive": true,
+      "existingDifference": null,
+      "notes": []
+    },
+    {
+      "eventId": "33-covid-19-pandemic",
+      "date": "Ongoing",
+      "displayOrder": 32,
+      "proposedDocumentId": "drafts.timeline-33-covid-19-pandemic",
+      "publishedId": "timeline-33-covid-19-pandemic",
+      "existingSanityId": [],
+      "action": "Create",
+      "languages": [
+        "en",
+        "es",
+        "zh"
+      ],
+      "missingTitleLanguages": [],
+      "paragraphsMissingALanguage": 0,
+      "counts": {
+        "blocks": 7,
+        "paragraphs": 5,
+        "participants": 1,
+        "videos": 1,
+        "links": 0,
+        "title": {
+          "en": 17,
+          "es": 20,
+          "zh": 4
+        }
+      },
+      "omittedStoryIds": [],
+      "linkedStoryIds": [
+        "story-ncnj"
+      ],
+      "missingParticipants": [],
+      "images": [
+        {
+          "block": "timelineParticipant",
+          "state": "local"
+        }
+      ],
+      "videos": 1,
+      "externalLinks": 0,
+      "contentMatchesArchive": true,
+      "existingDifference": null,
+      "notes": []
+    },
+    {
+      "eventId": "34-black-lives-matter",
+      "date": "Ongoing",
+      "displayOrder": 33,
+      "proposedDocumentId": "drafts.timeline-34-black-lives-matter",
+      "publishedId": "timeline-34-black-lives-matter",
+      "existingSanityId": [],
+      "action": "Create",
+      "languages": [
+        "en",
+        "es",
+        "zh"
+      ],
+      "missingTitleLanguages": [],
+      "paragraphsMissingALanguage": 0,
+      "counts": {
+        "blocks": 9,
+        "paragraphs": 7,
+        "participants": 1,
+        "videos": 1,
+        "links": 0,
+        "title": {
+          "en": 18,
+          "es": 18,
+          "zh": 27
+        }
+      },
+      "omittedStoryIds": [],
+      "linkedStoryIds": [
+        "story-etny"
+      ],
+      "missingParticipants": [],
+      "images": [
+        {
+          "block": "timelineParticipant",
+          "state": "local"
+        }
+      ],
+      "videos": 1,
+      "externalLinks": 0,
+      "contentMatchesArchive": true,
+      "existingDifference": null,
+      "notes": []
+    }
+  ]
+}

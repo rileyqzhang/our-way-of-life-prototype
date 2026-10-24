@@ -1,3 +1,4 @@
+import type { StoryCollection } from "@/lib/content/collections";
 import type { Locale } from "@/lib/i18n";
 import type { LocalizedText } from "@/lib/timeline/types";
 
@@ -12,7 +13,7 @@ export type UiCopy = {
     timeline: string;
     share: string;
     stories: string;
-    about: string;
+    research: string;
     contact: string;
   };
   home: {
@@ -29,7 +30,7 @@ export type UiCopy = {
     timelineTitle: string;
     timelineBody: string;
   };
-  collections: { label: string; title: string; description: string }[];
+  collections: { id: StoryCollection; label: string; title: string; description: string }[];
   stories: {
     title: string;
     lede: string;
@@ -37,12 +38,30 @@ export type UiCopy = {
     listEyebrow: string;
     listTitle: string;
     readStory: string;
+    learnMore: string;
+    exploreTitle: string;
+    exploreLede: string;
+    exploreVolume: string;
+    emptyCollection: string;
+    unassignedTitle: string;
+    unassignedNote: string;
+    heroImageAlt: string;
+    volumes: { id: StoryCollection; title: string; description: string; imageAlt: string }[];
   };
   story: {
     quotations: string;
     related: string;
     archiveLink: string;
     back: string;
+    backParticipants: string;
+    home: string;
+    participants: string;
+    team: string;
+    contact: string;
+    backTo: string;
+    next: string;
+    rights: string;
+    sections: string;
   };
   about: {
     eyebrow: string;
@@ -76,7 +95,24 @@ export type UiCopy = {
     title: string;
     pausedTitle: string;
     pausedBody: string;
+    emailCta: string;
+    emailSubject: string;
     browse: string;
+  };
+  research: {
+    transcripts: string;
+    publications: string;
+    methodology: string;
+    transcriptsTitle: string;
+    transcriptsLede: string;
+    openDoc: string;
+    docPending: string;
+    dissertation: string;
+    dissertationTitle: string;
+    downloadPdf: string;
+    pdfPending: string;
+    methodologyTitle: string;
+    methodologyBody: string;
   };
   footer: { about: string; contact: string; share: string; accessibility: string };
 };
@@ -92,7 +128,7 @@ const en: UiCopy = {
     timeline: "Interactive Timeline",
     share: "Share Your Story",
     stories: "Participants",
-    about: "About",
+    research: "For Research",
     contact: "Contact",
   },
   home: {
@@ -110,24 +146,61 @@ const en: UiCopy = {
     timelineBody: "Laws, migrations, and movements sit beside the stories participants told about living through them.",
   },
   collections: [
-    { label: "Latine", title: "Latine Immigrant Stories", description: "Stories from Latine immigrant participants." },
-    { label: "African American", title: "African American Stories", description: "Stories from African American older adults." },
-    { label: "Chinese", title: "Chinese Immigrant Stories", description: "Stories from Chinese immigrant participants." },
+    { id: "latine", label: "Latine", title: "Latine Immigrant Stories", description: "Stories from Latine immigrant participants." },
+    { id: "africanAmerican", label: "African American", title: "African American Stories", description: "Stories from African American older adults." },
+    { id: "chinese", label: "Chinese", title: "Chinese Immigrant Stories", description: "Stories from Chinese immigrant participants." },
   ],
   stories: {
     title: "Participants",
     lede: "African Americans and Latinx adults (age 60+) living in California, New Jersey and New York shared their experiences of participating in their communities throughout their lives. In addition, they shared stories of the ways they contributed to the well-being of their communities during COVID-19, Black Lives Matter in 2020, and through personal life transitions of immigration and changes to their health and physical abilities.",
     ledeContinued:
       "Stories are presented in participants’ native language. Most African American participants were born in the North East where they currently reside, except a few born in the South and the Midwest. Latinx participants’ stories include experiences from their countries of origin; Mexico, El Salvador, Guatemala, Colombia, Ecuador, Puerto Rico y Peru.",
-    listEyebrow: "Timeline participants",
-    listTitle: "Quotations held on the timeline",
-    readStory: "Read quotations",
+    listEyebrow: "Story cards — Participants",
+    listTitle: "Their Words. Their Lives.",
+    readStory: "Read Story",
+    learnMore: "Learn more",
+    exploreTitle: "Explore Collections",
+    exploreLede: "Select an archival volume below to read living community histories.",
+    exploreVolume: "Explore volume",
+    emptyCollection: "No stories in this collection yet.",
+    unassignedTitle: "Community not yet assigned",
+    unassignedNote: "These stories do not yet have a verified community membership.",
+    heroImageAlt: "Community members gathered on a sidewalk beside a banner that reads A Home for Every New Yorker.",
+    volumes: [
+      {
+        id: "latine",
+        title: "Latine Immigrant Stories",
+        description: "Oral histories of migration, solidarity, and neighborhood mutual aid.",
+        imageAlt: "A person standing with boxes of supplies outside a brick building.",
+      },
+      {
+        id: "africanAmerican",
+        title: "African American Stories",
+        description: "Civil rights organizing, Harlem living memory, and generational service.",
+        imageAlt: "A black-and-white photograph of people walking along a busy city sidewalk.",
+      },
+      {
+        id: "chinese",
+        title: "Chinese Immigrant Stories",
+        description: "Labor history, displacement resilience, and Chinatown mutual aid.",
+        imageAlt: "Shelves of canned food and dry goods in a community pantry.",
+      },
+    ],
   },
   story: {
     quotations: "Quotations",
     related: "On the timeline",
     archiveLink: "Also published on the current public archive",
     back: "All participants",
+    backParticipants: "Back to Participants",
+    home: "Home",
+    participants: "Participants",
+    team: "Our Team",
+    contact: "Contact",
+    backTo: "Back to",
+    next: "Next Participant Story",
+    rights: "© 2026 Our Way of Life Archive. All rights reserved.",
+    sections: "Story sections",
   },
   about: {
     eyebrow: "About the Archive",
@@ -161,12 +234,29 @@ const en: UiCopy = {
   },
   share: {
     title: "Share Your Story",
-    pausedTitle: "Story submissions are paused",
-    pausedBody:
-      "This form is not accepting stories, photographs, or contact details. A submission system needs a privacy review before anyone should send personal information through this site. Published participant quotations are available in the archive.",
+    pausedTitle: "Send a project by email",
+    pausedBody: "This site does not accept uploads. Email the research team and attach the project there.",
+    emailCta: "Email the research team",
+    emailSubject: "Project submission",
     browse: "Browse participants",
   },
-  footer: { about: "About", contact: "Contact", share: "Share Your Story", accessibility: "Accessibility" },
+  research: {
+    transcripts: "Story Transcripts",
+    publications: "Research & Publications",
+    methodology: "Research Methodology",
+    transcriptsTitle: "Open-Access Story Repository",
+    transcriptsLede: "Read the de-identified transcripts and primary documents in a shared Google Doc.",
+    openDoc: "Open the research document",
+    docPending: "The Google Doc link will be added here.",
+    dissertation: "Dissertation",
+    dissertationTitle:
+      "A phenomenological study exploring experiences of civic participation among older African Americans and Latinx immigrants using an intersectional life course perspective.",
+    downloadPdf: "Download Full Dissertation (PDF)",
+    pdfPending: "The dissertation PDF will be added here.",
+    methodologyTitle: "Research Methodology",
+    methodologyBody: "Verified research methods will be added here.",
+  },
+  footer: { about: "For Research", contact: "Contact", share: "Share Your Story", accessibility: "Accessibility" },
 };
 
 const es: UiCopy = {
@@ -180,7 +270,7 @@ const es: UiCopy = {
     timeline: "Línea de tiempo",
     share: "Comparte tu historia",
     stories: "Participantes",
-    about: "Acerca de",
+    research: "Para la investigación",
     contact: "Contacto",
   },
   home: {
@@ -199,24 +289,61 @@ const es: UiCopy = {
       "Leyes, migraciones y movimientos aparecen junto a las historias que las personas participantes contaron sobre haberlos vivido.",
   },
   collections: [
-    { label: "Latine", title: "Historias de inmigrantes latines", description: "Historias de personas participantes inmigrantes latines." },
-    { label: "Afroamericana", title: "Historias afroamericanas", description: "Historias de personas mayores afroamericanas." },
-    { label: "China", title: "Historias de inmigrantes chinos", description: "Historias de personas participantes inmigrantes chinas." },
+    { id: "latine", label: "Latine", title: "Historias de inmigrantes latines", description: "Historias de personas participantes inmigrantes latines." },
+    { id: "africanAmerican", label: "Afroamericana", title: "Historias afroamericanas", description: "Historias de personas mayores afroamericanas." },
+    { id: "chinese", label: "China", title: "Historias de inmigrantes chinos", description: "Historias de personas participantes inmigrantes chinas." },
   ],
   stories: {
     title: "Participantes",
     lede: "Personas afroamericanas y latinas adultas (de 60 años o más) que viven en California, Nueva Jersey y Nueva York compartieron sus experiencias de participación en sus comunidades a lo largo de sus vidas. Además, compartieron historias sobre las formas en que contribuyeron al bienestar de sus comunidades durante la COVID-19, Black Lives Matter en 2020, y a través de transiciones personales de inmigración y cambios en su salud y capacidades físicas.",
     ledeContinued:
       "Las historias se presentan en la lengua de las personas participantes. La mayoría de las personas participantes afroamericanas nacieron en el noreste, donde viven ahora, excepto algunas nacidas en el sur y el medio oeste. Las historias latinas incluyen experiencias de sus países de origen: México, El Salvador, Guatemala, Colombia, Ecuador, Puerto Rico y Perú.",
-    listEyebrow: "Personas en la línea de tiempo",
-    listTitle: "Citas conservadas en la línea de tiempo",
-    readStory: "Leer citas",
+    listEyebrow: "Fichas de historias — Participantes",
+    listTitle: "Sus palabras. Sus vidas.",
+    readStory: "Leer historia",
+    learnMore: "Más información",
+    exploreTitle: "Explorar colecciones",
+    exploreLede: "Elige un volumen del archivo para leer historias vivas de la comunidad.",
+    exploreVolume: "Explorar volumen",
+    emptyCollection: "Todavía no hay historias en esta colección.",
+    unassignedTitle: "Comunidad aún sin asignar",
+    unassignedNote: "Estas historias todavía no tienen una pertenencia comunitaria verificada.",
+    heroImageAlt: "Personas de la comunidad reunidas en una acera junto a una pancarta que dice A Home for Every New Yorker.",
+    volumes: [
+      {
+        id: "latine",
+        title: "Historias de inmigrantes latines",
+        description: "Historias orales de migración, solidaridad y ayuda mutua en el barrio.",
+        imageAlt: "Una persona de pie junto a cajas de suministros frente a un edificio de ladrillo.",
+      },
+      {
+        id: "africanAmerican",
+        title: "Historias afroamericanas",
+        description: "Organización por los derechos civiles, memoria viva de Harlem y servicio entre generaciones.",
+        imageAlt: "Una fotografía en blanco y negro de personas caminando por una acera concurrida.",
+      },
+      {
+        id: "chinese",
+        title: "Historias de inmigrantes chinos",
+        description: "Historia laboral, resiliencia ante el desplazamiento y ayuda mutua en los barrios chinos.",
+        imageAlt: "Estantes con comida enlatada y productos secos en una despensa comunitaria.",
+      },
+    ],
   },
   story: {
     quotations: "Citas",
     related: "En la línea de tiempo",
     archiveLink: "También publicada en el archivo público actual",
     back: "Todas las personas participantes",
+    backParticipants: "Volver a participantes",
+    home: "Inicio",
+    participants: "Participantes",
+    team: "Nuestro equipo",
+    contact: "Contacto",
+    backTo: "Volver a",
+    next: "Siguiente historia",
+    rights: "© 2026 Archivo Our Way of Life. Todos los derechos reservados.",
+    sections: "Secciones de la historia",
   },
   about: {
     eyebrow: "Acerca del archivo",
@@ -250,12 +377,29 @@ const es: UiCopy = {
   },
   share: {
     title: "Comparte tu historia",
-    pausedTitle: "El envío de historias está en pausa",
-    pausedBody:
-      "Este formulario no acepta historias, fotografías ni datos de contacto. Un sistema de envío necesita una revisión de privacidad antes de que alguien envíe información personal por este sitio. Las citas publicadas están en el archivo.",
+    pausedTitle: "Envía un proyecto por correo",
+    pausedBody: "Este sitio no acepta cargas de archivos. Escribe al equipo de investigación y adjunta el proyecto.",
+    emailCta: "Escribir al equipo de investigación",
+    emailSubject: "Envío de proyecto",
     browse: "Ver participantes",
   },
-  footer: { about: "Acerca de", contact: "Contacto", share: "Comparte tu historia", accessibility: "Accesibilidad" },
+  research: {
+    transcripts: "Transcripciones",
+    publications: "Investigación y publicaciones",
+    methodology: "Metodología de investigación",
+    transcriptsTitle: "Repositorio abierto de historias",
+    transcriptsLede: "Lee las transcripciones desidentificadas y los documentos primarios en un Google Doc compartido.",
+    openDoc: "Abrir el documento de investigación",
+    docPending: "El enlace del Google Doc se añadirá aquí.",
+    dissertation: "Tesis",
+    dissertationTitle:
+      "Un estudio fenomenológico sobre experiencias de participación cívica entre personas mayores afroamericanas e inmigrantes latines, desde una perspectiva interseccional del curso de vida.",
+    downloadPdf: "Descargar la tesis completa (PDF)",
+    pdfPending: "El PDF de la tesis se añadirá aquí.",
+    methodologyTitle: "Metodología de investigación",
+    methodologyBody: "Los métodos de investigación verificados se añadirán aquí.",
+  },
+  footer: { about: "Para la investigación", contact: "Contacto", share: "Comparte tu historia", accessibility: "Accesibilidad" },
 };
 
 const zh: UiCopy = {
@@ -269,7 +413,7 @@ const zh: UiCopy = {
     timeline: "互动时间线",
     share: "分享你的故事",
     stories: "参与者",
-    about: "关于",
+    research: "研究专区",
     contact: "联系",
   },
   home: {
@@ -287,24 +431,61 @@ const zh: UiCopy = {
     timelineBody: "法律、迁徙与社会运动，和参与者讲述的亲身经历放在一起。",
   },
   collections: [
-    { label: "拉丁裔", title: "拉丁裔移民故事", description: "拉丁裔移民参与者的故事。" },
-    { label: "非裔美国人", title: "非裔美国人故事", description: "非裔美国长者的故事。" },
-    { label: "华裔", title: "华裔移民故事", description: "华裔移民参与者的故事。" },
+    { id: "latine", label: "拉丁裔", title: "拉丁裔移民故事", description: "拉丁裔移民参与者的故事。" },
+    { id: "africanAmerican", label: "非裔美国人", title: "非裔美国人故事", description: "非裔美国长者的故事。" },
+    { id: "chinese", label: "华裔", title: "华裔移民故事", description: "华裔移民参与者的故事。" },
   ],
   stories: {
     title: "参与者",
     lede: "居住在加利福尼亚、新泽西和纽约、年满 60 岁的非裔美国人与拉丁裔长者，分享了他们一生参与社区的经历。他们也讲述了在 COVID-19 期间、2020 年 Black Lives Matter 运动中，以及在移民、健康和身体能力变化这些个人转折里，自己如何为社区的福祉做出贡献。",
     ledeContinued:
       "故事以参与者的母语呈现。大多数非裔美国参与者出生在他们现在居住的东北部，少数出生在南部和中西部。拉丁裔参与者的故事包括来自原居地的经历：墨西哥、萨尔瓦多、危地马拉、哥伦比亚、厄瓜多尔、波多黎各和秘鲁。",
-    listEyebrow: "时间线上的参与者",
-    listTitle: "保存在时间线上的引语",
-    readStory: "阅读引语",
+    listEyebrow: "故事卡片 — 参与者",
+    listTitle: "他们的话。他们的生活。",
+    readStory: "阅读故事",
+    learnMore: "了解更多",
+    exploreTitle: "浏览专题",
+    exploreLede: "选择下面的档案卷册，阅读鲜活的社区历史。",
+    exploreVolume: "打开卷册",
+    emptyCollection: "这个分类里还没有故事。",
+    unassignedTitle: "尚未归入社区",
+    unassignedNote: "这些故事还没有经过核对的社区归属。",
+    heroImageAlt: "社区成员聚集在人行道上，旁边的横幅写着 A Home for Every New Yorker。",
+    volumes: [
+      {
+        id: "latine",
+        title: "拉丁裔移民故事",
+        description: "关于迁徙、团结和邻里互助的口述历史。",
+        imageAlt: "一个人站在砖楼外，旁边是一箱箱物资。",
+      },
+      {
+        id: "africanAmerican",
+        title: "非裔美国人故事",
+        description: "民权组织、哈莱姆的生活记忆，以及代际间的服务。",
+        imageAlt: "一张黑白照片，人们走在繁忙的城市人行道上。",
+      },
+      {
+        id: "chinese",
+        title: "华裔移民故事",
+        description: "劳工史、面对流离的韧性，以及华埠的互助。",
+        imageAlt: "社区食物储藏室里摆满罐头和干货的货架。",
+      },
+    ],
   },
   story: {
     quotations: "引语",
     related: "在时间线上",
     archiveLink: "当前公开档案中的版本",
     back: "全部参与者",
+    backParticipants: "返回参与者",
+    home: "首页",
+    participants: "参与者",
+    team: "我们的团队",
+    contact: "联系",
+    backTo: "返回",
+    next: "下一位参与者的故事",
+    rights: "© 2026 我们的生活方式档案。保留所有权利。",
+    sections: "故事章节",
   },
   about: {
     eyebrow: "关于档案",
@@ -336,12 +517,28 @@ const zh: UiCopy = {
   },
   share: {
     title: "分享你的故事",
-    pausedTitle: "故事提交已暂停",
-    pausedBody:
-      "此表单不接收故事、照片或联系方式。在隐私审查完成之前，不应通过本网站提交个人信息。已公开的参与者引语可以在档案中阅读。",
+    pausedTitle: "通过邮件发送项目",
+    pausedBody: "本网站不接收文件上传。请发邮件给研究团队，并在邮件里附上项目。",
+    emailCta: "发邮件给研究团队",
+    emailSubject: "项目投稿",
     browse: "查看参与者",
   },
-  footer: { about: "关于", contact: "联系", share: "分享你的故事", accessibility: "无障碍" },
+  research: {
+    transcripts: "故事文稿",
+    publications: "研究与出版物",
+    methodology: "研究方法",
+    transcriptsTitle: "开放获取的故事库",
+    transcriptsLede: "在共享的 Google 文档里阅读已去标识的文稿和原始文献。",
+    openDoc: "打开研究文档",
+    docPending: "Google 文档链接将补充在这里。",
+    dissertation: "学位论文",
+    dissertationTitle: "一项现象学研究报告：从交叉性生命历程视角，探讨非裔美国长者与拉丁裔移民的公民参与经历。",
+    downloadPdf: "下载完整学位论文（PDF）",
+    pdfPending: "学位论文 PDF 将补充在这里。",
+    methodologyTitle: "研究方法",
+    methodologyBody: "已核实的研究方法将补充在这里。",
+  },
+  footer: { about: "研究专区", contact: "联系", share: "分享你的故事", accessibility: "无障碍" },
 };
 
 export const ui: Record<Locale, UiCopy> = { en, es, zh };
@@ -381,7 +578,7 @@ export const localSettings: SiteSettings = {
     { label: field((copy) => copy.nav.timeline), path: "/timeline" },
     { label: field((copy) => copy.nav.share), path: "/share-your-story" },
     { label: field((copy) => copy.nav.stories), path: "/stories" },
-    { label: field((copy) => copy.nav.about), path: "/about" },
+    { label: field((copy) => copy.nav.research), path: "/research" },
     { label: field((copy) => copy.nav.contact), path: "/contact" },
   ],
   accessibilityUrl: "https://dap.berkeley.edu/",

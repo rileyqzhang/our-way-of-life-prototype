@@ -13,7 +13,7 @@ export function SiteFooter({ lang, settings }: { lang: Locale; settings: SiteSet
       <div className="container footerInner">
         <strong>{pick(settings.siteName, lang)}</strong>
         <div className="footerLinks">
-          <Link href={localizeHref(lang, "/about")}>{copy.footer.about}</Link>
+          <Link href={localizeHref(lang, "/research")}>{copy.footer.about}</Link>
           <Link href={localizeHref(lang, "/contact")}>{copy.footer.contact}</Link>
           <Link href={localizeHref(lang, "/share-your-story")}>{copy.footer.share}</Link>
           <a href={settings.accessibilityUrl}>{copy.footer.accessibility}</a>

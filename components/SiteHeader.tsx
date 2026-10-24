@@ -38,13 +38,12 @@ export function SiteHeader({ lang, navigation }: { lang: Locale; navigation: Nav
           {navigation.map((item) => {
             const href = localizeHref(lang, item.path);
             const current = item.path === "/" ? pathname === href : pathname === href || pathname.startsWith(`${href}/`);
-            const stories = item.path === "/stories";
             return (
               <Link
                 key={item.path}
                 href={href}
                 aria-current={current ? "page" : undefined}
-                className={[current ? "isCurrent" : "", stories ? "navStories" : ""].filter(Boolean).join(" ") || undefined}
+                className={current ? "isCurrent" : undefined}
                 onClick={() => setOpen(false)}
               >
                 {pick(item.label, lang)}
