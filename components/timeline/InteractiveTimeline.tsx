@@ -6,6 +6,7 @@ import { VortexCanvas, type VortexPoint } from "@/components/timeline/VortexCanv
 import { scrollProgressFor, toVortexNodes, type VortexNode } from "@/components/timeline/vortex-model";
 import { pick } from "@/lib/content/text";
 import type { Locale } from "@/lib/i18n";
+import { closeTimelineCard, openTimelineCard } from "@/lib/timeline/open-cards";
 import type { TimelineBlock, TimelineEvent } from "@/lib/timeline/types";
 
 const chrome = {
@@ -90,7 +91,9 @@ export function InteractiveTimeline({ events, lang }: { events: TimelineEvent[];
   const [pinnedId, setPinnedId] = useState<string | null>(null);
   const [point, setPoint] = useState<VortexPoint | null>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [readingId, setReadingId] = useState<string | null>(null);
+  const [openIds, setOpenIds] = useState<string[]>([]);
+  const [focusedId, setFocusedId] = useState<string | null>(null);
+  const [focusNonce, setFocusNonce] = useState(0);
   const [view, setView] = useState<"vortex" | "linear">("vortex");
   const [diving, setDiving] = useState(false);
   const overCard = useRef(false);
@@ -103,11 +106,16 @@ export function InteractiveTimeline({ events, lang }: { events: TimelineEvent[];
   if (!diveFrame.current) progressRef.current = scrollProgress;
 
   const hovered = nodes.find((node) => node.id === hoveredId) ?? null;
-  const reading = nodes.find((node) => node.id === readingId) ?? null;
-  const readingEvent = events.find((event) => event.id === readingId) ?? null;
+  const openCards = openIds.flatMap((id) => {
+    const node = nodes.find((item) => item.id === id);
+    const event = events.find((item) => item.id === id);
+    return node && event ? [{ id, node, event }] : [];
+  });
 
-  const readingRef = useRef<string | null>(null);
-  readingRef.current = readingId;
+  const openIdsRef = useRef<string[]>([]);
+  const focusedRef = useRef<string | null>(null);
+  openIdsRef.current = openIds;
+  focusedRef.current = focusedId;
 
   const stopDive = () => {
     if (diveFrame.current) cancelAnimationFrame(diveFrame.current);
@@ -138,10 +146,26 @@ export function InteractiveTimeline({ events, lang }: { events: TimelineEvent[];
     diveFrame.current = requestAnimationFrame(tick);
   };
 
+  const focusCard = (id: string) => {
+    setFocusedId(id);
+    setFocusNonce((nonce) => nonce + 1);
+  };
+
   const diveTo = (node: VortexNode) => {
     setHoveredId(node.id);
     setPinnedId(node.id);
-    animateTo(scrollProgressFor(node.spiralParam), () => setReadingId(node.id));
+    setOpenIds((ids) => openTimelineCard(ids, node.id));
+    focusCard(node.id);
+    animateTo(scrollProgressFor(node.spiralParam));
+  };
+
+  const closeCard = (id: string) => {
+    const next = closeTimelineCard(openIdsRef.current, id);
+    setOpenIds(next);
+    if (focusedRef.current !== id) return;
+    const nextFocus = next.at(-1) ?? null;
+    setFocusedId(nextFocus);
+    if (nextFocus) setFocusNonce((nonce) => nonce + 1);
   };
 
   const openedHash = useRef(false);
@@ -155,13 +179,23 @@ export function InteractiveTimeline({ events, lang }: { events: TimelineEvent[];
   }, [nodes]);
 
   useEffect(() => {
+    if (!focusedId) return;
+    document.getElementById(`timeline-card-${focusedId}`)?.focus({ preventScroll: true });
+  }, [focusedId, focusNonce]);
+
+  useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
       if (event.key !== "Escape") return;
       if (diveFrame.current) cancelAnimationFrame(diveFrame.current);
       diveFrame.current = null;
       setDiving(false);
-      if (readingRef.current) {
-        setReadingId(null);
+      const current = focusedRef.current;
+      if (current && openIdsRef.current.includes(current)) {
+        const next = closeTimelineCard(openIdsRef.current, current);
+        setOpenIds(next);
+        const nextFocus = next.at(-1) ?? null;
+        setFocusedId(nextFocus);
+        if (nextFocus) setFocusNonce((nonce) => nonce + 1);
         return;
       }
       setPinnedId(null);
@@ -177,7 +211,6 @@ export function InteractiveTimeline({ events, lang }: { events: TimelineEvent[];
   }, []);
 
   const scrollBy = (delta: number) => {
-    if (readingRef.current) return;
     if (diveFrame.current) cancelAnimationFrame(diveFrame.current);
     diveFrame.current = null;
     setDiving(false);
@@ -199,7 +232,7 @@ export function InteractiveTimeline({ events, lang }: { events: TimelineEvent[];
       {view === "linear" ? (
         <LinearTimeline events={events} lang={lang} />
       ) : (
-    <section className="vortexStage" aria-labelledby={labelId}>
+    <section className={openCards.length ? "vortexStage hasCards" : "vortexStage"} aria-labelledby={labelId}>
       <h1 id={labelId} className="visuallyHidden">
         {copy.archive}
       </h1>
@@ -236,7 +269,7 @@ export function InteractiveTimeline({ events, lang }: { events: TimelineEvent[];
         onHoveredPoint={setPoint}
       />
 
-      {hovered && point?.visible && !diving ? (
+      {hovered && point?.visible && !diving && !openIds.includes(hovered.id) ? (
         <VortexPopover
           node={hovered}
           point={point}
@@ -270,16 +303,28 @@ export function InteractiveTimeline({ events, lang }: { events: TimelineEvent[];
         {copy.scroll} {scrollProgress >= 0.85 ? "↑" : "↓"}
       </button>
 
-      {reading && readingEvent ? (
-        <NarrativeModal
-          node={reading}
-          event={readingEvent}
-          nodes={nodes}
-          lang={lang}
-          closeLabel={copy.close}
-          onClose={() => setReadingId(null)}
-          onSelect={(node) => diveTo(node)}
-        />
+      {openCards.length ? (
+        <aside className="vortexDock" aria-label={copy.stories}>
+          {openCards.map(({ id, node, event }) => (
+            <TimelineCard
+              key={id}
+              event={event}
+              focused={id === focusedId}
+              lang={lang}
+              node={node}
+              onClose={() => closeCard(id)}
+              onFocus={() => {
+                if (focusedRef.current !== id) setFocusedId(id);
+              }}
+              onMove={(direction) => {
+                const ids = openIdsRef.current;
+                const index = Math.max(0, ids.indexOf(id));
+                const next = ids[(index + direction + ids.length) % ids.length];
+                if (next) focusCard(next);
+              }}
+            />
+          ))}
+        </aside>
       ) : null}
 
       <div className="visuallyHidden">
@@ -405,77 +450,66 @@ function VortexPopover({
   );
 }
 
-function NarrativeModal({
+function TimelineCard({
   node,
   event,
-  nodes,
   lang,
-  closeLabel,
+  focused,
   onClose,
-  onSelect,
+  onFocus,
+  onMove,
 }: {
   node: VortexNode;
   event: TimelineEvent;
-  nodes: VortexNode[];
   lang: Locale;
-  closeLabel: string;
+  focused: boolean;
   onClose: () => void;
-  onSelect: (node: VortexNode) => void;
+  onFocus: () => void;
+  onMove: (direction: 1 | -1) => void;
 }) {
-  const closeRef = useRef<HTMLButtonElement | null>(null);
-  const index = nodes.findIndex((item) => item.id === node.id);
-  const prev = index > 0 ? nodes[index - 1] : null;
-  const next = index >= 0 && index < nodes.length - 1 ? nodes[index + 1] : null;
   const titleId = useId();
-
-  useEffect(() => {
-    closeRef.current?.focus();
-  }, [node.id]);
+  const closeLabel = `${chrome[lang].close} ${node.date}. ${node.headline}`;
 
   return (
-    <div className="vortexModal" role="presentation">
-      <button type="button" className="vortexModalBackdrop" aria-label={closeLabel} onClick={onClose} />
-      <article className="vortexModalPanel" role="dialog" aria-modal="true" aria-labelledby={titleId}>
-        <div className="vortexModalBar">
-          <p className="vortexEra">
-            {node.date} · {node.headline}
-          </p>
-          <button ref={closeRef} type="button" onClick={onClose} aria-label={closeLabel}>
-            ×
-          </button>
-        </div>
-        <h2 id={titleId}>{node.headline}</h2>
+    <article
+      id={`timeline-card-${event.id}`}
+      className={focused ? "vortexDockCard isFocused" : "vortexDockCard"}
+      tabIndex={-1}
+      aria-labelledby={titleId}
+      onFocus={onFocus}
+      onKeyDown={(keyEvent) => {
+        const body = keyEvent.currentTarget.querySelector(".vortexDockBody");
+        if (body?.contains(keyEvent.target as Node)) return;
+        if (keyEvent.key === "ArrowRight" || keyEvent.key === "ArrowDown") {
+          keyEvent.preventDefault();
+          onMove(1);
+        }
+        if (keyEvent.key === "ArrowLeft" || keyEvent.key === "ArrowUp") {
+          keyEvent.preventDefault();
+          onMove(-1);
+        }
+      }}
+    >
+      <div className="vortexDockHead">
+        <p className="vortexEra">
+          {node.date} · {node.headline}
+        </p>
+        <button type="button" onClick={onClose} aria-label={closeLabel}>
+          ×
+        </button>
+      </div>
+      <h2 id={titleId}>{node.headline}</h2>
+      <div className="vortexDockBody" tabIndex={0}>
         {node.photoUrl ? (
           <figure>
             <img src={node.photoUrl} alt={node.photoAlt} />
           </figure>
         ) : null}
-        <div className="vortexModalBody">
-          {event.blocks.map((block, blockIndex) => (
-            <BlockView block={block} key={`${event.id}-${blockIndex}`} lang={lang} />
-          ))}
-        </div>
-        <div className="vortexModalNav">
-          {prev ? (
-            <button type="button" onClick={() => onSelect(prev)}>
-              ← {prev.date}
-            </button>
-          ) : (
-            <span />
-          )}
-          <button type="button" onClick={onClose}>
-            {closeLabel}
-          </button>
-          {next ? (
-            <button type="button" onClick={() => onSelect(next)}>
-              {next.date} →
-            </button>
-          ) : (
-            <span />
-          )}
-        </div>
-      </article>
-    </div>
+        {event.blocks.map((block, blockIndex) => (
+          <BlockView block={block} key={`${event.id}-${blockIndex}`} lang={lang} />
+        ))}
+      </div>
+    </article>
   );
 }
 
