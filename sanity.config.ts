@@ -2,6 +2,7 @@ import { visionTool } from "@sanity/vision";
 import { defineConfig } from "sanity";
 import { presentationTool } from "sanity/presentation";
 import { structureTool } from "sanity/structure";
+import { createStoryDraftAction } from "./cms/actions/createStoryDraft";
 import { structure } from "./cms/desk";
 import { schemaTypes } from "./cms/schemaTypes";
 
@@ -86,4 +87,10 @@ export default defineConfig({
     visionTool(),
   ],
   schema: { types: schemaTypes },
+  document: {
+    actions: (prev, context) => {
+      if (context.schemaType !== "storySubmission") return prev;
+      return [createStoryDraftAction, ...prev.filter((action) => action.action !== "publish")];
+    },
+  },
 });

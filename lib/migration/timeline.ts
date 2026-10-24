@@ -45,6 +45,29 @@ export function draftTimelineId(eventId: string) {
   return `drafts.${publishedTimelineId(eventId)}`;
 }
 
+export function logicalDocumentId(id: string) {
+  return id.startsWith("drafts.") ? id.slice("drafts.".length) : id;
+}
+
+export function sameTimelineEvent(existingId: string, eventId: string) {
+  return logicalDocumentId(existingId) === publishedTimelineId(eventId);
+}
+
+export function publishedStoryIdsBySlug(records: { _id: string; slug?: string }[]) {
+  const published = new Map<string, string>();
+  const draftOnly = new Map<string, string>();
+  for (const record of records) {
+    if (!record.slug) continue;
+    if (record._id.startsWith("drafts.")) {
+      if (!draftOnly.has(record.slug)) draftOnly.set(record.slug, record._id);
+      continue;
+    }
+    published.set(record.slug, record._id);
+  }
+  for (const slug of published.keys()) draftOnly.delete(slug);
+  return { published, draftOnly };
+}
+
 function linkAlt(block: TimelineBlockDocument): TimelineBlockDocument {
   if (block._type !== "timelineLink" || !block.imageAlt?.en) return block;
   if (block.imageAlt.es === block.imageAlt.en && block.imageAlt.zh === block.imageAlt.en) {

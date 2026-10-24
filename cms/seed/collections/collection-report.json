@@ -1,5 +1,5 @@
 {
-  "writtenAt": "2026-10-24T18:33:36.311Z",
+  "writtenAt": "2026-10-24T21:53:21.939Z",
   "dataset": "production",
   "sanityWrites": 0,
   "note": "Dry run. Published stories and collection documents are not modified. Draft collections are created only with --apply. Draft story references are added only with --link-drafts after the collection is published.",

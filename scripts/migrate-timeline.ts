@@ -10,7 +10,9 @@ import {
   draftTimelineId,
   missingLocaleFields,
   participantSlugs,
+  publishedStoryIdsBySlug,
   publishedTimelineId,
+  sameTimelineEvent,
   sourceTimelineDocuments,
   timelineDocumentForCreate,
   timelineRowIsApproved,
@@ -68,13 +70,7 @@ async function sanityContext() {
 }
 
 function storiesBySlug(records: LiveRecord[]) {
-  const map = new Map<string, string>();
-  const ordered = [...records.filter((record) => record._id.startsWith("drafts.")), ...records.filter((record) => !record._id.startsWith("drafts."))];
-  for (const record of ordered) {
-    if (!record.slug) continue;
-    map.set(record.slug, record._id.replace(/^drafts\./, ""));
-  }
-  return map;
+  return publishedStoryIdsBySlug(records);
 }
 
 function personReady(slug: string, people: LiveRecord[]) {
@@ -125,7 +121,8 @@ async function main() {
     sanityNote = "Sanity could not be queried. Existing events were not checked.";
   }
   const live = remote?.events || [];
-  const availableStories = storiesBySlug(remote?.stories || []);
+  const storyReferences = storiesBySlug(remote?.stories || []);
+  const availableStories = storyReferences.published;
   const people = remote?.people || [];
   const prepared = new Map<string, ReturnType<typeof timelineDocumentForCreate>>();
   const rows = documents.map((document, index) => {
@@ -133,8 +130,8 @@ async function main() {
     const eventId = document.slug.current;
     const plan = timelineDocumentForCreate(document, availableStories);
     prepared.set(eventId, plan);
-    const matches = live.filter((item) => item._id === document._id || item._id === plan.draft._id || item.slug === eventId);
-    const unexpected = matches.filter((item) => item._id !== document._id && item._id !== plan.draft._id);
+    const matches = live.filter((item) => sameTimelineEvent(item._id, eventId) || item.slug === eventId);
+    const unexpected = matches.filter((item) => !sameTimelineEvent(item._id, eventId));
     const fidelity = JSON.stringify(timelineShape(event)) === JSON.stringify(documentShape(document));
     const missingTitle = missingLocaleFields(document.title);
     const missingParagraphs = document.blocks.filter((block) => block._type === "timelineParagraph" && missingLocaleFields(block.text).length).length;
@@ -159,6 +156,8 @@ async function main() {
       paragraphsMissingALanguage: missingParagraphs,
       counts: counts(document),
       omittedStoryIds: plan.omittedStoryIds,
+      draftOnlyStoryIds: plan.omittedStoryIds.filter((id) => storyReferences.draftOnly.has(id.replace(/^story-/, ""))),
+      absentStoryIds: plan.omittedStoryIds.filter((id) => !storyReferences.draftOnly.has(id.replace(/^story-/, ""))),
       linkedStoryIds: [...referencedIds(plan.draft)].sort(),
       missingParticipants: missingPeople.map((slug) => `person-${slug}`),
       images,
@@ -171,6 +170,9 @@ async function main() {
         unexpected.length ? `This slug is already stored as ${unexpected.map((item) => item._id).join(", ")}.` : "",
         sanityNote,
         !fidelity ? "The Sanity document shape does not match the archive event." : "",
+        plan.omittedStoryIds.length
+          ? `Story references omitted because the published story does not exist: ${plan.omittedStoryIds.join(", ")}. No placeholder was created.`
+          : "",
       ].filter(Boolean),
     };
   });
@@ -186,7 +188,9 @@ async function main() {
       review: rows.filter((row) => row.action === "Review").length,
       duplicateIds: [...new Set(duplicateIds)],
       missingTranslations: rows.filter((row) => row.missingTitleLanguages.length || row.paragraphsMissingALanguage).map((row) => row.eventId),
-      missingStoryReferences: [...new Set(rows.flatMap((row) => row.omittedStoryIds))].sort(),
+      missingStoryReferences: [...new Set(rows.flatMap((row) => row.absentStoryIds))].sort(),
+      draftOnlyStoryReferences: [...new Set(rows.flatMap((row) => row.draftOnlyStoryIds))].sort(),
+      missingEventIds: ready,
       missingParticipants: [...new Set(rows.flatMap((row) => row.missingParticipants))].sort(),
       missingImages: rows.flatMap((row) => row.images.filter((image) => image.state === "missing" || image.state === "empty").map((image) => `${row.eventId}:${image.state}`)),
     },

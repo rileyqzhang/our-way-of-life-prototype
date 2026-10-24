@@ -14,4 +14,10 @@ export const structure: StructureResolver = (S) =>
       S.documentTypeListItem("timelineEvent").title("Timeline events"),
       S.documentTypeListItem("person").title("People"),
       S.documentTypeListItem("page").title("Pages"),
+      S.divider(),
+      S.listItem()
+        .title("Share Your Story survey")
+        .id("shareYourStorySurvey")
+        .child(S.document().schemaType("survey").documentId("shareYourStorySurvey")),
+      S.documentTypeListItem("storySubmission").title("Story submissions"),
     ]);

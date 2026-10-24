@@ -6,6 +6,9 @@ import { referencedIds } from "@/lib/migration/references";
 import {
   documentShape,
   draftTimelineId,
+  publishedStoryIdsBySlug,
+  publishedTimelineId,
+  sameTimelineEvent,
   sourceTimelineDocuments,
   timelineDocumentForCreate,
   timelineRowIsApproved,
@@ -40,6 +43,33 @@ test("missing story references are omitted and existing events stay unpublished"
   const linked = timelineDocumentForCreate(source, new Map([["mgnj", "362fbdab-460c-421b-ba63-61add1e64c86"]]));
   assert.equal(linked.omittedStoryIds.includes("story-mgnj"), false);
   assert.equal([...referencedIds(linked.draft)].includes("362fbdab-460c-421b-ba63-61add1e64c86"), true);
+});
+
+test("a draft-only story is not treated as a published reference", () => {
+  const records = [
+    { _id: "drafts.story-wpny", slug: "wpny" },
+    { _id: "drafts.story-senj", slug: "senj" },
+    { _id: "story-senj", slug: "senj" },
+    { _id: "362fbdab-460c-421b-ba63-61add1e64c86", slug: "frnj" },
+  ];
+  const stories = publishedStoryIdsBySlug(records);
+  assert.equal(stories.published.get("wpny"), undefined);
+  assert.equal(stories.draftOnly.get("wpny"), "drafts.story-wpny");
+  assert.equal(stories.published.get("senj"), "story-senj");
+  assert.equal(stories.draftOnly.has("senj"), false);
+  assert.equal(stories.published.has("dhnj"), false);
+  assert.equal(stories.published.has("emnj"), false);
+  assert.equal(sameTimelineEvent("drafts.timeline-06-1920-harlem-renaissance", "06-1920-harlem-renaissance"), true);
+  assert.equal(sameTimelineEvent(publishedTimelineId("06-1920-harlem-renaissance"), "06-1920-harlem-renaissance"), true);
+
+  const harlem = sourceTimelineDocuments().find((document) => document.slug.current === "06-1920-harlem-renaissance");
+  assert.ok(harlem);
+  const prepared = timelineDocumentForCreate(harlem, stories.published);
+  assert.equal(prepared.draft._id, draftTimelineId("06-1920-harlem-renaissance"));
+  assert.equal(prepared.omittedStoryIds.includes("story-wpny"), true);
+  assert.equal([...referencedIds(prepared.draft)].includes("story-wpny"), false);
+  assert.equal([...referencedIds(prepared.draft)].includes("drafts.story-wpny"), false);
+  assert.equal(prepared.problems.length, 0);
 });
 
 test("a partial Sanity timeline keeps the local spiral order", () => {

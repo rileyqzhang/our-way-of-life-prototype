@@ -1,17 +1,58 @@
 {
-  "writtenAt": "2026-10-24T08:08:01.467Z",
+  "writtenAt": "2026-10-24T22:29:45.543Z",
   "source": "lib/timeline/events.json",
   "sanityWrites": 0,
   "summary": {
     "total": 34,
-    "existing": 1,
-    "readyToCreate": 33,
+    "existing": 5,
+    "readyToCreate": 29,
     "review": 0,
     "duplicateIds": [],
     "missingTranslations": [],
     "missingStoryReferences": [
       "story-dhnj",
       "story-emnj"
+    ],
+    "draftOnlyStoryReferences": [
+      "story-bmnj",
+      "story-etny",
+      "story-hsnj",
+      "story-lrnj",
+      "story-mlnj",
+      "story-ncnj",
+      "story-rbny",
+      "story-wpny"
+    ],
+    "missingEventIds": [
+      "06-1920-harlem-renaissance",
+      "07-1924-the-immigration-act-border-patrol-establish",
+      "08-1940-white-flight",
+      "09-1942-the-bracero-program",
+      "10-1947-mendez-v-westminster-school-district",
+      "11-1949-the-groveland-four",
+      "12-1952-puerto-rico-becomes-a-commonwealth",
+      "13-the-civil-rights-movement",
+      "14-brown-vs-boe-of-topeka",
+      "15-emmett-till-murdered",
+      "16-1961-the-u-s-increases-military-in-the-vietnam-w",
+      "17-1964-malcolm-x-the-ballot-or-the-bullet",
+      "18-1966-kwanzaa-is-founded",
+      "19-the-black-panthers-the-young-lords",
+      "20-1967-adam-clayton-powell-what-s-in-your-hand-spe",
+      "21-1969-stonewall-riots",
+      "22-1970-christopher-street-liberation-day",
+      "23-1982-hiv-aids-epidemic",
+      "24-1986-reagan-signs-the-immigration-reform-and-con",
+      "25-the-1994-crime-bill",
+      "26-2001-the-dream-act-is-introduced",
+      "27-2003-ice-is-established",
+      "28-2005-hurricane-katrina-devastates-new-orleans-co",
+      "29-2008-president-barack-obama-is-elected",
+      "30-2012-daca-is-established",
+      "31-2019-new-jersey-signs-licenses-for-all",
+      "32-2020-new-jersey-restores-voting-rights-to-former",
+      "33-covid-19-pandemic",
+      "34-black-lives-matter"
     ],
     "missingParticipants": [
       "person-dhnj",
@@ -23,7 +64,7 @@
       "31-2019-new-jersey-signs-licenses-for-all:empty"
     ]
   },
-  "importCommand": "npx tsx scripts/migrate-timeline.ts --apply --only=02-1790-naturalization-act,03-1823-the-monroe-doctrine,04-1865-voting-rights,05-1910-the-great-migration,06-1920-harlem-renaissance,07-1924-the-immigration-act-border-patrol-establish,08-1940-white-flight,09-1942-the-bracero-program,10-1947-mendez-v-westminster-school-district,11-1949-the-groveland-four,12-1952-puerto-rico-becomes-a-commonwealth,13-the-civil-rights-movement,14-brown-vs-boe-of-topeka,15-emmett-till-murdered,16-1961-the-u-s-increases-military-in-the-vietnam-w,17-1964-malcolm-x-the-ballot-or-the-bullet,18-1966-kwanzaa-is-founded,19-the-black-panthers-the-young-lords,20-1967-adam-clayton-powell-what-s-in-your-hand-spe,21-1969-stonewall-riots,22-1970-christopher-street-liberation-day,23-1982-hiv-aids-epidemic,24-1986-reagan-signs-the-immigration-reform-and-con,25-the-1994-crime-bill,26-2001-the-dream-act-is-introduced,27-2003-ice-is-established,28-2005-hurricane-katrina-devastates-new-orleans-co,29-2008-president-barack-obama-is-elected,30-2012-daca-is-established,31-2019-new-jersey-signs-licenses-for-all,32-2020-new-jersey-restores-voting-rights-to-former,33-covid-19-pandemic,34-black-lives-matter",
+  "importCommand": "npx tsx scripts/migrate-timeline.ts --apply --only=06-1920-harlem-renaissance,07-1924-the-immigration-act-border-patrol-establish,08-1940-white-flight,09-1942-the-bracero-program,10-1947-mendez-v-westminster-school-district,11-1949-the-groveland-four,12-1952-puerto-rico-becomes-a-commonwealth,13-the-civil-rights-movement,14-brown-vs-boe-of-topeka,15-emmett-till-murdered,16-1961-the-u-s-increases-military-in-the-vietnam-w,17-1964-malcolm-x-the-ballot-or-the-bullet,18-1966-kwanzaa-is-founded,19-the-black-panthers-the-young-lords,20-1967-adam-clayton-powell-what-s-in-your-hand-spe,21-1969-stonewall-riots,22-1970-christopher-street-liberation-day,23-1982-hiv-aids-epidemic,24-1986-reagan-signs-the-immigration-reform-and-con,25-the-1994-crime-bill,26-2001-the-dream-act-is-introduced,27-2003-ice-is-established,28-2005-hurricane-katrina-devastates-new-orleans-co,29-2008-president-barack-obama-is-elected,30-2012-daca-is-established,31-2019-new-jersey-signs-licenses-for-all,32-2020-new-jersey-restores-voting-rights-to-former,33-covid-19-pandemic,34-black-lives-matter",
   "events": [
     {
       "eventId": "01-colonization-of-the-americas",
@@ -54,10 +95,15 @@
           "zh": 6
         }
       },
-      "omittedStoryIds": [],
-      "linkedStoryIds": [
-        "story-mgnj",
+      "omittedStoryIds": [
         "story-mlnj"
+      ],
+      "draftOnlyStoryIds": [
+        "story-mlnj"
+      ],
+      "absentStoryIds": [],
+      "linkedStoryIds": [
+        "story-mgnj"
       ],
       "missingParticipants": [],
       "images": [
@@ -83,7 +129,9 @@
         "videos": true,
         "links": true
       },
-      "notes": []
+      "notes": [
+        "Story references omitted because the published story does not exist: story-mlnj. No placeholder was created."
+      ]
     },
     {
       "eventId": "02-1790-naturalization-act",
@@ -91,8 +139,10 @@
       "displayOrder": 1,
       "proposedDocumentId": "drafts.timeline-02-1790-naturalization-act",
       "publishedId": "timeline-02-1790-naturalization-act",
-      "existingSanityId": [],
-      "action": "Create",
+      "existingSanityId": [
+        "timeline-02-1790-naturalization-act"
+      ],
+      "action": "Preserve",
       "languages": [
         "en",
         "es",
@@ -113,13 +163,24 @@
         }
       },
       "omittedStoryIds": [],
+      "draftOnlyStoryIds": [],
+      "absentStoryIds": [],
       "linkedStoryIds": [],
       "missingParticipants": [],
       "images": [],
       "videos": 1,
       "externalLinks": 0,
       "contentMatchesArchive": true,
-      "existingDifference": null,
+      "existingDifference": {
+        "date": true,
+        "displayOrder": true,
+        "title": true,
+        "blocks": true,
+        "paragraphs": true,
+        "participants": true,
+        "videos": true,
+        "links": true
+      },
       "notes": []
     },
     {
@@ -128,8 +189,10 @@
       "displayOrder": 2,
       "proposedDocumentId": "drafts.timeline-03-1823-the-monroe-doctrine",
       "publishedId": "timeline-03-1823-the-monroe-doctrine",
-      "existingSanityId": [],
-      "action": "Create",
+      "existingSanityId": [
+        "drafts.timeline-03-1823-the-monroe-doctrine"
+      ],
+      "action": "Preserve",
       "languages": [
         "en",
         "es",
@@ -150,13 +213,24 @@
         }
       },
       "omittedStoryIds": [],
+      "draftOnlyStoryIds": [],
+      "absentStoryIds": [],
       "linkedStoryIds": [],
       "missingParticipants": [],
       "images": [],
       "videos": 1,
       "externalLinks": 0,
       "contentMatchesArchive": true,
-      "existingDifference": null,
+      "existingDifference": {
+        "date": true,
+        "displayOrder": true,
+        "title": true,
+        "blocks": true,
+        "paragraphs": true,
+        "participants": true,
+        "videos": true,
+        "links": true
+      },
       "notes": []
     },
     {
@@ -165,8 +239,10 @@
       "displayOrder": 3,
       "proposedDocumentId": "drafts.timeline-04-1865-voting-rights",
       "publishedId": "timeline-04-1865-voting-rights",
-      "existingSanityId": [],
-      "action": "Create",
+      "existingSanityId": [
+        "drafts.timeline-04-1865-voting-rights"
+      ],
+      "action": "Preserve",
       "languages": [
         "en",
         "es",
@@ -187,6 +263,8 @@
         }
       },
       "omittedStoryIds": [],
+      "draftOnlyStoryIds": [],
+      "absentStoryIds": [],
       "linkedStoryIds": [
         "story-senj"
       ],
@@ -200,7 +278,16 @@
       "videos": 1,
       "externalLinks": 0,
       "contentMatchesArchive": true,
-      "existingDifference": null,
+      "existingDifference": {
+        "date": true,
+        "displayOrder": true,
+        "title": true,
+        "blocks": true,
+        "paragraphs": true,
+        "participants": true,
+        "videos": true,
+        "links": true
+      },
       "notes": []
     },
     {
@@ -209,8 +296,10 @@
       "displayOrder": 4,
       "proposedDocumentId": "drafts.timeline-05-1910-the-great-migration",
       "publishedId": "timeline-05-1910-the-great-migration",
-      "existingSanityId": [],
-      "action": "Create",
+      "existingSanityId": [
+        "drafts.timeline-05-1910-the-great-migration"
+      ],
+      "action": "Preserve",
       "languages": [
         "en",
         "es",
@@ -231,13 +320,24 @@
         }
       },
       "omittedStoryIds": [],
+      "draftOnlyStoryIds": [],
+      "absentStoryIds": [],
       "linkedStoryIds": [],
       "missingParticipants": [],
       "images": [],
       "videos": 1,
       "externalLinks": 0,
       "contentMatchesArchive": true,
-      "existingDifference": null,
+      "existingDifference": {
+        "date": true,
+        "displayOrder": true,
+        "title": true,
+        "blocks": true,
+        "paragraphs": true,
+        "participants": true,
+        "videos": true,
+        "links": true
+      },
       "notes": []
     },
     {
@@ -267,10 +367,15 @@
           "zh": 12
         }
       },
-      "omittedStoryIds": [],
-      "linkedStoryIds": [
-        "story-senj",
+      "omittedStoryIds": [
         "story-wpny"
+      ],
+      "draftOnlyStoryIds": [
+        "story-wpny"
+      ],
+      "absentStoryIds": [],
+      "linkedStoryIds": [
+        "story-senj"
       ],
       "missingParticipants": [],
       "images": [
@@ -287,7 +392,9 @@
       "externalLinks": 0,
       "contentMatchesArchive": true,
       "existingDifference": null,
-      "notes": []
+      "notes": [
+        "Story references omitted because the published story does not exist: story-wpny. No placeholder was created."
+      ]
     },
     {
       "eventId": "07-1924-the-immigration-act-border-patrol-establish",
@@ -317,6 +424,8 @@
         }
       },
       "omittedStoryIds": [],
+      "draftOnlyStoryIds": [],
+      "absentStoryIds": [],
       "linkedStoryIds": [],
       "missingParticipants": [],
       "images": [
@@ -359,6 +468,8 @@
         }
       },
       "omittedStoryIds": [],
+      "draftOnlyStoryIds": [],
+      "absentStoryIds": [],
       "linkedStoryIds": [
         "story-senj"
       ],
@@ -403,6 +514,8 @@
         }
       },
       "omittedStoryIds": [],
+      "draftOnlyStoryIds": [],
+      "absentStoryIds": [],
       "linkedStoryIds": [],
       "missingParticipants": [],
       "images": [],
@@ -440,6 +553,8 @@
         }
       },
       "omittedStoryIds": [],
+      "draftOnlyStoryIds": [],
+      "absentStoryIds": [],
       "linkedStoryIds": [],
       "missingParticipants": [],
       "images": [],
@@ -477,6 +592,8 @@
         }
       },
       "omittedStoryIds": [],
+      "draftOnlyStoryIds": [],
+      "absentStoryIds": [],
       "linkedStoryIds": [
         "362fbdab-460c-421b-ba63-61add1e64c86"
       ],
@@ -521,6 +638,8 @@
         }
       },
       "omittedStoryIds": [],
+      "draftOnlyStoryIds": [],
+      "absentStoryIds": [],
       "linkedStoryIds": [
         "story-ebnj"
       ],
@@ -564,10 +683,15 @@
           "zh": 4
         }
       },
-      "omittedStoryIds": [],
-      "linkedStoryIds": [
-        "362fbdab-460c-421b-ba63-61add1e64c86",
+      "omittedStoryIds": [
         "story-rbny"
+      ],
+      "draftOnlyStoryIds": [
+        "story-rbny"
+      ],
+      "absentStoryIds": [],
+      "linkedStoryIds": [
+        "362fbdab-460c-421b-ba63-61add1e64c86"
       ],
       "missingParticipants": [],
       "images": [
@@ -588,7 +712,9 @@
       "externalLinks": 1,
       "contentMatchesArchive": true,
       "existingDifference": null,
-      "notes": []
+      "notes": [
+        "Story references omitted because the published story does not exist: story-rbny. No placeholder was created."
+      ]
     },
     {
       "eventId": "14-brown-vs-boe-of-topeka",
@@ -617,12 +743,18 @@
           "zh": 12
         }
       },
-      "omittedStoryIds": [],
-      "linkedStoryIds": [
+      "omittedStoryIds": [
         "story-bmnj",
         "story-mlnj",
         "story-rbny"
       ],
+      "draftOnlyStoryIds": [
+        "story-bmnj",
+        "story-mlnj",
+        "story-rbny"
+      ],
+      "absentStoryIds": [],
+      "linkedStoryIds": [],
       "missingParticipants": [],
       "images": [
         {
@@ -642,7 +774,9 @@
       "externalLinks": 0,
       "contentMatchesArchive": true,
       "existingDifference": null,
-      "notes": []
+      "notes": [
+        "Story references omitted because the published story does not exist: story-bmnj, story-mlnj, story-rbny. No placeholder was created."
+      ]
     },
     {
       "eventId": "15-emmett-till-murdered",
@@ -671,11 +805,16 @@
           "zh": 8
         }
       },
-      "omittedStoryIds": [],
-      "linkedStoryIds": [
+      "omittedStoryIds": [
         "story-bmnj",
         "story-hsnj"
       ],
+      "draftOnlyStoryIds": [
+        "story-bmnj",
+        "story-hsnj"
+      ],
+      "absentStoryIds": [],
+      "linkedStoryIds": [],
       "missingParticipants": [],
       "images": [
         {
@@ -691,7 +830,9 @@
       "externalLinks": 0,
       "contentMatchesArchive": true,
       "existingDifference": null,
-      "notes": []
+      "notes": [
+        "Story references omitted because the published story does not exist: story-bmnj, story-hsnj. No placeholder was created."
+      ]
     },
     {
       "eventId": "16-1961-the-u-s-increases-military-in-the-vietnam-w",
@@ -720,12 +861,18 @@
           "zh": 21
         }
       },
-      "omittedStoryIds": [],
-      "linkedStoryIds": [
+      "omittedStoryIds": [
         "story-etny",
         "story-hsnj",
         "story-wpny"
       ],
+      "draftOnlyStoryIds": [
+        "story-etny",
+        "story-hsnj",
+        "story-wpny"
+      ],
+      "absentStoryIds": [],
+      "linkedStoryIds": [],
       "missingParticipants": [],
       "images": [
         {
@@ -745,7 +892,9 @@
       "externalLinks": 0,
       "contentMatchesArchive": true,
       "existingDifference": null,
-      "notes": []
+      "notes": [
+        "Story references omitted because the published story does not exist: story-etny, story-hsnj, story-wpny. No placeholder was created."
+      ]
     },
     {
       "eventId": "17-1964-malcolm-x-the-ballot-or-the-bullet",
@@ -774,10 +923,14 @@
           "zh": 23
         }
       },
-      "omittedStoryIds": [],
-      "linkedStoryIds": [
+      "omittedStoryIds": [
         "story-mlnj"
       ],
+      "draftOnlyStoryIds": [
+        "story-mlnj"
+      ],
+      "absentStoryIds": [],
+      "linkedStoryIds": [],
       "missingParticipants": [],
       "images": [
         {
@@ -789,7 +942,9 @@
       "externalLinks": 0,
       "contentMatchesArchive": true,
       "existingDifference": null,
-      "notes": []
+      "notes": [
+        "Story references omitted because the published story does not exist: story-mlnj. No placeholder was created."
+      ]
     },
     {
       "eventId": "18-1966-kwanzaa-is-founded",
@@ -818,10 +973,14 @@
           "zh": 10
         }
       },
-      "omittedStoryIds": [],
-      "linkedStoryIds": [
+      "omittedStoryIds": [
         "story-mlnj"
       ],
+      "draftOnlyStoryIds": [
+        "story-mlnj"
+      ],
+      "absentStoryIds": [],
+      "linkedStoryIds": [],
       "missingParticipants": [],
       "images": [
         {
@@ -833,7 +992,9 @@
       "externalLinks": 0,
       "contentMatchesArchive": true,
       "existingDifference": null,
-      "notes": []
+      "notes": [
+        "Story references omitted because the published story does not exist: story-mlnj. No placeholder was created."
+      ]
     },
     {
       "eventId": "19-the-black-panthers-the-young-lords",
@@ -863,6 +1024,8 @@
         }
       },
       "omittedStoryIds": [],
+      "draftOnlyStoryIds": [],
+      "absentStoryIds": [],
       "linkedStoryIds": [],
       "missingParticipants": [],
       "images": [],
@@ -899,10 +1062,14 @@
           "zh": 25
         }
       },
-      "omittedStoryIds": [],
-      "linkedStoryIds": [
+      "omittedStoryIds": [
         "story-mlnj"
       ],
+      "draftOnlyStoryIds": [
+        "story-mlnj"
+      ],
+      "absentStoryIds": [],
+      "linkedStoryIds": [],
       "missingParticipants": [],
       "images": [
         {
@@ -914,7 +1081,9 @@
       "externalLinks": 0,
       "contentMatchesArchive": true,
       "existingDifference": null,
-      "notes": []
+      "notes": [
+        "Story references omitted because the published story does not exist: story-mlnj. No placeholder was created."
+      ]
     },
     {
       "eventId": "21-1969-stonewall-riots",
@@ -943,10 +1112,14 @@
           "zh": 9
         }
       },
-      "omittedStoryIds": [],
-      "linkedStoryIds": [
+      "omittedStoryIds": [
         "story-rbny"
       ],
+      "draftOnlyStoryIds": [
+        "story-rbny"
+      ],
+      "absentStoryIds": [],
+      "linkedStoryIds": [],
       "missingParticipants": [],
       "images": [
         {
@@ -958,7 +1131,9 @@
       "externalLinks": 0,
       "contentMatchesArchive": true,
       "existingDifference": null,
-      "notes": []
+      "notes": [
+        "Story references omitted because the published story does not exist: story-rbny. No placeholder was created."
+      ]
     },
     {
       "eventId": "22-1970-christopher-street-liberation-day",
@@ -988,6 +1163,8 @@
         }
       },
       "omittedStoryIds": [],
+      "draftOnlyStoryIds": [],
+      "absentStoryIds": [],
       "linkedStoryIds": [],
       "missingParticipants": [],
       "images": [],
@@ -1025,12 +1202,18 @@
         }
       },
       "omittedStoryIds": [
-        "story-emnj"
-      ],
-      "linkedStoryIds": [
+        "story-emnj",
         "story-lrnj",
         "story-rbny"
       ],
+      "draftOnlyStoryIds": [
+        "story-lrnj",
+        "story-rbny"
+      ],
+      "absentStoryIds": [
+        "story-emnj"
+      ],
+      "linkedStoryIds": [],
       "missingParticipants": [
         "person-emnj"
       ],
@@ -1052,7 +1235,9 @@
       "externalLinks": 0,
       "contentMatchesArchive": true,
       "existingDifference": null,
-      "notes": []
+      "notes": [
+        "Story references omitted because the published story does not exist: story-emnj, story-lrnj, story-rbny. No placeholder was created."
+      ]
     },
     {
       "eventId": "24-1986-reagan-signs-the-immigration-reform-and-con",
@@ -1081,10 +1266,14 @@
           "zh": 20
         }
       },
-      "omittedStoryIds": [],
-      "linkedStoryIds": [
+      "omittedStoryIds": [
         "story-ncnj"
       ],
+      "draftOnlyStoryIds": [
+        "story-ncnj"
+      ],
+      "absentStoryIds": [],
+      "linkedStoryIds": [],
       "missingParticipants": [],
       "images": [
         {
@@ -1096,7 +1285,9 @@
       "externalLinks": 0,
       "contentMatchesArchive": true,
       "existingDifference": null,
-      "notes": []
+      "notes": [
+        "Story references omitted because the published story does not exist: story-ncnj. No placeholder was created."
+      ]
     },
     {
       "eventId": "25-the-1994-crime-bill",
@@ -1126,6 +1317,8 @@
         }
       },
       "omittedStoryIds": [],
+      "draftOnlyStoryIds": [],
+      "absentStoryIds": [],
       "linkedStoryIds": [],
       "missingParticipants": [],
       "images": [],
@@ -1163,6 +1356,8 @@
         }
       },
       "omittedStoryIds": [],
+      "draftOnlyStoryIds": [],
+      "absentStoryIds": [],
       "linkedStoryIds": [],
       "missingParticipants": [],
       "images": [],
@@ -1202,6 +1397,10 @@
       "omittedStoryIds": [
         "story-dhnj"
       ],
+      "draftOnlyStoryIds": [],
+      "absentStoryIds": [
+        "story-dhnj"
+      ],
       "linkedStoryIds": [],
       "missingParticipants": [
         "person-dhnj"
@@ -1216,7 +1415,9 @@
       "externalLinks": 0,
       "contentMatchesArchive": true,
       "existingDifference": null,
-      "notes": []
+      "notes": [
+        "Story references omitted because the published story does not exist: story-dhnj. No placeholder was created."
+      ]
     },
     {
       "eventId": "28-2005-hurricane-katrina-devastates-new-orleans-co",
@@ -1245,10 +1446,14 @@
           "zh": 19
         }
       },
-      "omittedStoryIds": [],
-      "linkedStoryIds": [
+      "omittedStoryIds": [
         "story-bmnj"
       ],
+      "draftOnlyStoryIds": [
+        "story-bmnj"
+      ],
+      "absentStoryIds": [],
+      "linkedStoryIds": [],
       "missingParticipants": [],
       "images": [
         {
@@ -1260,7 +1465,9 @@
       "externalLinks": 0,
       "contentMatchesArchive": true,
       "existingDifference": null,
-      "notes": []
+      "notes": [
+        "Story references omitted because the published story does not exist: story-bmnj. No placeholder was created."
+      ]
     },
     {
       "eventId": "29-2008-president-barack-obama-is-elected",
@@ -1289,9 +1496,14 @@
           "zh": 16
         }
       },
-      "omittedStoryIds": [],
+      "omittedStoryIds": [
+        "story-etny"
+      ],
+      "draftOnlyStoryIds": [
+        "story-etny"
+      ],
+      "absentStoryIds": [],
       "linkedStoryIds": [
-        "story-etny",
         "story-senj"
       ],
       "missingParticipants": [],
@@ -1309,7 +1521,9 @@
       "externalLinks": 0,
       "contentMatchesArchive": true,
       "existingDifference": null,
-      "notes": []
+      "notes": [
+        "Story references omitted because the published story does not exist: story-etny. No placeholder was created."
+      ]
     },
     {
       "eventId": "30-2012-daca-is-established",
@@ -1338,10 +1552,14 @@
           "zh": 14
         }
       },
-      "omittedStoryIds": [],
-      "linkedStoryIds": [
+      "omittedStoryIds": [
         "story-bmnj"
       ],
+      "draftOnlyStoryIds": [
+        "story-bmnj"
+      ],
+      "absentStoryIds": [],
+      "linkedStoryIds": [],
       "missingParticipants": [],
       "images": [
         {
@@ -1353,7 +1571,9 @@
       "externalLinks": 0,
       "contentMatchesArchive": true,
       "existingDifference": null,
-      "notes": []
+      "notes": [
+        "Story references omitted because the published story does not exist: story-bmnj. No placeholder was created."
+      ]
     },
     {
       "eventId": "31-2019-new-jersey-signs-licenses-for-all",
@@ -1385,6 +1605,10 @@
       "omittedStoryIds": [
         "story-dhnj"
       ],
+      "draftOnlyStoryIds": [],
+      "absentStoryIds": [
+        "story-dhnj"
+      ],
       "linkedStoryIds": [],
       "missingParticipants": [
         "person-dhnj"
@@ -1399,7 +1623,9 @@
       "externalLinks": 0,
       "contentMatchesArchive": true,
       "existingDifference": null,
-      "notes": []
+      "notes": [
+        "Story references omitted because the published story does not exist: story-dhnj. No placeholder was created."
+      ]
     },
     {
       "eventId": "32-2020-new-jersey-restores-voting-rights-to-former",
@@ -1428,10 +1654,14 @@
           "zh": 21
         }
       },
-      "omittedStoryIds": [],
-      "linkedStoryIds": [
+      "omittedStoryIds": [
         "story-bmnj"
       ],
+      "draftOnlyStoryIds": [
+        "story-bmnj"
+      ],
+      "absentStoryIds": [],
+      "linkedStoryIds": [],
       "missingParticipants": [],
       "images": [
         {
@@ -1443,7 +1673,9 @@
       "externalLinks": 0,
       "contentMatchesArchive": true,
       "existingDifference": null,
-      "notes": []
+      "notes": [
+        "Story references omitted because the published story does not exist: story-bmnj. No placeholder was created."
+      ]
     },
     {
       "eventId": "33-covid-19-pandemic",
@@ -1472,10 +1704,14 @@
           "zh": 4
         }
       },
-      "omittedStoryIds": [],
-      "linkedStoryIds": [
+      "omittedStoryIds": [
         "story-ncnj"
       ],
+      "draftOnlyStoryIds": [
+        "story-ncnj"
+      ],
+      "absentStoryIds": [],
+      "linkedStoryIds": [],
       "missingParticipants": [],
       "images": [
         {
@@ -1487,7 +1723,9 @@
       "externalLinks": 0,
       "contentMatchesArchive": true,
       "existingDifference": null,
-      "notes": []
+      "notes": [
+        "Story references omitted because the published story does not exist: story-ncnj. No placeholder was created."
+      ]
     },
     {
       "eventId": "34-black-lives-matter",
@@ -1516,10 +1754,14 @@
           "zh": 27
         }
       },
-      "omittedStoryIds": [],
-      "linkedStoryIds": [
+      "omittedStoryIds": [
         "story-etny"
       ],
+      "draftOnlyStoryIds": [
+        "story-etny"
+      ],
+      "absentStoryIds": [],
+      "linkedStoryIds": [],
       "missingParticipants": [],
       "images": [
         {
@@ -1531,7 +1773,9 @@
       "externalLinks": 0,
       "contentMatchesArchive": true,
       "existingDifference": null,
-      "notes": []
+      "notes": [
+        "Story references omitted because the published story does not exist: story-etny. No placeholder was created."
+      ]
     }
   ]
 }
