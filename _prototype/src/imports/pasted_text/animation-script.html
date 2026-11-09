@@ -1,0 +1,179 @@
+這個概念非常宏大且富有儀式感！將 ARCHIVE 左側的水平線視為書本裝訂軸（Spine），並以此為軸做出 3D 翻頁效果，能完美契合你想要的「打開歷史封面」的意象。
+
+由於我是一個 AI，無法直接操作 Figma 或直接生成影片檔，但我可以為你提供最關鍵的**動畫分解設計圖**與**核心程式碼腳本**。你可以利用這些資源在網頁上（或請開發人員幫助）輕鬆重現這個效果，或者參考這個結構在 Figma 中手動製作多幀動畫。
+
+### 動態 Logo 「書頁展開」效果分解與預覽
+
+#### 1. 核心邏輯設計圖 (The Concept)
+
+我們將 Logo 拆解為三個部分：
+
+1. **「封皮/書頁」 (Cover Page)**：包含「OUR WAY OF LIFE」文字弧、左側水平線、中間的「ARCHIVE」文字。
+2. **「書軸」 (Spine)**：右側水平線（固定不動）。
+3. **「淡出背景」 (Splash Overlay)**：全螢幕的金色 (#DEB353) 覆蓋層。
+
+**動畫運動軌跡：** 封皮部分以書軸為圓心，在 3D 空間中向右側旋轉淡出。
+
+| 動畫階段 | 視覺表現（描述） | 核心運動 |
+| --- | --- | --- |
+| **0ms - 200ms** | **定格準備。** 全螢幕金色，Logo 靜止呈現，如同封面。 | 無。 |
+| **200ms - 800ms** | **書頁展開。** 左側水平線、弧形字與「ARCHIVE」文字整體向右翻轉（繞 3D Y 軸），文字隨後依序沿圓弧浮現。 | **Y-axis rotation, Skew, Translate, Opacity.** |
+| **800ms - 1300ms** | **全螢幕淡出。** 金色背景快速變透明，露出下方的 Story Cards 網頁。 | **Opacity.** |
+
+---
+
+#### 2. 核心程式碼腳本 (Code Prototype for Web)
+
+這是一段可以直接執行的 HTML/CSS 腳本，你可以將其儲存為 `.html` 檔案並在瀏覽器打開，立刻預覽這個擬真翻頁效果。這也是新手將動畫從 Figma 轉化為網頁最簡單的方法。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Way of Life Archive - Open Sequence</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --primary-gold: #DEB353;
+        --dark-brown: #2C1B14;
+        --page-bg: #F7F6F2;
+        --card-bg: #ffffff;
+        --font-main: 'Source Serif 4', serif;
+    }
+
+    body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: var(--page-bg); font-family: var(--font-main); }
+
+    /* 1. Splash Screen Overlay (Fullscreen Gold) */
+    .splash-overlay {
+        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+        background-color: var(--primary-gold);
+        display: flex; justify-content: center; align-items: center;
+        z-index: 100;
+        animation: fadeOutSplash 1.5s ease-out 1s forwards;
+        perspective: 1200px; /* 3D effect foundation */
+    }
+
+    /* 2. The Logo Book Structure */
+    .book-logo {
+        position: relative; display: flex; align-items: center;
+        width: 300px; /* Base width */
+        height: 150px;
+        color: var(--dark-brown);
+        transform-style: preserve-3d; /* Maintain 3D context */
+        animation: bookReveal 1s ease-out 0.2s forwards;
+    }
+
+    /* 2a. Fixed Spine (Right line) */
+    .book-spine {
+        position: absolute; right: 0; width: 50px; height: 2px;
+        background-color: var(--dark-brown);
+        transform-origin: left center;
+    }
+
+    /* 2b. Turning Cover Page (Includes left line, archive, and arc text) */
+    .book-cover {
+        position: absolute; left: 0; width: calc(100% - 50px); height: 100%;
+        display: flex; align-items: center;
+        transform-style: preserve-3d;
+        transform-origin: right center; /* Axis of rotation is the spine */
+    }
+
+    .line-left { width: 50px; height: 2px; background-color: var(--dark-brown); margin-right: 12px; }
+
+    .archive-text { font-size: 1.1rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; }
+
+    /* The Arc Text Structure (Simulated as a single path) */
+    .arc-text-wrap {
+        position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+        width: 250px; height: 125px;
+        display: flex; justify-content: center; align-items: flex-start;
+        opacity: 0; /* Hidden initially */
+        animation: fadeInArc 0.6s ease-out 0.8s forwards;
+    }
+    
+    .arc-text { font-size: 1.2rem; font-style: italic; white-space: nowrap; }
+
+    /* 3. Revealed Content (Simplified Story Cards Grid) */
+    .page-content {
+        padding: 60px 24px; max-width: 1200px; margin: 0 auto;
+        display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+        opacity: 0;
+        animation: fadeInContent 0.8s ease-out 1.5s forwards;
+    }
+    .story-card { background: var(--card-bg); border: 1px solid #e3e1da; border-radius: 12px; padding: 24px; height: 180px; }
+
+    /* --- Keyframe Animations --- */
+
+    /* Phase 1: The book cover opens (3D rotation) */
+    @keyframes bookReveal {
+        0% { transform: rotateY(0deg) skew(0deg); opacity: 1; }
+        100% { transform: rotateY(70deg) skew(5deg) translateZ(80px); opacity: 0; }
+    }
+
+    /* Phase 2: Arc text fades and curves into place */
+    @keyframes fadeInArc {
+        0% { opacity: 0; transform: translateX(-50%) translateY(10px); }
+        100% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    }
+
+    /* Phase 3: Golden overlay fades out */
+    @keyframes fadeOutSplash {
+        0% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { opacity: 0; visibility: hidden; }
+    }
+
+    /* Main content appearance */
+    @keyframes fadeInContent {
+        0% { opacity: 0; transform: translateY(15px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+</style>
+</head>
+<body>
+
+<!-- 1. Fullscreen Golden Splash Overlay -->
+<div class="splash-overlay">
+    <!-- 2. Animated Logo Structure -->
+    <div class="book-logo">
+        <!-- Turning Cover Page -->
+        <div class="book-cover">
+            <div class="line-left"></div>
+            <span class="archive-text">ARCHIVE</span>
+        </div>
+        <!-- Fixed Spine/Axis -->
+        <div class="book-spine"></div>
+        <!-- Arched Text (Appears subsequently) -->
+        <div class="arc-text-wrap">
+            <span class="arc-text">OUR WAY OF LIFE</span>
+        </div>
+    </div>
+</div>
+
+<!-- 3. Revealed Main Content Page -->
+<div class="page-content">
+    <div class="story-card">BMNJ</div>
+    <div class="story-card">MGNJ</div>
+    <div class="story-card">EBNJ</div>
+    <div class="story-card">...</div>
+    <div class="story-card">...</div>
+    <div class="story-card">...</div>
+</div>
+
+</body>
+</html>
+
+```
+
+### 3. 在 Figma (手動製作帧動畫) 的指南
+
+如果你想在 Figma 中手動製作這個 3D 效果，你無法直接做 3D 旋轉，需要用「透視形變 (Perspective Warp / Distortion)」**和**多幀動畫 (Smart Animate) 來模擬：
+
+* **幀 1 (定格)**：放置完整的 Logo。
+* **幀 2 (開始翻轉)**：將封皮部分（左線 + ARCHIVE 文字）的**圖層寬度縮小約 20%**，並稍微向右移動，模擬 3D 翻轉的視差。弧形文字透明度設為 0。
+* **幀 3 (翻轉過半)**：繼續縮小封皮圖層寬度（如縮小 50%），ARCHIVE 文字稍微變淡。**弧形文字透明度開始增加 (e.g., 30%)**。
+* **幀 4 (展開/淡出)**：封皮圖層寬度極小，近乎消失。**弧形文字完全淡入 (100% 透明度)**，並依據你的描述，你可以讓弧形字沿著圓弧一個字母一個字母淡入。
+
+使用 Figma 的 **Smart Animate** (Ease Out, 約 500ms - 800ms) 串接這些幀，就能模擬出擬真的書頁從左到右翻開的感覺。

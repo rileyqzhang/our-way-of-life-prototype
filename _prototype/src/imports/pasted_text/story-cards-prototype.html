@@ -1,0 +1,227 @@
+要將原本 Weebly 雜亂的條列頁轉變為兼具溫度與學術重量的 **「Story Cards」原型**，並順暢過渡至 WordPress，你可以分兩步執行：先用這套乾淨、具備現代人文質感的 **Vibe Code (HTML + CSS)** 快速預覽效果；接著按照 WordPress 的架構將資料結構化。
+
+---
+
+### 1. Prototype Vibe Code (單一檔案可直接瀏覽)
+
+將以下程式碼儲存為 `index.html` 即可在瀏覽器開啟。視覺採用文檔式暖灰底色、高對比襯線引言、懸浮動態回饋，以及醒目的代號標記：
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Participants | Story Archive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-color: #f6f5f1;
+      --card-bg: #ffffff;
+      --text-main: #1c1c1a;
+      --text-muted: #65645f;
+      --accent: #a8422b;
+      --border: #e3e1da;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+      --font-serif: 'Source Serif 4', serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      padding: 60px 24px;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; }
+    header { max-width: 680px; margin-bottom: 48px; }
+    h1 { font-family: var(--font-serif); font-size: 2.5rem; margin-bottom: 12px; }
+    p.intro { color: var(--text-muted); font-size: 1.05rem; line-height: 1.6; }
+
+    /* Story Card Grid */
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 28px;
+    }
+
+    .story-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .story-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .card-portrait-wrap {
+      position: relative;
+      width: 100%;
+      padding-top: 66%; /* 3:2 aspect ratio */
+      background: #dfded9;
+      overflow: hidden;
+    }
+
+    .card-portrait {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: grayscale(85%) contrast(110%);
+      transition: filter 0.3s ease;
+    }
+
+    .story-card:hover .card-portrait { filter: grayscale(0%); }
+
+    .card-id-tag {
+      position: absolute;
+      bottom: 12px; left: 12px;
+      background: rgba(28, 28, 26, 0.85);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      padding: 4px 10px;
+      border-radius: 4px;
+      backdrop-filter: blur(4px);
+    }
+
+    .card-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    .quote {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      line-height: 1.5;
+      font-style: italic;
+      color: var(--text-main);
+      margin-bottom: 20px;
+    }
+
+    .meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .read-more {
+      font-weight: 600;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Our Participants</h1>
+    <p class="intro">Stories of resilience, mutual aid, and community action across New York, New Jersey, and California.</p>
+  </header>
+
+  <section class="story-grid">
+    <!-- Card 1 -->
+    <a href="#" class="story-card">
+      <div class="card-portrait-wrap">
+        <img class="card-portrait" src="https://picsum.photos/600/400?grayscale&random=1" alt="Portrait">
+        <span class="card-id-tag">BMNJ</span>
+      </div>
+      <div class="card-body">
+        <p class="quote">“The service that I do now is what I was raised to do. It’s what needs to be done to keep my community alive.”</p>
+        <div class="meta">
+          <span>Newark, NJ</span>
+          <span class="read-more">Read Story &rarr;</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Card 2 -->
+    <a href="#" class="story-card">
+      <div class="card-portrait-wrap">
+        <img class="card-portrait" src="https://picsum.photos/600/400?grayscale&random=2" alt="Portrait">
+        <span class="card-id-tag">MGNJ</span>
+      </div>
+      <div class="card-body">
+        <p class="quote">“Colaborar económicamente es la forma en la que me gusta ayudar, porque esa es la necesidad de la comunidad.”</p>
+        <div class="meta">
+          <span>El Salvador &rarr; NJ</span>
+          <span class="read-more">Read Story &rarr;</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Card 3 -->
+    <a href="#" class="story-card">
+      <div class="card-portrait-wrap">
+        <img class="card-portrait" src="https://picsum.photos/600/400?grayscale&random=3" alt="Portrait">
+        <span class="card-id-tag">EBNJ</span>
+      </div>
+      <div class="card-body">
+        <p class="quote">“There I was standing up for democracy and freedom, yet we didn't have it back home. It was a contradiction.”</p>
+        <div class="meta">
+          <span>Born 1941, AL</span>
+          <span class="read-more">Read Story &rarr;</span>
+        </div>
+      </div>
+    </a>
+  </section>
+</div>
+
+</body>
+</html>
+
+```
+
+---
+
+### 2. Weebly 轉移到 WordPress 的執行路徑
+
+不用手動搬移幾十個 10 頁的故事，建議採取**模組化自訂文章型別（CPT）**：
+
+**架構與資料分離**
+
+* 安裝免費外掛 **Pods** 或 **ACF (Advanced Custom Fields)**。
+* 建立一個名為 `Participants` 的 Custom Post Type (CPT)。
+* 設定專屬欄位：
+* **Participant ID** (例如: `BMNJ`, `MGNJ`)
+* **Featured Pull Quote** (單句金句)
+* **Artistic Portrait** (特色圖片/插畫)
+* **Origins / Location** (例如: `Manhattan -> NJ`)
+* **Full Narrative** (WordPress 預設編輯器放完整的 10 頁故事與檔案)
+
+
+
+**視覺與列表渲染 (No-Code / Low-Code 做法)**
+
+* **Block Theme (全站編輯 / FSE)**：使用 WordPress 內建的 **Query Loop Block**，將版面設為 Grid，直接在編輯器內拖入 Post Featured Image、自訂欄位與引言。
+* **頁面編輯器 (Elementor / Bricks)**：使用 Loop Builder，把上面 prototype 的結構套入單一卡片樣板，系統會自動將所有受訪者資料撈出並排版。
+
+**資料搬運 (Migration)**
+
+* 由於 Weebly 的結構多為封閉式靜態頁面，最好的方式是將現有 Weebly 內容在試算表（Google Sheets / CSV）中整理好各欄位（ID、Quote、內容、圖片連結）。
+* 在 WordPress 安裝 **WP All Import** 外掛，一鍵將 CSV 直接灌入剛建立的 `Participants` 自訂文章型別中。
+
+你打算使用 WordPress 原生的區塊編輯器（Gutenberg），還是 Elementor 等頁面構建工具來架設？
