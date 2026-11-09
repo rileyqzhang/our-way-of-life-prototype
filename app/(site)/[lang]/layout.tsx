@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Libre_Baskerville, Libre_Franklin } from "next/font/google";
+import { Cormorant_Garamond, DM_Sans, Plus_Jakarta_Sans, Source_Serif_4 } from "next/font/google";
 import { draftMode } from "next/headers";
 import { VisualEditing } from "next-sanity";
 import { HideOnStoryDetail } from "@/components/HideOnStoryDetail";
@@ -11,19 +11,34 @@ import { locales } from "@/lib/i18n";
 import { readLang } from "@/lib/i18n/request";
 import "../../globals.css";
 
-const bodyFont = Libre_Franklin({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-body",
+  weight: ["400", "500", "600"],
+  variable: "--font-dm-sans",
   display: "swap",
 });
 
-const displayFont = Libre_Baskerville({
+const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["400", "700"],
-  style: ["normal", "italic"],
-  variable: "--font-display",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-jakarta",
   display: "swap",
-  adjustFontFallback: false,
+});
+
+const sourceSerif = Source_Serif_4({
+  subsets: ["latin"],
+  weight: ["400", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-source-serif",
+  display: "swap",
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-cormorant",
+  display: "swap",
 });
 
 export const revalidate = 60;
@@ -47,17 +62,17 @@ export default async function SiteLayout({
   const copy = ui[lang];
 
   return (
-    <html lang={lang} className={`${bodyFont.variable} ${displayFont.variable}`}>
-      <body className={bodyFont.className}>
+    <html lang={lang} className={`${dmSans.variable} ${plusJakarta.variable} ${sourceSerif.variable} ${cormorant.variable}`}>
+      <body>
         <a className="skipLink" href="#main">
           {copy.skip}
         </a>
         <HideOnStoryDetail>
-          <SiteHeader lang={lang} navigation={archive.settings.navigation} />
+          <SiteHeader lang={lang} />
         </HideOnStoryDetail>
         <main id="main">{children}</main>
         <HideOnStoryDetail>
-          <SiteFooter lang={lang} settings={archive.settings} />
+          <SiteFooter lang={lang} accessibilityUrl={archive.settings.accessibilityUrl} />
         </HideOnStoryDetail>
         {draft.isEnabled ? <VisualEditing /> : null}
       </body>

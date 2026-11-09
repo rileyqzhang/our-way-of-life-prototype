@@ -10,10 +10,12 @@
 | --- | --- |
 | `/` | `app/(site)/[lang]/page.tsx` |
 | `/stories/[slug]` | `app/(site)/[lang]/stories/[slug]/page.tsx` |
-| `/collections/[key]` | `app/(site)/[lang]/collections/[key]/page.tsx` |
-| `/researchers` | `app/(site)/[lang]/researchers/page.tsx` |
+| `/stories/collections/[collection]` | `app/(site)/[lang]/stories/collections/[collection]/page.tsx` |
+| `/research` | `app/(site)/[lang]/research/page.tsx` |
+| `/research/methodology` | `app/(site)/[lang]/research/methodology/page.tsx` |
+| `/research/publications` | `app/(site)/[lang]/research/publications/page.tsx` |
 
-`[key]` 沿用现有合集 slug：`latine`、`africanAmerican`、`chinese`。现在的合集地址是 `/stories/collections/[collection]`，移植时改为 `/collections/[key]`，旧地址再做跳转。
+`[collection]` 沿用现有合集 slug：`latine`、`africanAmerican`、`chinese`。合集留在 `/stories/collections/[collection]`，不新建 `/collections`。研究留在现有的三个地址，不新建 `/researchers`。
 
 原型用了 Tailwind class。这个 Next 项目没有 Tailwind，样式在 `app/globals.css`。移植时把外观写进这里，不要为了原型把 Tailwind 加进来。
 
@@ -62,14 +64,14 @@
 | --- | --- | --- |
 | `App` 里的书架和人物网格（1841–2062） | `app/(site)/[lang]/page.tsx` | 首页 `/`。服务器组件取合集和故事，把数据传给书架和卡片。 |
 | `SplashScreen` | `components/archive/SplashScreen.tsx` | 只在首页挂载。 |
-| `ArchiveVolume`，以及 `runArchiveTransition` | `components/archive/ArchiveVolume.tsx`、`components/archive/ArchiveShelf.tsx` | 首页书架和合集页书封共用。书的链接指向 `/collections/[key]`。 |
+| `ArchiveVolume`，以及 `runArchiveTransition` | `components/archive/ArchiveVolume.tsx`、`components/archive/ArchiveShelf.tsx` | 首页书架和合集页书封共用。书的链接指向 `/stories/collections/[collection]`。 |
 | `ParticipantStoryCard`，以及首页 1994–2058 行的重复卡片 | `components/stories/ParticipantCard.tsx` | 合成一个组件。首页和合集页都用它。有肖像显示照片，没有肖像显示代号首字母。链接到 `/stories/[slug]`。 |
-| `CollectionArchivePage` | `app/(site)/[lang]/collections/[key]/page.tsx` | 合集页。现有 `stories/collections/[collection]/page.tsx` 改为跳到新地址。 |
+| `CollectionArchivePage` | `app/(site)/[lang]/stories/collections/[collection]/page.tsx` | 合集页做在现有路由上。不新建 `/collections`，也不把旧地址改成跳转。 |
 | `BmnjStoryPage`、`BmnjTimelineSpine`、`BmnjChapterCard` | `components/stories/StoryDetailView.tsx` | 故事页外观放进已经存在的详情组件。`app/(site)/[lang]/stories/[slug]/page.tsx` 继续负责按 slug 取数据。不要再写一个只认识 BMNJ 的页面。 |
 | `FadeSection`、`useFadeIn` | `components/archive/FadeIn.tsx` | 故事导语和阶段卡片使用。 |
 | `SiteHeader` | `components/SiteHeader.tsx` | 站点布局 `app/(site)/[lang]/layout.tsx` 已经渲染顶栏。换外观，保留现有栏目链接。 |
 | `SiteFooter` | `components/SiteFooter.tsx` | 同样换现有页脚，不新做一个只在原型页出现的页脚。 |
-| `ResearchersPage` | `app/(site)/[lang]/researchers/page.tsx`，标签交互放 `components/research/ResearchersTabs.tsx` | 新的 `/researchers`。现有 `/research`、`/research/publications`、`/research/methodology` 保留为跳转，避免旧链接失效。 |
+| `ResearchersPage` | `app/(site)/[lang]/research/page.tsx`、`methodology/page.tsx`、`publications/page.tsx` | 不新建 `/researchers`。原型的三个 tab 分别是这三个现有地址，用链接切换。 |
 
 顶栏这些栏目在原型里点了只会回到首页。移植时接到已经存在的页面：
 
@@ -80,9 +82,10 @@
 | Share Your Story | `/share-your-story` |
 | Participants | `/stories` |
 | Our Team | `/about` |
-| Rightful Participation | 先链到现有对应页面；没有独立页面之前不要做空路由 |
-| For Research | `/researchers` |
+| For Research | `/research` |
 | Contact Us | `/contact` |
+
+Rightful Participation 不放进顶栏。Search 和 Account 图标也不放。
 
 故事页顶栏只显示 Home、Participants、Our Team、Contact，这是故事页自己的窄导航，放在 `StoryDetailView` 里。
 
@@ -97,7 +100,7 @@
 | `components/archive/ArchiveVolume.tsx` | 悬停状态。若改成 CSS `:hover`，书本身可以是服务器组件。 |
 | `components/archive/ArchiveShelf.tsx` | 只在还要保留书本之间的 View Transition 时需要。普通 `<Link>` 不需要。 |
 | `components/stories/StoryDetailView.tsx` | 已经是客户端组件。滚动时高亮当前人生阶段需要观察器。 |
-| `components/research/ResearchersTabs.tsx` | 三个标签的 `useState`。 |
+| `components/research/ResearchNav.tsx` | 已经是客户端组件，只用 `usePathname` 标出当前研究页。三个 tab 是链接，不用 `useState`。 |
 
 这些保持服务器组件：首页、合集页、故事页的 `page.tsx`，以及 `SiteHeader`、`SiteFooter`、`ParticipantCard`。它们只渲染链接和从服务器传入的数据。
 
@@ -132,10 +135,23 @@
 2. 顶栏和页脚。换 `components/SiteHeader.tsx` 和 `components/SiteFooter.tsx` 的外观。先确认现有栏目还能到时间轴、关于、联系和研究页。
 3. Sanity schema。只改 `cms/schemaTypes/story.ts`，加上可选分段和可选 `lifeStage`。不新建重复的故事类型。
 4. 导入原型内容。BMNJ 写入真实肖像和 7 段正文，第 6、7 段不填 `lifeStage`。其他人只导入代号、地点和引语，肖像留空。不导入 Unsplash 人物照片、`reyesPhoto`、`repoRows`。
-5. 首页书架。`app/(site)/[lang]/page.tsx` 读合集和故事。三本书链到 `/collections/[key]`，人物网格只用 `ParticipantCard`。
-6. 合集页。新增 `app/(site)/[lang]/collections/[key]/page.tsx`，卡片仍用 `ParticipantCard`。旧的 `app/(site)/[lang]/stories/collections/[collection]/page.tsx` 跳到新地址。华人合集没有故事时显示空状态。
+5. 首页书架。`app/(site)/[lang]/page.tsx` 读合集和故事。三本书链到 `/stories/collections/[collection]`，slug 用 `latine`、`africanAmerican`、`chinese`。首页现有的三张合集卡已经指向这些地址，保持不动。人物网格只用 `ParticipantCard`。
+6. 合集页。在现有的 `app/(site)/[lang]/stories/collections/[collection]/page.tsx` 上做，不新建 `/collections`。卡片仍用 `ParticipantCard`。华人合集没有故事时显示空状态。
 7. 通用故事页。改 `app/(site)/[lang]/stories/[slug]/page.tsx` 和 `components/stories/StoryDetailView.tsx`。有 `lifeStage` 的段按阶段排，没有的排在时间轴最后。没有肖像时，大图区域也用首字母占位。
-8. 研究者页。新增 `app/(site)/[lang]/researchers/page.tsx`。三个标签先用现有研究页文案。旧的 `/research` 地址跳过来。
+8. 研究者页。不新建 `/researchers`。把原型的 `ResearchersPage` 移进现有的 `/research`。原型的三个 tab 分别对应 `/research`、`/research/methodology`、`/research/publications`，用链接切换，不用 `useState`。三个页面先用现有文案。
 9. 开场动画。最后加 `SplashScreen`。它依赖定时器和浏览器，放在前面会挡住其余页面的检查。
 
 View Transition 和 “下一位参与者” 不在这九步里。下一位需要合集内的稳定顺序，等卡片和合集页都从 Sanity 读出之后再加。
+
+## 最后清理
+
+这些旧样式现在没有页面使用，先留在 `app/globals.css` 里。移植做完后再删：
+
+- `.siteHeader`
+- `.nav`
+- `.navLinks`
+- `.langSwitch`
+- `.footer`
+- `.goldBar`
+
+同一块里只给旧顶栏页脚用的 `.brand`、`.navToggle`、`.footerInner`、`.footerLinks` 一起删。

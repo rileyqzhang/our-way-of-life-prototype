@@ -157,7 +157,7 @@ export function StoryDetailView({
             {copy.story.backParticipants}
           </Link>
           <div className="storyBrand">
-            <img src="/logo.png" alt="" width={44} height={44} />
+            <img src="/images/logo.png" alt="" width={44} height={44} />
             <span>{copy.siteName}</span>
           </div>
           <nav className="storyHeaderNav" aria-label="Primary">
@@ -265,7 +265,7 @@ export function StoryDetailView({
       <footer className="storyFooter">
         <div className="storyFooterBar">
           <div className="storyBrand storyFooterBrand">
-            <img src="/logo.png" alt="" width={48} height={48} />
+            <img src="/images/logo.png" alt="" width={48} height={48} />
             <span>{copy.siteName}</span>
           </div>
           <p>{copy.story.rights}</p>
