@@ -19,8 +19,13 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   const copy = ui[lang];
   const archive = await getArchive();
   const home = archive.pages.find((page) => page.slug === "home");
-  const featured = archive.stories.find((story) => story.photographs[0] && story.quotations[0]) ?? archive.stories[0];
+  const featured = archive.stories.find((story) => story.photographs[0] && pick(story.headline, lang).trim()) ?? archive.stories[0];
   const photo = featured?.photographs[0];
+  const featuredLead = pick(featured?.overview, lang)
+    .split(/\n\s*\n/)
+    .map((paragraph) => paragraph.trim())
+    .find(Boolean);
+  const featuredQuote = pick(featured?.headline, lang).trim();
 
   return (
     <>
@@ -47,7 +52,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               <p className="eyebrow">{copy.home.featuredEyebrow}</p>
               <h2 className="sectionTitle">{pick(featured.title, lang)}</h2>
               <div className="rule" />
-              <blockquote className="prose">{pick(featured.summary, lang)}</blockquote>
+              <blockquote className="prose">{featuredLead || featuredQuote}</blockquote>
               <div className="heroActions" style={{ justifyContent: "flex-start" }}>
                 <Link className="button" href={localizeHref(lang, `/stories/${featured.slug}`)}>
                   {copy.home.readStory}

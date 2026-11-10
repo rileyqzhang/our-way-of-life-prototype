@@ -78,10 +78,9 @@ export function collectionDocumentId(slug: string) {
   return `collection-${slug}`;
 }
 
-export function storyCollectionSlug(communitySlug: string | null | undefined, legacy: string | null | undefined) {
+export function storyCollectionSlug(communitySlug: string | null | undefined) {
   const reference = communitySlug?.trim();
-  if (reference) return reference;
-  return isStoryCollection(legacy) ? legacy : undefined;
+  return reference || undefined;
 }
 
 function hasText(value: LocalizedText | undefined) {

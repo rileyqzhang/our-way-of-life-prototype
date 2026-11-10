@@ -170,7 +170,7 @@ function eraFor(dates: string[]) {
 export function buildStoryLayout(input: {
   code: string;
   location: string;
-  summary: string;
+  overview: string;
   body: string;
   lang: Locale;
   article?: { en: StoryArticleBlock[]; es: StoryArticleBlock[]; zh: StoryArticleBlock[] };
@@ -185,7 +185,7 @@ export function buildStoryLayout(input: {
   const heroSource = quotationTexts[0] || spansText(blocks.find((block) => block.style === "blockquote")?.spans || []) || "";
   const heroQuote = wrapQuote(heroSource);
   const usedAsHero = clean(stripQuote(heroQuote));
-  const summary = input.summary.trim();
+  const summary = input.overview.trim();
   const narrative = clean(blocks.filter((block) => block.style !== "h2").map((block) => spansText(block.spans)).join(" "));
 
   let introBlocks: StorySpan[][] = [];

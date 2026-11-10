@@ -1,4 +1,5 @@
 import { defineField, defineType } from "sanity";
+import { firstFilled } from "./localePreview";
 
 export const collection = defineType({
   name: "collection",
@@ -49,6 +50,9 @@ export const collection = defineType({
     { title: "Display order", name: "displayOrder", by: [{ field: "displayOrder", direction: "asc" }] },
   ],
   preview: {
-    select: { title: "name.en", subtitle: "slug.current", media: "cover" },
+    select: { en: "name.en", es: "name.es", zh: "name.zh", subtitle: "slug.current", media: "cover" },
+    prepare({ en, es, zh, subtitle, media }: { en?: string; es?: string; zh?: string; subtitle?: string; media?: any }) {
+      return { title: firstFilled(en, es, zh) || "Untitled", subtitle, media };
+    },
   },
 });

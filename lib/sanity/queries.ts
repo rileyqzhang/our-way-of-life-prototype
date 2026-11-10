@@ -39,10 +39,9 @@ export const archiveQuery = defineQuery(`{
   "stories": *[_type == "story"] | order(participantCode asc) {
     "slug": slug.current,
     participantCode,
-    collection,
     "communitySlug": community->slug.current,
     title,
-    summary,
+    overview,
     body,
     article,
     location,
@@ -57,13 +56,7 @@ export const archiveQuery = defineQuery(`{
       source,
       usagePermission
     },
-    quotations[] {
-      _key,
-      text,
-      "eventId": event->slug.current,
-      "eventDate": event->date,
-      "eventTitle": event->title
-    },
+    headline,
     relatedEvents[]->{
       "id": slug.current,
       date,
@@ -87,3 +80,32 @@ export const archiveQuery = defineQuery(`{
     }
   }
 }`);
+
+export const storyBySlugQuery = defineQuery(`*[_type == "story" && slug.current == $slug][0]{
+  "slug": slug.current,
+  participantCode,
+  title,
+  location,
+  body,
+  article,
+  overview,
+  "collectionSlug": community->slug.current,
+  "collectionName": community->name,
+  photographs[] {
+    _key,
+    image,
+    legacySrc,
+    alt
+  },
+  headline,
+  segments[] {
+    _key,
+    quote,
+    isQuote,
+    shortTitle,
+    body,
+    lifeStage
+  }
+}`);
+
+export const storySlugQuery = defineQuery(`*[_type == "story" && defined(slug.current)].slug.current`);

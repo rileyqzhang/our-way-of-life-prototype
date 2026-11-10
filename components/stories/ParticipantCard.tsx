@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArchiveImage } from "@/components/media/ArchiveImage";
 import type { ArchiveStory } from "@/lib/content/derive";
 import { openingQuotation, pick } from "@/lib/content/text";
+import { omitElicitationPlain } from "@/lib/content/story-segments";
 import { localizeHref, type Locale } from "@/lib/i18n";
 
 function stripQuotes(text: string) {
@@ -10,8 +11,24 @@ function stripQuotes(text: string) {
 
 export function ParticipantCard({ story, lang, readStory }: { story: ArchiveStory; lang: Locale; readStory: string }) {
   const photo = story.photographs[0];
-  const storedQuote = pick(story.quotations[0]?.text, lang);
-  const quote = stripQuotes(storedQuote || openingQuotation(story.body, lang));
+  const headline = stripQuotes(pick(story.headline, lang));
+  const overviewLead = pick(story.overview, lang)
+    .split(/(?<=[.!?。！？])\s+/)
+    .map((sentence) => sentence.trim())
+    .filter(Boolean)
+    .slice(0, 2)
+    .join(" ");
+  const legacyQuote = openingQuotation(
+    story.body
+      ? {
+          en: omitElicitationPlain(story.body.en || ""),
+          es: omitElicitationPlain(story.body.es || ""),
+          zh: omitElicitationPlain(story.body.zh || ""),
+        }
+      : undefined,
+    lang,
+  );
+  const quote = headline || overviewLead || stripQuotes(legacyQuote);
   const location = pick(story.location, lang);
 
   return (
@@ -27,7 +44,7 @@ export function ParticipantCard({ story, lang, readStory }: { story: ArchiveStor
         </div>
       )}
       <div className="storyCardBody">
-        {quote ? (
+        {headline ? (
           <p className="storyCardMark" aria-hidden="true">
             “
           </p>

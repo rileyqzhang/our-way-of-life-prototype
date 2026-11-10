@@ -88,3 +88,57 @@ export function planStoryLinks(stories: CollectionStoryRecord[], publishedSlugs:
 export function collectionRowIsApproved(row: CollectionPlanRow, only: Set<string> | undefined) {
   return row.action === "CreateDraft" && (!only || only.has(row.slug));
 }
+
+export type CollectionDocumentRecord = {
+  id: string;
+  slug: string;
+  name?: string | null;
+};
+
+export type StoryReferenceRecord = {
+  id: string;
+  participantCode?: string | null;
+  legacy?: string | null;
+  communitySlug?: string | null;
+};
+
+export type CollectionReferencePlan = {
+  participantCode: string;
+  documentId: string;
+  legacy: string;
+  collectionSlug: string;
+  collectionId: string;
+  collectionName: string;
+};
+
+export function planCollectionReferenceBackfill(stories: StoryReferenceRecord[], collections: CollectionDocumentRecord[]) {
+  const publishedCollections = collections.filter((collection) => collection.slug && !collection.id.startsWith("drafts."));
+  const bySlug = new Map<string, CollectionDocumentRecord[]>();
+  for (const collection of publishedCollections) {
+    const list = bySlug.get(collection.slug) || [];
+    list.push(collection);
+    bySlug.set(collection.slug, list);
+  }
+  const ready: CollectionReferencePlan[] = [];
+  const unmatched: { participantCode: string; documentId: string; legacy: string }[] = [];
+  for (const story of stories) {
+    if (story.communitySlug?.trim()) continue;
+    const legacy = story.legacy?.trim() || "";
+    if (!legacy) continue;
+    const matches = bySlug.get(legacy) || [];
+    if (matches.length !== 1) {
+      unmatched.push({ participantCode: story.participantCode?.trim() || story.id, documentId: story.id, legacy });
+      continue;
+    }
+    const collection = matches[0];
+    ready.push({
+      participantCode: story.participantCode?.trim() || story.id,
+      documentId: story.id,
+      legacy,
+      collectionSlug: collection.slug,
+      collectionId: collection.id,
+      collectionName: collection.name?.trim() || collection.slug,
+    });
+  }
+  return { ready, unmatched };
+}

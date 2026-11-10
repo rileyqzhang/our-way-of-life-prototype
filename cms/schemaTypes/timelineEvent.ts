@@ -1,4 +1,5 @@
 import { defineArrayMember, defineField, defineType } from "sanity";
+import { firstFilled } from "./localePreview";
 
 export const timelineEvent = defineType({
   name: "timelineEvent",
@@ -28,7 +29,12 @@ export const timelineEvent = defineType({
               options: { list: [{ title: "Caption", value: "caption" }] },
             }),
           ],
-          preview: { select: { title: "text.en" } },
+          preview: {
+            select: { en: "text.en", es: "text.es", zh: "text.zh" },
+            prepare({ en, es, zh }: { en?: string; es?: string; zh?: string }) {
+              return { title: firstFilled(en, es, zh) || "Untitled" };
+            },
+          },
         }),
         defineArrayMember({
           name: "timelineParticipant",
@@ -44,7 +50,12 @@ export const timelineEvent = defineType({
             defineField({ name: "caption", title: "Caption", type: "localeText" }),
             defineField({ name: "externalHref", title: "Current public archive URL", type: "url" }),
           ],
-          preview: { select: { title: "participantCode", subtitle: "title.en", media: "image" } },
+          preview: {
+            select: { title: "participantCode", en: "title.en", es: "title.es", zh: "title.zh", media: "image" },
+            prepare({ title, en, es, zh, media }: { title?: string; en?: string; es?: string; zh?: string; media?: any }) {
+              return { title, subtitle: firstFilled(en, es, zh), media };
+            },
+          },
         }),
         defineArrayMember({
           name: "timelineVideo",
@@ -69,7 +80,12 @@ export const timelineEvent = defineType({
             defineField({ name: "legacySrc", title: "Existing preview image", type: "string" }),
             defineField({ name: "imageAlt", title: "Image alt text", type: "localeString" }),
           ],
-          preview: { select: { title: "title.en", subtitle: "domain" } },
+          preview: {
+            select: { en: "title.en", es: "title.es", zh: "title.zh", subtitle: "domain" },
+            prepare({ en, es, zh, subtitle }: { en?: string; es?: string; zh?: string; subtitle?: string }) {
+              return { title: firstFilled(en, es, zh) || "Untitled", subtitle };
+            },
+          },
         }),
       ],
     }),
@@ -81,5 +97,10 @@ export const timelineEvent = defineType({
     }),
   ],
   orderings: [{ title: "Display order", name: "displayOrder", by: [{ field: "displayOrder", direction: "asc" }] }],
-  preview: { select: { title: "title.en", subtitle: "date" } },
+  preview: {
+    select: { en: "title.en", es: "title.es", zh: "title.zh", subtitle: "date" },
+    prepare({ en, es, zh, subtitle }: { en?: string; es?: string; zh?: string; subtitle?: string }) {
+      return { title: firstFilled(en, es, zh) || "Untitled", subtitle };
+    },
+  },
 });

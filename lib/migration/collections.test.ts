@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { collectionDraft, planCollections, planStoryLinks } from "@/lib/migration/collections";
+import { collectionDraft, planCollectionReferenceBackfill, planCollections, planStoryLinks } from "@/lib/migration/collections";
 
 test("collection migration creates missing drafts and preserves existing documents", () => {
   const plan = planCollections([
@@ -39,4 +39,32 @@ test("story links never rewrite published stories or guess an unverified communi
     ["drafts.story-wait", "Wait"],
   ]);
   assert.equal(rows[1].referenceId, "collection-africanAmerican");
+});
+
+test("reference backfill sets a missing collection only when one published collection matches the legacy value", () => {
+  const collections = [
+    { id: "collection-latine", slug: "latine", name: "Latine Immigrant Stories" },
+    { id: "drafts.collection-latine", slug: "latine", name: "Latine Immigrant Stories" },
+    { id: "collection-africanAmerican", slug: "africanAmerican", name: "African American Stories" },
+  ];
+  const plan = planCollectionReferenceBackfill(
+    [
+      { id: "story-aawe", participantCode: "AAWE", legacy: "latine" },
+      { id: "story-linked", participantCode: "BMNJ", legacy: "latine", communitySlug: "africanAmerican" },
+      { id: "story-empty", participantCode: "OPEN", legacy: "" },
+      { id: "story-unknown", participantCode: "WAIT", legacy: "chinese" },
+    ],
+    collections,
+  );
+  assert.deepEqual(plan.ready, [
+    {
+      participantCode: "AAWE",
+      documentId: "story-aawe",
+      legacy: "latine",
+      collectionSlug: "latine",
+      collectionId: "collection-latine",
+      collectionName: "Latine Immigrant Stories",
+    },
+  ]);
+  assert.deepEqual(plan.unmatched, [{ participantCode: "WAIT", documentId: "story-unknown", legacy: "chinese" }]);
 });

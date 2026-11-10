@@ -62,6 +62,7 @@ export type UiCopy = {
     next: string;
     rights: string;
     sections: string;
+    toldIn: { en: string; es: string; zh: string };
   };
   about: {
     eyebrow: string;
@@ -201,6 +202,11 @@ const en: UiCopy = {
     next: "Next Participant Story",
     rights: "© 2026 Our Way of Life Archive. All rights reserved.",
     sections: "Story sections",
+    toldIn: {
+      en: "This story is told in English.",
+      es: "This story is told in Spanish.",
+      zh: "This story is told in Chinese.",
+    },
   },
   about: {
     eyebrow: "About the Archive",
@@ -344,6 +350,11 @@ const es: UiCopy = {
     next: "Siguiente historia",
     rights: "© 2026 Archivo Our Way of Life. Todos los derechos reservados.",
     sections: "Secciones de la historia",
+    toldIn: {
+      en: "Esta historia está contada en inglés.",
+      es: "Esta historia está contada en español.",
+      zh: "Esta historia está contada en chino.",
+    },
   },
   about: {
     eyebrow: "Acerca del archivo",
@@ -486,6 +497,11 @@ const zh: UiCopy = {
     next: "下一位参与者的故事",
     rights: "© 2026 我们的生活方式档案。保留所有权利。",
     sections: "故事章节",
+    toldIn: {
+      en: "这个故事以英语讲述。",
+      es: "这个故事以西班牙语讲述。",
+      zh: "这个故事以中文讲述。",
+    },
   },
   about: {
     eyebrow: "关于档案",

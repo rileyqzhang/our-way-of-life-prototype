@@ -43,10 +43,11 @@ export type ArchiveStory = {
   slug: string;
   participantCode: string;
   title: LocalizedText;
-  summary: LocalizedText;
+  overview?: LocalizedText;
   body?: LocalizedText;
   location?: LocalizedText;
   photographs: Photo[];
+  headline?: LocalizedText;
   quotations: StoryQuotation[];
   relatedEvents: RelatedEvent[];
   article?: { en: StoryArticleBlock[]; es: StoryArticleBlock[]; zh: StoryArticleBlock[] };
@@ -128,11 +129,6 @@ export function storiesFromTimeline(events: PreparedTimelineEvent[]): ArchiveSto
             slug,
             participantCode: canonicalCode,
             title: { en: canonicalCode, es: canonicalCode, zh: canonicalCode },
-            summary: {
-              en: `Quotations from participant ${canonicalCode} on the interactive timeline.`,
-              es: `Citas de la persona participante ${canonicalCode} en la línea de tiempo.`,
-              zh: `参与者 ${canonicalCode} 在互动时间线上的引语。`,
-            },
             photographs: [],
             quotations: [],
             relatedEvents: [],
@@ -171,11 +167,6 @@ export function storiesFromTimeline(events: PreparedTimelineEvent[]): ArchiveSto
 
       if (block.type !== "paragraph") current = undefined;
     }
-  }
-
-  for (const story of bySlug.values()) {
-    const first = story.quotations[0];
-    if (first) story.summary = first.text;
   }
 
   return [...bySlug.values()].sort((a, b) => a.participantCode.localeCompare(b.participantCode));

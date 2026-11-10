@@ -20,6 +20,7 @@
     "test:survey": "tsx --test lib/survey/survey.test.ts"
   },
   "dependencies": {
+    "@portabletext/react": "^8.0.1",
     "@sanity/image-url": "^2.1.1",
     "@sanity/vision": "^3.99.0",
     "@supabase/supabase-js": "^2.116.0",

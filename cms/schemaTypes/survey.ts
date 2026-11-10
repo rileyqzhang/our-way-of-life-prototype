@@ -1,4 +1,5 @@
 import { defineArrayMember, defineField, defineType } from "sanity";
+import { firstFilled } from "./localePreview";
 
 const questionTypes = [
   { title: "Short text", value: "text" },
@@ -57,9 +58,9 @@ const question = defineField({
         }),
       ],
       preview: {
-        select: { title: "label.en", subtitle: "type" },
-        prepare({ title, subtitle }) {
-          return { title: title || "Untitled question", subtitle };
+        select: { en: "label.en", es: "label.es", zh: "label.zh", subtitle: "type" },
+        prepare({ en, es, zh, subtitle }: { en?: string; es?: string; zh?: string; subtitle?: string }) {
+          return { title: firstFilled(en, es, zh) || "Untitled question", subtitle };
         },
       },
     }),

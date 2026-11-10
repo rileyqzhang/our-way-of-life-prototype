@@ -48,7 +48,7 @@ export default defineConfig({
       resolve: {
         locations: {
           story: {
-            select: { title: "title.en", slug: "slug.current" },
+            select: { title: "participantCode", slug: "slug.current" },
             resolve: (doc) => ({
               locations: [
                 { title: `${doc?.title || "Story"} · English`, href: `/en/stories/${doc?.slug || ""}` },
@@ -88,6 +88,7 @@ export default defineConfig({
   ],
   schema: { types: schemaTypes },
   document: {
+    newDocumentOptions: (prev) => prev.filter((item) => item.templateId !== "person"),
     actions: (prev, context) => {
       if (context.schemaType !== "storySubmission") return prev;
       return [createStoryDraftAction, ...prev.filter((action) => action.action !== "publish")];

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans, Plus_Jakarta_Sans, Source_Serif_4 } from "next/font/google";
 import { draftMode } from "next/headers";
 import { VisualEditing } from "next-sanity";
-import { HideOnStoryDetail } from "@/components/HideOnStoryDetail";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { getArchive } from "@/lib/content/get-content";
@@ -19,7 +18,7 @@ const dmSans = DM_Sans({
 });
 
 const plusJakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-jakarta",
   display: "swap",
@@ -34,7 +33,7 @@ const sourceSerif = Source_Serif_4({
 });
 
 const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   weight: ["400", "600", "700"],
   style: ["normal", "italic"],
   variable: "--font-cormorant",
@@ -67,13 +66,9 @@ export default async function SiteLayout({
         <a className="skipLink" href="#main">
           {copy.skip}
         </a>
-        <HideOnStoryDetail>
-          <SiteHeader lang={lang} />
-        </HideOnStoryDetail>
+        <SiteHeader lang={lang} />
         <main id="main">{children}</main>
-        <HideOnStoryDetail>
-          <SiteFooter lang={lang} accessibilityUrl={archive.settings.accessibilityUrl} />
-        </HideOnStoryDetail>
+        <SiteFooter lang={lang} accessibilityUrl={archive.settings.accessibilityUrl} />
         {draft.isEnabled ? <VisualEditing /> : null}
       </body>
     </html>

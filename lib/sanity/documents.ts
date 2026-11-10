@@ -29,15 +29,7 @@ export function sanityDocuments(archive: ArchiveContent = localArchive()) {
     participantCode: story.participantCode,
     slug: { _type: "slug", current: story.slug },
     title: localeString(story.title),
-    summary: localeText(story.summary),
-    quotations: story.quotations.map((quotation, index) => ({
-      _key: keyFor(`${story.slug}-quotation-${index}`),
-      _type: "quotation",
-      text: localeText(quotation.text),
-      event: eventId.has(quotation.eventId)
-        ? { _type: "reference", _ref: eventId.get(quotation.eventId) as string }
-        : undefined,
-    })),
+    headline: localeText(story.headline || story.quotations.find((quotation) => quotation.text.en || quotation.text.es || quotation.text.zh)?.text || { en: "", es: "", zh: "" }),
     photographs: story.photographs.map((photo, index) => ({
       _key: keyFor(`${story.slug}-photo-${index}-${photo.src}`),
       _type: "photograph",

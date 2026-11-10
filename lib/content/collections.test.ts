@@ -37,9 +37,9 @@ test("a published collection can replace the fallback wording without changing t
   assert.ok(chinese?.image);
 });
 
-test("story membership prefers an explicit reference and does not infer an unknown legacy value", () => {
-  assert.equal(storyCollectionSlug("caribbean", "latine"), "caribbean");
-  assert.equal(storyCollectionSlug("", "africanAmerican"), "africanAmerican");
-  assert.equal(storyCollectionSlug(undefined, "not-a-community"), undefined);
-  assert.equal(storyCollectionSlug(undefined, ""), undefined);
+test("story membership reads the collection reference only", () => {
+  assert.equal(storyCollectionSlug("caribbean"), "caribbean");
+  assert.equal(storyCollectionSlug(""), undefined);
+  assert.equal(storyCollectionSlug(undefined), undefined);
+  assert.equal(storyCollectionSlug("  latine  "), "latine");
 });

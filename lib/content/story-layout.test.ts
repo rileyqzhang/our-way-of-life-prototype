@@ -6,7 +6,7 @@ test("story headings become chapters and timeline events stay in order", () => {
   const layout = buildStoryLayout({
     code: "SENJ",
     location: "Newark, NJ",
-    summary: "A biography that is not the quotation.",
+    overview: "A biography that is not the quotation.",
     body: "Story 1\n\nThe first account.\n\nStory 2\n\nThe second account.",
     lang: "en",
     quotations: [{ text: "“Stand up.”" }],
@@ -30,7 +30,7 @@ test("a story heading keeps its own quotation instead of the hero quotation", ()
   const layout = buildStoryLayout({
     code: "SENJ",
     location: "",
-    summary: "SENJ was born in Harlem and later moved to New Jersey, where she kept organizing with her neighbors.",
+    overview: "SENJ was born in Harlem and later moved to New Jersey, where she kept organizing with her neighbors.",
     body: "",
     lang: "en",
     article: {
@@ -56,7 +56,7 @@ test("a short article does not replace the full story", () => {
   const layout = buildStoryLayout({
     code: "JMOK",
     location: "",
-    summary: "",
+    overview: "",
     body: story,
     lang: "zh",
     article: { en: [{ _type: "block", style: "normal", children: [{ text: "JMOK7" }] }], es: [], zh: [] },
@@ -72,7 +72,7 @@ test("portable text keeps emphasis, links, and the requested language", () => {
   const layout = buildStoryLayout({
     code: "CSSF",
     location: "",
-    summary: "",
+    overview: "",
     body: "",
     lang: "zh",
     article: {

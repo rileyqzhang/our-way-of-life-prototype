@@ -1,4 +1,5 @@
 import { defineField, defineType } from "sanity";
+import { firstFilled } from "./localePreview";
 
 export const person = defineType({
   name: "person",
@@ -22,7 +23,12 @@ export const person = defineType({
     defineField({ name: "bio", title: "Biography", type: "localeText" }),
     defineField({ name: "photograph", title: "Photograph", type: "photograph" }),
   ],
-  preview: { select: { title: "name", subtitle: "role.en", media: "photograph.image" } },
+  preview: {
+    select: { title: "name", en: "role.en", es: "role.es", zh: "role.zh", media: "photograph.image" },
+    prepare({ title, en, es, zh, media }: { title?: string; en?: string; es?: string; zh?: string; media?: any }) {
+      return { title, subtitle: firstFilled(en, es, zh), media };
+    },
+  },
 });
 
 export const page = defineType({
@@ -35,7 +41,12 @@ export const page = defineType({
     defineField({ name: "summary", title: "Summary", type: "localeText" }),
     defineField({ name: "body", title: "Body", type: "localeText" }),
   ],
-  preview: { select: { title: "title.en", subtitle: "slug.current" } },
+  preview: {
+    select: { en: "title.en", es: "title.es", zh: "title.zh", subtitle: "slug.current" },
+    prepare({ en, es, zh, subtitle }: { en?: string; es?: string; zh?: string; subtitle?: string }) {
+      return { title: firstFilled(en, es, zh) || "Untitled", subtitle };
+    },
+  },
 });
 
 export const siteSettings = defineType({
@@ -57,7 +68,12 @@ export const siteSettings = defineType({
             defineField({ name: "label", title: "Label", type: "localeString", validation: (rule) => rule.required() }),
             defineField({ name: "path", title: "Path", type: "string", description: "Without a language prefix, for example /stories.", validation: (rule) => rule.required() }),
           ],
-          preview: { select: { title: "label.en", subtitle: "path" } },
+          preview: {
+            select: { en: "label.en", es: "label.es", zh: "label.zh", subtitle: "path" },
+            prepare({ en, es, zh, subtitle }: { en?: string; es?: string; zh?: string; subtitle?: string }) {
+              return { title: firstFilled(en, es, zh) || "Untitled", subtitle };
+            },
+          },
         },
       ],
     }),

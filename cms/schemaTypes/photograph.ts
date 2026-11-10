@@ -1,4 +1,5 @@
 import { defineField, defineType } from "sanity";
+import { firstFilled } from "./localePreview";
 
 export const photograph = defineType({
   name: "photograph",
@@ -18,6 +19,9 @@ export const photograph = defineType({
     defineField({ name: "usagePermission", title: "Usage permission", type: "text", rows: 3 }),
   ],
   preview: {
-    select: { title: "alt.en", media: "image" },
+    select: { en: "alt.en", es: "alt.es", zh: "alt.zh", media: "image" },
+    prepare({ en, es, zh, media }: { en?: string; es?: string; zh?: string; media?: any }) {
+      return { title: firstFilled(en, es, zh) || "Untitled", media };
+    },
   },
 });

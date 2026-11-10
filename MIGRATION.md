@@ -71,7 +71,7 @@
 | `FadeSection`、`useFadeIn` | `components/archive/FadeIn.tsx` | 故事导语和阶段卡片使用。 |
 | `SiteHeader` | `components/SiteHeader.tsx` | 站点布局 `app/(site)/[lang]/layout.tsx` 已经渲染顶栏。换外观，保留现有栏目链接。 |
 | `SiteFooter` | `components/SiteFooter.tsx` | 同样换现有页脚，不新做一个只在原型页出现的页脚。 |
-| `ResearchersPage` | `app/(site)/[lang]/research/page.tsx`、`methodology/page.tsx`、`publications/page.tsx` | 不新建 `/researchers`。原型的三个 tab 分别是这三个现有地址，用链接切换。 |
+| `ResearchersPage` | `app/(site)/[lang]/research/page.tsx`、`methodology/page.tsx`、`publications/page.tsx` | 不新建 `/researchers`。tab 顺序是 Archive Overview and Access、Research Methodology、Research & Publications，用链接切换。 |
 
 顶栏这些栏目在原型里点了只会回到首页。移植时接到已经存在的页面：
 
@@ -120,25 +120,46 @@ Rightful Participation 不放进顶栏。Search 和 Account 图标也不放。
 
 这些是外观，留在代码里：颜色、渐变、字体、书架形状、开场动画、Figma 的 `data-layer-name` 和 `viewTransitionName`、按钮上的 “Read Story” 和 “Coming soon”，以及没有肖像时的首字母占位。
 
-在现有的 `cms/schemaTypes/story.ts` 上加字段，不新建另一套故事类型。分段列表里的 `lifeStage` 是可选的，取值对应原型的三个人生阶段：`youth`、`adulthood`、`older`。BMNJ 前 5 段按 `chapters` 写入阶段，第 6、7 段照样导入正文和引语，但 `lifeStage` 留空，等教授确认后再填。时间轴先排有 `lifeStage` 的段，没有的一律排在最后。没有阶段的参与者不套用 BMNJ 的三章。
+在现有的 `cms/schemaTypes/story.ts` 上加字段，不新建另一套故事类型，也不另建 participant 类型。参与者的代号、地点、引语、可选肖像和所属合集继续用 `story` 上已有的 `participantCode`、`location`、`quotations`、`photographs`、`community`。
+
+`lifeStage` 是共用常量，schema 和前端都从 `cms/schemaTypes/lifeStage.ts` 读取。三个值是 `youth`、`adulthood`、`olderAdulthood`，显示名称是 Youth and Adolescence (-18)、Adulthood (20-59)、Older Adulthood (60+)。
+
+`story.segments` 是可选数组。每段有完整标题 `quote`、可选的时间线短标题 `shortTitle`、Portable Text 的 `body`，以及可选的 `lifeStage`。`lifeStage` 在 Studio 里用单选按钮。留空的段落归到 Other Stories，时间线里也按同样的短标题规则列出。左栏短标题有 `shortTitle` 就用它，否则用 `lib/content/segment-title.ts` 的 `segmentTimelineTitle`：先把 `quote` 做首字母大写并去掉末尾一个句号，再在词边界截到约 8 个词并加省略号。锚点 id 仍由英文 `quote` 生成。不加入原型 `chapters` 的 title、era、nodes，也不加 `timelineChapters`。个人概述用新增的可选 `overview`（多语言 Portable Text）。已有的 `summary` 是纯文本，继续给卡片用，不拿来当故事页概述。BMNJ 第 6、7 段先不填 `lifeStage`，会落在 Other Stories。没有阶段的参与者不套用别人的段落。
+
+`publication` 存作者、年份、标题、期刊或出版社、卷、期、页码、DOI 或链接、排序。前端按 APA 7 拼引用。书目按出版物本身的语言存一份，三种网站语言页面用同一条。
+
+`researchAccessPage` 是单例，给 `/research` 用。三个小节是 Who can use the archive?、Using Data Ethically、Access the Archive，每节有多语言标题和 Portable Text 正文，另加 Google Form 网址和按钮文字。
+
+新字段都可选。文字字段沿用现有的 `localeString`、`localeText`，长文用新的 `localeBlock`（同样是 en / es / zh）。
+
+仍写在代码里的页面文字先只列清单，这一步不改。以后每页一个单例，或扩展现有的 `page` / `siteSettings`。
 
 不导入、也不建文档的内容：
 
 - 除 BMNJ 以外的 Unsplash 人物照片。肖像字段留空。
 - `reyesPhoto` 和 `repoRows`。
-- 研究者页的方法论长文、学位论文标题和两段说明。现在在 `lib/content/copy.ts` 和三个研究页面里。`page` 文档只有标题、摘要和正文，装不下这四节结构。第一轮继续用现有文案。
-- 两个 Google Drive 地址。文稿下载继续读 `NEXT_PUBLIC_RESEARCH_DOC_URL`。学位论文链接不要写进仓库；需要公开地址时再加一个同样只在服务端或公开环境变量里配置的项。
+- 研究者页不再提供文稿直接下载。不放 Google Drive 链接，也不放 “Download All Transcripts (.ZIP)”。访问申请用 `researchAccessPage` 的 Google Form 网址。
+- Archive Overview and Access 的三节文字放在 `researchAccessPage`。Research Methodology 的说明，以及 Research & Publications 里论文列表以外的标题，仍在 `lib/content/copy.ts`，随写死文字那一批再迁。论文条目用 `publication`，不要把整句 APA 引用写进代码。
+- 学位论文 PDF 不要写进仓库，除非另有可以公开的文件。
 
 ## 5. 移植顺序
 
 1. 全局样式和字体。把原型的颜色、字体变量收进 `app/globals.css`，包括没有肖像时的首字母占位。
 2. 顶栏和页脚。换 `components/SiteHeader.tsx` 和 `components/SiteFooter.tsx` 的外观。先确认现有栏目还能到时间轴、关于、联系和研究页。
-3. Sanity schema。只改 `cms/schemaTypes/story.ts`，加上可选分段和可选 `lifeStage`。不新建重复的故事类型。
+3. Sanity schema。在现有类型上加可选字段，不新建重复的故事或参与者类型。共用 `lifeStage` 常量。`story` 加 `segments`（含可选 `shortTitle`）和可选的 `overview`。新建 `publication` 和单例 `researchAccessPage`。不导入内容，也不改页面。同时列出仍写在代码里的页面文字，先不挪进 Sanity。不给 story 加 elicitation 字段。Elicitation Document 不进入网站。
 4. 导入原型内容。BMNJ 写入真实肖像和 7 段正文，第 6、7 段不填 `lifeStage`。其他人只导入代号、地点和引语，肖像留空。不导入 Unsplash 人物照片、`reyesPhoto`、`repoRows`。
 5. 首页书架。`app/(site)/[lang]/page.tsx` 读合集和故事。三本书链到 `/stories/collections/[collection]`，slug 用 `latine`、`africanAmerican`、`chinese`。首页现有的三张合集卡已经指向这些地址，保持不动。人物网格只用 `ParticipantCard`。
 6. 合集页。在现有的 `app/(site)/[lang]/stories/collections/[collection]/page.tsx` 上做，不新建 `/collections`。卡片仍用 `ParticipantCard`。华人合集没有故事时显示空状态。
-7. 通用故事页。改 `app/(site)/[lang]/stories/[slug]/page.tsx` 和 `components/stories/StoryDetailView.tsx`。有 `lifeStage` 的段按阶段排，没有的排在时间轴最后。没有肖像时，大图区域也用首字母占位。
-8. 研究者页。不新建 `/researchers`。把原型的 `ResearchersPage` 移进现有的 `/research`。原型的三个 tab 分别对应 `/research`、`/research/methodology`、`/research/publications`，用链接切换，不用 `useState`。三个页面先用现有文案。
+7. 通用故事页。所有参与者共用 `app/(site)/[lang]/stories/[slug]/page.tsx` 和 `components/stories/StoryDetailView.tsx`，布局参考 `BmnjStoryPage`、`BmnjTimelineSpine`、`BmnjChapterCard`。不要再写一个只认识 BMNJ 的页面。
+
+   桌面是左右两栏，两栏顶部对齐，从同一高度开始。左栏是时间线，`position: sticky`。往下滚动时固定，`top` 留出和全站顶栏一样的高度，不被顶栏挡住。时间线永远显示三个阶段，名称来自 `lifeStage`：Youth and Adolescence (-18)、Adulthood (20-59)、Older Adulthood (60+)。每个阶段下面按顺序只列该阶段 segments 的短标题，不列正文。短标题用 `segmentTimelineTitle`：有 `shortTitle` 就用，并做首字母大写、去掉末尾一个句号；没有就把 `quote` 先做同样的处理，再在词边界截到约 8 个词并加省略号。Other Stories 用同一条规则。短标题链到该段唯一的锚点。点击或在短标题上按 Enter 后平滑滚动，段落标题停在顶栏下方。跳到的段落有短暂高亮。滚动时，当前段落的短标题高亮，所在阶段自动展开。手机上点完后目录收起。某个阶段没有段落时，阶段名称仍在，显示为灰色。
+
+   右栏最上面是这个人的 `overview`。下面按三个阶段分组，每组有阶段标题，组里是该阶段的每段故事：完整的 `quote` 加 `body`。没有段落的阶段不在右栏出现。没标 `lifeStage` 的段落放在最后一组，标题是 Other Stories。组内顺序沿用 `segments` 数组里的先后。故事区用浅色背景和深色文字。阶段卡片默认可见，不能停在透明度 0。
+
+   网站不展示 Elicitation Document。schema 不加这个字段。Word 导入遇到黄色的 “Elicitation Document” 整节就跳过。还没有 `segments`、暂时用旧全文显示的故事，也要拿掉正文里的 “Elicitation Document” 这一节，从这行标题到下一节标题之前都不显示。
+
+   手机宽度把时间线放到正文上方，并且可以折叠。只有一两段故事时，空阶段在左栏保持灰色，右栏只画出有内容的组和 Other Stories。不用原型 `chapters` 的 title、era、nodes。没有肖像时，大图区域用首字母占位。
+8. 研究者页。不新建 `/researchers`。三个 tab 用链接切换，不用 `useState`。顺序是 Archive Overview and Access（`/research`）→ Research Methodology（`/research/methodology`）→ Research & Publications（`/research/publications`）。`/research` 改名为 Archive Overview and Access，读 `researchAccessPage` 的三节：Who can use the archive?、Using Data Ethically、Access the Archive。最后一节的按钮打开 Google Form。删掉所有直接下载文稿的链接，包括 Google Drive 和 “Download All Transcripts (.ZIP)”。Research & Publications 用 `publication` 文档按 APA 7 拼出论文列表，不让编辑手打整条引用。
 9. 开场动画。最后加 `SplashScreen`。它依赖定时器和浏览器，放在前面会挡住其余页面的检查。
 
 View Transition 和 “下一位参与者” 不在这九步里。下一位需要合集内的稳定顺序，等卡片和合集页都从 Sanity 读出之后再加。
@@ -155,3 +176,11 @@ View Transition 和 “下一位参与者” 不在这九步里。下一位需�
 - `.goldBar`
 
 同一块里只给旧顶栏页脚用的 `.brand`、`.navToggle`、`.footerInner`、`.footerLinks` 一起删。
+
+确认合集页人数和改之前一致之后，再删除 story 的 Legacy community 字段（`collection`）和已经写入的旧值。在此之前字段保持隐藏，数据保留。
+
+所有参与者都导入 `segments` 之后，删除 story 的两份旧全文：`body`（Full story (plain text)）和 `article`（Full story）。同时删掉 schema 和已经写入的数据。在此之前，有分段的故事隐藏这两个字段，还没有分段的故事只读显示。
+
+网站、时间线和公开查询都不读 `person` 文档，也不读 story 上的 `participant` 引用。确认旧导入脚本不再创建这些文档之后，删除全部 Participant 文档（`_type == "person"` 且 `roleKind == "participant"`）、每篇 story 上的 `participant` 引用，以及 `person` schema。在此之前，story 里的引用保持隐藏，Studio 左侧不再列出这些文档。
+
+把每一篇 story（草稿和发布版）隐藏的 Title 三个语言 `title.en`、`title.es`、`title.zh` 都回填成该文档的 Participant name or code。网站已经直接显示代号，这一步只是让存着的旧 Title 和代号一致。FRNJ 的旧英文 Title 是引语，回填前先确认这句已经在草稿的 Quotations 里。

@@ -1,47 +1,25 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, DM_Sans, Plus_Jakarta_Sans, Source_Serif_4 } from "next/font/google";
+import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
-import { StoryDetailView } from "@/components/stories/StoryDetailView";
+import { StoryFade } from "@/components/story/StoryFade";
+import { StoryPortable } from "@/components/story/StoryPortable";
+import { StoryTimeline } from "@/components/story/StoryTimeline";
 import { ui } from "@/lib/content/copy";
-import { getArchive, getStory } from "@/lib/content/get-content";
-import { buildStoryLayout } from "@/lib/content/story-layout";
+import { portraitAlt } from "@/lib/content/derive";
+import { groupStorySegments, localizedBlocks, localizedPlain, portablePlain, readingFallback, storyContentLocale } from "@/lib/content/story-segments";
 import { pick } from "@/lib/content/text";
 import { locales, localizeHref } from "@/lib/i18n";
 import { readLang } from "@/lib/i18n/request";
+import { sanityImageUrl } from "@/lib/sanity/image";
+import { getStoryDocument, publishedStorySlugs } from "@/lib/sanity/story-document";
 
-const storySans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-story-sans",
-  display: "swap",
-});
-
-const storyDm = DM_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-story-dm",
-  display: "swap",
-});
-
-const storySerif = Source_Serif_4({
-  subsets: ["latin"],
-  weight: ["400", "600"],
-  style: ["normal", "italic"],
-  variable: "--font-story-serif",
-  display: "swap",
-});
-
-const storyDisplay = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["400", "600"],
-  style: ["normal", "italic"],
-  variable: "--font-story-display",
-  display: "swap",
-});
+export const dynamicParams = true;
+export const revalidate = 60;
 
 export async function generateStaticParams() {
-  const archive = await getArchive();
-  return locales.flatMap((lang) => archive.stories.map((story) => ({ lang, slug: story.slug })));
+  const slugs = await publishedStorySlugs();
+  return locales.flatMap((lang) => slugs.map((slug) => ({ lang, slug })));
 }
 
 export async function generateMetadata({
@@ -51,45 +29,120 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const lang = await readLang(params);
-  const story = await getStory(slug);
+  const story = await getStoryDocument(slug);
   if (!story) return { title: ui[lang].stories.title };
-  return { title: pick(story.title, lang), description: pick(story.summary, lang) };
+  const contentLang = storyContentLocale(story, lang);
+  const headline = localizedPlain(story.headline, contentLang);
+  const overviewLead = portablePlain(localizedBlocks(story.overview, contentLang)).split(/\n\s*\n/).find(Boolean);
+  return {
+    title: story.participantCode || ui[lang].stories.title,
+    description: overviewLead || headline,
+  };
 }
 
-export default async function StoryPage({ params }: { params: Promise<{ lang: string; slug: string }> }) {
+export default async function StoryPage({
+  params,
+}: {
+  params: Promise<{ lang: string; slug: string }>;
+}) {
   const { slug } = await params;
   const lang = await readLang(params);
-  const [story, archive] = await Promise.all([getStory(slug), getArchive()]);
-  if (!story) notFound();
+  const story = await getStoryDocument(slug);
+  if (!story?.participantCode) notFound();
+
   const copy = ui[lang];
-  const portrait = story.photographs[0];
-  const volume = story.collection ? archive.collections.find((item) => item.slug === story.collection) : undefined;
-  const siblings = archive.stories
-    .filter((item) => item.collection === story.collection)
-    .sort((a, b) => a.participantCode.localeCompare(b.participantCode));
-  const index = siblings.findIndex((item) => item.slug === story.slug);
-  const next = siblings.length > 1 && index >= 0 ? siblings[(index + 1) % siblings.length] : undefined;
-  const layout = buildStoryLayout({
-    code: story.participantCode,
-    location: pick(story.location, lang),
-    summary: pick(story.summary, lang),
-    body: pick(story.body, lang),
-    lang,
-    article: story.article,
-    quotations: story.quotations.map((quotation) => ({ text: pick(quotation.text, lang) })),
-    relatedEvents: story.relatedEvents.map((event) => ({ id: event.id, date: event.date, title: pick(event.title, lang) })),
-  });
+  const code = story.participantCode;
+  const contentLang = storyContentLocale(story, lang);
+  const languageNote = contentLang === lang ? "" : copy.story.toldIn[contentLang];
+  const location = localizedPlain(story.location, lang);
+  const headline = localizedPlain(story.headline, contentLang).trim();
+  const overview = localizedBlocks(story.overview, contentLang).filter((block) => (block.children || []).some((child) => child.text?.trim()));
+  const stages = groupStorySegments(story.segments, contentLang);
+  const hasSegments = stages.some((stage) => !stage.empty);
+  const fallback = hasSegments ? null : readingFallback(story.article, story.body, contentLang);
+  const photo = story.photographs?.[0];
+  const photoSrc = sanityImageUrl(photo?.image, 2400) || photo?.legacySrc?.trim() || "";
+  const photoAlt = localizedPlain(photo?.alt, lang) || pick(portraitAlt(code), lang);
+  const initial = code.trim().charAt(0).toUpperCase();
+  const badge = location ? `${code} · ${location}` : code;
+  const collectionName = localizedPlain(story.collectionName, lang);
+  const backHref = story.collectionSlug
+    ? localizeHref(lang, `/stories/collections/${story.collectionSlug}`)
+    : localizeHref(lang, "/stories");
+  const backLabel = collectionName ? `${copy.story.backTo} ${collectionName}` : copy.story.backParticipants;
 
   return (
-    <StoryDetailView
-      lang={lang}
-      fontClassName={`${storySans.variable} ${storyDm.variable} ${storySerif.variable} ${storyDisplay.variable}`}
-      image={portrait ? { src: portrait.src, alt: pick(portrait.alt, lang) } : undefined}
-      layout={layout}
-      collectionHref={story.collection ? localizeHref(lang, `/stories/collections/${story.collection}`) : undefined}
-      collectionLabel={volume ? `${copy.story.backTo} ${pick(volume.name, lang)}` : undefined}
-      nextHref={next ? localizeHref(lang, `/stories/${next.slug}`) : undefined}
-      externalHref={story.externalHref}
-    />
+    <article className="storyPage">
+      <section className={["storyHero", photoSrc ? "" : "isFallback", headline ? "" : "isQuiet"].filter(Boolean).join(" ")}>
+        {photoSrc ? <Image className="storyHeroImage" src={photoSrc} alt={photoAlt} fill priority sizes="100vw" /> : <p className="storyHeroInitial" aria-hidden="true">{initial}</p>}
+        <div className="storyHeroShade" />
+        <div className="storyHeroCopy">
+          <p className="storyBadge">{badge}</p>
+          {headline ? <blockquote className="storyHeroQuote">{headline}</blockquote> : null}
+        </div>
+      </section>
+
+      <div className="storyColumns">
+        <StoryTimeline
+          stages={stages.map((stage) => ({
+            id: stage.id,
+            title: stage.title,
+            empty: stage.empty,
+            segments: stage.segments.map((segment) => ({ id: segment.id, label: segment.timelineTitle })),
+          }))}
+        />
+        <header className="storyOverview">
+          <h1>{code}</h1>
+          {location ? <p className="storyOverviewPlace">{location}</p> : null}
+          {languageNote ? <p className="storyLanguageNote">{languageNote}</p> : null}
+          {overview.length ? (
+            <div className="storyOverviewText">
+              <StoryPortable value={overview} />
+            </div>
+          ) : null}
+        </header>
+        <div className="storyStages">
+          {stages
+            .filter((stage) => !stage.empty)
+            .map((stage) => (
+              <StoryFade key={stage.id}>
+                <section className="storyStageCard" aria-labelledby={`story-heading-${stage.id}`}>
+                  <div className="storyCardHead">
+                    <h2 id={`story-heading-${stage.id}`}>{stage.title}</h2>
+                  </div>
+                  <div className="storyCardBody">
+                    {stage.segments.map((segment) => (
+                      <article key={segment.id} id={segment.id} className="storySegment" data-story-segment={segment.id} data-story-stage={stage.id}>
+                        {segment.title ? (
+                          <h3 className={segment.isQuote ? "storyCardQuote" : "storyCardHeading"} tabIndex={-1}>
+                            {segment.isQuote ? <span aria-hidden="true">“</span> : null}
+                            {segment.title}
+                          </h3>
+                        ) : null}
+                        {segment.title && segment.body.length ? <div className="storyCardRule" /> : null}
+                        <StoryPortable value={segment.body} />
+                      </article>
+                    ))}
+                  </div>
+                </section>
+              </StoryFade>
+            ))}
+          {fallback ? (
+            <div className="storyFallback">
+              {fallback.kind === "blocks" ? (
+            <StoryPortable value={fallback.blocks} />
+          ) : (
+            fallback.paragraphs.map((paragraph, index) => <p key={`${index}-${paragraph.slice(0, 24)}`}>{paragraph}</p>)
+          )}
+            </div>
+          ) : null}
+          <div className="storyActions">
+            <Link className="storyAction storyActionPrimary" href={backHref}>
+              {backLabel}
+            </Link>
+          </div>
+        </div>
+      </div>
+    </article>
   );
 }
