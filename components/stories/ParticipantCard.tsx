@@ -15,11 +15,15 @@ export function ParticipantCard({
   lang,
   readStory,
   comingSoon,
+  fromCollection,
+  variant = "default",
 }: {
   story: ArchiveStory;
   lang: Locale;
   readStory: string;
   comingSoon: string;
+  fromCollection?: string;
+  variant?: "default" | "collection";
 }) {
   const photo = story.photographs[0];
   const headline = stripQuotes(pick(story.headline, lang));
@@ -42,6 +46,51 @@ export function ParticipantCard({
   const quote = headline || overviewLead || stripQuotes(legacyQuote);
   const location = pick(story.location, lang);
   const hasStory = story.hasSegments === true;
+  const href = localizeHref(lang, fromCollection ? `/stories/${story.slug}?from=${fromCollection}` : `/stories/${story.slug}`);
+
+  if (variant === "collection") {
+    const archiveBody = (
+      <>
+        <div className="archiveCardMedia">
+          {photo ? (
+            <ArchiveImage alt={pick(photo.alt, lang)} className="archiveCardPhoto" height={640} src={photo.src} width={640} />
+          ) : (
+            <PortraitPlaceholder code={story.participantCode} />
+          )}
+        </div>
+        <div className="archiveCardBody">
+          <p className="archiveCardCode">{story.participantCode}</p>
+          {quote ? (
+            <>
+              <span className="archiveCardMark" aria-hidden="true">
+                “
+              </span>
+              <blockquote className="archiveCardQuote" lang={lang}>
+                {quote}
+              </blockquote>
+            </>
+          ) : null}
+          <div className="archiveCardFoot">
+            {location ? <p className="archiveCardLocation">{location}</p> : null}
+            {hasStory ? (
+              <span className="archiveCardRead">
+                {readStory} <span aria-hidden="true">→</span>
+              </span>
+            ) : (
+              <span className="archiveCardSoon">{comingSoon}</span>
+            )}
+          </div>
+        </div>
+      </>
+    );
+    if (!hasStory) return <article className="archiveCard">{archiveBody}</article>;
+    return (
+      <Link className="archiveCard" href={href}>
+        {archiveBody}
+      </Link>
+    );
+  }
+
   const body = (
     <>
       <div className="participantCardMedia">
@@ -83,7 +132,7 @@ export function ParticipantCard({
   if (!hasStory) return <article className="participantCard">{body}</article>;
 
   return (
-    <Link className="participantCard" href={localizeHref(lang, `/stories/${story.slug}`)}>
+    <Link className="participantCard" href={href}>
       {body}
     </Link>
   );

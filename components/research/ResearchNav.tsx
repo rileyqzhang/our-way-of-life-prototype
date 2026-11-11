@@ -2,32 +2,38 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ui } from "@/lib/content/copy";
-import { isLocale, localizeHref, type Locale } from "@/lib/i18n";
+import { localizeHref, type Locale } from "@/lib/i18n";
 
 const tabs = [
-  { id: "transcripts", path: "/research" },
-  { id: "publications", path: "/research/publications" },
+  { id: "overview", path: "/research" },
   { id: "methodology", path: "/research/methodology" },
+  { id: "publications", path: "/research/publications" },
 ] as const;
 
-export function ResearchNav() {
+export function ResearchNav({
+  lang,
+  label,
+  labels,
+}: {
+  lang: Locale;
+  label: string;
+  labels: Record<(typeof tabs)[number]["id"], string>;
+}) {
   const pathname = usePathname();
-  const segment = pathname.split("/")[1];
-  const lang: Locale = isLocale(segment) ? segment : "en";
-  const copy = ui[lang].research;
 
   return (
-    <nav className="researchNav" aria-label={copy.transcripts}>
-      {tabs.map((tab) => {
-        const href = localizeHref(lang, tab.path);
-        const current = tab.path === "/research" ? pathname === href : pathname === href || pathname.startsWith(`${href}/`);
-        return (
-          <Link key={tab.id} href={href} aria-current={current ? "page" : undefined}>
-            {copy[tab.id]}
-          </Link>
-        );
-      })}
+    <nav className="researchNav" aria-label={label || "Research"}>
+      <div className="researchNavBar" role="list">
+        {tabs.map((tab) => {
+          const href = localizeHref(lang, tab.path);
+          const current = tab.path === "/research" ? pathname === href : pathname === href || pathname.startsWith(`${href}/`);
+          return (
+            <Link key={tab.id} href={href} aria-current={current ? "page" : undefined} role="listitem">
+              {labels[tab.id]}
+            </Link>
+          );
+        })}
+      </div>
     </nav>
   );
 }

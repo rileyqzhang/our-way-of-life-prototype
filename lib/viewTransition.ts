@@ -1,29 +1,17 @@
-import { flushSync } from "react-dom";
-
 export type ArchiveTransitionDirection = "forward" | "back";
 
-export function runArchiveTransition(
-  update: () => void,
-  direction: ArchiveTransitionDirection,
-  afterUpdate?: () => void,
-) {
-  const transitionDocument = document as Document & {
-    startViewTransition?: (callback: () => void) => { finished: Promise<void> };
-  };
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  if (!transitionDocument.startViewTransition || reducedMotion) {
-    flushSync(update);
-    afterUpdate?.();
+export function markArchiveTransition(direction: ArchiveTransitionDirection) {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    clearArchiveTransition();
     return;
   }
-
   document.documentElement.dataset.archiveTransition = direction;
-  const transition = transitionDocument.startViewTransition(() => {
-    flushSync(update);
-    afterUpdate?.();
-  });
-  transition.finished.finally(() => {
-    delete document.documentElement.dataset.archiveTransition;
-  });
+}
+
+export function clearArchiveTransition() {
+  delete document.documentElement.dataset.archiveTransition;
+}
+
+export function isPlainClick(event: { button: number; metaKey: boolean; ctrlKey: boolean; shiftKey: boolean; altKey: boolean; defaultPrevented: boolean }) {
+  return !event.defaultPrevented && event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey;
 }

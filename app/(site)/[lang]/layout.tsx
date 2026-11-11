@@ -4,6 +4,7 @@ import { draftMode } from "next/headers";
 import { VisualEditing } from "next-sanity";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { ArchiveTransitionDirection } from "@/components/stories/ArchiveTransitionDirection";
 import { getArchive } from "@/lib/content/get-content";
 import { ui } from "@/lib/content/copy";
 import { locales } from "@/lib/i18n";
@@ -74,6 +75,7 @@ export default async function SiteLayout({
         <SiteHeader lang={lang} />
         <main id="main">{children}</main>
         <SiteFooter lang={lang} accessibilityUrl={archive.settings.accessibilityUrl} />
+        <ArchiveTransitionDirection />
         {draft.isEnabled ? <VisualEditing /> : null}
       </body>
     </html>

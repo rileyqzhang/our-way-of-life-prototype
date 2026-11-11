@@ -6,6 +6,11 @@ export function pick(value: LocalizedText | undefined, lang: Locale) {
   return value[lang] || value.en || value.es || value.zh || "";
 }
 
+export function pickRich<T>(value: { en?: T[] | null; es?: T[] | null; zh?: T[] | null } | null | undefined, lang: Locale) {
+  if (!value) return [] as T[];
+  return [value[lang], value.en, value.es, value.zh].find((items) => items && items.length) || [];
+}
+
 const CLOSERS: Record<string, string> = { "“": "”", "«": "»", '"': '"' };
 
 export function openingQuotation(value: LocalizedText | undefined, lang: Locale) {

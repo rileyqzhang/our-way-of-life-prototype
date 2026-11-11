@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { ui } from "@/lib/content/copy";
 import { locales, localizeHref, swapLocale, type Locale } from "@/lib/i18n";
 
@@ -14,6 +14,54 @@ function isCurrent(pathname: string, lang: Locale, path: string) {
   const href = localizeHref(lang, path);
   if (path === "/") return pathname === href;
   return pathname === href || pathname.startsWith(`${href}/`);
+}
+
+function LanguageLinks({
+  lang,
+  pathname,
+  onNavigate,
+  query = "",
+}: {
+  lang: Locale;
+  pathname: string;
+  onNavigate: () => void;
+  query?: string;
+}) {
+  const copy = ui[lang];
+
+  return (
+    <div className="archiveLang" role="group" aria-label={copy.languageLabel}>
+      {locales.map((locale) => {
+        const href = swapLocale(pathname, locale);
+        return (
+          <Link
+            key={locale}
+            href={query ? `${href}?${query}` : href}
+            hrefLang={locale}
+            lang={locale}
+            aria-current={locale === lang ? "true" : undefined}
+            onClick={onNavigate}
+          >
+            <span className="archiveLangFull">{languageLabel[locale]}</span>
+            <span className="archiveLangShort">{languageShort[locale]}</span>
+          </Link>
+        );
+      })}
+    </div>
+  );
+}
+
+function LanguageSwitch({
+  lang,
+  pathname,
+  onNavigate,
+}: {
+  lang: Locale;
+  pathname: string;
+  onNavigate: () => void;
+}) {
+  const query = useSearchParams().toString();
+  return <LanguageLinks lang={lang} pathname={pathname} onNavigate={onNavigate} query={query} />;
 }
 
 export function SiteHeader({ lang }: { lang: Locale }) {
@@ -72,21 +120,9 @@ export function SiteHeader({ lang }: { lang: Locale }) {
           )}
         </button>
         <div className="archiveHeaderTools">
-          <div className="archiveLang" role="group" aria-label={copy.languageLabel}>
-            {locales.map((locale) => (
-              <Link
-                key={locale}
-                href={swapLocale(pathname, locale)}
-                hrefLang={locale}
-                lang={locale}
-                aria-current={locale === lang ? "true" : undefined}
-                onClick={() => setOpen(false)}
-              >
-                <span className="archiveLangFull">{languageLabel[locale]}</span>
-                <span className="archiveLangShort">{languageShort[locale]}</span>
-              </Link>
-            ))}
-          </div>
+          <Suspense fallback={<LanguageLinks lang={lang} pathname={pathname} onNavigate={() => setOpen(false)} />}>
+            <LanguageSwitch lang={lang} pathname={pathname} onNavigate={() => setOpen(false)} />
+          </Suspense>
         </div>
         <nav id="primary-navigation" className={open ? "archiveNav isOpen" : "archiveNav"} aria-label="Primary">
           {items.map((item) => {

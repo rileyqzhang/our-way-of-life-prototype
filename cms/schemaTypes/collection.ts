@@ -38,6 +38,33 @@ export const collection = defineType({
       fields: [defineField({ name: "alt", title: "Alt text", type: "localeString" })],
     }),
     defineField({
+      name: "backgroundGradient",
+      title: "Page background gradient",
+      type: "object",
+      description:
+        "Background of this collection's page, drawn as a 145° gradient from the start color (top left) to the end color (bottom right). Use dark colors so the cream title stays readable. Leave both empty to use the site's dark brown.",
+      options: { collapsible: true, collapsed: false },
+      fields: [
+        defineField({ name: "from", title: "Start color", type: "color", options: { disableAlpha: true } }),
+        defineField({ name: "to", title: "End color", type: "color", options: { disableAlpha: true } }),
+      ],
+    }),
+    defineField({
+      name: "accentColor",
+      title: "Accent color",
+      type: "color",
+      description:
+        "Used for the Back to Archive Shelf link, the “— Their Words. Their Lives.” part of the title, and the large quotation marks on the cards. Pick a light gold or similar so it reads on the dark background. Leave empty to use gold.",
+      options: { disableAlpha: true },
+    }),
+    defineField({
+      name: "mutedColor",
+      title: "Secondary color",
+      type: "color",
+      description: "Used for the small “Digital Archive” label above the title. Pick a softer tone than the accent. Leave empty to use a muted gold.",
+      options: { disableAlpha: true },
+    }),
+    defineField({
       name: "displayOrder",
       title: "Display order",
       type: "number",

@@ -42,10 +42,14 @@ export async function generateMetadata({
 
 export default async function StoryPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ lang: string; slug: string }>;
+  searchParams: Promise<{ from?: string | string[] }>;
 }) {
   const { slug } = await params;
+  const fromParam = (await searchParams).from;
+  const from = Array.isArray(fromParam) ? fromParam[0] : fromParam;
   const lang = await readLang(params);
   const story = await getStoryDocument(slug);
   if (!story?.participantCode) notFound();
@@ -66,13 +70,24 @@ export default async function StoryPage({
   const initial = code.trim().charAt(0).toUpperCase();
   const badge = location ? `${code} · ${location}` : code;
   const collectionName = localizedPlain(story.collectionName, lang);
-  const backHref = story.collectionSlug
+  const fromCollection = Boolean(from && story.collectionSlug && from === story.collectionSlug && collectionName);
+  const backHref = fromCollection
     ? localizeHref(lang, `/stories/collections/${story.collectionSlug}`)
     : localizeHref(lang, "/stories");
-  const backLabel = collectionName ? `${copy.story.backTo} ${collectionName}` : copy.story.backParticipants;
+  const backLabel = fromCollection
+    ? `${copy.story.backTo}${lang === "zh" ? "" : " "}${collectionName}`
+    : copy.story.backParticipants;
 
   return (
     <article className="storyPage">
+      <div className="storyReturn">
+        <Link href={backHref}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+            <path d="M19 12H5M12 5l-7 7 7 7" />
+          </svg>
+          {backLabel}
+        </Link>
+      </div>
       <section className={["storyHero", photoSrc ? "" : "isFallback", headline ? "" : "isQuiet"].filter(Boolean).join(" ")}>
         {photoSrc ? <Image className="storyHeroImage" src={photoSrc} alt={photoAlt} fill priority sizes="100vw" /> : <p className="storyHeroInitial" aria-hidden="true">{initial}</p>}
         <div className="storyHeroShade" />
@@ -136,11 +151,6 @@ export default async function StoryPage({
           )}
             </div>
           ) : null}
-          <div className="storyActions">
-            <Link className="storyAction storyActionPrimary" href={backHref}>
-              {backLabel}
-            </Link>
-          </div>
         </div>
       </div>
     </article>

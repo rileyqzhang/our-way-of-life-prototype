@@ -9,7 +9,18 @@ export const archiveQuery = defineQuery(`{
     cover {
       asset,
       alt
+    },
+    "theme": {
+      "gradientFrom": backgroundGradient.from.hex,
+      "gradientTo": backgroundGradient.to.hex,
+      "accent": accentColor.hex,
+      "muted": mutedColor.hex
     }
+  },
+  "collectionPage": *[_id == "collectionPage"][0] {
+    backLabel,
+    eyebrow,
+    titleSuffix
   },
   "timeline": *[_type == "timelineEvent"] | order(displayOrder asc) {
     "id": slug.current,
@@ -110,3 +121,47 @@ export const storyBySlugQuery = defineQuery(`*[_type == "story" && slug.current 
 }`);
 
 export const storySlugQuery = defineQuery(`*[_type == "story" && defined(slug.current)].slug.current`);
+
+export const researchQuery = defineQuery(`{
+  "access": *[_id == "researchAccessPage"][0]{
+    tabLabel,
+    navAria,
+    whoCanUse{ heading, body },
+    requestingAccess{ heading, body },
+    formUrl,
+    buttonLabel,
+    inquiry,
+    contactEmail
+  },
+  "methodology": *[_id == "researchMethodologyPage"][0]{
+    tabLabel,
+    participantsHeading,
+    participantsBody,
+    participantsPhoto{ asset, alt },
+    eyebrow,
+    title,
+    sections[]{ heading, body }
+  },
+  "publicationsPage": *[_id == "researchPublicationsPage"][0]{
+    tabLabel,
+    publicationsHeading,
+    dissertationHeading,
+    accessHeading,
+    downloadLabel,
+    downloadUrl
+  },
+  "publications": *[_type == "publication"] | order(displayOrder asc){
+    "id": _id,
+    authors,
+    year,
+    title,
+    source,
+    publisher,
+    volume,
+    issue,
+    pages,
+    link,
+    section,
+    displayOrder
+  }
+}`);

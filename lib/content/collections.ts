@@ -12,9 +12,72 @@ export type ArchiveCollection = {
   image?: string;
   imageAlt: LocalizedText;
   displayOrder: number;
+  theme?: CollectionThemeInput;
 };
 
+export type CollectionThemeInput = {
+  gradientFrom?: string;
+  gradientTo?: string;
+  accent?: string;
+  muted?: string;
+};
+
+export type CollectionTheme = {
+  background: string;
+  accent: string;
+  muted: string;
+};
+
+const defaultTheme = {
+  gradientFrom: "#5b2509",
+  gradientTo: "#2a1004",
+  accent: "#D9AD62",
+  muted: "#C29A6B",
+};
+
+const HEX = /^#[0-9a-f]{3}(?:[0-9a-f]{3})?$/i;
+
+function hex(value: string | undefined, fallback: string) {
+  return value && HEX.test(value.trim()) ? value.trim() : fallback;
+}
+
+export function collectionTheme(input: CollectionThemeInput | undefined): CollectionTheme {
+  const from = hex(input?.gradientFrom, "");
+  const to = hex(input?.gradientTo, "");
+  const gradientFrom = from || to || defaultTheme.gradientFrom;
+  const gradientTo = to || (from ? from : defaultTheme.gradientTo);
+  return {
+    background: `linear-gradient(145deg, ${gradientFrom} 0%, ${gradientTo} 100%)`,
+    accent: hex(input?.accent, defaultTheme.accent),
+    muted: hex(input?.muted, defaultTheme.muted),
+  };
+}
+
 const text = (en: string, es: string, zh: string): LocalizedText => ({ en, es, zh });
+
+export type CollectionPageCopy = {
+  backLabel: LocalizedText;
+  eyebrow: LocalizedText;
+  titleSuffix: LocalizedText;
+};
+
+export const localCollectionPage: CollectionPageCopy = {
+  backLabel: text("Back to Archive Shelf", "Volver al estante del archivo", "返回档案书架"),
+  eyebrow: text("Digital Archive", "Archivo digital", "数字档案"),
+  titleSuffix: text("Their Words. Their Lives.", "Sus palabras. Sus vidas.", "他们的话。他们的生活。"),
+};
+
+function filledOr(value: LocalizedText | undefined, fallback: LocalizedText) {
+  return hasText(value) ? (value as LocalizedText) : fallback;
+}
+
+export function mergeCollectionPage(remote: Partial<CollectionPageCopy> | null | undefined): CollectionPageCopy {
+  return {
+    backLabel: filledOr(remote?.backLabel, localCollectionPage.backLabel),
+    eyebrow: filledOr(remote?.eyebrow, localCollectionPage.eyebrow),
+    titleSuffix: filledOr(remote?.titleSuffix, localCollectionPage.titleSuffix),
+  };
+}
 
 export const legacyCollections: ArchiveCollection[] = [
   {
@@ -100,6 +163,7 @@ export function mergeCollections(remote: ArchiveCollection[], local: ArchiveColl
       image: collection.image || current?.image,
       imageAlt: hasText(collection.imageAlt) ? collection.imageAlt : current?.imageAlt || { en: "", es: "", zh: "" },
       displayOrder: collection.displayOrder,
+      theme: collection.theme,
     });
   }
   return [...bySlug.values()].sort((a, b) => a.displayOrder - b.displayOrder || a.slug.localeCompare(b.slug));

@@ -1,4 +1,4 @@
-import { storyCollectionSlug, type ArchiveCollection } from "@/lib/content/collections";
+import { mergeCollectionPage, storyCollectionSlug, type ArchiveCollection, type CollectionPageCopy } from "@/lib/content/collections";
 import type { PageDocument, SiteSettings } from "@/lib/content/copy";
 import { localPages, localSettings } from "@/lib/content/copy";
 import type { ArchiveStory, Photo, PreparedTimelineEvent, StoryArticleBlock } from "@/lib/content/derive";
@@ -52,7 +52,10 @@ type SanityCollection = {
   description?: LocaleValue;
   displayOrder?: number;
   cover?: { asset?: { _ref?: string }; alt?: LocaleValue } | null;
+  theme?: { gradientFrom?: string | null; gradientTo?: string | null; accent?: string | null; muted?: string | null } | null;
 };
+
+type SanityCollectionPage = { backLabel?: LocaleValue; eyebrow?: LocaleValue; titleSuffix?: LocaleValue };
 
 type SanityStory = {
   slug?: string;
@@ -84,6 +87,7 @@ type SanitySettings = {
 
 export type SanityArchive = {
   collections?: SanityCollection[] | null;
+  collectionPage?: SanityCollectionPage | null;
   timeline?: SanityEvent[] | null;
   stories?: SanityStory[] | null;
   pages?: SanityPage[] | null;
@@ -199,8 +203,20 @@ export function mapCollections(collections: SanityCollection[] | null | undefine
         image: sanityImageUrl(collection.cover, 1200) || undefined,
         imageAlt: alt,
         displayOrder: collection.displayOrder ?? 0,
+        theme: {
+          gradientFrom: collection.theme?.gradientFrom || undefined,
+          gradientTo: collection.theme?.gradientTo || undefined,
+          accent: collection.theme?.accent || undefined,
+          muted: collection.theme?.muted || undefined,
+        },
       };
     });
+}
+
+export function mapCollectionPage(page: SanityCollectionPage | null | undefined): CollectionPageCopy {
+  return mergeCollectionPage(
+    page ? { backLabel: locale(page.backLabel), eyebrow: locale(page.eyebrow), titleSuffix: locale(page.titleSuffix) } : null,
+  );
 }
 
 export function mapStories(stories: SanityStory[] | null | undefined): ArchiveStory[] {

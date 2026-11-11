@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { CSSProperties } from "react";
+import { ArchiveBookTransition } from "@/components/stories/ArchiveBookTransition";
+import { ArchiveVolumeBook, volumeTone, volumeTransitionName } from "@/components/stories/ArchiveVolume";
 import { ParticipantCard } from "@/components/stories/ParticipantCard";
-import { legacyCollections } from "@/lib/content/collections";
+import { ArchiveTransitionLink } from "@/components/stories/VolumeLink";
+import { collectionTheme, legacyCollections } from "@/lib/content/collections";
 import { ui } from "@/lib/content/copy";
 import { getArchive } from "@/lib/content/get-content";
 import { preferCanonicalStory } from "@/lib/migration/participant-code";
@@ -44,32 +47,60 @@ export default async function StoryCollectionPage({
   const volume = archive.collections.find((item) => item.slug === collection);
   if (!volume) notFound();
   const stories = preferCanonicalStory(archive.stories.filter((story) => story.collection === collection));
-  const description = pick(volume.description, lang);
+  const theme = collectionTheme(volume.theme);
+  const wording = archive.collectionPage;
+  const name = pick(volume.name, lang);
+  const themeStyle = {
+    "--collection-bg": theme.background,
+    "--collection-accent": theme.accent,
+    "--collection-muted": theme.muted,
+  } as CSSProperties;
 
   return (
-    <>
-      <div className="participantStoriesHead">
-        <div className="container">
-          <p className="storyBack">
-            <Link href={localizeHref(lang, "/stories")}>{copy.story.back}</Link>
-          </p>
-          <h1 className="participantStoriesTitle">{pick(volume.name, lang)}</h1>
-          {description ? <p className="collectionLede">{description}</p> : null}
-        </div>
+    <div className="collectionPage" style={themeStyle}>
+      <div className="collectionPageInner collectionBackRow">
+        <ArchiveTransitionLink className="collectionBack" direction="back" href={localizeHref(lang, "/stories#archive-shelf")}>
+          <span aria-hidden="true">←</span> {pick(wording.backLabel, lang)}
+        </ArchiveTransitionLink>
       </div>
-      <section className="participantStories">
-        <div className="container">
-          {stories.length ? (
-            <div className="participantStoryGrid">
-              {stories.map((story) => (
-                <ParticipantCard comingSoon={copy.stories.comingSoon} key={story.slug} lang={lang} readStory={copy.stories.readStory} story={story} />
-              ))}
-            </div>
-          ) : (
-            <p className="collectionEmpty">{copy.stories.emptyCollection}</p>
-          )}
+
+      <header className="collectionPageInner collectionPageHeader">
+        <div className="collectionVolumeHeader">
+          <div>
+            <p className="collectionEyebrow">{pick(wording.eyebrow, lang)}</p>
+            <h1 className="collectionVolumeTitle">
+              {name} <span className="collectionVolumeTitleAccent">— {pick(wording.titleSuffix, lang)}</span>
+            </h1>
+          </div>
+          <div className="collectionHeroBook">
+            <ArchiveBookTransition name={volumeTransitionName(volume.slug)}>
+              <div className={`volume volume--${volumeTone(volume.slug)} volume--hero`}>
+                <ArchiveVolumeBook collection={volume} lang={lang} priority />
+              </div>
+            </ArchiveBookTransition>
+          </div>
         </div>
+      </header>
+
+      <section className="collectionPageInner collectionGallery" aria-label={name}>
+        {stories.length ? (
+          <div className="collectionGalleryGrid">
+            {stories.map((story) => (
+              <ParticipantCard
+                comingSoon={copy.stories.comingSoon}
+                fromCollection={collection}
+                key={story.slug}
+                lang={lang}
+                readStory={copy.stories.readStory}
+                story={story}
+                variant="collection"
+              />
+            ))}
+          </div>
+        ) : (
+          <p className="collectionGalleryEmpty">{copy.stories.emptyCollection}</p>
+        )}
       </section>
-    </>
+    </div>
   );
 }

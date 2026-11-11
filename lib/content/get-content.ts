@@ -5,7 +5,7 @@ import { localArchive } from "@/lib/content/local";
 import { client, previewClient } from "@/lib/sanity/client";
 import { isSanityConfigured } from "@/lib/sanity/env";
 import { mergeCollections } from "@/lib/content/collections";
-import { mapCollections, mapPages, mapSettings, mapStories, mapTimeline, type SanityArchive } from "@/lib/sanity/map";
+import { mapCollectionPage, mapCollections, mapPages, mapSettings, mapStories, mapTimeline, type SanityArchive } from "@/lib/sanity/map";
 import { mergeTimeline } from "@/lib/content/derive";
 import { canonicalParticipantSlug } from "@/lib/migration/participant-code";
 import { archiveQuery } from "@/lib/sanity/queries";
@@ -36,6 +36,7 @@ async function readSanity(): Promise<ArchiveContent | null> {
       timeline: mergeTimeline(timeline, local.timeline),
       stories: stories.length ? stories : local.stories,
       collections: mergeCollections(collections, local.collections),
+      collectionPage: mapCollectionPage(data?.collectionPage),
       pages: mapPages(data?.pages),
       settings: mapSettings(data?.settings),
     };

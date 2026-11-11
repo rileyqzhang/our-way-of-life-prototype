@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ArchiveImage } from "@/components/media/ArchiveImage";
+import { ArchiveVolumeBook, volumeTone, volumeTransitionName } from "@/components/stories/ArchiveVolume";
 import { ParticipantCard } from "@/components/stories/ParticipantCard";
+import { VolumeLink } from "@/components/stories/VolumeLink";
 import type { ArchiveCollection } from "@/lib/content/collections";
 import { ui, type UiCopy } from "@/lib/content/copy";
 import type { ArchiveStory } from "@/lib/content/derive";
@@ -34,9 +34,6 @@ function storyGroups(stories: ArchiveStory[], collections: ArchiveCollection[], 
   ];
 }
 
-const heroImage = "/timeline/2021-07-19_19-55-12_1626738877.jpg";
-const volumeTones = ["rust", "navy", "forest"] as const;
-
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const lang = await readLang(params);
   const archive = await getArchive();
@@ -48,55 +45,34 @@ export default async function StoriesPage({ params }: { params: Promise<{ lang: 
   const lang = await readLang(params);
   const copy = ui[lang];
   const archive = await getArchive();
-  const page = archive.pages.find((item) => item.slug === "stories");
 
   return (
     <>
-      <section className="archiveHero participantsHero">
-        <div className="container archiveHeroSplit">
-          <div className="archiveHeroCopy">
-            <h1 className="archiveTitle">{pick(page?.title, lang) || copy.stories.title}</h1>
-            <p className="archiveLede">{pick(page?.summary, lang) || copy.stories.lede}</p>
-            <p className="archiveLede">{pick(page?.body, lang) || copy.stories.ledeContinued}</p>
-          </div>
-          <figure className="participantsHeroFrame">
-            <ArchiveImage
-              alt={copy.stories.heroImageAlt}
-              className="participantsHeroPhoto"
-              height={720}
-              priority
-              src={heroImage}
-              width={960}
-            />
-          </figure>
-        </div>
-      </section>
-
-      <section className="participantsCollections">
-        <div className="container">
-          <h2 className="participantsCollectionsTitle">{copy.stories.exploreTitle}</h2>
-          <p className="participantsCollectionsLede">{copy.stories.exploreLede}</p>
-          <div className="volumeShelf">
-            {archive.collections.map((collection, index) => (
-              <Link className={`volume volume--${volumeTones[index % volumeTones.length]}`} href={localizeHref(lang, `/stories/collections/${collection.slug}`)} key={collection.slug}>
-                <span className="volumeTitle">{pick(collection.name, lang)}</span>
-                {collection.image ? (
-                  <ArchiveImage
-                    alt={pick(collection.imageAlt, lang)}
-                    className="volumePhoto"
-                    height={640}
-                    src={collection.image}
-                    width={480}
-                  />
-                ) : (
-                  <span className="volumePhoto volumePhoto--empty" />
-                )}
-                {pick(collection.description, lang) ? <span className="volumeBlurb">{pick(collection.description, lang)}</span> : null}
-                <span className="volumeCta">
-                  {copy.stories.exploreVolume} <span aria-hidden="true">→</span>
-                </span>
-              </Link>
-            ))}
+      <section className="participantsCollections" id="archive-shelf">
+        <div className="archiveShelfInner">
+          <header className="archiveShelfHead">
+            <h1 className="participantsCollectionsTitle">{copy.stories.exploreTitle}</h1>
+            <p className="participantsCollectionsLede">{copy.stories.exploreLede}</p>
+          </header>
+          <div className="archiveShelfStage">
+            <div className="volumeShelf">
+              {archive.collections.map((collection) => (
+                <VolumeLink
+                  className={`volume volume--${volumeTone(collection.slug)}`}
+                  href={localizeHref(lang, `/stories/collections/${collection.slug}`)}
+                  key={collection.slug}
+                  transitionName={volumeTransitionName(collection.slug)}
+                >
+                  <ArchiveVolumeBook collection={collection} cta={copy.stories.exploreVolume} lang={lang} priority />
+                </VolumeLink>
+              ))}
+            </div>
+            <div className="archiveLedge" aria-hidden="true">
+              <div className="archiveLedgeTop" />
+              <div className="archiveLedgeBrass" />
+              <div className="archiveLedgeBody" />
+              <div className="archiveLedgeShadow" />
+            </div>
           </div>
         </div>
       </section>

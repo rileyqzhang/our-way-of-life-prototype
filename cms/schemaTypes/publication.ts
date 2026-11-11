@@ -26,8 +26,14 @@ export const publication = defineType({
     }),
     defineField({
       name: "source",
-      title: "Journal or publisher",
-      description: "The journal name, or the book publisher. Leave empty if there is none.",
+      title: "Journal or book title",
+      description: "The journal name, or the book title for a chapter. The website italicizes this. Leave empty if there is none.",
+      type: "string",
+    }),
+    defineField({
+      name: "publisher",
+      title: "Publisher",
+      description: "For a chapter, the book publisher. Leave empty for a journal article. The book title goes in Journal or book title.",
       type: "string",
     }),
     defineField({
@@ -55,18 +61,39 @@ export const publication = defineType({
       type: "string",
     }),
     defineField({
+      name: "section",
+      title: "Section",
+      description: "Publications are the article list. Dissertation is the separate block below that list.",
+      type: "string",
+      initialValue: "publications",
+      options: {
+        list: [
+          { title: "Publications", value: "publications" },
+          { title: "Dissertation", value: "dissertation" },
+        ],
+        layout: "radio",
+      },
+    }),
+    defineField({
+      name: "editorNote",
+      title: "Editor note",
+      description: "Shown in Studio only, not on the website. Use this to flag a citation that still needs confirmation.",
+      type: "text",
+      rows: 4,
+    }),
+    defineField({
       name: "displayOrder",
       title: "Sort order",
-      description: "Lower numbers appear first on Research & Publications. Leave empty to place this item after the numbered ones.",
+      description: "Lower numbers appear first inside the selected section.",
       type: "number",
       validation: (rule) => rule.integer().min(0),
     }),
   ],
   orderings: [{ title: "Sort order", name: "displayOrder", by: [{ field: "displayOrder", direction: "asc" }] }],
   preview: {
-    select: { title: "title", year: "year", author: "authors.0" },
-    prepare({ title, year, author }) {
-      return { title: title || "Untitled publication", subtitle: [author, year].filter(Boolean).join(", ") };
+    select: { title: "title", year: "year", author: "authors.0", note: "editorNote" },
+    prepare({ title, year, author, note }: { title?: string; year?: string; author?: string; note?: string }) {
+      return { title: title || "Untitled publication", subtitle: note || [author, year].filter(Boolean).join(", ") };
     },
   },
 });

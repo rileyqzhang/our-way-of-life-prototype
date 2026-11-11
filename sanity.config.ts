@@ -1,3 +1,4 @@
+import { colorInput } from "@sanity/color-input";
 import { visionTool } from "@sanity/vision";
 import { defineConfig } from "sanity";
 import { presentationTool } from "sanity/presentation";
@@ -85,6 +86,7 @@ export default defineConfig({
       },
     }),
     visionTool(),
+    colorInput(),
   ],
   schema: { types: schemaTypes },
   document: {

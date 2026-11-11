@@ -1,4 +1,4 @@
-import { legacyCollections, type ArchiveCollection } from "@/lib/content/collections";
+import { legacyCollections, localCollectionPage, type ArchiveCollection, type CollectionPageCopy } from "@/lib/content/collections";
 import { localPages, localSettings, type PageDocument, type SiteSettings } from "@/lib/content/copy";
 import { prepareTimeline, storiesFromTimeline, type ArchiveStory, type PreparedTimelineEvent } from "@/lib/content/derive";
 import { timelineEvents } from "@/lib/timeline/events";
@@ -8,6 +8,7 @@ export type ArchiveContent = {
   timeline: PreparedTimelineEvent[];
   stories: ArchiveStory[];
   collections: ArchiveCollection[];
+  collectionPage: CollectionPageCopy;
   pages: PageDocument[];
   settings: SiteSettings;
 };
@@ -19,6 +20,7 @@ export function localArchive(): ArchiveContent {
     timeline,
     stories: storiesFromTimeline(timeline),
     collections: legacyCollections,
+    collectionPage: localCollectionPage,
     pages: localPages,
     settings: localSettings,
   };
