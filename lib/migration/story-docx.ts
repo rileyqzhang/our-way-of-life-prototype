@@ -74,7 +74,7 @@ const CHINESE_STORY = /^故事\s*([0-9０-９一二三四五六七八九十]+)\s
 const ELICITATION = /^(?:[a-z]{2,8}\d*\s+)?elicitation\b/i;
 const KEPT_SUBHEADINGS = ["reflexiones y consejos", "cambios en la participacion a traves del tiempo"];
 const HEARING_MARK = String.raw`\[\s*(?:unintelligible|inaudible|ininteligible)(?:\s+\d{1,2}:\d{2}:\d{2})?\s*\]`;
-const CLARIFY_MARK = String.raw`(?:\[\s*)?FOR\s+[A-Z0-9]+\s+TO\s+CLARIFY(?:\s*\])?`;
+const CLARIFY_MARK = String.raw`(?:\[\s*)?(?:FOR|ASK)\s+[A-Z0-9]+\s+TO\s+CLARIFY(?:\s*\])?(?:\s*\.)?`;
 const EDITORIAL_NOTE = new RegExp(`${HEARING_MARK}|${CLARIFY_MARK}`, "gi");
 
 export function publishBlockers(text: string) {
@@ -293,7 +293,7 @@ function splitHeadingQuote(text: string) {
 
 const STANDALONE_PROMPT = /^(?:¿\s*)?(?:anything (?:more you would|you would) like to add\b|por qu[eé] participa\b|c[oó]mo se siente\b|me puede decir\b|qu[eé] apoyos usted cree\b|qu[eé] consejo usted le dar[ií]a\b|algo que quiera agregar\b)[\s\S]*[?？]\s*$/i;
 
-function isStandalonePrompt(text: string) {
+export function isStandalonePrompt(text: string) {
   const value = text.replace(/\s+/g, " ").trim();
   return value.length > 0 && value.length <= 280 && STANDALONE_PROMPT.test(value);
 }
@@ -313,15 +313,136 @@ function isGeneratedTitle(title: string) {
 
 function firstSentence(text: string) {
   const value = text.replace(/\s+/g, " ").trim();
-  const match = value.match(/^([\s\S]+?[.!?。！？])(?:\s|$)/);
-  return (match?.[1] || value).trim();
+  const match = value.match(/^([\s\S]+?[.!?])(?:\s|$)|([\s\S]+?[。！？])/);
+  return (match?.[1] || match?.[2] || value).trim();
 }
 
-function titleFromFirstSentence(text: string) {
+function hanCount(text: string) {
+  return text.match(/\p{Script=Han}/gu)?.length ?? 0;
+}
+
+export function titleFromFirstSentence(text: string) {
   const sentence = firstSentence(text);
   const words = sentence.match(/\S+/g) || [];
+  if (hanCount(sentence) >= 8 && words.length <= 2) {
+    if (hanCount(sentence) <= 36) return sentence;
+    const chars = [...sentence];
+    let count = 0;
+    let end = 0;
+    for (let index = 0; index < chars.length; index += 1) {
+      if (/\p{Script=Han}/u.test(chars[index])) count += 1;
+      if (count > 36) break;
+      end = index + 1;
+    }
+    const clipped = chars.slice(0, end).join("").replace(/[，,、\s]+$/, "").trim();
+    return `${clipped}…`;
+  }
   if (words.length <= 12) return sentence;
-  return words.slice(0, 12).join(" ");
+  return `${words.slice(0, 12).join(" ").replace(/[,，]\s*$/, "")}…`;
+}
+
+export function isQuietEmptyHeading(title: string) {
+  return isStandalonePrompt(title) || isGeneratedTitle(title);
+}
+
+const PLACEHOLDER_TEXT = /^(?:n\/a|n\.a\.|ninguno|ninguna|无|無)[.。]?$/i;
+
+export function isPlaceholderText(text: string) {
+  return PLACEHOLDER_TEXT.test(text.replace(/\s+/g, " ").trim());
+}
+
+function sentenceCount(text: string) {
+  return text.split(/[.!?。！？]+/).map((part) => part.trim()).filter(Boolean).length;
+}
+
+export function titleIsProse(text: string) {
+  const value = text.replace(/\s+/g, " ").trim();
+  return wordCount(value) > 25 || sentenceCount(value) > 1;
+}
+
+export function headingFromLeadingBlock(first: string, next: string) {
+  const opening = first.replace(/\s+/g, " ").trim();
+  const following = next.replace(/\s+/g, " ").trim();
+  if (!opening || isPlaceholderText(opening) || !following) return "";
+  const labeled = opening.match(/^(?:故事|Historia|Story)\s*[:：]\s*(.*)$/i);
+  if (labeled) {
+    const title = labeled[1].replace(/[:：]\s*$/, "").trim();
+    return title && !titleIsProse(title) ? title : "";
+  }
+  const colon = opening.match(/^(.{2,40})[:：]\s*$/);
+  if (colon) return colon[1].trim();
+  if (/[.!?。！？]/.test(opening) || titleIsProse(opening) || isGroupHeading(opening) || isKeptSubheading(opening)) return "";
+  const han = hanCount(opening);
+  const words = wordCount(opening);
+  const short = (han >= 4 && han <= 30 && words <= 4) || (words >= 2 && words <= 12 && han === 0);
+  if (!short || following.length < opening.length + 40) return "";
+  return opening;
+}
+
+function blockFromPlain(text: string): PortableBlock {
+  return {
+    _type: "block",
+    _key: nextKey("block"),
+    style: "normal",
+    markDefs: [],
+    children: [{ _type: "span", _key: nextKey("span"), text, marks: [] }],
+  };
+}
+
+function repairStoredShape(segments: StorySegmentPlan[], edits: InterviewEdit[]) {
+  for (const segment of segments) {
+    const placeholders = segment.body.filter((block) => isPlaceholderText(blockText(block)));
+    if (placeholders.length) {
+      segment.body = segment.body.filter((block) => !isPlaceholderText(blockText(block)));
+      edits.push({
+        kind: "split-heading",
+        where: segmentLabel(segment),
+        before: placeholders.map(blockText).join(" "),
+        after: "",
+        reason: "正文只有占位词，不生成段落",
+      });
+    }
+    if (!segment.title.trim() && segment.body.length > 1) {
+      const first = blockText(segment.body[0]);
+      const next = segment.body.slice(1).map(blockText).join(" ");
+      const heading = headingFromLeadingBlock(first, next);
+      if (heading) {
+        edits.push({
+          kind: "split-heading",
+          where: segmentLabel(segment),
+          before: first,
+          after: heading,
+          reason: "短标题和正文粘在一起，已拆开",
+        });
+        segment.title = heading;
+        segment.isQuote = false;
+        segment.body.shift();
+      }
+    }
+    if (segment.title.trim() && !segment.body.length && titleIsProse(segment.title)) {
+      const prose = segment.title;
+      const title = titleFromFirstSentence(prose);
+      edits.push({
+        kind: "generated-title",
+        where: segmentLabel(segment),
+        before: prose,
+        after: title,
+        reason: "标题由脚本生成，需人工检查",
+      });
+      segment.body = [blockFromPlain(prose)];
+      segment.title = title;
+      segment.isQuote = false;
+    }
+  }
+  for (let index = segments.length - 1; index >= 0; index -= 1) {
+    const segment = segments[index];
+    if (segment.body.length) continue;
+    if (segment.title.trim() && !isPlaceholderText(segment.title)) continue;
+    segments.splice(index, 1);
+  }
+  segments.forEach((segment, index) => {
+    segment.index = index + 1;
+  });
 }
 
 function stripLabels(text: string) {
@@ -708,6 +829,7 @@ export function parseStoryHtml(html: string): StoryImportPlan {
   }
   for (const segment of segments) segment.words = wordCount(segment.body.map(blockText).join(" "));
   cleanInterviewPrompts(segments, outside, edits);
+  repairStoredShape(segments, edits);
   for (const segment of segments) segment.words = wordCount(segment.body.map(blockText).join(" "));
   const overviewText = overview.map(blockText).join(" ");
   if (!headline) warnings.push("No headline quotation was found.");

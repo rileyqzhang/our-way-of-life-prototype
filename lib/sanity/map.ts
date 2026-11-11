@@ -68,6 +68,7 @@ type SanityStory = {
   published?: boolean;
   photographs?: SanityPhoto[] | null;
   headline?: LocaleValue;
+  hasSegments?: boolean;
   quotations?: { text?: LocaleValue; eventId?: string; eventDate?: string; eventTitle?: LocaleValue }[] | null;
   relatedEvents?: { id?: string; date?: string; title?: LocaleValue }[] | null;
 };
@@ -230,6 +231,7 @@ export function mapStories(stories: SanityStory[] | null | undefined): ArchiveSt
           .map((event) => ({ id: event.id as string, date: event.date || "", title: locale(event.title) })),
         externalHref: story.externalHref || undefined,
         published: story.published !== false,
+        hasSegments: story.hasSegments === true,
         collection: storyCollectionSlug(story.communitySlug),
       };
     });

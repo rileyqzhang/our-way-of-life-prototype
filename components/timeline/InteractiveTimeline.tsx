@@ -13,7 +13,7 @@ const chrome = {
   en: {
     archive: "Our Way of Life Archive",
     viewLabel: "Timeline view",
-    vortex: "Vortex timeline",
+    vortex: "Spiral timeline",
     linear: "Linear timeline",
     scroll: "Scroll to traverse decades",
     read: "Read story",
@@ -25,7 +25,7 @@ const chrome = {
   es: {
     archive: "Archivo Our Way of Life",
     viewLabel: "Vista de la línea de tiempo",
-    vortex: "Línea en vórtice",
+    vortex: "Línea en espiral",
     linear: "Línea lineal",
     scroll: "Desplázate para recorrer las décadas",
     read: "Leer la historia",
@@ -37,7 +37,7 @@ const chrome = {
   zh: {
     archive: "我们的生活方式档案",
     viewLabel: "时间线视图",
-    vortex: "漩涡时间线",
+    vortex: "螺旋时间线",
     linear: "线性时间线",
     scroll: "滚动穿越年代",
     read: "阅读故事",

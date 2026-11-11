@@ -38,6 +38,7 @@ export type UiCopy = {
     listEyebrow: string;
     listTitle: string;
     readStory: string;
+    comingSoon: string;
     learnMore: string;
     exploreTitle: string;
     exploreLede: string;
@@ -159,6 +160,7 @@ const en: UiCopy = {
     listEyebrow: "Story cards — Participants",
     listTitle: "Their Words. Their Lives.",
     readStory: "Read Story",
+    comingSoon: "Coming soon",
     learnMore: "Learn more",
     exploreTitle: "Explore Collections",
     exploreLede: "Select an archival volume below to read living community histories.",
@@ -307,6 +309,7 @@ const es: UiCopy = {
     listEyebrow: "Fichas de historias — Participantes",
     listTitle: "Sus palabras. Sus vidas.",
     readStory: "Leer historia",
+    comingSoon: "Próximamente",
     learnMore: "Más información",
     exploreTitle: "Explorar colecciones",
     exploreLede: "Elige un volumen del archivo para leer historias vivas de la comunidad.",
@@ -454,6 +457,7 @@ const zh: UiCopy = {
     listEyebrow: "故事卡片 — 参与者",
     listTitle: "他们的话。他们的生活。",
     readStory: "阅读故事",
+    comingSoon: "即将推出",
     learnMore: "了解更多",
     exploreTitle: "浏览专题",
     exploreLede: "选择下面的档案卷册，阅读鲜活的社区历史。",

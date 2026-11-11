@@ -62,6 +62,11 @@ export default async function SiteLayout({
 
   return (
     <html lang={lang} className={`${dmSans.variable} ${plusJakarta.variable} ${sourceSerif.variable} ${cormorant.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet" />
+      </head>
       <body>
         <a className="skipLink" href="#main">
           {copy.skip}

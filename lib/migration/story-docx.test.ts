@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { applyParticipantCode, lifeStageForGroup, parseStoryHtml, wordCount } from "@/lib/migration/story-docx";
+import { applyParticipantCode, lifeStageForGroup, parseStoryHtml, titleFromFirstSentence, wordCount } from "@/lib/migration/story-docx";
 
 const sample = `
 <p><strong>BMNJ6 Narrative</strong></p>
@@ -339,6 +339,62 @@ test("an add-on title becomes the first sentence", () => {
   assert.equal(plan.edits.some((edit) => edit.kind === "generated-title" && edit.reason.includes("需人工检查")), true);
 });
 
+test("a generated title keeps about twelve words, drops a trailing comma, and adds an ellipsis", () => {
+  const plan = parseStoryHtml(`
+    <p>Later Life – La edad avanzada</p>
+    <p>Algo que añadir: parte 2</p>
+    <p>Uno dos tres cuatro cinco seis siete ocho nueve diez once doce, trece palabras siguen aqui.</p>
+  `);
+  assert.equal(plan.segments[0].title, "Uno dos tres cuatro cinco seis siete ocho nueve diez once doce…");
+});
+
+test("a long Chinese sentence is shortened to about twelve words", () => {
+  assert.equal(
+    titleFromFirstSentence("我觉得跳舞的组，邻居家人，还有一个工友，还有一个老年中心认识一个朋友，我们平时会一起吃吃饭，是我社区的一部分。"),
+    "我觉得跳舞的组，邻居家人，还有一个工友，还有一个老年中心认识一个朋友，我们平时会…",
+  );
+});
+
+test("an ASK clarify note is removed the same way as a FOR clarify note", () => {
+  const plan = parseStoryHtml(`
+    <p>Stories of CP from adulthood</p>
+    <p>Story 1: A title</p>
+    <p>The officer came to the meeting. ASK SENJ6 TO CLARIFY . He asked me to continue with the group.</p>
+  `);
+  assert.equal(
+    plan.segments[0].body.map((block) => block.children.map((span) => span.text).join("")).join(" "),
+    "The officer came to the meeting. He asked me to continue with the group.",
+  );
+});
+
+test("the interview questions left in the stored drafts are recognized and removed", () => {
+  const answer = "Nos sentimos en el mismo terreno y estas personas están muy capacitadas porque saben manejar el teléfono mejor que una persona que puede ver.";
+  const plan = parseStoryHtml(`
+    <p>Later Life – La edad avanzada</p>
+    <p>Story 1: Cambios en la participación a través del tiempo</p>
+    <p>¿Cómo se siente poder tener una comunidad de personas que también son ciegos?</p>
+    <p>${answer}</p>
+    <p>Story 2: Asesoramiento de medicina / salud alternativa</p>
+    <p>Me puede decir cuando es que haces estos convivios?</p>
+    <p>En las iglesias hacemos muchos convivios y la gente tiene que involucrarse para dar la bienvenida a las personas que llegan.</p>
+    <p>Story 3: Cambios en la participación a través del tiempo</p>
+    <p>Algo que quiera agregar de como a cambiado su participación atreves de los años?</p>
+    <p>Story 4: La importancia de contribuir en la comunidad</p>
+    <p>¿Qué apoyos usted cree que les serviría a las personas de mayor edad para ayudarlas a que se mantengan activas e involucradas?</p>
+    <p>Hay bastantes recursos que da el condado y el que no lo quiera aprovechar no quiere participar, pero la mesa está servida.</p>
+    <p>Story 5: Apoyos necesarios para promover participación</p>
+    <p>¿Qué consejo usted le daría a la gente sobre la importancia de involucrarse y contribuir en la comunidad?</p>
+    <p>Le aconsejaría participar porque la información es muy importante y uno aprende cada día cuando está involucrado.</p>
+  `);
+  const body = plan.segments.map((segment) => segment.body.map((block) => block.children.map((span) => span.text).join("")).join(" ")).join("\n");
+  assert.equal(body.includes("Cómo se siente"), false);
+  assert.equal(body.includes("Me puede decir"), false);
+  assert.equal(body.includes("Algo que quiera agregar"), false);
+  assert.equal(body.includes("Qué apoyos usted cree"), false);
+  assert.equal(body.includes("Qué consejo usted"), false);
+  assert.match(body, /Nos sentimos en el mismo terreno/);
+});
+
 test("a quotation glued to a group heading becomes the first story title", () => {
   const plan = parseStoryHtml(`
     <p>¿Qué es la participación cívica? “yo lo hago por amor, por misericordia”</p>
@@ -350,6 +406,69 @@ test("a quotation glued to a group heading becomes the first story title", () =>
   assert.equal(plan.segments[0].group, "¿Qué es la participación cívica?");
   assert.equal(plan.segments[0].title, "yo lo hago por amor, por misericordia");
   assert.equal(plan.segments[1].title, "Éramos pobres");
+});
+
+test("a story heading that is really the whole paragraph becomes body text with a generated title", () => {
+  const prose = "My Church is mostly black, but we join in with this other church. Reverend Duncan was in charge of the outreach.";
+  const plan = parseStoryHtml(`
+    <p>Stories of CP from later life</p>
+    <p>Story 2. ${prose}</p>
+  `);
+  assert.equal(plan.segments[0].lifeStage, "olderAdulthood");
+  assert.equal(plan.segments[0].isQuote, false);
+  assert.equal(plan.segments[0].title, titleFromFirstSentence(prose));
+  assert.match(plan.segments[0].body.map((block) => block.children.map((span) => span.text).join("")).join(" "), /Reverend Duncan/);
+  assert.equal(plan.edits.some((edit) => edit.kind === "generated-title" && edit.reason.includes("需人工检查")), true);
+});
+
+test("a quoted title with more than one sentence stays the title when the body is separate", () => {
+  const plan = parseStoryHtml(`
+    <p>Stories of CP from adulthood</p>
+    <p>Story 1: “It's being flexible. The best way to learn is to listen.”</p>
+    <p>Civic participation means you put up some work effort in the community and try to address the needs you see.</p>
+  `);
+  assert.equal(plan.segments[0].title, "It's being flexible. The best way to learn is to listen.");
+  assert.equal(plan.segments[0].isQuote, true);
+});
+
+test("a label or a short heading glued to the following paragraph is split into the title", () => {
+  const plan = parseStoryHtml(`
+    <p>Stories of CP from childhood</p>
+    <p>Story 1: Placeholder</p>
+    <p>This numbered story keeps the later short lines from being treated as ordinary subheadings.</p>
+    <p>Stories of CP from adulthood</p>
+    <p>故事：忙于家庭和工作没有余力</p>
+    <p>我五十岁时和兄弟姐妹一起搬来美国，先住在Chicago之后搬到Oakland。搬来美国前要工作和照顾孩子，没有余力参加别的活动。</p>
+    <p>Stories of CP from later life</p>
+    <p>从中国到美国，以自己的方式为国家和社区做贡献</p>
+    <p>65年到98年来美国之前我先搞文艺再做生意。改革开放从广东开始建设，那个时候办工厂和搞贸易的人不多，大家都没有做生意的经验。</p>
+    <p>The cost of participation</p>
+    <p>给身边人建议：</p>
+    <p>我们老年公寓的口号是参与就是健康。老年人参加任何一个组都可以帮助摆脱孤单，来这里住的人会慢慢融入每周的活动。</p>
+  `);
+  assert.deepEqual(plan.segments.slice(1).map((segment) => segment.title), [
+    "忙于家庭和工作没有余力",
+    "从中国到美国，以自己的方式为国家和社区做贡献",
+    "给身边人建议",
+  ]);
+  const bodies = plan.segments.slice(1).map((segment) => segment.body.map((block) => block.children.map((span) => span.text).join("")).join(" "));
+  assert.match(bodies[0], /^我五十岁时/);
+  assert.match(bodies[1], /^65年到98年/);
+  assert.match(bodies[2], /^我们老年公寓的口号/);
+});
+
+test("a paragraph that is only a placeholder does not become a segment", () => {
+  const plan = parseStoryHtml(`
+    <p>Stories of CP from childhood</p>
+    <p>N/A</p>
+    <p>Stories of CP from adulthood</p>
+    <p>Story 1: A real title</p>
+    <p>This story has a real paragraph after the placeholder, so the placeholder line is left out.</p>
+    <p>n/a</p>
+  `);
+  assert.equal(plan.segments.some((segment) => segment.body.some((block) => /n\/a/i.test(block.children.map((span) => span.text).join("")))), false);
+  assert.equal(plan.segments.some((segment) => segment.title === "N/A"), false);
+  assert.equal(plan.segments.at(-1)?.title, "A real title");
 });
 
 test("the participant code loses its numeric suffix only in the headline and overview", () => {

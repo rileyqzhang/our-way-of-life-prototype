@@ -2277,82 +2277,200 @@ button, input, textarea, select { font: inherit; color: inherit; }
   text-transform: uppercase;
 }
 
+.participantStoriesHead,
+.participantStories {
+  --participant-serif: var(--font-source-serif), "Noto Serif SC", "Songti SC", "STSong", "Source Han Serif SC", "Noto Serif CJK SC", "PMingLiU", "SimSun", Georgia, serif;
+}
+.participantStoriesHead {
+  background: linear-gradient(to bottom, var(--brand-amber) 0%, #8B5A1A 100%);
+  padding: 3.5rem 0 1rem;
+}
 .participantStories {
   scroll-margin-top: 92px;
-  background: #c9a04a;
-  padding: 56px 0 80px;
+  background: linear-gradient(to bottom, #8B5A1A 0%, var(--brand-dark) 100%);
+  padding: 2.5rem 0 5rem;
 }
 .participantStoriesEyebrow {
-  margin: 0 0 6px;
-  color: #3d2414;
-  font-size: .72rem;
-  font-weight: 750;
-  letter-spacing: .14em;
+  margin: 0;
+  color: var(--brand-dark);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
+  opacity: 0.7;
 }
-.participantStories .storyBack a,
-.collectionLede,
-.collectionEmpty { color: #1a120c; }
+.participantStoriesHead .storyBack { margin-bottom: 8px; }
+.participantStoriesHead .storyBack a,
+.participantStoriesHead .collectionLede { color: var(--brand-dark); }
 .collectionLede {
   max-width: 40rem;
-  margin: 0 0 32px;
+  margin: 0.75rem 0 0;
   font-size: 1.05rem;
   line-height: 1.5;
 }
-.collectionEmpty {
+.participantStories .collectionEmpty {
   margin: 0;
+  color: var(--brand-cream);
   font-size: 1.05rem;
 }
 .participantStoriesTitle {
-  margin: 0 0 28px;
-  color: #2c1810;
-  font-family: var(--font-display-stack);
-  font-weight: 400;
-  font-size: clamp(2.15rem, 3.6vw, 2.85rem);
-  letter-spacing: -.025em;
-  line-height: 1.08;
+  margin: 0.25rem 0 0;
+  color: var(--brand-dark);
+  font-family: var(--participant-serif);
+  font-weight: 600;
+  font-size: 1.875rem;
+  letter-spacing: 0;
+  line-height: 1.2;
 }
 .participantGroup + .participantGroup { margin-top: 42px; }
 .participantGroupTitle {
-  margin: 0 0 8px;
-  color: #2c1810;
-  font-family: var(--font-display-stack);
+  margin: 0 0 16px;
+  color: var(--brand-cream);
+  font-family: var(--participant-serif);
   font-size: clamp(1.45rem, 2.4vw, 1.9rem);
-  font-weight: 400;
-  letter-spacing: -.02em;
+  font-weight: 600;
+  letter-spacing: 0;
   line-height: 1.15;
 }
 .participantGroupNote {
   max-width: 40rem;
-  margin: 0 0 18px;
-  color: #1a120c;
+  margin: -8px 0 16px;
+  color: var(--brand-cream);
   font-size: .95rem;
   line-height: 1.45;
+  opacity: 0.8;
 }
 .participantStoryGrid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
+  gap: 20px;
   align-items: stretch;
 }
-.participantStories .storyCard { border-radius: 16px; }
-.participantStories .storyCardPhoto { height: 132px; }
-.participantStories .storyCardBody { padding: 12px 14px 12px; }
-.participantStories .storyCardMark { font-size: 1.7rem; }
-.participantStories .storyCardQuote {
-  display: -webkit-box;
+.participantCard {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
   overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 5;
-  font-weight: 400;
-  font-style: italic;
-  font-size: .98rem;
-  line-height: 1.4;
+  border: 1px solid var(--brand-border);
+  border-radius: 0.75rem;
+  background: var(--brand-card);
+  color: var(--brand-dark);
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-.participantStories .storyCardFooter { gap: 8px; padding-top: 12px; }
-.participantStories .storyCardLocation,
-.participantStories .storyCardSoon { font-size: .78rem; line-height: 1.3; }
-.participantStories .storyCardLink { min-height: 0; font-size: .84rem; }
+.participantCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(91, 37, 9, 0.18);
+}
+.participantCardMedia {
+  position: relative;
+  height: 0;
+  padding-top: 70%;
+  overflow: hidden;
+}
+.participantCardPhoto,
+.participantCardMedia .portraitPlaceholder {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  border-radius: 0;
+  aspect-ratio: auto;
+  object-fit: cover;
+}
+.participantCardPhoto {
+  filter: grayscale(80%) contrast(1.1);
+  transition: filter 0.4s ease;
+}
+.participantCard:hover .participantCardPhoto {
+  filter: grayscale(0%) contrast(1);
+}
+.participantCardShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(91, 37, 9, 0.6) 0%, transparent 50%);
+  pointer-events: none;
+}
+.participantCardCode {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.5rem;
+  z-index: 1;
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.25rem;
+  background: rgba(91, 37, 9, 0.88);
+  color: var(--brand-cream);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+  backdrop-filter: blur(4px);
+}
+.participantCardMedia .portraitPlaceholder {
+  font-size: clamp(3.5rem, 8vw, 5.5rem);
+}
+.participantCardBody {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 140px;
+  padding: 1rem;
+}
+.participantCardMark,
+.participantCardQuote,
+.participantCardMedia .portraitPlaceholder {
+  font-family: var(--participant-serif);
+}
+.participantCardMark {
+  display: block;
+  margin: 0 0 4px;
+  color: var(--brand-amber);
+  font-size: 2rem;
+  font-style: normal;
+  line-height: 0.8;
+  opacity: 0.62;
+}
+.participantCardQuote {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  color: var(--brand-dark);
+  font-size: 0.85rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.55;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+.participantCardFoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--brand-border);
+}
+.participantCardLocation {
+  min-width: 0;
+  color: var(--brand-dark);
+  font-size: 0.75rem;
+  line-height: 1.3;
+  opacity: 0.6;
+}
+.participantCardRead,
+.participantCardSoon {
+  margin-left: auto;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+.participantCardRead { color: var(--brand-red); }
+.participantCardSoon { color: var(--brand-dark); opacity: 0.35; }
 @media (max-width: 1100px) {
   .storyCardGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .participantStoryGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -2372,6 +2490,9 @@ button, input, textarea, select { font: inherit; color: inherit; }
   .participantsHeroPhoto,
   .volume:hover,
   .volume:focus-visible { transform: none; }
+  .participantCard:hover { transform: none; }
+  .participantCardPhoto,
+  .participantCard:hover .participantCardPhoto { transition: none; }
   .storyFade { opacity: 1; transform: none; transition: none; }
   .storySegment.isJumpTarget { transition: none; }
   .storySidebarDot,

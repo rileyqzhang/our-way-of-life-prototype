@@ -57,6 +57,7 @@ export const archiveQuery = defineQuery(`{
       usagePermission
     },
     headline,
+    "hasSegments": count(segments) > 0,
     relatedEvents[]->{
       "id": slug.current,
       date,

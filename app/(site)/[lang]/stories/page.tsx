@@ -101,17 +101,21 @@ export default async function StoriesPage({ params }: { params: Promise<{ lang: 
         </div>
       </section>
 
-      <section className="participantStories" id="participant-stories">
+      <div className="participantStoriesHead">
         <div className="container">
           <p className="participantStoriesEyebrow">{copy.stories.listEyebrow}</p>
           <h2 className="participantStoriesTitle">{copy.stories.listTitle}</h2>
+        </div>
+      </div>
+      <section className="participantStories" id="participant-stories">
+        <div className="container">
           {storyGroups(preferCanonicalStory(archive.stories), archive.collections, copy, lang).map((group) => (
             <div className="participantGroup" key={group.id}>
               <h3 className="participantGroupTitle">{group.title}</h3>
               {group.note ? <p className="participantGroupNote">{group.note}</p> : null}
               <div className="participantStoryGrid">
                 {group.stories.map((story) => (
-                  <ParticipantCard key={story.slug} lang={lang} readStory={copy.stories.readStory} story={story} />
+                  <ParticipantCard comingSoon={copy.stories.comingSoon} key={story.slug} lang={lang} readStory={copy.stories.readStory} story={story} />
                 ))}
               </div>
             </div>

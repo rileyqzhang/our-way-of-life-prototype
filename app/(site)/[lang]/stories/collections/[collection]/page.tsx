@@ -47,23 +47,29 @@ export default async function StoryCollectionPage({
   const description = pick(volume.description, lang);
 
   return (
-    <section className="participantStories">
-      <div className="container">
-        <p className="storyBack">
-          <Link href={localizeHref(lang, "/stories")}>{copy.story.back}</Link>
-        </p>
-        <h1 className="participantStoriesTitle">{pick(volume.name, lang)}</h1>
-        {description ? <p className="collectionLede">{description}</p> : null}
-        {stories.length ? (
-          <div className="participantStoryGrid">
-            {stories.map((story) => (
-              <ParticipantCard key={story.slug} lang={lang} readStory={copy.stories.readStory} story={story} />
-            ))}
-          </div>
-        ) : (
-          <p className="collectionEmpty">{copy.stories.emptyCollection}</p>
-        )}
+    <>
+      <div className="participantStoriesHead">
+        <div className="container">
+          <p className="storyBack">
+            <Link href={localizeHref(lang, "/stories")}>{copy.story.back}</Link>
+          </p>
+          <h1 className="participantStoriesTitle">{pick(volume.name, lang)}</h1>
+          {description ? <p className="collectionLede">{description}</p> : null}
+        </div>
       </div>
-    </section>
+      <section className="participantStories">
+        <div className="container">
+          {stories.length ? (
+            <div className="participantStoryGrid">
+              {stories.map((story) => (
+                <ParticipantCard comingSoon={copy.stories.comingSoon} key={story.slug} lang={lang} readStory={copy.stories.readStory} story={story} />
+              ))}
+            </div>
+          ) : (
+            <p className="collectionEmpty">{copy.stories.emptyCollection}</p>
+          )}
+        </div>
+      </section>
+    </>
   );
 }

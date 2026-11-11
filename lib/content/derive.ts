@@ -53,6 +53,7 @@ export type ArchiveStory = {
   article?: { en: StoryArticleBlock[]; es: StoryArticleBlock[]; zh: StoryArticleBlock[] };
   externalHref?: string;
   published: boolean;
+  hasSegments?: boolean;
   collection?: string;
 };
 
@@ -134,6 +135,7 @@ export function storiesFromTimeline(events: PreparedTimelineEvent[]): ArchiveSto
             relatedEvents: [],
             externalHref: block.href.startsWith("http") ? block.href : undefined,
             published: true,
+            hasSegments: false,
           };
           bySlug.set(slug, story);
         }
