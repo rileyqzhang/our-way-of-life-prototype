@@ -8,12 +8,11 @@ export type VortexPoint = { x: number; y: number; visible: boolean };
 type VortexCanvasProps = {
   nodes: VortexNode[];
   hoveredId: string | null;
-  pinned: boolean;
   scrollProgress: number;
   onHover: (id: string | null) => void;
-  onPin: (id: string | null) => void;
+  onOpen: (id: string) => void;
   onScrollDelta: (delta: number) => void;
-  onHoveredPoint: (point: VortexPoint | null) => void;
+  onPositions: (positions: Record<string, VortexPoint>) => void;
 };
 
 type NodeCoord = { x: number; y: number; r: number; relZ: number; visible: boolean };
@@ -21,33 +20,30 @@ type NodeCoord = { x: number; y: number; r: number; relZ: number; visible: boole
 export function VortexCanvas({
   nodes,
   hoveredId,
-  pinned,
   scrollProgress,
   onHover,
-  onPin,
+  onOpen,
   onScrollDelta,
-  onHoveredPoint,
+  onPositions,
 }: VortexCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const fieldRef = useRef<HTMLDivElement | null>(null);
   const coordsRef = useRef<Record<string, NodeCoord>>({});
   const nodesRef = useRef(nodes);
   const hoveredRef = useRef(hoveredId);
-  const pinnedRef = useRef(pinned);
   const scrollRef = useRef(scrollProgress);
   const hoverCb = useRef(onHover);
-  const pinCb = useRef(onPin);
-  const pointCb = useRef(onHoveredPoint);
+  const openCb = useRef(onOpen);
+  const positionsCb = useRef(onPositions);
   const scrollCb = useRef(onScrollDelta);
-  const lastPoint = useRef<VortexPoint | null>(null);
+  const lastPositions = useRef<Record<string, VortexPoint>>({});
 
   nodesRef.current = nodes;
   hoveredRef.current = hoveredId;
-  pinnedRef.current = pinned;
   scrollRef.current = scrollProgress;
   hoverCb.current = onHover;
-  pinCb.current = onPin;
-  pointCb.current = onHoveredPoint;
+  openCb.current = onOpen;
+  positionsCb.current = onPositions;
   scrollCb.current = onScrollDelta;
 
   useEffect(() => {
@@ -188,16 +184,27 @@ export function VortexCanvas({
       }
 
       coordsRef.current = coords;
-      const active = activeId ? coords[activeId] : undefined;
       const rect = canvas.getBoundingClientRect();
-      const next = active && active.visible ? { x: active.x + rect.left, y: active.y + rect.top, visible: true } : null;
-      const prev = lastPoint.current;
-      const moved = !prev || !next
-        ? Boolean(prev) !== Boolean(next)
-        : Math.hypot(prev.x - next.x, prev.y - next.y) > 0.75 || prev.visible !== next.visible;
+      const nextPositions: Record<string, VortexPoint> = {};
+      for (const [id, coord] of Object.entries(coords)) {
+        nextPositions[id] = { x: coord.x + rect.left, y: coord.y + rect.top, visible: coord.visible };
+      }
+      const previous = lastPositions.current;
+      const ids = new Set([...Object.keys(previous), ...Object.keys(nextPositions)]);
+      let moved = ids.size !== Object.keys(previous).length;
+      if (!moved) {
+        for (const id of ids) {
+          const before = previous[id];
+          const after = nextPositions[id];
+          if (!before || !after || before.visible !== after.visible || Math.hypot(before.x - after.x, before.y - after.y) > 0.75) {
+            moved = true;
+            break;
+          }
+        }
+      }
       if (moved) {
-        lastPoint.current = next;
-        pointCb.current(next);
+        lastPositions.current = nextPositions;
+        positionsCb.current(nextPositions);
       }
 
       frame = requestAnimationFrame(render);
@@ -233,24 +240,17 @@ export function VortexCanvas({
         if (matched.id !== hoveredRef.current) hoverCb.current(matched.id);
         return;
       }
-      if (!pinnedRef.current && hoveredRef.current) hoverCb.current(null);
+      if (hoveredRef.current) hoverCb.current(null);
     };
 
     const onPointerUp = (event: PointerEvent) => {
       const matched = hitTest(event.clientX, event.clientY);
-      if (matched) {
-        pinCb.current(matched.id);
-        hoverCb.current(matched.id);
-        return;
-      }
-      if (!pinnedRef.current) return;
-      pinCb.current(null);
-      hoverCb.current(null);
+      if (matched) openCb.current(matched.id);
     };
 
     const onPointerLeave = () => {
       canvas.style.cursor = "default";
-      if (!pinnedRef.current) hoverCb.current(null);
+      hoverCb.current(null);
     };
 
     let touchY: number | null = null;

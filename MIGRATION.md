@@ -124,7 +124,7 @@ Rightful Participation 不放进顶栏。Search 和 Account 图标也不放。
 
 `lifeStage` 是共用常量，schema 和前端都从 `cms/schemaTypes/lifeStage.ts` 读取。三个值是 `youth`、`adulthood`、`olderAdulthood`，显示名称是 Youth and Adolescence (-18)、Adulthood (20-59)、Older Adulthood (60+)。
 
-`story.segments` 是可选数组。每段有完整标题 `quote`、可选的时间线短标题 `shortTitle`、Portable Text 的 `body`，以及可选的 `lifeStage`。`lifeStage` 在 Studio 里用单选按钮。留空的段落归到 Other Stories，时间线里也按同样的短标题规则列出。左栏短标题有 `shortTitle` 就用它，否则用 `lib/content/segment-title.ts` 的 `segmentTimelineTitle`：先把 `quote` 做首字母大写并去掉末尾一个句号，再在词边界截到约 8 个词并加省略号。锚点 id 仍由英文 `quote` 生成。不加入原型 `chapters` 的 title、era、nodes，也不加 `timelineChapters`。个人概述用新增的可选 `overview`（多语言 Portable Text）。已有的 `summary` 是纯文本，继续给卡片用，不拿来当故事页概述。BMNJ 第 6、7 段先不填 `lifeStage`，会落在 Other Stories。没有阶段的参与者不套用别人的段落。
+`story.segments` 是可选数组。每段有完整标题 `quote`、可选的时间线短标题 `shortTitle`、Portable Text 的 `body`，以及必填的 `lifeStage`。`lifeStage` 在 Studio 里用单选按钮。故事页只按三个阶段分组。左栏短标题有 `shortTitle` 就用它，否则用 `lib/content/segment-title.ts` 的 `segmentTimelineTitle`：先把 `quote` 做首字母大写并去掉末尾一个句号，再在词边界截到约 8 个词并加省略号。锚点 id 仍由英文 `quote` 生成。不加入原型 `chapters` 的 title、era、nodes，也不加 `timelineChapters`。个人概述用新增的可选 `overview`（多语言 Portable Text）。已有的 `summary` 是纯文本，继续给卡片用，不拿来当故事页概述。没有阶段的参与者不套用别人的段落。
 
 `publication` 存作者、年份、标题、期刊或出版社、卷、期、页码、DOI 或链接、排序。前端按 APA 7 拼引用。书目按出版物本身的语言存一份，三种网站语言页面用同一条。
 
@@ -152,13 +152,13 @@ Rightful Participation 不放进顶栏。Search 和 Account 图标也不放。
 6. 合集页。在现有的 `app/(site)/[lang]/stories/collections/[collection]/page.tsx` 上做，不新建 `/collections`。卡片仍用 `ParticipantCard`。华人合集没有故事时显示空状态。
 7. 通用故事页。所有参与者共用 `app/(site)/[lang]/stories/[slug]/page.tsx` 和 `components/stories/StoryDetailView.tsx`，布局参考 `BmnjStoryPage`、`BmnjTimelineSpine`、`BmnjChapterCard`。不要再写一个只认识 BMNJ 的页面。
 
-   桌面是左右两栏，两栏顶部对齐，从同一高度开始。左栏是时间线，`position: sticky`。往下滚动时固定，`top` 留出和全站顶栏一样的高度，不被顶栏挡住。时间线永远显示三个阶段，名称来自 `lifeStage`：Youth and Adolescence (-18)、Adulthood (20-59)、Older Adulthood (60+)。每个阶段下面按顺序只列该阶段 segments 的短标题，不列正文。短标题用 `segmentTimelineTitle`：有 `shortTitle` 就用，并做首字母大写、去掉末尾一个句号；没有就把 `quote` 先做同样的处理，再在词边界截到约 8 个词并加省略号。Other Stories 用同一条规则。短标题链到该段唯一的锚点。点击或在短标题上按 Enter 后平滑滚动，段落标题停在顶栏下方。跳到的段落有短暂高亮。滚动时，当前段落的短标题高亮，所在阶段自动展开。手机上点完后目录收起。某个阶段没有段落时，阶段名称仍在，显示为灰色。
+   桌面是左右两栏，两栏顶部对齐，从同一高度开始。左栏是时间线，`position: sticky`。往下滚动时固定，`top` 留出和全站顶栏一样的高度，不被顶栏挡住。时间线永远显示三个阶段，名称来自 `lifeStage`：Youth and Adolescence (-18)、Adulthood (20-59)、Older Adulthood (60+)。每个阶段下面按顺序只列该阶段 segments 的短标题，不列正文。短标题用 `segmentTimelineTitle`：有 `shortTitle` 就用，并做首字母大写、去掉末尾一个句号；没有就把 `quote` 先做同样的处理，再在词边界截到约 8 个词并加省略号。短标题链到该段唯一的锚点。点击或在短标题上按 Enter 后平滑滚动，段落标题停在顶栏下方。跳到的段落有短暂高亮。滚动时，当前段落的短标题高亮，所在阶段自动展开。手机上点完后目录收起。某个阶段没有段落时，阶段名称仍在，显示为灰色。
 
-   右栏最上面是这个人的 `overview`。下面按三个阶段分组，每组有阶段标题，组里是该阶段的每段故事：完整的 `quote` 加 `body`。没有段落的阶段不在右栏出现。没标 `lifeStage` 的段落放在最后一组，标题是 Other Stories。组内顺序沿用 `segments` 数组里的先后。故事区用浅色背景和深色文字。阶段卡片默认可见，不能停在透明度 0。
+   右栏最上面是这个人的 `overview`。下面按三个阶段分组，每组有阶段标题，组里是该阶段的每段故事：完整的 `quote` 加 `body`。没有段落的阶段不在右栏出现。组内顺序沿用 `segments` 数组里的先后。故事区用浅色背景和深色文字。阶段卡片默认可见，不能停在透明度 0。
 
    网站不展示 Elicitation Document。schema 不加这个字段。Word 导入遇到黄色的 “Elicitation Document” 整节就跳过。还没有 `segments`、暂时用旧全文显示的故事，也要拿掉正文里的 “Elicitation Document” 这一节，从这行标题到下一节标题之前都不显示。
 
-   手机宽度把时间线放到正文上方，并且可以折叠。只有一两段故事时，空阶段在左栏保持灰色，右栏只画出有内容的组和 Other Stories。不用原型 `chapters` 的 title、era、nodes。没有肖像时，大图区域用首字母占位。
+   手机宽度把时间线放到正文上方，并且可以折叠。只有一两段故事时，空阶段在左栏保持灰色，右栏只画出有内容的组。不用原型 `chapters` 的 title、era、nodes。没有肖像时，大图区域用首字母占位。
 8. 研究者页。不新建 `/researchers`。三个 tab 用链接切换，不用 `useState`。顺序是 Archive Overview and Access（`/research`）→ Research Methodology（`/research/methodology`）→ Research & Publications（`/research/publications`）。`/research` 改名为 Archive Overview and Access，读 `researchAccessPage` 的三节：Who can use the archive?、Using Data Ethically、Access the Archive。最后一节的按钮打开 Google Form。删掉所有直接下载文稿的链接，包括 Google Drive 和 “Download All Transcripts (.ZIP)”。Research & Publications 用 `publication` 文档按 APA 7 拼出论文列表，不让编辑手打整条引用。
 9. 开场动画。最后加 `SplashScreen`。它依赖定时器和浏览器，放在前面会挡住其余页面的检查。
 

@@ -14,13 +14,13 @@ Publish when the list looks right. Nothing appears on the website until you publ
 
 ## Classify the section
 
-Open the section and choose one **Life stage**:
+Open the section and choose one **Life stage**. A section needs one of these:
 
 - **Youth and Adolescence (-18)**
 - **Adulthood (20-59)**
 - **Older Adulthood (60+)**
 
-These are single-choice buttons. Leave them all unselected to place the section in **Other Stories**.
+These are single-choice buttons. Pick one before you publish.
 
 ## Write the titles
 
@@ -53,7 +53,7 @@ Group headings in the Word file decide the life stage:
 - “Stories of CP from childhood” and “Stories of CP from young adulthood” become Youth and Adolescence
 - “Stories of CP from adulthood” becomes Adulthood
 - “Stories of CP from later life” becomes Older Adulthood
-- Any other group, including the opening civic-participation section, becomes Other Stories
+- Any other group, including the opening civic-participation section, is left without a stage. Open that section in Studio and choose one before you publish.
 
 The yellow “Elicitation Document” section is skipped. Notes that say `FOR BM TO CLARIFY` are removed. A timestamp such as `[unintelligible 00:37:08]` becomes `[…]`.
 

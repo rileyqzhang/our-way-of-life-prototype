@@ -52,7 +52,6 @@ type SanityCollection = {
   description?: LocaleValue;
   displayOrder?: number;
   cover?: { asset?: { _ref?: string }; alt?: LocaleValue } | null;
-  theme?: { gradientFrom?: string | null; gradientTo?: string | null; accent?: string | null; muted?: string | null } | null;
 };
 
 type SanityCollectionPage = { backLabel?: LocaleValue; eyebrow?: LocaleValue; titleSuffix?: LocaleValue };
@@ -71,6 +70,7 @@ type SanityStory = {
   published?: boolean;
   photographs?: SanityPhoto[] | null;
   headline?: LocaleValue;
+  cardIntro?: LocaleValue;
   hasSegments?: boolean;
   quotations?: { text?: LocaleValue; eventId?: string; eventDate?: string; eventTitle?: LocaleValue }[] | null;
   relatedEvents?: { id?: string; date?: string; title?: LocaleValue }[] | null;
@@ -203,12 +203,6 @@ export function mapCollections(collections: SanityCollection[] | null | undefine
         image: sanityImageUrl(collection.cover, 1200) || undefined,
         imageAlt: alt,
         displayOrder: collection.displayOrder ?? 0,
-        theme: {
-          gradientFrom: collection.theme?.gradientFrom || undefined,
-          gradientTo: collection.theme?.gradientTo || undefined,
-          accent: collection.theme?.accent || undefined,
-          muted: collection.theme?.muted || undefined,
-        },
       };
     });
 }
@@ -234,6 +228,7 @@ export function mapStories(stories: SanityStory[] | null | undefined): ArchiveSt
         location: story.location && (story.location.en || story.location.es || story.location.zh) ? locale(story.location) : undefined,
         photographs: (story.photographs || []).map((photo) => mapPhoto(photo, code)).filter((photo): photo is Photo => Boolean(photo)),
         headline: story.headline && (story.headline.en || story.headline.es || story.headline.zh) ? locale(story.headline) : undefined,
+        cardIntro: story.cardIntro && (story.cardIntro.en || story.cardIntro.es || story.cardIntro.zh) ? locale(story.cardIntro) : undefined,
         quotations: (story.quotations || [])
           .filter((quotation) => quotation.text && (quotation.text.en || quotation.text.es || quotation.text.zh))
           .map((quotation) => ({

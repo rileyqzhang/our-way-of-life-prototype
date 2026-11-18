@@ -48,6 +48,7 @@ export type ArchiveStory = {
   location?: LocalizedText;
   photographs: Photo[];
   headline?: LocalizedText;
+  cardIntro?: LocalizedText;
   quotations: StoryQuotation[];
   relatedEvents: RelatedEvent[];
   article?: { en: StoryArticleBlock[]; es: StoryArticleBlock[]; zh: StoryArticleBlock[] };

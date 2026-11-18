@@ -4,7 +4,7 @@ export type StoryLifeStage = "youth" | "adulthood" | "olderAdulthood" | "";
  * Life-stage headings are matched by text, not by highlight color.
  * Matching ignores case, accents, spacing, and ages written in parentheses.
  * Longer phrases win, so "young adulthood" stays in youth instead of adulthood.
- * Headings that are not listed here stay unstaged and show under Other Stories.
+ * Headings that are not listed here are left without a life stage.
  */
 export const lifeStageGroupPhrases: Record<Exclude<StoryLifeStage, "">, string[]> = {
   youth: [

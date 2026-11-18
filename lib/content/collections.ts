@@ -1,6 +1,23 @@
+import type { CSSProperties } from "react";
 import type { LocalizedText } from "@/lib/timeline/types";
 
 export const storyCollections = ["latine", "africanAmerican", "chinese"] as const;
+
+export const collectionColors = {
+  cover: "#843420",
+  background: "linear-gradient(145deg, #2E120D 0%, #1A0A07 100%)",
+  accent: "#D9AD62",
+  muted: "#B97D5F",
+} as const;
+
+export function collectionColorStyle(): CSSProperties {
+  return {
+    "--collection-cover": collectionColors.cover,
+    "--collection-bg": collectionColors.background,
+    "--collection-accent": collectionColors.accent,
+    "--collection-muted": collectionColors.muted,
+  } as CSSProperties;
+}
 
 export type StoryCollection = (typeof storyCollections)[number];
 
@@ -12,46 +29,7 @@ export type ArchiveCollection = {
   image?: string;
   imageAlt: LocalizedText;
   displayOrder: number;
-  theme?: CollectionThemeInput;
 };
-
-export type CollectionThemeInput = {
-  gradientFrom?: string;
-  gradientTo?: string;
-  accent?: string;
-  muted?: string;
-};
-
-export type CollectionTheme = {
-  background: string;
-  accent: string;
-  muted: string;
-};
-
-const defaultTheme = {
-  gradientFrom: "#5b2509",
-  gradientTo: "#2a1004",
-  accent: "#D9AD62",
-  muted: "#C29A6B",
-};
-
-const HEX = /^#[0-9a-f]{3}(?:[0-9a-f]{3})?$/i;
-
-function hex(value: string | undefined, fallback: string) {
-  return value && HEX.test(value.trim()) ? value.trim() : fallback;
-}
-
-export function collectionTheme(input: CollectionThemeInput | undefined): CollectionTheme {
-  const from = hex(input?.gradientFrom, "");
-  const to = hex(input?.gradientTo, "");
-  const gradientFrom = from || to || defaultTheme.gradientFrom;
-  const gradientTo = to || (from ? from : defaultTheme.gradientTo);
-  return {
-    background: `linear-gradient(145deg, ${gradientFrom} 0%, ${gradientTo} 100%)`,
-    accent: hex(input?.accent, defaultTheme.accent),
-    muted: hex(input?.muted, defaultTheme.muted),
-  };
-}
 
 const text = (en: string, es: string, zh: string): LocalizedText => ({ en, es, zh });
 
@@ -163,7 +141,6 @@ export function mergeCollections(remote: ArchiveCollection[], local: ArchiveColl
       image: collection.image || current?.image,
       imageAlt: hasText(collection.imageAlt) ? collection.imageAlt : current?.imageAlt || { en: "", es: "", zh: "" },
       displayOrder: collection.displayOrder,
-      theme: collection.theme,
     });
   }
   return [...bySlug.values()].sort((a, b) => a.displayOrder - b.displayOrder || a.slug.localeCompare(b.slug));

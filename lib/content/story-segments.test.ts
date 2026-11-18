@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { groupStorySegments, localizedPlain, readingFallback, segmentAnchorId, storyContentLocale } from "@/lib/content/story-segments";
 
-test("segments stay in life-stage order and unstaged stories come last", () => {
+test("segments stay in life-stage order and a section without a stage is left out", () => {
   const stages = groupStorySegments(
     [
       { _key: "late", quote: { en: "A later adulthood memory" }, lifeStage: "olderAdulthood", body: { en: [{ children: [{ text: "Later." }] }] } },
@@ -20,13 +20,13 @@ test("segments stay in life-stage order and unstaged stories come last", () => {
       ["Youth and Adolescence (-18)", false, ["Harlem"]],
       ["Adulthood (20-59)", false, ["Moving to New Jersey"]],
       ["Older Adulthood (60+)", false, ["A later adulthood memory"]],
-      ["Other Stories", false, ["A story without a stage"]],
     ],
   );
+  assert.equal(stages.some((stage) => stage.segments.some((segment) => segment.timelineTitle === "A story without a stage")), false);
   assert.equal(stages[0].segments[0].id, segmentAnchorId("Growing up in Harlem", "young"));
 });
 
-test("a story with one section still keeps the empty stages and omits Other Stories", () => {
+test("a story with one section still keeps the empty stages", () => {
   const stages = groupStorySegments([{ _key: "only", quote: { en: "One memory" }, lifeStage: "adulthood" }], "en");
   assert.deepEqual(
     stages.map((stage) => [stage.id, stage.empty]),
@@ -43,6 +43,12 @@ test("a story page uses the language that actually has the story", () => {
   assert.equal(storyContentLocale(spanish, "en"), "es");
   assert.equal(storyContentLocale(spanish, "es"), "es");
   assert.equal(storyContentLocale({ body: { en: "English.", zh: "中文故事更长一些。" } }, "es"), "zh");
+  const spanishSegments = {
+    headline: { en: "An English quotation." },
+    article: { en: [{ children: [{ text: "The legacy English article is much longer than the sections." }] }] },
+    segments: [{ quote: { es: "Mi niñez" }, body: { es: [{ children: [{ text: "Crecí en Lima." }] }] } }],
+  };
+  assert.equal(storyContentLocale(spanishSegments, "en"), "es");
 });
 
 test("missing translations fall back to English and anchors stay on the English title", () => {

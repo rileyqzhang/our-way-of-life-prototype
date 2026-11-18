@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ArchiveVolumeBook, volumeTone, volumeTransitionName } from "@/components/stories/ArchiveVolume";
+import { ArchiveVolumeBook } from "@/components/stories/ArchiveVolume";
 import { ParticipantCard } from "@/components/stories/ParticipantCard";
 import { VolumeLink } from "@/components/stories/VolumeLink";
 import type { ArchiveCollection } from "@/lib/content/collections";
@@ -10,6 +10,7 @@ import { preferCanonicalStory } from "@/lib/migration/participant-code";
 import { pick } from "@/lib/content/text";
 import { localizeHref } from "@/lib/i18n";
 import { readLang } from "@/lib/i18n/request";
+import { volumeTransitionName } from "@/lib/viewTransition";
 
 function storyGroups(stories: ArchiveStory[], collections: ArchiveCollection[], copy: UiCopy, lang: Parameters<typeof pick>[1]) {
   const known = new Set(collections.map((collection) => collection.slug));
@@ -58,7 +59,7 @@ export default async function StoriesPage({ params }: { params: Promise<{ lang: 
             <div className="volumeShelf">
               {archive.collections.map((collection) => (
                 <VolumeLink
-                  className={`volume volume--${volumeTone(collection.slug)}`}
+                  className="volume"
                   href={localizeHref(lang, `/stories/collections/${collection.slug}`)}
                   key={collection.slug}
                   transitionName={volumeTransitionName(collection.slug)}

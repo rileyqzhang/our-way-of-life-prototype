@@ -17,5 +17,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 export default async function TimelinePage({ params }: { params: Promise<{ lang: string }> }) {
   const lang = await readLang(params);
   const archive = await getArchive();
-  return <InteractiveTimeline events={archive.timeline} lang={lang} />;
+  const stories = archive.stories
+    .filter((story) => story.published && story.slug && story.participantCode)
+    .map((story) => ({ slug: story.slug, participantCode: story.participantCode }));
+  return <InteractiveTimeline events={archive.timeline} lang={lang} stories={stories} />;
 }

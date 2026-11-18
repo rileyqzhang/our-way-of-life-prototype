@@ -34,6 +34,12 @@ export const story = defineType({
       type: "localeString",
     }),
     defineField({
+      name: "cardIntro",
+      title: "Short introduction (shown on the participant card)",
+      description: "One or two sentences shown on the participant card. This is different from the Overview, which appears at the top of the story page.",
+      type: "localeText",
+    }),
+    defineField({
       name: "headline",
       title: "Headline",
       description: "The quotation shown across the portrait. Write English, Spanish, and Chinese in their own fields. Leave a language blank when it is not ready.",
@@ -48,7 +54,7 @@ export const story = defineType({
     defineField({
       name: "segments",
       title: "Story sections",
-      description: "Optional. On the story page, sections are grouped by life stage. Sections without a stage appear last, under Other Stories. Within a stage, this list order is kept.",
+      description: "On the story page, sections are grouped by life stage. Within a stage, this list order is kept.",
       type: "array",
       of: [
         defineArrayMember({
@@ -84,9 +90,10 @@ export const story = defineType({
             defineField({
               name: "lifeStage",
               title: "Life stage",
-              description: "Choose the life stage this section belongs to. Leave it empty to place the section in Other Stories.",
+              description: "Required. Choose the life stage this section belongs to.",
               type: "string",
               options: { list: [...lifeStages], layout: "radio" },
+              validation: (rule) => rule.required(),
             }),
           ],
           preview: {
@@ -117,7 +124,8 @@ export const story = defineType({
               stage?: string;
             }) {
               const name = firstFilled(quoteEn, quoteEs, quoteZh, shortEn, shortEs, shortZh) || "Untitled section";
-              return { title: `${lifeStageTitle(stage) || "Other Stories"} — ${name}` };
+              const stageTitle = lifeStageTitle(stage);
+              return { title: stageTitle ? `${stageTitle} — ${name}` : name };
             },
           },
         }),

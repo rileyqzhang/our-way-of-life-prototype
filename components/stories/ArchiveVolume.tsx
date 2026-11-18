@@ -1,17 +1,7 @@
 import { ArchiveImage } from "@/components/media/ArchiveImage";
-import type { ArchiveCollection } from "@/lib/content/collections";
+import { collectionColorStyle, type ArchiveCollection } from "@/lib/content/collections";
 import { pick } from "@/lib/content/text";
 import type { Locale } from "@/lib/i18n";
-
-export function volumeTone(slug: string) {
-  if (slug === "latine" || slug === "africanAmerican" || slug === "chinese") return slug;
-  return "latine";
-}
-
-export function volumeTransitionName(slug: string) {
-  const names = { latine: "archive-book-latine", africanAmerican: "archive-book-african-american", chinese: "archive-book-chinese" };
-  return names[volumeTone(slug)];
-}
 
 export function ArchiveVolumeBook({
   collection,
@@ -28,7 +18,7 @@ export function ArchiveVolumeBook({
   return (
     <>
       <span className="volumeShadow" aria-hidden="true" />
-      <span className="volumeBody">
+      <span className="volumeBody" style={collectionColorStyle()}>
         <span className="volumeSpine" aria-hidden="true">
           <span className="volumeSpineLight" />
         </span>

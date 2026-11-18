@@ -16,12 +16,11 @@
     "migrate:docx:chinese": "tsx scripts/migrate-docx.ts --community=chinese",
     "migrate:timeline": "tsx scripts/migrate-timeline.ts",
     "migrate:collections": "tsx scripts/migrate-collections.ts",
-    "test:migration": "tsx --test lib/migration/participant-code.test.ts lib/migration/docx-document.test.ts lib/migration/timeline.test.ts lib/migration/collections.test.ts lib/content/collections.test.ts lib/timeline/open-cards.test.ts",
+    "test:migration": "tsx --test lib/migration/participant-code.test.ts lib/migration/docx-document.test.ts lib/migration/timeline.test.ts lib/migration/collections.test.ts lib/content/collections.test.ts lib/viewTransition.test.ts lib/timeline/open-cards.test.ts",
     "test:survey": "tsx --test lib/survey/survey.test.ts"
   },
   "dependencies": {
     "@portabletext/react": "^8.0.1",
-    "@sanity/color-input": "^4.0.7",
     "@sanity/image-url": "^2.1.1",
     "@sanity/vision": "^3.99.0",
     "@supabase/supabase-js": "^2.116.0",
@@ -41,6 +40,7 @@
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "@types/three": "^0.186.0",
+    "playwright-core": "^1.65.0",
     "tsx": "^4.20.5",
     "typescript": "^5.7.2"
   }

@@ -9,12 +9,6 @@ export const archiveQuery = defineQuery(`{
     cover {
       asset,
       alt
-    },
-    "theme": {
-      "gradientFrom": backgroundGradient.from.hex,
-      "gradientTo": backgroundGradient.to.hex,
-      "accent": accentColor.hex,
-      "muted": mutedColor.hex
     }
   },
   "collectionPage": *[_id == "collectionPage"][0] {
@@ -68,6 +62,7 @@ export const archiveQuery = defineQuery(`{
       usagePermission
     },
     headline,
+    cardIntro,
     "hasSegments": count(segments) > 0,
     relatedEvents[]->{
       "id": slug.current,

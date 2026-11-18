@@ -213,7 +213,7 @@ async function dryRunAll(client: SanityClient | null) {
     lines.push("");
     lines.push(`Overview: ${firstWords(plan.overviewText, 15, lang) || "(none)"}`);
     lines.push("");
-    lines.push(`Stages: youth ${stages.youth}, adulthood ${stages.adulthood}, olderAdulthood ${stages.olderAdulthood}, Other Stories ${stages.other}.`);
+    lines.push(`Stages: youth ${stages.youth}, adulthood ${stages.adulthood}, olderAdulthood ${stages.olderAdulthood}, unstaged ${stages.other}.`);
     lines.push("");
     lines.push(plan.unsplit ? "The whole story is one segment." : `Segments: ${plan.segments.length}.`);
     lines.push("");

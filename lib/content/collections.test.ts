@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { collectionTheme, mergeCollections, storyCollectionSlug, type ArchiveCollection } from "@/lib/content/collections";
+import { collectionColorStyle, collectionColors, mergeCollections, storyCollectionSlug, type ArchiveCollection } from "@/lib/content/collections";
 
 const blank = { en: "", es: "", zh: "" };
 
@@ -37,17 +37,19 @@ test("a published collection can replace the fallback wording without changing t
   assert.ok(chinese?.image);
 });
 
-test("collection theme uses Sanity colors and falls back to brown and gold", () => {
-  assert.deepEqual(collectionTheme({ gradientFrom: "#2E120D", gradientTo: "#1A0A07", accent: "#D9AD62", muted: "#B97D5F" }), {
+test("every collection uses the shared Latine red palette", () => {
+  assert.deepEqual(collectionColors, {
+    cover: "#843420",
     background: "linear-gradient(145deg, #2E120D 0%, #1A0A07 100%)",
     accent: "#D9AD62",
     muted: "#B97D5F",
   });
-  const fallback = collectionTheme(undefined);
-  assert.equal(fallback.background, "linear-gradient(145deg, #5b2509 0%, #2a1004 100%)");
-  assert.equal(fallback.accent, "#D9AD62");
-  assert.equal(collectionTheme({ gradientFrom: "#0E1B2E", accent: "red; background: url(x)" }).accent, "#D9AD62");
-  assert.equal(collectionTheme({ gradientFrom: "#0E1B2E" }).background, "linear-gradient(145deg, #0E1B2E 0%, #0E1B2E 100%)");
+  assert.deepEqual(collectionColorStyle(), {
+    "--collection-cover": "#843420",
+    "--collection-bg": "linear-gradient(145deg, #2E120D 0%, #1A0A07 100%)",
+    "--collection-accent": "#D9AD62",
+    "--collection-muted": "#B97D5F",
+  });
 });
 
 test("story membership reads the collection reference only", () => {

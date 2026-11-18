@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import type { CSSProperties } from "react";
 import { ArchiveBookTransition } from "@/components/stories/ArchiveBookTransition";
-import { ArchiveVolumeBook, volumeTone, volumeTransitionName } from "@/components/stories/ArchiveVolume";
+import { ArchiveVolumeBook } from "@/components/stories/ArchiveVolume";
 import { ParticipantCard } from "@/components/stories/ParticipantCard";
 import { ArchiveTransitionLink } from "@/components/stories/VolumeLink";
-import { collectionTheme, legacyCollections } from "@/lib/content/collections";
+import { collectionColorStyle, legacyCollections } from "@/lib/content/collections";
 import { ui } from "@/lib/content/copy";
 import { getArchive } from "@/lib/content/get-content";
 import { preferCanonicalStory } from "@/lib/migration/participant-code";
 import { pick } from "@/lib/content/text";
 import { locales, localizeHref } from "@/lib/i18n";
 import { readLang } from "@/lib/i18n/request";
+import { volumeTransitionName } from "@/lib/viewTransition";
 
 export const dynamicParams = true;
 export const revalidate = 60;
@@ -47,17 +47,11 @@ export default async function StoryCollectionPage({
   const volume = archive.collections.find((item) => item.slug === collection);
   if (!volume) notFound();
   const stories = preferCanonicalStory(archive.stories.filter((story) => story.collection === collection));
-  const theme = collectionTheme(volume.theme);
   const wording = archive.collectionPage;
   const name = pick(volume.name, lang);
-  const themeStyle = {
-    "--collection-bg": theme.background,
-    "--collection-accent": theme.accent,
-    "--collection-muted": theme.muted,
-  } as CSSProperties;
 
   return (
-    <div className="collectionPage" style={themeStyle}>
+    <div className="collectionPage" style={collectionColorStyle()}>
       <div className="collectionPageInner collectionBackRow">
         <ArchiveTransitionLink className="collectionBack" direction="back" href={localizeHref(lang, "/stories#archive-shelf")}>
           <span aria-hidden="true">←</span> {pick(wording.backLabel, lang)}
@@ -74,7 +68,7 @@ export default async function StoryCollectionPage({
           </div>
           <div className="collectionHeroBook">
             <ArchiveBookTransition name={volumeTransitionName(volume.slug)}>
-              <div className={`volume volume--${volumeTone(volume.slug)} volume--hero`}>
+              <div className="volume volume--hero">
                 <ArchiveVolumeBook collection={volume} lang={lang} priority />
               </div>
             </ArchiveBookTransition>
@@ -84,17 +78,9 @@ export default async function StoryCollectionPage({
 
       <section className="collectionPageInner collectionGallery" aria-label={name}>
         {stories.length ? (
-          <div className="collectionGalleryGrid">
+          <div className="participantStoryGrid">
             {stories.map((story) => (
-              <ParticipantCard
-                comingSoon={copy.stories.comingSoon}
-                fromCollection={collection}
-                key={story.slug}
-                lang={lang}
-                readStory={copy.stories.readStory}
-                story={story}
-                variant="collection"
-              />
+              <ParticipantCard comingSoon={copy.stories.comingSoon} key={story.slug} lang={lang} readStory={copy.stories.readStory} story={story} />
             ))}
           </div>
         ) : (

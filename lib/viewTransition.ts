@@ -1,3 +1,15 @@
+const namedArchiveBooks = {
+  latine: "archive-book-latine",
+  africanAmerican: "archive-book-african-american",
+  chinese: "archive-book-chinese",
+} as const;
+
+export function volumeTransitionName(slug: string) {
+  if (slug in namedArchiveBooks) return namedArchiveBooks[slug as keyof typeof namedArchiveBooks];
+  const safe = slug.trim().replace(/[^A-Za-z0-9_-]+/g, "-").replace(/^-+|-+$/g, "");
+  return `archive-book-${safe || "collection"}`;
+}
+
 export type ArchiveTransitionDirection = "forward" | "back";
 
 export function markArchiveTransition(direction: ArchiveTransitionDirection) {

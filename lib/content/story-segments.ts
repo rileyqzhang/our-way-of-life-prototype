@@ -27,7 +27,7 @@ export type StorySegmentSource = {
 
 export type StorySegmentView = {
   id: string;
-  stage: LifeStage | "other";
+  stage: LifeStage;
   title: string;
   isQuote: boolean;
   timelineTitle: string;
@@ -35,13 +35,11 @@ export type StorySegmentView = {
 };
 
 export type StoryStageView = {
-  id: LifeStage | "other";
+  id: LifeStage;
   title: string;
   empty: boolean;
   segments: StorySegmentView[];
 };
-
-const OTHER_TITLE = "Other Stories";
 
 export function storyContentLocale(
   story: {
@@ -53,13 +51,17 @@ export function storyContentLocale(
   },
   lang: Locale,
 ): Locale {
-  const score = (locale: Locale) => {
-    const quotations = (story.headline?.[locale] || "").trim().length;
-    const segments = (story.segments || []).reduce(
+  const segmentScore = (locale: Locale) =>
+    (story.segments || []).reduce(
       (sum, segment) => sum + (segment.quote?.[locale] || "").trim().length + (segment.shortTitle?.[locale] || "").trim().length + blockText(segment.body?.[locale]),
       0,
     );
-    return blockText(story.overview?.[locale]) + blockText(story.article?.[locale]) + (story.body?.[locale] || "").trim().length + quotations + segments;
+  const hasSegments = (["en", "es", "zh"] as const).some((locale) => segmentScore(locale) > 0);
+  // Segments are the page body; a headline or legacy article in another language must not hide them.
+  const score = (locale: Locale) => {
+    if (hasSegments) return segmentScore(locale);
+    const quotations = (story.headline?.[locale] || "").trim().length;
+    return blockText(story.overview?.[locale]) + blockText(story.article?.[locale]) + (story.body?.[locale] || "").trim().length + quotations;
   };
   if (score(lang) > 0) return lang;
   const available = (["en", "es", "zh"] as const)
@@ -109,17 +111,18 @@ export function segmentAnchorId(englishQuote: string, key: string) {
   return `segment-${slug || key || "section"}`;
 }
 
-function stageOf(value: string | null | undefined): LifeStage | "other" {
-  return lifeStages.some((stage) => stage.value === value) ? (value as LifeStage) : "other";
+function stageOf(value: string | null | undefined): LifeStage | null {
+  return lifeStages.some((stage) => stage.value === value) ? (value as LifeStage) : null;
 }
 
 export function groupStorySegments(segments: StorySegmentSource[] | null | undefined, lang: Locale): StoryStageView[] {
-  const grouped = new Map<LifeStage | "other", StorySegmentView[]>();
+  const grouped = new Map<LifeStage, StorySegmentView[]>();
   for (const stage of lifeStages) grouped.set(stage.value, []);
-  grouped.set("other", []);
   const used = new Set<string>();
 
   (segments || []).forEach((segment, index) => {
+    const stage = stageOf(segment.lifeStage);
+    if (!stage) return;
     const key = segment._key?.trim() || `segment-${index + 1}`;
     const quote = localizedPlain(segment.quote, lang);
     const englishQuote = segment.quote?.en?.trim() || quote;
@@ -129,7 +132,6 @@ export function groupStorySegments(segments: StorySegmentSource[] | null | undef
     let id = segmentAnchorId(englishQuote, key);
     if (used.has(id)) id = `${id}-${key}`;
     used.add(id);
-    const stage = stageOf(segment.lifeStage);
     grouped.get(stage)?.push({
       id,
       stage,
@@ -140,13 +142,10 @@ export function groupStorySegments(segments: StorySegmentSource[] | null | undef
     });
   });
 
-  const stages: StoryStageView[] = lifeStages.map((stage) => {
+  return lifeStages.map((stage) => {
     const items = grouped.get(stage.value) || [];
     return { id: stage.value, title: lifeStageTitle(stage.value) || stage.title, empty: items.length === 0, segments: items };
   });
-  const other = grouped.get("other") || [];
-  if (other.length) stages.push({ id: "other", title: OTHER_TITLE, empty: false, segments: other });
-  return stages;
 }
 
 const ELICITATION = /^elicitation document\b/i;

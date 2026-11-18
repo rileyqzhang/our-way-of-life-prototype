@@ -1,10 +1,11 @@
 "use client";
 
-import { Fragment, useId } from "react";
-import { ArchiveImage } from "@/components/media/ArchiveImage";
+import { useId } from "react";
+import { TimelineNarrative } from "@/components/timeline/TimelineNarrative";
 import { pick } from "@/lib/content/text";
 import type { Locale } from "@/lib/i18n";
-import type { TimelineBlock, TimelineEvent, TimelineLanguage } from "@/lib/timeline/types";
+import type { StoryRef } from "@/lib/timeline/card-content";
+import type { TimelineEvent, TimelineLanguage } from "@/lib/timeline/types";
 
 const copy: Record<TimelineLanguage, { title: string; subtitle: string }> = {
   en: { title: "Our Way of Life", subtitle: "Weaving Our History" },
@@ -12,101 +13,7 @@ const copy: Record<TimelineLanguage, { title: string; subtitle: string }> = {
   zh: { title: "我们的生活方式", subtitle: "编织我们的历史" },
 };
 
-const richToken = /(\*\*[^*]+\*\*|\[[^\]]+\]\([^)\s]+\))/g;
-
-function RichText({ value }: { value: string }) {
-  return value.split("\n").map((line, lineIndex) => (
-    <Fragment key={lineIndex}>
-      {lineIndex > 0 ? <br /> : null}
-      {line.split(richToken).map((part, partIndex) => {
-        if (part.startsWith("**") && part.endsWith("**")) {
-          return <strong key={partIndex}>{part.slice(2, -2)}</strong>;
-        }
-        const link = part.match(/^\[([^\]]+)\]\(([^)\s]+)\)$/);
-        if (link) {
-          return (
-            <a key={partIndex} href={link[2]} rel="noopener noreferrer" target="_blank">
-              {link[1]}
-            </a>
-          );
-        }
-        return <Fragment key={partIndex}>{part}</Fragment>;
-      })}
-    </Fragment>
-  ));
-}
-
-function youtubeEmbed(src: string) {
-  try {
-    const url = new URL(src);
-    if (url.protocol === "https:" && url.hostname === "www.youtube.com" && url.pathname.startsWith("/embed/")) {
-      return url.toString();
-    }
-  } catch {
-    return null;
-  }
-  return null;
-}
-
-function BlockView({ block, lang }: { block: TimelineBlock; lang: TimelineLanguage }) {
-  if (block.type === "paragraph") {
-    return (
-      <p className={block.emphasis === "caption" ? "itlCaption" : undefined}>
-        <RichText value={pick(block.text, lang)} />
-      </p>
-    );
-  }
-
-  if (block.type === "participant") {
-    const href = block.slug ? `/${lang}/stories/${block.slug}` : block.href;
-    const external = href.startsWith("http");
-    const alt = pick(block.imageAlt, lang) || `Portrait of participant ${block.code}`;
-    return (
-      <h4>
-        <a className="itlParticipant" href={href} {...(external ? { rel: "noopener noreferrer", target: "_blank" } : {})}>
-          {block.avatar ? (
-            <ArchiveImage alt={alt} className="itlAvatar" height={60} src={block.avatar} width={60} />
-          ) : (
-            <span className="itlAvatarFallback" aria-hidden="true">
-              {block.code.slice(0, 1)}
-            </span>
-          )}
-          <span>{pick(block.title, lang)}</span>
-        </a>
-      </h4>
-    );
-  }
-
-  if (block.type === "video") {
-    const src = youtubeEmbed(block.src);
-    if (!src) return null;
-    return (
-      <div className="itlVideo">
-        <iframe
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-          loading="lazy"
-          src={src}
-          title={block.title}
-        />
-      </div>
-    );
-  }
-
-  const imageAlt = block.imageAlt || pick(block.title, lang);
-  return (
-    <a className="itlLink" href={block.href} rel="noopener noreferrer" target="_blank">
-      {block.image ? <img alt={imageAlt} src={block.image} /> : null}
-      <span className="itlLinkText">
-        <span className="itlLinkTitle">{pick(block.title, lang)}</span>
-        {pick(block.description, lang) ? <span className="itlLinkDesc">{pick(block.description, lang)}</span> : null}
-        {block.domain ? <span className="itlLinkDomain">{block.domain}</span> : null}
-      </span>
-    </a>
-  );
-}
-
-function TimelineEntry({ event, lang }: { event: TimelineEvent; lang: TimelineLanguage }) {
+function TimelineEntry({ event, lang, stories }: { event: TimelineEvent; lang: TimelineLanguage; stories: readonly StoryRef[] }) {
   const panelId = useId();
   return (
     <article className="itlEntry" id={event.id}>
@@ -121,16 +28,14 @@ function TimelineEntry({ event, lang }: { event: TimelineEvent; lang: TimelineLa
           </span>
         </summary>
         <div className="itlCard" id={panelId}>
-          {event.blocks.map((block, index) => (
-            <BlockView block={block} key={`${event.id}-${index}`} lang={lang} />
-          ))}
+          <TimelineNarrative event={event} lang={lang} stories={stories} surface="paper" />
         </div>
       </details>
     </article>
   );
 }
 
-export function LinearTimeline({ events, lang }: { events: TimelineEvent[]; lang: Locale }) {
+export function LinearTimeline({ events, lang, stories = [] }: { events: TimelineEvent[]; lang: Locale; stories?: readonly StoryRef[] }) {
   const text = copy[lang];
 
   return (
@@ -157,7 +62,7 @@ export function LinearTimeline({ events, lang }: { events: TimelineEvent[]; lang
           <p className="itlSubtitle">{text.subtitle}</p>
           <div className="itlList">
             {events.map((event) => (
-              <TimelineEntry event={event} key={event.id} lang={lang} />
+              <TimelineEntry event={event} key={event.id} lang={lang} stories={stories} />
             ))}
           </div>
         </div>
